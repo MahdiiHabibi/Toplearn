@@ -1,0 +1,60 @@
+﻿@model RegisterViewModel
+@{
+	ViewBag.Title = "عضویت کاربران";
+	Layout = "_Layout";
+}
+
+
+<partial name="_breadcrumb"/>
+
+<main class="client-page">
+	<div class="container-content">
+
+		<header><h2> عضویت در سایت </h2></header>
+
+		<div class="form-layer">
+			<form action="/Account/Register" method="post">
+				<div class="row">
+
+					<div class="input-group col-4">
+						<span class="input-group-addon" ><i class="zmdi zmdi-email"></i></span>
+						<input asp-for="Email" type="email" class="form-control" placeholder="ایمیل" aria-describedby="email-address">
+					</div>
+					<span asp-validation-for="Email"></span>
+
+					<div class="input-group col-4">
+						<span class="input-group-addon" id="username"><i class="zmdi zmdi-account"></i></span>
+						<input asp-for="FullName" type="text" class="form-control" placeholder="نام و نام خانوادگی" aria-describedby="username">
+					</div>
+					<span asp-validation-for="FullName"></span>
+
+					<div class="input-group col-4">
+						<span class="input-group-addon" id="password"><i class="zmdi zmdi-account-circle"></i></span>
+						<input asp-for="UserName" type="text" class="form-control" placeholder="نام کاربری" aria-describedby="username">
+					</div>
+					<span asp-validation-for="UserName"></span>
+
+					<div class="input-group">
+						<span class="input-group-addon" id="email-address"><i class="zmdi zmdi-lock"></i></span>
+						<input asp-for="Password" type="password" class="form-control" placeholder="رمز عبور " aria-describedby="password">
+					</div>
+					<span asp-validation-for="Password"></span>
+
+					<div class="input-group">
+						<span class="input-group-addon" id="email-address"><i class="zmdi zmdi-lock"></i></span>
+						<input asp-for="RePassword" type="password" class="form-control" placeholder="تکرار رمز عبور " aria-describedby="password">
+					</div>
+					<span asp-validation-for="RePassword"></span>
+				</div>
+				<input asp-for="BackUrl" type="hidden"/>
+				<div class="link">
+					<a asp-action="Login" asp-controller="Account" asp-route-BackUrl_Url="@Model.BackUrl"> <i class="zmdi zmdi-account"></i> ورود به سایت </a>
+				</div>
+
+				<button class="btn btn-success" type="submit"> عضویت در سایت </button>
+
+			</form>
+		</div>
+
+	</div>
+</main>

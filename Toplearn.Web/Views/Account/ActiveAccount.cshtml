@@ -1,0 +1,25 @@
+﻿@{
+	ViewBag.Title = "ارسال مجدد لینک فعالسازی حساب کاربری";
+}
+
+
+<main class="client-page">
+	<div class="container-content">
+
+		<header>
+			<h2>فعال سازی حساب کاربری</h2>
+		</header>
+		<div class="form-layer">
+			<form action="/ActiveAccount" method="post">
+				<div class="input-group">
+					<span class="input-group-addon" id="email-address"><i class="zmdi zmdi-email"></i></span>
+					<input name="email" id="email" type="text" class="form-control" placeholder="ایمیل" aria-describedby="email-address">
+				</div>
+				<button class="btn btn-success" type="submit">
+					ارسال
+				</button>
+			</form>
+		</div>
+
+	</div>
+</main>

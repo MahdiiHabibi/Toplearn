@@ -1,0 +1,75 @@
+﻿
+
+<!DOCTYPE html>
+<html class="no-js" dir="rtl" lang="fa-IR">
+<head>
+	<meta charset="UTF-8">
+	<title> تاپ لرن  -  @ViewBag.Title </title>
+	<partial name="_MetaTags" />
+	<partial name="_Styles" />
+	<script src="~/js/jquery.min.js"></script>
+</head>
+<body>
+	<script src="~/js/modernizr-custom.js"></script>
+
+	<div class="landing-layer">
+		<div class="container">
+			<nav>
+				<div class="row">
+					<div class="col-sm-6 col-xs-12">
+						<ul>
+							<li>
+								<a href="/"> 
+									<strong>
+										تاپ لرن
+									</strong>
+									</a>
+								<a href="~"> همکاری در فروش </a>
+								<a href="~"> درباره ما </a>
+								<a href="~"> تماس با ما </a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-sm-6 col-xs-12">
+						<div class="clientarea">
+							@if (User.Identity.IsAuthenticated)
+							{
+								<div class="loggein">
+									<i class="zmdi zmdi-account"></i><a asp-action="Index" asp-controller="Account"> @User.Identity.Name ، خوش آمدی </a> /
+									<a asp-action="LogOut" asp-controller="Account"> خروج </a>
+								</div>
+							}
+							else
+							{
+								<div class="signin">
+									<i class="zmdi zmdi-account"></i>
+									<a asp-action="Login" asp-controller="Account"> ورود </a> /
+									<a asp-action="Register" asp-controller="Account"> عضویت </a>
+								</div>
+							}
+						</div>
+					</div>
+				</div>
+			</nav>
+			@await RenderSectionAsync("SearchBox", false)
+		</div>
+	</div>
+
+	<!-- main manu -->
+	<partial name="_MainMenu" />
+	<!-- /main manu -->
+	<!-- content -->
+	
+	@RenderBody()
+	<!-- /content -->
+	<!-- footer -->
+	<partial name="_Footer" />
+	<!-- /footer -->
+	<!--Alert-->
+	<partial name="_AlertForMassage"/>
+	<!--Alert-->
+	<script src="~/js/bootstrap.min.js"></script>
+	<script src="~/js/script.js"></script>
+	<partial name="_ValidationScriptsPartial" />
+</body>
+</html>

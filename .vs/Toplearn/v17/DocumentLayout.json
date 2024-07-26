@@ -1,0 +1,57 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "W:\\Toplearn\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0D24A8D8-60E6-449F-BAFE-23309058DA4D}|Toplearn.Web\\Toplearn.Web.csproj|w:\\toplearn\\toplearn.web\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D24A8D8-60E6-449F-BAFE-23309058DA4D}|Toplearn.Web\\Toplearn.Web.csproj|solutionrelative:toplearn.web\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D24A8D8-60E6-449F-BAFE-23309058DA4D}|Toplearn.Web\\Toplearn.Web.csproj|w:\\toplearn\\toplearn.web\\views\\shared\\_activeemail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0D24A8D8-60E6-449F-BAFE-23309058DA4D}|Toplearn.Web\\Toplearn.Web.csproj|solutionrelative:toplearn.web\\views\\shared\\_activeemail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 137,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "W:\\Toplearn\\Toplearn.Web\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Toplearn.Web\\Controllers\\AccountController.cs",
+              "ToolTip": "W:\\Toplearn\\Toplearn.Web\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Toplearn.Web\\Controllers\\AccountController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4BAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T15:21:47.82Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_ActiveEmail.cshtml",
+              "DocumentMoniker": "W:\\Toplearn\\Toplearn.Web\\Views\\Shared\\_ActiveEmail.cshtml",
+              "RelativeDocumentMoniker": "Toplearn.Web\\Views\\Shared\\_ActiveEmail.cshtml",
+              "ToolTip": "W:\\Toplearn\\Toplearn.Web\\Views\\Shared\\_ActiveEmail.cshtml",
+              "RelativeToolTip": "Toplearn.Web\\Views\\Shared\\_ActiveEmail.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-25T15:20:16.047Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

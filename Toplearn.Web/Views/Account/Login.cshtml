@@ -1,0 +1,56 @@
+﻿@model LoginViewModel
+@{
+	ViewBag.Title = "ورود به سایت";
+}
+
+
+
+<main class="client-page">
+	<div class="container-content">
+
+		<header>
+			<h2>
+				ورود به سایت
+			</h2>
+		</header>
+
+		<div class="form-layer">
+
+			<form action="/Account/Login" method="post">
+
+				<div class="input-group">
+					<span class="input-group-addon" id="email-address"><i class="zmdi zmdi-email"></i></span>
+					<input asp-for="Email" type="text" class="form-control" placeholder="ایمیل" aria-describedby="email-address">
+				</div>
+				<span asp-validation-for="Email"></span>
+
+
+				<div class="input-group">
+					<span class="input-group-addon" id="password"><i class="zmdi zmdi-lock"></i></span>
+					<input asp-for="Password" type="password" class="form-control" placeholder="رمز عبور " aria-describedby="password">
+				</div>
+				<span asp-validation-for="Password"></span>
+
+				<input asp-for="BackUrl" type="hidden" />
+
+				<div class="remember-me">
+					<label><input asp-for="RememberMe" type="checkbox" >  مرا بخاطر بسپار </label>
+				</div>
+
+				<div class="link">
+					<a asp-action="ForgotPassword" asp-controller="Account"> <i class="zmdi zmdi-lock"></i> رمز عبور خود را فراموش کرده ام !</a>
+					<a href="/ActiveAccount"> <i class="zmdi zmdi-check-all"></i> فعال سازی حساب کاربری !</a>
+					<a asp-action="Register" asp-controller="Account" asp-route-BackUrl_Url="@Model.BackUrl">
+						<i class="zmdi zmdi-account"></i>
+						عضویت در سایت
+					</a>
+				</div>
+
+				<button class="btn btn-success" type="submit"> ورود به سایت </button>
+
+			</form>
+		</div>
+
+	</div>
+	<
+</main>
