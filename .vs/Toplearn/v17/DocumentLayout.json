@@ -3,12 +3,28 @@
   "WorkspaceRootPath": "W:\\Toplearn\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0D24A8D8-60E6-449F-BAFE-23309058DA4D}|Toplearn.Web\\Toplearn.Web.csproj|w:\\toplearn\\toplearn.web\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D24A8D8-60E6-449F-BAFE-23309058DA4D}|Toplearn.Web\\Toplearn.Web.csproj|solutionrelative:toplearn.web\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{99A39462-E33C-4871-8DEE-E18A4BC0DEA7}|Toplearn.Core\\Toplearn.Core.csproj|w:\\toplearn\\toplearn.core\\convertors\\automapper\\automapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A39462-E33C-4871-8DEE-E18A4BC0DEA7}|Toplearn.Core\\Toplearn.Core.csproj|solutionrelative:toplearn.core\\convertors\\automapper\\automapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D24A8D8-60E6-449F-BAFE-23309058DA4D}|Toplearn.Web\\Toplearn.Web.csproj|w:\\toplearn\\toplearn.web\\views\\shared\\_activeemail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0D24A8D8-60E6-449F-BAFE-23309058DA4D}|Toplearn.Web\\Toplearn.Web.csproj|solutionrelative:toplearn.web\\views\\shared\\_activeemail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{0D24A8D8-60E6-449F-BAFE-23309058DA4D}|Toplearn.Web\\Toplearn.Web.csproj|w:\\toplearn\\toplearn.web\\views\\shared\\_boxofimageinuserpanel.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0D24A8D8-60E6-449F-BAFE-23309058DA4D}|Toplearn.Web\\Toplearn.Web.csproj|solutionrelative:toplearn.web\\views\\shared\\_boxofimageinuserpanel.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D24A8D8-60E6-449F-BAFE-23309058DA4D}|Toplearn.Web\\Toplearn.Web.csproj|w:\\toplearn\\toplearn.web\\areas\\userpanel\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0D24A8D8-60E6-449F-BAFE-23309058DA4D}|Toplearn.Web\\Toplearn.Web.csproj|solutionrelative:toplearn.web\\areas\\userpanel\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D24A8D8-60E6-449F-BAFE-23309058DA4D}|Toplearn.Web\\Toplearn.Web.csproj|w:\\toplearn\\toplearn.web\\areas\\userpanel\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D24A8D8-60E6-449F-BAFE-23309058DA4D}|Toplearn.Web\\Toplearn.Web.csproj|solutionrelative:toplearn.web\\areas\\userpanel\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A39462-E33C-4871-8DEE-E18A4BC0DEA7}|Toplearn.Core\\Toplearn.Core.csproj|w:\\toplearn\\toplearn.core\\services\\interface\\mapper\\imapperuserpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A39462-E33C-4871-8DEE-E18A4BC0DEA7}|Toplearn.Core\\Toplearn.Core.csproj|solutionrelative:toplearn.core\\services\\interface\\mapper\\imapperuserpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A39462-E33C-4871-8DEE-E18A4BC0DEA7}|Toplearn.Core\\Toplearn.Core.csproj|w:\\toplearn\\toplearn.core\\services\\implement\\mapper\\mapperuserpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A39462-E33C-4871-8DEE-E18A4BC0DEA7}|Toplearn.Core\\Toplearn.Core.csproj|solutionrelative:toplearn.core\\services\\implement\\mapper\\mapperuserpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,36 +34,85 @@
       "DocumentGroups": [
         {
           "DockedWidth": 137,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "W:\\Toplearn\\Toplearn.Web\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "Toplearn.Web\\Controllers\\AccountController.cs",
-              "ToolTip": "W:\\Toplearn\\Toplearn.Web\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "Toplearn.Web\\Controllers\\AccountController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4BAAACAAAA",
+              "Title": "AutoMapper.cs",
+              "DocumentMoniker": "W:\\Toplearn\\Toplearn.Core\\Convertors\\AutoMapper\\AutoMapper.cs",
+              "RelativeDocumentMoniker": "Toplearn.Core\\Convertors\\AutoMapper\\AutoMapper.cs",
+              "ToolTip": "W:\\Toplearn\\Toplearn.Core\\Convertors\\AutoMapper\\AutoMapper.cs",
+              "RelativeToolTip": "Toplearn.Core\\Convertors\\AutoMapper\\AutoMapper.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAAwBwAAAA8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-25T15:21:47.82Z",
+              "WhenOpened": "2024-07-29T14:11:55.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "W:\\Toplearn\\Toplearn.Web\\Areas\\UserPanel\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Toplearn.Web\\Areas\\UserPanel\\Controllers\\HomeController.cs",
+              "ToolTip": "W:\\Toplearn\\Toplearn.Web\\Areas\\UserPanel\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Toplearn.Web\\Areas\\UserPanel\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T14:03:38.167Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "W:\\Toplearn\\Toplearn.Web\\Areas\\UserPanel\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Toplearn.Web\\Areas\\UserPanel\\Views\\Home\\Index.cshtml",
+              "ToolTip": "W:\\Toplearn\\Toplearn.Web\\Areas\\UserPanel\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Toplearn.Web\\Areas\\UserPanel\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-29T13:56:08.703Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "_ActiveEmail.cshtml",
-              "DocumentMoniker": "W:\\Toplearn\\Toplearn.Web\\Views\\Shared\\_ActiveEmail.cshtml",
-              "RelativeDocumentMoniker": "Toplearn.Web\\Views\\Shared\\_ActiveEmail.cshtml",
-              "ToolTip": "W:\\Toplearn\\Toplearn.Web\\Views\\Shared\\_ActiveEmail.cshtml",
-              "RelativeToolTip": "Toplearn.Web\\Views\\Shared\\_ActiveEmail.cshtml",
+              "Title": "_BoxOfImageInUserPanel.cshtml",
+              "DocumentMoniker": "W:\\Toplearn\\Toplearn.Web\\Views\\Shared\\_BoxOfImageInUserPanel.cshtml",
+              "RelativeDocumentMoniker": "Toplearn.Web\\Views\\Shared\\_BoxOfImageInUserPanel.cshtml",
+              "ToolTip": "W:\\Toplearn\\Toplearn.Web\\Views\\Shared\\_BoxOfImageInUserPanel.cshtml",
+              "RelativeToolTip": "Toplearn.Web\\Views\\Shared\\_BoxOfImageInUserPanel.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-25T15:20:16.047Z"
+              "WhenOpened": "2024-07-29T13:55:02.639Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MapperUserPanel.cs",
+              "DocumentMoniker": "W:\\Toplearn\\Toplearn.Core\\Services\\Implement\\Mapper\\MapperUserPanel.cs",
+              "RelativeDocumentMoniker": "Toplearn.Core\\Services\\Implement\\Mapper\\MapperUserPanel.cs",
+              "ToolTip": "W:\\Toplearn\\Toplearn.Core\\Services\\Implement\\Mapper\\MapperUserPanel.cs",
+              "RelativeToolTip": "Toplearn.Core\\Services\\Implement\\Mapper\\MapperUserPanel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T13:26:16.188Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IMapperUserPanel.cs",
+              "DocumentMoniker": "W:\\Toplearn\\Toplearn.Core\\Services\\Interface\\Mapper\\IMapperUserPanel.cs",
+              "RelativeDocumentMoniker": "Toplearn.Core\\Services\\Interface\\Mapper\\IMapperUserPanel.cs",
+              "ToolTip": "W:\\Toplearn\\Toplearn.Core\\Services\\Interface\\Mapper\\IMapperUserPanel.cs",
+              "RelativeToolTip": "Toplearn.Core\\Services\\Interface\\Mapper\\IMapperUserPanel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T13:25:53.794Z",
+              "EditorCaption": ""
             }
           ]
         }
