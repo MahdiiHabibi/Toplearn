@@ -1,0 +1,16 @@
+W:\Toplearn\Toplearn.Core\bin\Release\net8.0\Toplearn.Core.deps.json
+W:\Toplearn\Toplearn.Core\bin\Release\net8.0\Toplearn.Core.dll
+W:\Toplearn\Toplearn.Core\bin\Release\net8.0\Toplearn.Core.pdb
+W:\Toplearn\Toplearn.Core\bin\Release\net8.0\Toplearn.DataLayer.dll
+W:\Toplearn\Toplearn.Core\bin\Release\net8.0\Toplearn.DataLayer.pdb
+W:\Toplearn\Toplearn.Core\obj\Release\net8.0\Toplearn.Core.csproj.AssemblyReference.cache
+W:\Toplearn\Toplearn.Core\obj\Release\net8.0\Toplearn.Core.GeneratedMSBuildEditorConfig.editorconfig
+W:\Toplearn\Toplearn.Core\obj\Release\net8.0\Toplearn.Core.AssemblyInfoInputs.cache
+W:\Toplearn\Toplearn.Core\obj\Release\net8.0\Toplearn.Core.AssemblyInfo.cs
+W:\Toplearn\Toplearn.Core\obj\Release\net8.0\Toplearn.Core.csproj.CoreCompileInputs.cache
+W:\Toplearn\Toplearn.Core\obj\Release\net8.0\Toplearn.Core.sourcelink.json
+W:\Toplearn\Toplearn.Core\obj\Release\net8.0\Toplearn.34E0E102.Up2Date
+W:\Toplearn\Toplearn.Core\obj\Release\net8.0\Toplearn.Core.dll
+W:\Toplearn\Toplearn.Core\obj\Release\net8.0\refint\Toplearn.Core.dll
+W:\Toplearn\Toplearn.Core\obj\Release\net8.0\Toplearn.Core.pdb
+W:\Toplearn\Toplearn.Core\obj\Release\net8.0\ref\Toplearn.Core.dll

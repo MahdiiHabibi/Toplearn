@@ -13,3 +13,4 @@ W:\Toplearn\Toplearn.Core\bin\Debug\net8.0\Toplearn.DataLayer.dll
 W:\Toplearn\Toplearn.Core\bin\Debug\net8.0\Toplearn.DataLayer.pdb
 W:\Toplearn\Toplearn.Core\obj\Debug\net8.0\Toplearn.Core.csproj.AssemblyReference.cache
 W:\Toplearn\Toplearn.Core\obj\Debug\net8.0\Toplearn.34E0E102.Up2Date
+W:\Toplearn\Toplearn.Core\obj\Debug\net8.0\Toplearn.Core.sourcelink.json

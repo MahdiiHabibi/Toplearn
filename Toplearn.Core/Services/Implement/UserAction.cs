@@ -65,14 +65,15 @@ namespace Toplearn.Core.Services.Implement
 					x.Email == loginViewModel.Email.FixedEmail() &&
 					x.Password == loginViewModel.Password.EncodePasswordMd5());
 
-		public async Task<bool> SendTheVerificationCodeWithEmail(User user, string View, string subject, string BackUrl = "/home/index")
+		public async Task<bool> SendTheVerificationCodeWithEmail(User user, string View, string subject, string HostUrl, string BackUrl = "2%home2%index")
 		{
 			try
 			{
 				var MassageModel = mapperAccount.MapTheSendEmailHtmlViewModelFromUser(user);
 				MassageModel.BackUrl = BackUrl;
+				MassageModel.HostUrl = HostUrl;
 				var MassageBody = _viewRender.RenderToStringAsync(View, MassageModel);
-				return SendEmail.Send(user.Email,subject, MassageBody);
+				return SendEmail.Send(user.Email, subject, MassageBody);
 			}
 			catch
 			{
@@ -81,45 +82,45 @@ namespace Toplearn.Core.Services.Implement
 		}
 
 		public async Task<User> GetUser(string email)
-		{
-			return await _contextActionsForUser.GetOne(x => x.Email == email.FixedEmail());
-		}
-
-		public async Task<User?> SignUpUser(RegisterViewModel registerViewModel)
-		{
-
-			try
 			{
-				// Removing the first and last spaces of the email and UPPER it
-				registerViewModel.UserName = registerViewModel.UserName.FixedUsername();
-				// Removing the first and last spaces of the Username
-				registerViewModel.Email = registerViewModel.Email.FixedEmail();
-				// Convert RegisterViewModel To User Entity with AutoMapper Library 
-				// AutoMapper was injected in program of WEB and its inheritance is in AutoMapper.cs <Toplearn.Core.Convertors.AutoMapper>
-				// The Method Of Map is in MapperAccount.cs <Toplearn.Core.Services.Interface.Mapper> 
-				User user = mapperAccount.MapTheUserFromRegisterViewModel(registerViewModel);
-				// IContextActions is a Dynamic interface for Add & Update & Remove & GetInfo & ... From Database For All type of Entities
-				// AddToContext is in IContextActions and it is the dynamic method too, it will Add to Context and Save in Database
-				if (await _contextActionsForUser.AddToContext(user))
+				return await _contextActionsForUser.GetOne(x => x.Email == email.FixedEmail());
+			}
+
+			public async Task<User?> SignUpUser(RegisterViewModel registerViewModel)
+			{
+
+				try
 				{
-					return user;
+					// Removing the first and last spaces of the email and UPPER it
+					registerViewModel.UserName = registerViewModel.UserName.FixedUsername();
+					// Removing the first and last spaces of the Username
+					registerViewModel.Email = registerViewModel.Email.FixedEmail();
+					// Convert RegisterViewModel To User Entity with AutoMapper Library 
+					// AutoMapper was injected in program of WEB and its inheritance is in AutoMapper.cs <Toplearn.Core.Convertors.AutoMapper>
+					// The Method Of Map is in MapperAccount.cs <Toplearn.Core.Services.Interface.Mapper> 
+					User user = mapperAccount.MapTheUserFromRegisterViewModel(registerViewModel);
+					// IContextActions is a Dynamic interface for Add & Update & Remove & GetInfo & ... From Database For All type of Entities
+					// AddToContext is in IContextActions and it is the dynamic method too, it will Add to Context and Save in Database
+					if (await _contextActionsForUser.AddToContext(user))
+					{
+						return user;
+					}
+					return null;
 				}
-				return null;
+				catch
+				{
+					return null;
+				}
+
 			}
-			catch
+
+			public async Task<bool> ChangePassowrd(ResetPasswordViewModel resetPasswordViewModel)
 			{
-				return null;
+				var user = await _contextActionsForUser.GetOne(x => x.ActiveCode == resetPasswordViewModel.ActiveCode);
+				user.Password = resetPasswordViewModel.Password.EncodePasswordMd5();
+				user.ActiveCode = StringGenerate.GuidGenerate();
+				var res = await _contextActionsForUser.UpdateTblOfContext(user);
+				return res;
 			}
-
-		}
-
-		public async Task<bool> ChangePassowrd(ResetPasswordViewModel resetPasswordViewModel)
-		{
-			var user =await _contextActionsForUser.GetOne(x=>x.ActiveCode == resetPasswordViewModel.ActiveCode);
-			user.Password = resetPasswordViewModel.Password.EncodePasswordMd5();
-			user.ActiveCode = StringGenerate.GuidGenerate();
-			var res =await _contextActionsForUser.UpdateTblOfContext(user);
-			return res;
 		}
 	}
-}

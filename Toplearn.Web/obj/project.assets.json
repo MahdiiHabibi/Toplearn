@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "AdvancedStringBuilder/0.1.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/AdvancedStringBuilder.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/AdvancedStringBuilder.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "AutoMapper/13.0.1": {
         "type": "package",
         "dependencies": {
@@ -58,6 +71,41 @@
         },
         "runtime": {
           "lib/netstandard2.0/Azure.Identity.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Elmah.Io.AspNetCore/5.1.66": {
+        "type": "package",
+        "dependencies": {
+          "Elmah.Io.Client": "[5.1.76, 6.0.0)"
+        },
+        "compile": {
+          "lib/net8.0/Elmah.Io.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Elmah.Io.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "Elmah.Io.Client/5.1.76": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "lib/net8.0/Elmah.Io.Client.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Elmah.Io.Client.dll": {
             "related": ".xml"
           }
         }
@@ -4665,6 +4713,57 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
+      "WebMarkupMin.AspNet.Common/2.16.1": {
+        "type": "package",
+        "dependencies": {
+          "WebMarkupMin.Core": "2.16.1"
+        },
+        "compile": {
+          "lib/netstandard2.1/WebMarkupMin.AspNet.Common.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/WebMarkupMin.AspNet.Common.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "WebMarkupMin.AspNetCore8/2.16.1": {
+        "type": "package",
+        "dependencies": {
+          "WebMarkupMin.AspNet.Common": "2.16.1"
+        },
+        "compile": {
+          "lib/net8.0/WebMarkupMin.AspNetCore8.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/WebMarkupMin.AspNetCore8.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "WebMarkupMin.Core/2.16.1": {
+        "type": "package",
+        "dependencies": {
+          "AdvancedStringBuilder": "0.1.1"
+        },
+        "compile": {
+          "lib/netstandard2.1/WebMarkupMin.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/WebMarkupMin.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Toplearn.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -4698,6 +4797,28 @@
     }
   },
   "libraries": {
+    "AdvancedStringBuilder/0.1.1": {
+      "sha512": "32IrlspOA59ewotQ4tlKP27QhKxMKGB7oncqlwVHn/hAz+j/r3HvLr6/W9ni9Mnyktlcg6kt7QZS8rEgur1+4Q==",
+      "type": "package",
+      "path": "advancedstringbuilder/0.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "advancedstringbuilder.0.1.1.nupkg.sha512",
+        "advancedstringbuilder.nuspec",
+        "icon.png",
+        "lib/net40-client/AdvancedStringBuilder.dll",
+        "lib/net40-client/AdvancedStringBuilder.xml",
+        "lib/net45/AdvancedStringBuilder.dll",
+        "lib/net45/AdvancedStringBuilder.xml",
+        "lib/netstandard1.0/AdvancedStringBuilder.dll",
+        "lib/netstandard1.0/AdvancedStringBuilder.xml",
+        "lib/netstandard2.0/AdvancedStringBuilder.dll",
+        "lib/netstandard2.0/AdvancedStringBuilder.xml",
+        "readme.txt"
+      ]
+    },
     "AutoMapper/13.0.1": {
       "sha512": "/Fx1SbJ16qS7dU4i604Sle+U9VLX+WSNVJggk6MupKVkYvvBm4XqYaeFuf67diHefHKHs50uQIS2YEDFhPCakQ==",
       "type": "package",
@@ -4753,6 +4874,50 @@
         "azureicon.png",
         "lib/netstandard2.0/Azure.Identity.dll",
         "lib/netstandard2.0/Azure.Identity.xml"
+      ]
+    },
+    "Elmah.Io.AspNetCore/5.1.66": {
+      "sha512": "CxACQvqg224wxQEYEfyxzLjMPozpxtUtp0tHXgBTjmQ/q4BJwhWS4jjfzf+fHayI7fs9Mzg8B7K2yqCvgXN8jQ==",
+      "type": "package",
+      "path": "elmah.io.aspnetcore/5.1.66",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "elmah.io.aspnetcore.5.1.66.nupkg.sha512",
+        "elmah.io.aspnetcore.nuspec",
+        "icon.png",
+        "lib/net8.0/Elmah.Io.AspNetCore.dll",
+        "lib/net8.0/Elmah.Io.AspNetCore.xml",
+        "lib/netstandard2.0/Elmah.Io.AspNetCore.dll",
+        "lib/netstandard2.0/Elmah.Io.AspNetCore.xml"
+      ]
+    },
+    "Elmah.Io.Client/5.1.76": {
+      "sha512": "6JhW1dP6dZIRPfuv7dPm1KPh7412H/UAEdL7co7Wbeo9t4eliopFlYSAkfUhr91qXjEvbj5KpPFkzVZ7lA+ztQ==",
+      "type": "package",
+      "path": "elmah.io.client/5.1.76",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "elmah.io.client.5.1.76.nupkg.sha512",
+        "elmah.io.client.nuspec",
+        "icon.png",
+        "lib/net45/Elmah.Io.Client.dll",
+        "lib/net45/Elmah.Io.Client.xml",
+        "lib/net46/Elmah.Io.Client.dll",
+        "lib/net46/Elmah.Io.Client.xml",
+        "lib/net461/Elmah.Io.Client.dll",
+        "lib/net461/Elmah.Io.Client.xml",
+        "lib/net8.0/Elmah.Io.Client.dll",
+        "lib/net8.0/Elmah.Io.Client.xml",
+        "lib/netstandard1.1/Elmah.Io.Client.dll",
+        "lib/netstandard1.1/Elmah.Io.Client.xml",
+        "lib/netstandard1.4/Elmah.Io.Client.dll",
+        "lib/netstandard1.4/Elmah.Io.Client.xml",
+        "lib/netstandard2.0/Elmah.Io.Client.dll",
+        "lib/netstandard2.0/Elmah.Io.Client.xml"
       ]
     },
     "Humanizer/2.14.1": {
@@ -13494,6 +13659,70 @@
         "system.xml.xdocument.nuspec"
       ]
     },
+    "WebMarkupMin.AspNet.Common/2.16.1": {
+      "sha512": "u7Z8FT1/1+kLOBKyA6KNqxCkM8J2ySSfKUNYMXAKGr2hMATmcDx2HlSdHBCapYQ+AwhdS/dPd+EYJnrbXh+iLQ==",
+      "type": "package",
+      "path": "webmarkupmin.aspnet.common/2.16.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "icon.png",
+        "lib/net40/WebMarkupMin.AspNet.Common.dll",
+        "lib/net40/WebMarkupMin.AspNet.Common.xml",
+        "lib/net45/WebMarkupMin.AspNet.Common.dll",
+        "lib/net45/WebMarkupMin.AspNet.Common.xml",
+        "lib/netstandard1.3/WebMarkupMin.AspNet.Common.dll",
+        "lib/netstandard1.3/WebMarkupMin.AspNet.Common.xml",
+        "lib/netstandard2.0/WebMarkupMin.AspNet.Common.dll",
+        "lib/netstandard2.0/WebMarkupMin.AspNet.Common.xml",
+        "lib/netstandard2.1/WebMarkupMin.AspNet.Common.dll",
+        "lib/netstandard2.1/WebMarkupMin.AspNet.Common.xml",
+        "readme.txt",
+        "webmarkupmin.aspnet.common.2.16.1.nupkg.sha512",
+        "webmarkupmin.aspnet.common.nuspec"
+      ]
+    },
+    "WebMarkupMin.AspNetCore8/2.16.1": {
+      "sha512": "Prd49rSpw6AnkT8+BkDd7i325l/jWsDJ6NwSUPP8VPWfCLiPu0IAW+QRDOQ3pH9wavDE3KJOv/OtF2quLafUZg==",
+      "type": "package",
+      "path": "webmarkupmin.aspnetcore8/2.16.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "icon.png",
+        "lib/net8.0/WebMarkupMin.AspNetCore8.dll",
+        "lib/net8.0/WebMarkupMin.AspNetCore8.xml",
+        "readme.txt",
+        "webmarkupmin.aspnetcore8.2.16.1.nupkg.sha512",
+        "webmarkupmin.aspnetcore8.nuspec"
+      ]
+    },
+    "WebMarkupMin.Core/2.16.1": {
+      "sha512": "nO0nWt+4l6fTvWXaMpeD+QFWHNrMfIiS3lP/4ETgcrB0TcDkizmEXFbhhMLdm1Zxkqq9y4EYwxdP6N0LZzndFA==",
+      "type": "package",
+      "path": "webmarkupmin.core/2.16.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "icon.png",
+        "lib/net40-client/WebMarkupMin.Core.dll",
+        "lib/net40-client/WebMarkupMin.Core.xml",
+        "lib/net45/WebMarkupMin.Core.dll",
+        "lib/net45/WebMarkupMin.Core.xml",
+        "lib/netstandard1.3/WebMarkupMin.Core.dll",
+        "lib/netstandard1.3/WebMarkupMin.Core.xml",
+        "lib/netstandard2.0/WebMarkupMin.Core.dll",
+        "lib/netstandard2.0/WebMarkupMin.Core.xml",
+        "lib/netstandard2.1/WebMarkupMin.Core.dll",
+        "lib/netstandard2.1/WebMarkupMin.Core.xml",
+        "readme.txt",
+        "webmarkupmin.core.2.16.1.nupkg.sha512",
+        "webmarkupmin.core.nuspec"
+      ]
+    },
     "Toplearn.Core/1.0.0": {
       "type": "project",
       "path": "../Toplearn.Core/Toplearn.Core.csproj",
@@ -13508,13 +13737,15 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "AutoMapper >= 13.0.1",
+      "Elmah.Io.AspNetCore >= 5.1.66",
       "Microsoft.EntityFrameworkCore >= 8.0.7",
       "Microsoft.EntityFrameworkCore.Relational >= 8.0.7",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.7",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.7",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 8.0.3",
       "Toplearn.Core >= 1.0.0",
-      "Toplearn.DataLayer >= 1.0.0"
+      "Toplearn.DataLayer >= 1.0.0",
+      "WebMarkupMin.AspNetCore8 >= 2.16.1"
     ]
   },
   "packageFolders": {
@@ -13574,6 +13805,10 @@
             "target": "Package",
             "version": "[13.0.1, )"
           },
+          "Elmah.Io.AspNetCore": {
+            "target": "Package",
+            "version": "[5.1.66, )"
+          },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[8.0.7, )"
@@ -13595,6 +13830,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[8.0.3, )"
+          },
+          "WebMarkupMin.AspNetCore8": {
+            "target": "Package",
+            "version": "[2.16.1, )"
           }
         },
         "imports": [
@@ -13619,13 +13858,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1900",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json."
-    }
-  ]
+  }
 }

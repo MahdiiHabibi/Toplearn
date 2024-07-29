@@ -1,0 +1,233 @@
+{
+  "Files": [
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\css\\CustomCss.css",
+      "PackagePath": "staticwebassets\\css\\CustomCss.css"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\css\\bootstrap-rtl.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-rtl.min.css"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\css\\fonts\\BYekan-webfont.eot",
+      "PackagePath": "staticwebassets\\css\\fonts\\BYekan-webfont.eot"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\css\\fonts\\BYekan-webfont.ttf",
+      "PackagePath": "staticwebassets\\css\\fonts\\BYekan-webfont.ttf"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\css\\fonts\\BYekan-webfont.woff",
+      "PackagePath": "staticwebassets\\css\\fonts\\BYekan-webfont.woff"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\css\\fonts\\Material-Design-Iconic-Font.eot",
+      "PackagePath": "staticwebassets\\css\\fonts\\Material-Design-Iconic-Font.eot"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\css\\fonts\\Material-Design-Iconic-Font.svg",
+      "PackagePath": "staticwebassets\\css\\fonts\\Material-Design-Iconic-Font.svg"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\css\\fonts\\Material-Design-Iconic-Font.ttf",
+      "PackagePath": "staticwebassets\\css\\fonts\\Material-Design-Iconic-Font.ttf"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\css\\fonts\\Material-Design-Iconic-Font.woff",
+      "PackagePath": "staticwebassets\\css\\fonts\\Material-Design-Iconic-Font.woff"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\css\\fonts\\Material-Design-Iconic-Font.woff2",
+      "PackagePath": "staticwebassets\\css\\fonts\\Material-Design-Iconic-Font.woff2"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\css\\material-design-iconic-font.min.css",
+      "PackagePath": "staticwebassets\\css\\material-design-iconic-font.min.css"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\captcha.jpg",
+      "PackagePath": "staticwebassets\\images\\captcha.jpg"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\logo.png",
+      "PackagePath": "staticwebassets\\images\\logo.png"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\pattern.png",
+      "PackagePath": "staticwebassets\\images\\pattern.png"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\pic\\1.jpg",
+      "PackagePath": "staticwebassets\\images\\pic\\1.jpg"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\pic\\2.jpg",
+      "PackagePath": "staticwebassets\\images\\pic\\2.jpg"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\pic\\3.jpg",
+      "PackagePath": "staticwebassets\\images\\pic\\3.jpg"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\pic\\4.jpg",
+      "PackagePath": "staticwebassets\\images\\pic\\4.jpg"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\pic\\5.jpg",
+      "PackagePath": "staticwebassets\\images\\pic\\5.jpg"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\pic\\6.jpg",
+      "PackagePath": "staticwebassets\\images\\pic\\6.jpg"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\pic\\7.jpg",
+      "PackagePath": "staticwebassets\\images\\pic\\7.jpg"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\pic\\8.jpg",
+      "PackagePath": "staticwebassets\\images\\pic\\8.jpg"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\pic\\Default.jpg",
+      "PackagePath": "staticwebassets\\images\\pic\\Default.jpg"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\pic\\avatar.jpg",
+      "PackagePath": "staticwebassets\\images\\pic\\avatar.jpg"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\pic\\big-thumb.jpg",
+      "PackagePath": "staticwebassets\\images\\pic\\big-thumb.jpg"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\pic\\namad-1.png",
+      "PackagePath": "staticwebassets\\images\\pic\\namad-1.png"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\pic\\namad.png",
+      "PackagePath": "staticwebassets\\images\\pic\\namad.png"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\slide.jpg",
+      "PackagePath": "staticwebassets\\images\\slide.jpg"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\js\\jquery.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.min.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\js\\jquery.unobtrusive-ajax.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.unobtrusive-ajax.min.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\js\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\js\\jquery.validate.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\js\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.validate.min.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\js\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\js\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\js\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\js\\modernizr-custom.js",
+      "PackagePath": "staticwebassets\\js\\modernizr-custom.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\js\\script.js",
+      "PackagePath": "staticwebassets\\js\\script.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\noUiSlider\\nouislider.min.css",
+      "PackagePath": "staticwebassets\\noUiSlider\\nouislider.min.css"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\noUiSlider\\nouislider.min.js",
+      "PackagePath": "staticwebassets\\noUiSlider\\nouislider.min.js"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.Toplearn.Web.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.build.Toplearn.Web.props",
+      "PackagePath": "build\\Toplearn.Web.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Toplearn.Web.props",
+      "PackagePath": "buildMultiTargeting\\Toplearn.Web.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildTransitive.Toplearn.Web.props",
+      "PackagePath": "buildTransitive\\Toplearn.Web.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -24,6 +24,6 @@ namespace Toplearn.Core.DTOs.Accounts
         [Display(Name = "مرا به خاطر بسپار")]
         public bool RememberMe { get; set; }
 
-        public string BackUrl { get; set; }
+        public string? BackUrl { get; set; }
     }
 }

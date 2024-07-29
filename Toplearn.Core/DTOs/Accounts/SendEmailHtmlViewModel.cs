@@ -13,5 +13,6 @@ namespace Toplearn.Core.DTOs.Accounts
 		public string FullName { get; set; }
 
 		public string BackUrl { get; set; }
+		public string HostUrl { get; set; }
 	}
 }

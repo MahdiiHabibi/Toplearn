@@ -12,3 +12,4 @@ W:\Toplearn\Toplearn.DataLayer\obj\Debug\net8.0\refint\Toplearn.DataLayer.dll
 W:\Toplearn\Toplearn.DataLayer\obj\Debug\net8.0\Toplearn.DataLayer.pdb
 W:\Toplearn\Toplearn.DataLayer\obj\Debug\net8.0\Toplearn.DataLayer.genruntimeconfig.cache
 W:\Toplearn\Toplearn.DataLayer\obj\Debug\net8.0\ref\Toplearn.DataLayer.dll
+W:\Toplearn\Toplearn.DataLayer\obj\Debug\net8.0\Toplearn.DataLayer.sourcelink.json

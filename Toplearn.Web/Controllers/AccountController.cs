@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using Toplearn.Core.Convertors;
 using Toplearn.Core.DTOs;
 using Toplearn.Core.DTOs.Accounts;
 using Toplearn.Core.Services.Interface;
@@ -15,7 +16,7 @@ namespace Toplearn.Web.Controllers
 
 	public class AccountController(IUserAction userAction) : Controller
 	{
-		
+
 		#region Register
 
 		[HttpGet]
@@ -62,14 +63,14 @@ namespace Toplearn.Web.Controllers
 					   );
 					return View(registerViewModel);
 				default:
-					var res = await userAction.SendTheVerificationCodeWithEmail(user, "_ActiveAccount", "فعالسازی حساب کاربری شما در تاپ لرن", CheckTheBackUrl(registerViewModel.BackUrl));
+					var res = await userAction.SendTheVerificationCodeWithEmail(user, "_ActiveEmail", "فعالسازی حساب کاربری شما در تاپ لرن", Request.Scheme + "://" + Request.Host, CheckTheBackUrl(registerViewModel.BackUrl));
 					if (res)
 					{
 						CreateMassageAlert("success",
 							"ثبت نام شما با موفقیت انجام شد ." + $"برای فعالسازی حساب کاربری خود لینک فرستاده شده به ایمیل شما را باز کنید ."
 							, "موفق  "
 						);
-						return RedirectToAction("Login", "Account");
+						return RedirectToAction("Login", "Account",new {BackUrl=CheckTheBackUrl(registerViewModel.BackUrl)});
 					}
 					else
 					{
@@ -128,7 +129,8 @@ namespace Toplearn.Web.Controllers
 							new(ClaimTypes.Name,user.FullName),
 							new ("ImageUrl",user.ImageUrl),
 							new ("UserName",user.UserName),
-							new (ClaimTypes.Email,user.Email)
+							new (ClaimTypes.Email,user.Email),
+							new ("DateTimeOfRegister",user.DateTime.ToString())
 						};
 						var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
 						var principal = new ClaimsPrincipal(identity);
@@ -143,7 +145,7 @@ namespace Toplearn.Web.Controllers
 						CreateMassageAlert("primary"
 							, $"ورود به اکانت خود با موفقیت انجام شد"
 							 , $"سلام  {user.FullName}");
-						return Redirect(loginViewModel.BackUrl);
+						return Redirect(loginViewModel.BackUrl ?? "/");
 					}
 				}
 			}
@@ -158,12 +160,12 @@ namespace Toplearn.Web.Controllers
 		// Check The Url If there is No Problem : it returns the input , else : It returns the Url Of the Login Page
 		public string CheckTheBackUrl(string BackUrl)
 		{
-			if (!BackUrl.IsNullOrEmpty() && Url.IsLocalUrl(BackUrl))
+			if (!BackUrl.IsNullOrEmpty() && Url.IsLocalUrl(BackUrl.Replace("%2", "/")))
 			{
 				return BackUrl;
 			}
 
-			return "home/index";
+			return "";
 		}
 
 		public void CreateMassageAlert(string TypeOfAlert, string DescriptionOfAlert, string TitleOfAlert)
@@ -248,7 +250,7 @@ namespace Toplearn.Web.Controllers
 				return RedirectToAction("index", "Home");
 			}
 
-			var res = await userAction.SendTheVerificationCodeWithEmail(await userAction.GetUser(email), "_ActiveAccount", "فعالسازی حساب کاربری شما در تاپ لرن", "/Home/index");
+			var res = await userAction.SendTheVerificationCodeWithEmail(await userAction.GetUser(email), "_ActiveEmail", "فعالسازی حساب کاربری شما در تاپ لرن", Request.Scheme + "://" + Request.Host, "");
 			if (res)
 			{
 				CreateMassageAlert("success",
@@ -259,7 +261,7 @@ namespace Toplearn.Web.Controllers
 			}
 			else
 			{
-				ModelState.AddModelError("Email", "ثبت نام شما با موفقیت انجام شد ولی در ارسال لینک فعال سازی اکانت شما مشکلی به وجود آمده است .");
+				CreateMassageAlert("danger", " در ارسال لینک فعال سازی اکانت شما مشکلی به وجود آمده است .","نا موفق");
 				return RedirectToAction("Login", "Account");
 			}
 
@@ -283,7 +285,8 @@ namespace Toplearn.Web.Controllers
 			ViewBag.Email = email;
 			if (await userAction.IsEmailExist(email))
 			{
-				bool res = await userAction.SendTheVerificationCodeWithEmail(await userAction.GetUser(email), "_ForgotPassword", "لینک بازیابی کلمه ی رمز عبور", "/home/index");
+				TempData["Url"] = Request.Scheme + "://" + Request.Host;
+				bool res = await userAction.SendTheVerificationCodeWithEmail(await userAction.GetUser(email), "_ForgotPassword", "لینک بازیابی کلمه ی رمز عبور", Request.Scheme + "://" + Request.Host, "2%home2%index");
 
 				if (res)
 				{
@@ -306,8 +309,9 @@ namespace Toplearn.Web.Controllers
 
 
 		[Route("Account/ResetPassword/{ActiveCode}/{BackUrl?}")]
-		public async Task<IActionResult> ResetPassword(string ActiveCode, string BackUrl = "/Account/Login")
+		public async Task<IActionResult> ResetPassword(string ActiveCode, string BackUrl = "Account/Login")
 		{
+			var x = Request.Scheme + "://" + Request.Host;
 			if (await userAction.IsActiveCodeExist(ActiveCode))
 				return View(new ResetPasswordViewModel()
 				{
@@ -319,6 +323,7 @@ namespace Toplearn.Web.Controllers
 		}
 
 		[HttpPost]
+		[Route("/ResetPassword")]
 		public async Task<IActionResult> ResetPassword(ResetPasswordViewModel resetPasswordViewModel)
 		{
 			if (!ModelState.IsValid)
@@ -333,12 +338,15 @@ namespace Toplearn.Web.Controllers
 			{
 				CreateMassageAlert("success", "رمز عبور شما با موفقیت تغییر یافت .", "موفق ");
 			}
-			CreateMassageAlert("danget", "در تغییر رمز عبور شما مشکلی به وجود آمد دقایقی قبل دوباره تلاش کنید .", "بروز خطا  ");
+			else
+			{
+				CreateMassageAlert("danger", "در تغییر رمز عبور شما مشکلی به وجود آمد دقایقی قبل دوباره تلاش کنید .", "بروز خطا  ");
+			}
 			return RedirectToAction("login", "Account");
 		}
 
 		#endregion
-	
-		
+
+
 	}
 }

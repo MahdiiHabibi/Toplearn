@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using Toplearn.Core.DTOs.Accounts;
+using Toplearn.Core.DTOs.UserPanel;
 using Toplearn.Core.Services.Interface.Mapper;
 using Toplearn.DataLayer.Entities.User;
 
@@ -22,5 +24,6 @@ namespace Toplearn.Core.Services.Implement.Mapper
 		{
 			return mapper.Map<SendEmailHtmlViewModel>(user);
 		}
-	}
+
+    }
 }

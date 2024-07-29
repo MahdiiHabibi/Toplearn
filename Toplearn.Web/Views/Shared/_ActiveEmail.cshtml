@@ -18,9 +18,9 @@
 <p>
 	جهت فعالسازی حساب کاربری بر روی این لینک کلیک کنید
 </p>
-<a style="text-align:center;" href="https://localhost:7208/Account/ActiveAccount/@(Model.ActiveCode)/@(Model.BackUrl)">
+<a style="text-align:center;" href="@(Model.HostUrl)/Account/ActiveAccount/@(Model.ActiveCode)?BackUrl=@(Model.BackUrl)">
 	فعال سازی حساب کاربری
 </a>
 <p style="text-align:center;">
-	https://localhost:7208/Account/ActiveAccount/@(Model.ActiveCode)/@(Model.BackUrl)
+	@(Model.HostUrl)/Account/ActiveAccount/@(Model.ActiveCode)?BackUrl=@(Model.BackUrl)
 </p>

@@ -13,5 +13,9 @@ namespace Toplearn.Core.Convertors
 
 		public static string FixedUsername(this string username) =>
 			username.Trim();
+
+		public static string CapitalizeFirstLetter(this string model) =>
+			model.First().ToString().ToUpper() + model[1..].ToLower();
+
 	}
 }
