@@ -30,6 +30,8 @@ builder.Services.AddScoped(typeof(IContextActions<>), typeof(ContextActions<>));
 builder.Services.AddScoped<IViewRenderService, RenderViewToString>();
 // Add User Services that we need to do for some Action Like : Register || Login 
 builder.Services.AddScoped<IUserAction, UserAction>();
+// Add User Services that we need to do for some Action in User Panel
+builder.Services.AddScoped<IUserPanelService,UserPanelService>();
 
 
 #endregion
@@ -101,6 +103,8 @@ app.UseWebMarkupMin();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+
 app.MapControllerRoute(
 	name: "areas",
 	pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");

@@ -26,7 +26,7 @@ namespace Toplearn.Core.Convertors.AutoMapper
                 .ForMember(x => x.Password, y =>
                     y.MapFrom(d => d.Password.EncodePasswordMd5()))
                 .ForMember(x => x.ImageUrl, y =>
-                    y.MapFrom(d => "/images/pic/Default.png"));
+                    y.MapFrom(d => @"\images\pic\Default.png"));
 
             // Create the SendEmailHtmlViewModel From User
             CreateMap<User, SendEmailHtmlViewModel>()
@@ -43,7 +43,18 @@ namespace Toplearn.Core.Convertors.AutoMapper
                 .ForMember(x => x.WalletBalance, y => y.MapFrom(d => 0))
                 .ForMember(x => x.ImageUrl, y => y.MapFrom(d => d.SingleOrDefault(s => s.Type == "ImageUrl")!.Value))
                 .ForMember(x => x.UserId, y => y.MapFrom(d => Convert.ToInt32(d.SingleOrDefault(s => s.Type == ClaimTypes.NameIdentifier)!.Value)));
+
+
+			// Create The EditPanelViewModel From CookiesUser
+			CreateMap<IEnumerable<Claim>, EditPanelViewModel>()
+				.ForMember(x => x.Email,
+					y => y.MapFrom(d =>
+						d.SingleOrDefault(s => s.Type == ClaimTypes.Email)!.Value.CapitalizeFirstLetter()))
+				.ForMember(x => x.FullName,
+					y => y.MapFrom(d => d.SingleOrDefault(s => s.Type == ClaimTypes.Name)!.Value))
+				.ForMember(x => x.UserName, y => y.MapFrom(d => d.SingleOrDefault(s => s.Type == "UserName")!.Value));
+
         }
 
-    }
+	}
 }

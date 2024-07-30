@@ -78,23 +78,25 @@ namespace Toplearn.Core.Services.Implement
 			}
 		}
 
-		public async Task<bool> Exists(Expression<Func<TEntity, bool>> fun) =>
-			await _entities.AnyAsync(fun);
+		public async Task<bool> Exists(Func<TEntity, bool> fun) =>
+			_entities.ToList().Where(fun).Any();
 
-		public async Task<TEntity?> GetOne(Expression<Func<TEntity, bool>>? fun = null)
+
+		public async Task<TEntity?> GetOne(Func<TEntity, bool>? fun = null)
 		{
-			return _entities.SingleOrDefault(fun);
+			return _entities.Where(fun).Single();
 		}
 
-		public async Task<IEnumerable<TEntity?>> Get(Expression<Func<TEntity, bool>>? fun = null)
+		public async Task<IEnumerable<TEntity?>> Get(Func<TEntity, bool>? fun = null)
 		{
-			IQueryable<TEntity?> query = _entities;
+			IEnumerable<TEntity?> query = _entities;
 			// If the input function is null, it means that all data is requested Otherwise, we have data limits
 			if (fun != null)
 			{
 				query = query.Where(fun);
 			}
-			return await query.ToListAsync();
+
+			return query;
 		}
 
 	}

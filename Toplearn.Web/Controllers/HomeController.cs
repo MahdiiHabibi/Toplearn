@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using System.Data;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Toplearn.Core.Convertors;
 using Toplearn.Core.Services.Interface;
@@ -17,6 +20,7 @@ namespace Toplearn.Web.Controllers
         {
 	        throw new Exception("سلام سایت قفل است ");
         }
+
        
 
     }

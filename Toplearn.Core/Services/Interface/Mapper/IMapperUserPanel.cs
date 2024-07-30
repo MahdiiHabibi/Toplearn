@@ -10,6 +10,8 @@ namespace Toplearn.Core.Services.Interface.Mapper
 {
     public interface IMapperUserPanel
     {
-        public UserPanelViewModel MapTheUserPanelViewModelFromClaims(List<Claim> claim);
+        public UserPanelViewModel MapTheUserPanelViewModelFromClaims(List<Claim> claims);
+
+        public EditPanelViewModel MapTheEditPanelViewModelFromClaims(IEnumerable<Claim> claims);
     }
 }

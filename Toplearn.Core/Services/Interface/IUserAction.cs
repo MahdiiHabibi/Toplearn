@@ -18,8 +18,8 @@ namespace Toplearn.Core.Services.Interface
 		public Task<bool> IsEmailActived(string email);
 		public Task<User?> CheckTheInfoForLogin(LoginViewModel loginViewModel);
 		public Task<bool> SendTheVerificationCodeWithEmail(User user, string View, string subject, string HostUrl, string BackUrl = "2%home2%index");
-		public Task<User> GetUser(string email);
-		public Task<bool> ChangePassowrd(ResetPasswordViewModel resetPasswordViewModel);
+		public Task<User> GetUserByEmail(string email);
+		public Task<bool> ChangePassword(ResetPasswordViewModel resetPasswordViewModel);
 
 
 

@@ -81,46 +81,46 @@ namespace Toplearn.Core.Services.Implement
 			}
 		}
 
-		public async Task<User> GetUser(string email)
-			{
-				return await _contextActionsForUser.GetOne(x => x.Email == email.FixedEmail());
-			}
+		public async Task<User> GetUserByEmail(string email)
+		{
+			return await _contextActionsForUser.GetOne(x => x.Email == email.FixedEmail());
+		}
 
-			public async Task<User?> SignUpUser(RegisterViewModel registerViewModel)
-			{
+		public async Task<User?> SignUpUser(RegisterViewModel registerViewModel)
+		{
 
-				try
+			try
+			{
+				// Removing the first and last spaces of the email and UPPER it
+				registerViewModel.UserName = registerViewModel.UserName.FixedUsername();
+				// Removing the first and last spaces of the Username
+				registerViewModel.Email = registerViewModel.Email.FixedEmail();
+				// Convert RegisterViewModel To User Entity with AutoMapper Library 
+				// AutoMapper was injected in program of WEB and its inheritance is in AutoMapper.cs <Toplearn.Core.Convertors.AutoMapper>
+				// The Method Of Map is in MapperAccount.cs <Toplearn.Core.Services.Interface.Mapper> 
+				User user = mapperAccount.MapTheUserFromRegisterViewModel(registerViewModel);
+				// IContextActions is a Dynamic interface for Add & Update & Remove & GetInfo & ... From Database For All type of Entities
+				// AddToContext is in IContextActions and it is the dynamic method too, it will Add to Context and Save in Database
+				if (await _contextActionsForUser.AddToContext(user))
 				{
-					// Removing the first and last spaces of the email and UPPER it
-					registerViewModel.UserName = registerViewModel.UserName.FixedUsername();
-					// Removing the first and last spaces of the Username
-					registerViewModel.Email = registerViewModel.Email.FixedEmail();
-					// Convert RegisterViewModel To User Entity with AutoMapper Library 
-					// AutoMapper was injected in program of WEB and its inheritance is in AutoMapper.cs <Toplearn.Core.Convertors.AutoMapper>
-					// The Method Of Map is in MapperAccount.cs <Toplearn.Core.Services.Interface.Mapper> 
-					User user = mapperAccount.MapTheUserFromRegisterViewModel(registerViewModel);
-					// IContextActions is a Dynamic interface for Add & Update & Remove & GetInfo & ... From Database For All type of Entities
-					// AddToContext is in IContextActions and it is the dynamic method too, it will Add to Context and Save in Database
-					if (await _contextActionsForUser.AddToContext(user))
-					{
-						return user;
-					}
-					return null;
+					return user;
 				}
-				catch
-				{
-					return null;
-				}
-
+				return null;
 			}
-
-			public async Task<bool> ChangePassowrd(ResetPasswordViewModel resetPasswordViewModel)
+			catch
 			{
-				var user = await _contextActionsForUser.GetOne(x => x.ActiveCode == resetPasswordViewModel.ActiveCode);
-				user.Password = resetPasswordViewModel.Password.EncodePasswordMd5();
-				user.ActiveCode = StringGenerate.GuidGenerate();
-				var res = await _contextActionsForUser.UpdateTblOfContext(user);
-				return res;
+				return null;
 			}
+
+		}
+
+		public async Task<bool> ChangePassword(ResetPasswordViewModel resetPasswordViewModel)
+		{
+			var user = await _contextActionsForUser.GetOne(x => x.ActiveCode == resetPasswordViewModel.ActiveCode);
+			user.Password = resetPasswordViewModel.Password.EncodePasswordMd5();
+			user.ActiveCode = StringGenerate.GuidGenerate();
+			var res = await _contextActionsForUser.UpdateTblOfContext(user);
+			return res;
 		}
 	}
+}

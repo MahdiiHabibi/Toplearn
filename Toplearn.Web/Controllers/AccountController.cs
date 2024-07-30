@@ -250,7 +250,7 @@ namespace Toplearn.Web.Controllers
 				return RedirectToAction("index", "Home");
 			}
 
-			var res = await userAction.SendTheVerificationCodeWithEmail(await userAction.GetUser(email), "_ActiveEmail", "فعالسازی حساب کاربری شما در تاپ لرن", Request.Scheme + "://" + Request.Host, "");
+			var res = await userAction.SendTheVerificationCodeWithEmail(await userAction.GetUserByEmail(email), "_ActiveEmail", "فعالسازی حساب کاربری شما در تاپ لرن", Request.Scheme + "://" + Request.Host, "");
 			if (res)
 			{
 				CreateMassageAlert("success",
@@ -286,7 +286,7 @@ namespace Toplearn.Web.Controllers
 			if (await userAction.IsEmailExist(email))
 			{
 				TempData["Url"] = Request.Scheme + "://" + Request.Host;
-				bool res = await userAction.SendTheVerificationCodeWithEmail(await userAction.GetUser(email), "_ForgotPassword", "لینک بازیابی کلمه ی رمز عبور", Request.Scheme + "://" + Request.Host, "2%home2%index");
+				bool res = await userAction.SendTheVerificationCodeWithEmail(await userAction.GetUserByEmail(email), "_ForgotPassword", "لینک بازیابی کلمه ی رمز عبور", Request.Scheme + "://" + Request.Host, "2%home2%index");
 
 				if (res)
 				{
@@ -334,7 +334,7 @@ namespace Toplearn.Web.Controllers
 				CreateMassageAlert("danger", "لینک ارسالی شما معتبر نمی باشد .", "ناموفق");
 				return RedirectToAction("Login", "Account");
 			}
-			if (await userAction.ChangePassowrd(resetPasswordViewModel))
+			if (await userAction.ChangePassword(resetPasswordViewModel))
 			{
 				CreateMassageAlert("success", "رمز عبور شما با موفقیت تغییر یافت .", "موفق ");
 			}

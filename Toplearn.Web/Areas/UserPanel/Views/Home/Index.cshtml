@@ -1,4 +1,5 @@
 ﻿@model UserPanelViewModel
+
 @{
 	ViewBag.Title = "پنل کاربری" + " " + Model.FullName;
 }
@@ -30,7 +31,7 @@
 									<li> <i class="zmdi zmdi-assignment-account"></i> نام کاربری :  @Model.UserName </li>
 									<li> <i class="zmdi zmdi-email"></i> ایمیل : @Model.Email.CapitalizeFirstLetter() </li>
 									<li> <i class="zmdi zmdi-calendar-check"></i> تاریخ عضویت : @Model.DateTime.ToShamsi() </li>
-									<li> <i class="zmdi zmdi-calendar-check"></i> مانده ی کیف پول : @Model.WalletBalance تومان </li>
+									<li> <i class="zmdi zmdi-balance-wallet"></i> مانده ی کیف پول : @Model.WalletBalance تومان </li>
 								</ul>
 							</div>
 						</div>
@@ -41,5 +42,3 @@
 	</div>
 
 </main>
-
-

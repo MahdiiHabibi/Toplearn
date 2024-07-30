@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Cq2TkOMA+Jde6t4+nlpI4qMaY27oVzKLu3B5KBO9qYg=",
+  "Hash": "/8OQmR+Af4TLXiFs0QZYTEzGYvCtmQ+z0/tDn6QVA3E=",
   "Source": "Toplearn.Web",
   "BasePath": "_content/Toplearn.Web",
   "Mode": "Default",
@@ -302,6 +302,25 @@
       "OriginalItemSpec": "wwwroot\\images\\logo.png"
     },
     {
+      "Identity": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\logo.svg",
+      "SourceId": "Toplearn.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\",
+      "BasePath": "_content/Toplearn.Web",
+      "RelativePath": "images/logo.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\logo.svg"
+    },
+    {
       "Identity": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\pattern.png",
       "SourceId": "Toplearn.Web",
       "SourceType": "Discovered",
@@ -528,6 +547,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\pic\\Default.jpg"
+    },
+    {
+      "Identity": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\pic\\Default.png",
+      "SourceId": "Toplearn.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\",
+      "BasePath": "_content/Toplearn.Web",
+      "RelativePath": "images/pic/Default.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\pic\\Default.png"
     },
     {
       "Identity": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\pic\\namad.png",
