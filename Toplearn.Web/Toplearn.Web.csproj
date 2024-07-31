@@ -23,6 +23,7 @@
 		</PackageReference>
 		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.3" />
 		<PackageReference Include="WebMarkupMin.AspNetCore8" Version="2.16.1" />
+		<PackageReference Include="Zarinpal" Version="3.0.1" />
 	</ItemGroup>
 
   <ItemGroup>

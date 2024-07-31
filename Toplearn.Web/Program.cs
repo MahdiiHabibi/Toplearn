@@ -32,7 +32,8 @@ builder.Services.AddScoped<IViewRenderService, RenderViewToString>();
 builder.Services.AddScoped<IUserAction, UserAction>();
 // Add User Services that we need to do for some Action in User Panel
 builder.Services.AddScoped<IUserPanelService,UserPanelService>();
-
+// Add Services that we need in everyThing That About Wallet
+builder.Services.AddScoped<IWalletManager,WalletManager>();
 
 #endregion
 
@@ -44,6 +45,8 @@ builder.Services.AddAutoMapper(typeof(AutoMapperUser));
 builder.Services.AddScoped<IMapperAccount, MapperAccount>();
 // Add Rep Of Maps that we need in UserPanel Area
 builder.Services.AddScoped<IMapperUserPanel,MapperUserPanel>();
+// Add Rep Of Maps that we need in UserPanel Area And Wallet Controller
+builder.Services.AddScoped<IMapperWallet, MapperWallet>();
 
 #endregion
 

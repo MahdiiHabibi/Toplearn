@@ -17,7 +17,8 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.3",
           "Toplearn.Core": "1.0.0",
           "Toplearn.DataLayer": "1.0.0",
-          "WebMarkupMin.AspNetCore8": "2.16.1"
+          "WebMarkupMin.AspNetCore8": "2.16.1",
+          "ZarinPal": "3.0.1"
         },
         "runtime": {
           "Toplearn.Web.dll": {}
@@ -2843,6 +2844,22 @@
           }
         }
       },
+      "ZarinPal/3.0.1": {
+        "runtime": {
+          "lib/netcoreapp2.2/Dto.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          },
+          "lib/netcoreapp2.2/Service.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          },
+          "lib/netcoreapp2.2/ZarinPal.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
+          }
+        }
+      },
       "Toplearn.Core/1.0.0": {
         "dependencies": {
           "AutoMapper": "13.0.1",
@@ -4788,6 +4805,13 @@
       "sha512": "sha512-nO0nWt+4l6fTvWXaMpeD+QFWHNrMfIiS3lP/4ETgcrB0TcDkizmEXFbhhMLdm1Zxkqq9y4EYwxdP6N0LZzndFA==",
       "path": "webmarkupmin.core/2.16.1",
       "hashPath": "webmarkupmin.core.2.16.1.nupkg.sha512"
+    },
+    "ZarinPal/3.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1XPTvVdTa+ywa61JOK7TXVNqzHfwg/8bnMqKh9ISvHWk8HEhhrFXhuC/F5c/xDz9smay7254gD6T4WicgS+FeQ==",
+      "path": "zarinpal/3.0.1",
+      "hashPath": "zarinpal.3.0.1.nupkg.sha512"
     },
     "Toplearn.Core/1.0.0": {
       "type": "project",

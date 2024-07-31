@@ -10,6 +10,11 @@ namespace Toplearn.DataLayer.Entities.User
     public class User
     {
 
+	    // When We Write virtual in Navigation props we need have ctor 
+		public User()
+	    {
+		    
+	    }
 
         [Key]
         public int UserId { get; set; }
@@ -55,10 +60,14 @@ namespace Toplearn.DataLayer.Entities.User
         [DataType(DataType.ImageUrl)]
         public string ImageUrl { get; set; }
 
+        public int WalletBalance { get; set; } = 0;
+
 
         #region Relations || Nav Prop
 
-        public List<User_Role> UserRoles { get; set; }
+        public virtual List<User_Role> UserRoles { get; set; }
+
+        public virtual List<Wallet.Wallet> Wallets { get; set; }
 
         #endregion
 

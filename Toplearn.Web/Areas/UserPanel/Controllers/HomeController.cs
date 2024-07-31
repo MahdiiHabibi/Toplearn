@@ -17,12 +17,15 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 {
 	[Area("UserPanel")]
 	[Authorize]
-	public class HomeController(IMapperUserPanel mapperUserPanel, IUserPanelService _userPanelService) : Controller
+	[Route("UserPanel")]
+	public class HomeController(IMapperUserPanel mapperUserPanel, IUserPanelService _userPanelService,IWalletManager walletManager) : Controller
 	{
 
-		public IActionResult Index()
+		[Route("")]
+		public async Task<IActionResult> Index()
 		{
 			var userModel = mapperUserPanel.MapTheUserPanelViewModelFromClaims(User.Claims.ToList());
+			userModel.WalletBalance = await walletManager.GetBalanceOfUser(userModel.UserId);
 			return View(userModel);
 		}
 
@@ -30,7 +33,7 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 		#region Edit Profile
 
 
-		[Route("UserPanel/EditProfile")]
+		[Route("EditProfile")]
 		public IActionResult EditProfile()
 		{
 			var userModel = mapperUserPanel.MapTheEditPanelViewModelFromClaims(User.Claims);
@@ -38,7 +41,7 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 		}
 
 		[HttpPost]
-		[Route("UserPanel/EditProfile")]
+		[Route("EditProfile")]
 		public async Task<IActionResult> EditProfile(EditPanelViewModel editPanelViewModel)
 		{
 			if (ModelState.IsValid == false)
@@ -124,7 +127,7 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 
 		#region RessetUserImage
 
-		[Route("UserPanel/ResetImageOfUser")]
+		[Route("ResetImageOfUser")]
 		public async Task<IActionResult> ResetImageOfUser()
 		{
 			var userId = GetUserIdFromClaims();
@@ -162,7 +165,7 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 
 		#region Methods
 
-		public void CreateMassageAlert(string TypeOfAlert, string DescriptionOfAlert, string TitleOfAlert)
+		private void CreateMassageAlert(string TypeOfAlert, string DescriptionOfAlert, string TitleOfAlert)
 		{
 			TempData["Massage_TypeOfAlert"] = TypeOfAlert;
 			TempData["Massage_DescriptionOfAlert"] = DescriptionOfAlert;
@@ -190,7 +193,7 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 			await HttpContext.SignInAsync(principal, properties);
 		}
 
-		[Route("UserPanel/CheckUserInEdit", Name = "CheckUserNameIsExist")]
+		[Route("CheckUserInEdit", Name = "CheckUserNameIsExist")]
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		[AllowAnonymous]
@@ -208,7 +211,7 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 			return Json(true);
 		}
 
-		[Route("UserPanel/CheckEmailIsExist", Name = "CheckEmailIsExist")]
+		[Route("CheckEmailIsExist", Name = "CheckEmailIsExist")]
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		[AllowAnonymous]
@@ -234,13 +237,13 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 
 		#region ChangePassword
 
-		[Route("UserPanel/ChangePassword")]
+		[Route("ChangePassword")]
 		public IActionResult ChangePassword()
 		{
 			return View(new ChangePasswordViewModel());
 		}
 
-		[Route("UserPanel/ChangePassword")]
+		[Route("ChangePassword")]
 		[HttpPost]
 		public async Task<IActionResult> ChangePassword(ChangePasswordViewModel changePasswordViewModel)
 		{

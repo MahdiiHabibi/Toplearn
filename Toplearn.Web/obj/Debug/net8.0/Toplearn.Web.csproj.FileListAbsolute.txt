@@ -263,3 +263,6 @@ W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\WebMarkupMin.Core.dll
 W:\Toplearn\Toplearn.Web\obj\Debug\net8.0\Toplearn.Web.sourcelink.json
 W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\Elmah.Io.AspNetCore.dll
 W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\Elmah.Io.Client.dll
+W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\Dto.dll
+W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\Service.dll
+W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\ZarinPal.dll

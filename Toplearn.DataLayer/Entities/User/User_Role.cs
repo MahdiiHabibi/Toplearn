@@ -10,6 +10,13 @@ namespace Toplearn.DataLayer.Entities.User
 {
     public class User_Role
     {
+        // When We Write virtual in Navigation props we need have ctor 
+	    public User_Role()
+	    {
+		    
+	    }
+
+
         [Key]
         public int Id { get; set; }
         
@@ -21,11 +28,11 @@ namespace Toplearn.DataLayer.Entities.User
         #region Relations || Nav Prop
 
         [ForeignKey(nameof(UserId))]
-        public User User { get; set; }
+        public virtual User User { get; set; }
 
 
         [ForeignKey(nameof(RoleId))]
-        public Role Role { get; set; }
+        public virtual Role Role { get; set; }
 
         #endregion
     }

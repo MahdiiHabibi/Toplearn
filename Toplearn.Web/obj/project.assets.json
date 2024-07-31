@@ -4764,6 +4764,19 @@
           }
         }
       },
+      "ZarinPal/3.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp2.2/Dto.dll": {},
+          "lib/netcoreapp2.2/Service.dll": {},
+          "lib/netcoreapp2.2/ZarinPal.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.2/Dto.dll": {},
+          "lib/netcoreapp2.2/Service.dll": {},
+          "lib/netcoreapp2.2/ZarinPal.dll": {}
+        }
+      },
       "Toplearn.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -13723,6 +13736,20 @@
         "webmarkupmin.core.nuspec"
       ]
     },
+    "ZarinPal/3.0.1": {
+      "sha512": "1XPTvVdTa+ywa61JOK7TXVNqzHfwg/8bnMqKh9ISvHWk8HEhhrFXhuC/F5c/xDz9smay7254gD6T4WicgS+FeQ==",
+      "type": "package",
+      "path": "zarinpal/3.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp2.2/Dto.dll",
+        "lib/netcoreapp2.2/Service.dll",
+        "lib/netcoreapp2.2/ZarinPal.dll",
+        "zarinpal.3.0.1.nupkg.sha512",
+        "zarinpal.nuspec"
+      ]
+    },
     "Toplearn.Core/1.0.0": {
       "type": "project",
       "path": "../Toplearn.Core/Toplearn.Core.csproj",
@@ -13745,7 +13772,8 @@
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 8.0.3",
       "Toplearn.Core >= 1.0.0",
       "Toplearn.DataLayer >= 1.0.0",
-      "WebMarkupMin.AspNetCore8 >= 2.16.1"
+      "WebMarkupMin.AspNetCore8 >= 2.16.1",
+      "Zarinpal >= 3.0.1"
     ]
   },
   "packageFolders": {
@@ -13834,6 +13862,10 @@
           "WebMarkupMin.AspNetCore8": {
             "target": "Package",
             "version": "[2.16.1, )"
+          },
+          "Zarinpal": {
+            "target": "Package",
+            "version": "[3.0.1, )"
           }
         },
         "imports": [
@@ -13858,13 +13890,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1900",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json."
-    }
-  ]
+  }
 }

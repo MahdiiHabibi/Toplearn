@@ -245,6 +245,10 @@
             "WebMarkupMin.AspNetCore8": {
               "target": "Package",
               "version": "[2.16.1, )"
+            },
+            "Zarinpal": {
+              "target": "Package",
+              "version": "[3.0.1, )"
             }
           },
           "imports": [

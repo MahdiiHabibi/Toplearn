@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ZvmNUF19DOY=",
+  "dgSpecHash": "HkJrAoptio4=",
   "success": true,
   "projectFilePath": "W:\\Toplearn\\Toplearn.Web\\Toplearn.Web.csproj",
   "expectedPackageFiles": [
@@ -277,14 +277,8 @@
     "C:\\Users\\Mahdi\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Mahdi\\.nuget\\packages\\webmarkupmin.aspnet.common\\2.16.1\\webmarkupmin.aspnet.common.2.16.1.nupkg.sha512",
     "C:\\Users\\Mahdi\\.nuget\\packages\\webmarkupmin.aspnetcore8\\2.16.1\\webmarkupmin.aspnetcore8.2.16.1.nupkg.sha512",
-    "C:\\Users\\Mahdi\\.nuget\\packages\\webmarkupmin.core\\2.16.1\\webmarkupmin.core.2.16.1.nupkg.sha512"
+    "C:\\Users\\Mahdi\\.nuget\\packages\\webmarkupmin.core\\2.16.1\\webmarkupmin.core.2.16.1.nupkg.sha512",
+    "C:\\Users\\Mahdi\\.nuget\\packages\\zarinpal\\3.0.1\\zarinpal.3.0.1.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1900",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json."
-    }
-  ]
+  "logs": []
 }

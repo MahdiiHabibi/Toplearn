@@ -1,0 +1,54 @@
+﻿@model DepositWalletViewModel
+@{
+    ViewBag.Title = "کیف پول شما";
+}
+
+
+<partial name="_breadcrumb" />
+<partial name="_ValidationScriptsPartial" />
+
+<main>
+	<div class="container">
+		<div class="user-account">
+			<div class="row">
+				<div class="col-md-3 col-sm-4 col-xs-12">
+					<aside>
+
+						<partial name="_BoxOfImageInUserPanel" />
+
+						<partial name="_DeskInUserPanel" />
+
+					</aside>
+				</div>
+				<div class="col-md-9 col-sm-8 col-xs-12">
+					<section class="user-account-content">
+						<header>
+							<h1> کیف پول شما </h1></header>
+						<div class="inner form-layer">
+							<form asp-action="IncreaseWalletBalance" asp-controller="Wallet" method="post">
+								<div class="row">
+									<div class="col-md-7 col-sm-8 col-xs-12" style="margin-bottom: 13px;">
+										<div class="input-group">
+											<span class="input-group-addon" id="username"><i class="zmdi zmdi-balance-wallet"></i></span>
+											<input type="number" class="form-control" asp-for="Amount" placeholder="مبلغ به ریال">
+										</div>
+										<span asp-validation-for="Amount"></span>
+									</div>
+
+									<div class="text-danger" asp-validation-summary="All"></div>
+									<div class="col-md-7 col-sm-8 col-xs-12">
+										<button class="btn btn-success"> شارژ کیف پول </button>
+									</div>
+								</div>
+							</form>
+							<hr/>
+
+
+						</div>
+					</section>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</main>

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Toplearn.DataLayer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+096cb72baa27babcedc76c13400f0d8fa38158f0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7266c57f4c5485fa028b3ef6e04e5117fe4d91aa")]
 [assembly: System.Reflection.AssemblyProductAttribute("Toplearn.DataLayer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Toplearn.DataLayer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -10,6 +10,8 @@ using TopLearn.Core.Security;
 using Toplearn.DataLayer.Entities.User;
 using Toplearn.Core.DTOs.Accounts;
 using Toplearn.Core.DTOs.UserPanel;
+using Toplearn.Core.DTOs.Wallet;
+using Toplearn.DataLayer.Entities.Wallet;
 
 namespace Toplearn.Core.Convertors.AutoMapper
 {
@@ -40,7 +42,7 @@ namespace Toplearn.Core.Convertors.AutoMapper
                 .ForMember(x => x.DateTime, y => y.MapFrom(d => Convert.ToDateTime(d.SingleOrDefault(s => s.Type == "DateTimeOfRegister")!.Value)))
                 .ForMember(x => x.FullName, y => y.MapFrom(d => d.SingleOrDefault(s => s.Type == ClaimTypes.Name)!.Value))
                 .ForMember(x => x.UserName, y => y.MapFrom(d => d.SingleOrDefault(s => s.Type == "UserName")!.Value))
-                .ForMember(x => x.WalletBalance, y => y.MapFrom(d => 0))
+                .ForMember(x => x.WalletBalance, y => y.MapFrom(d => 0 ))
                 .ForMember(x => x.ImageUrl, y => y.MapFrom(d => d.SingleOrDefault(s => s.Type == "ImageUrl")!.Value))
                 .ForMember(x => x.UserId, y => y.MapFrom(d => Convert.ToInt32(d.SingleOrDefault(s => s.Type == ClaimTypes.NameIdentifier)!.Value)));
 
@@ -53,6 +55,12 @@ namespace Toplearn.Core.Convertors.AutoMapper
 				.ForMember(x => x.FullName,
 					y => y.MapFrom(d => d.SingleOrDefault(s => s.Type == ClaimTypes.Name)!.Value))
 				.ForMember(x => x.UserName, y => y.MapFrom(d => d.SingleOrDefault(s => s.Type == "UserName")!.Value));
+
+
+
+			// Create The GetPaymentInformationViewModel From Wallet
+
+			CreateMap<Wallet, GetPaymentInformationViewModel>();
 
         }
 
