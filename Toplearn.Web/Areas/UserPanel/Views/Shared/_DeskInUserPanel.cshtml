@@ -4,14 +4,14 @@
 		<ul>
 			<li><a asp-area="UserPanel" asp-controller="Home" asp-action="index"> مشاهده حساب کابری </a></li>
 			<li><a asp-action="EditProfile" asp-controller="Home" asp-area="UserPanel"> ویرایش حساب کابری </a></li>
-			<li><a href=""> تغییر رمز عبور </a></li>
+			<li><a asp-action="ChangePassword" asp-controller="Home" asp-area="UserPanel"> تغییر رمز عبور </a></li>
 			<li><a asp-controller="Account" asp-action="ForgotPassword"> فراموشی رمز عبور </a></li>
 			<li><a href=""> تنظیمات حساب کاربری </a></li>
 			@if (User.Claims.Single(x => x.Type == "ImageUrl").Value != @"\images\pic\Default.png")
 			{
 				<li><a asp-action="ResetImageOfUser" asp-controller="Home" asp-area="UserPanel">حذف عکس حساب کاربری</a></li>
 			}
-			<li><a href="/Logout">خروج از حساب کاربری </a></li>
+			<li><a asp-action="Logout" asp-controller="Account">خروج از حساب کاربری </a></li>
 		</ul>
 	</div>
 </section>

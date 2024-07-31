@@ -53,6 +53,10 @@
       "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\UsersAvatar\\1271a3648352465ca4522945ffb23cde.jpg",
+      "PackagePath": "staticwebassets\\images\\UsersAvatar\\1271a3648352465ca4522945ffb23cde.jpg"
+    },
+    {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\captcha.jpg",
       "PackagePath": "staticwebassets\\images\\captcha.jpg"
     },

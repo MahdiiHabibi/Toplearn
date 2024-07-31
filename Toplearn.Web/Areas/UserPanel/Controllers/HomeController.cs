@@ -11,6 +11,7 @@ using Toplearn.DataLayer.Entities.User;
 using System.IO;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using TopLearn.Core.Security;
 
 namespace Toplearn.Web.Areas.UserPanel.Controllers
 {
@@ -120,25 +121,28 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 		}
 
 		#endregion
+
+		#region RessetUserImage
+
 		[Route("UserPanel/ResetImageOfUser")]
 		public async Task<IActionResult> ResetImageOfUser()
 		{
 			var userId = GetUserIdFromClaims();
-			var  user = await _userPanelService.GetUserByUserId(userId);
-			var removedImageUrl = $"{Directory.GetCurrentDirectory()}\\wwwroot{user.ImageUrl}" ;
+			var user = await _userPanelService.GetUserByUserId(userId);
+			var removedImageUrl = $"{Directory.GetCurrentDirectory()}\\wwwroot{user.ImageUrl}";
 			user.ImageUrl = @"\images\pic\Default.png";
 
 			// Update User 
 			if (await _userPanelService.UpdateUser(user))
 			{
 				await UpdateUserClaims(user);
-				
+
 				if (System.IO.File.Exists(removedImageUrl))
 				{
 					System.IO.File.Delete(removedImageUrl);
 				}
 
-				CreateMassageAlert("success", "عکس شما با موفقیت تغییر یافت ." ,
+				CreateMassageAlert("success", "عکس شما با موفقیت تغییر یافت .",
 					"موفق");
 				return RedirectToAction("Index", "Home");
 			}
@@ -149,9 +153,12 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 					"ناموفق");
 				return RedirectToAction("Index", "Home");
 			}
-			
-			
+
+
 		}
+
+
+		#endregion
 
 		#region Methods
 
@@ -183,14 +190,36 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 			await HttpContext.SignInAsync(principal, properties);
 		}
 
-		[Route("UserPanel/CheckUserInEdit", Name = "CheckUserInEdit")]
+		[Route("UserPanel/CheckUserInEdit", Name = "CheckUserNameIsExist")]
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> CheckUserInEdit(string username)
+		[AllowAnonymous]
+		public async Task<IActionResult> CheckUserNameIsExist(string username)
 		{
-			if (await _userPanelService.IsUserNameExist(username) && User.Claims.Single(x => x.Type == "UserName").Value != username)
+			var UserNameInClaims = User.Identity.IsAuthenticated
+				? User.Claims.SingleOrDefault(x => x.Type == "UserName")!.Value
+				: "";
+
+			if (await _userPanelService.IsUserNameExist(username) && UserNameInClaims != username)
 			{
 				return Json("این نام کاربری از قبل موجود است .");
+			}
+
+			return Json(true);
+		}
+
+		[Route("UserPanel/CheckEmailIsExist", Name = "CheckEmailIsExist")]
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		[AllowAnonymous]
+		public async Task<IActionResult> CheckEmailIsExist(string email)
+		{
+			var emailInUserClaims = User.Identity.IsAuthenticated
+				? User.Claims.SingleOrDefault(x => x.Type == ClaimTypes.Email)!.Value
+				: "";
+			if (await _userPanelService.IsEmailExist(email) && emailInUserClaims != email)
+			{
+				return Json("این ایمیل از قبل موجود است .");
 			}
 
 			return Json(true);
@@ -200,6 +229,50 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 		{
 			return int.Parse(User.Claims.Single(x => x.Type == ClaimTypes.NameIdentifier).Value);
 		}
+
+		#endregion
+
+		#region ChangePassword
+
+		[Route("UserPanel/ChangePassword")]
+		public IActionResult ChangePassword()
+		{
+			return View(new ChangePasswordViewModel());
+		}
+
+		[Route("UserPanel/ChangePassword")]
+		[HttpPost]
+		public async Task<IActionResult> ChangePassword(ChangePasswordViewModel changePasswordViewModel)
+		{
+			var userId = GetUserIdFromClaims();
+			var user = await _userPanelService.GetUserByUserId(userId);
+			if (user == null)
+			{
+				CreateMassageAlert("danger", "مشکلی به وجود آمده است . لطفا مجددا وارد شوید .", "بروز خطا");
+				return RedirectToAction("Logout", "Account");
+			}
+
+			if (user.Password != changePasswordViewModel.OldPassword.EncodePasswordMd5())
+			{
+				ModelState.AddModelError("OldPassword", "رمز عبور فعلی شما نادرست میباشد .");
+				return View(changePasswordViewModel);
+			}
+			user.Password = changePasswordViewModel.NewPassword.EncodePasswordMd5();
+			if (await _userPanelService.UpdateUser(user))
+			{
+				await UpdateUserClaims(user);
+				CreateMassageAlert("success", "رمز عبور شما با موفقیت تغییر یافت .",
+					"موفق");
+				return RedirectToAction("Index", "Home");
+			}
+
+			CreateMassageAlert("danger",
+				"در ثبت اطلاعات جدید شما مشکلی به وجود آمده است. دوباره تلاش کرده و در صورت خطای مجدد به ما اطلاع دهید .",
+				"ناموفق");
+			return RedirectToAction("Index", "Home");
+
+		}
+
 
 		#endregion
 	}
