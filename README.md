@@ -35,7 +35,7 @@ Go to the project directory
   cd Toplearn
 ```
 
-Install dependencies
+Restore dependencies
 
 ```bash
   dotnet restore
