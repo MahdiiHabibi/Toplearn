@@ -14,19 +14,19 @@ using Toplearn.DataLayer.Entities.User;
 namespace Toplearn.Web.Controllers
 {
 
-	public class AccountController(IUserAction userAction) : Controller
+	public class AccountController(IUserAction userAction) : TopLearnController
 	{
 
 		#region Register
 
 		[HttpGet]
-		[Route("Register/{BackUrl_Url?}")]
-		public IActionResult Register(string BackUrl_Url = null)
+		[Route("Register")]
+		public IActionResult Register(string BackUrl = null)
 		{
 			var registerViewModel = new RegisterViewModel
 			{
 				// Check The Url If there is No Problem : it returns the input , else : It returns the Url Of the Login Page
-				BackUrl = CheckTheBackUrl(BackUrl_Url)
+				BackUrl = CheckTheBackUrl(BackUrl).Replace("/", "%2")
 			};
 
 			return View(registerViewModel);
@@ -34,7 +34,7 @@ namespace Toplearn.Web.Controllers
 
 		[HttpPost]
 		[Route("Register")]
-		public async Task<IActionResult> Register(RegisterViewModel registerViewModel)
+		public async Task<IActionResult> Register(RegisterViewModel registerViewModel, string BackUrl = null)
 		{
 			if (!ModelState.IsValid)
 			{
@@ -71,7 +71,7 @@ namespace Toplearn.Web.Controllers
 							"ثبت نام شما با موفقیت انجام شد ." + $"برای فعالسازی حساب کاربری خود لینک فرستاده شده به ایمیل شما را باز کنید ."
 							, "موفق  "
 						);
-						return RedirectToAction("Login", "Account",new {BackUrl=CheckTheBackUrl(registerViewModel.BackUrl)});
+						return RedirectToAction("Login", "Account", new { BackUrl = CheckTheBackUrl(registerViewModel.BackUrl) });
 					}
 					else
 					{
@@ -87,14 +87,14 @@ namespace Toplearn.Web.Controllers
 
 		#region Login
 
-		[Route("Login/{BackUrl_Url?}")]
-		public IActionResult Login(string BackUrl_Url = null)
+		[Route("Login/{BackUrl?}")]
+		public IActionResult Login(string BackUrl = null)
 		{
 			var loginViewModel = new LoginViewModel()
 			{
 				RememberMe = false,
 				// Check The Url If there is No Problem : it returns the input , else : It returns the Url Of the Login Page
-				BackUrl = CheckTheBackUrl(BackUrl_Url)
+				BackUrl = CheckTheBackUrl(BackUrl).Replace("/","%2")
 			};
 
 
@@ -146,34 +146,12 @@ namespace Toplearn.Web.Controllers
 						CreateMassageAlert("primary"
 							, $"ورود به اکانت خود با موفقیت انجام شد"
 							 , $"سلام  {user.FullName}");
-						return Redirect(loginViewModel.BackUrl ?? "/");
+						return Redirect(loginViewModel.BackUrl.Replace("%2", "/"));
 					}
 				}
 			}
 			ModelState.AddModelError("Email", "رمز عبور یا ایمیل وارد شده درست نمی باشد و باهم تطابقت ندارند . ");
 			return View(loginViewModel);
-		}
-
-		#endregion
-
-		#region Methods
-
-		// Check The Url If there is No Problem : it returns the input , else : It returns the Url Of the Login Page
-		public string CheckTheBackUrl(string BackUrl)
-		{
-			if (!BackUrl.IsNullOrEmpty() && Url.IsLocalUrl(BackUrl.Replace("%2", "/")))
-			{
-				return BackUrl;
-			}
-
-			return "";
-		}
-
-		public void CreateMassageAlert(string TypeOfAlert, string DescriptionOfAlert, string TitleOfAlert)
-		{
-			TempData["Massage_TypeOfAlert"] = TypeOfAlert;
-			TempData["Massage_DescriptionOfAlert"] = DescriptionOfAlert;
-			TempData["Massage_TitleOfAlert"] = TitleOfAlert;
 		}
 
 		#endregion
@@ -192,7 +170,7 @@ namespace Toplearn.Web.Controllers
 		#region Activation Account
 
 		[Route("Account/ActiveAccount/{ActiveCode}/{BackUrl?}")]
-		public async Task<IActionResult> ActiveAccount(string ActiveCode, string BackUrl = " ")
+		public async Task<IActionResult> ActiveAccount(string ActiveCode, string BackUrl = "2%UserPanel")
 		{
 			string TypeOfAlert = string.Empty;
 			string DescriptionOfAlert = string.Empty;
@@ -227,49 +205,14 @@ namespace Toplearn.Web.Controllers
 
 			return Redirect(
 				(TypeOfAlert == "success" ?
-					Url.Action("Login", "Account", new { BackUrl = CheckTheBackUrl(BackUrl), Request.Scheme })
-					: "/Register") ?? "/Register");
+					Url.Action("Login", "Account", new { BackUrl = CheckTheBackUrl(BackUrl)})
+					: "/") ?? "/");
 
 		}
 
-		[Route("/ActiveAccount")]
-		public IActionResult ActiveAccount()
-		{
-			return View("ActiveAccount");
-		}
+		
 
-
-		[HttpPost]
-		[Route("/ActiveAccount")]
-		public async Task<IActionResult> ActiveAccount(string email)
-		{
-			if ((await userAction.IsEmailExist(email)) == false || (await userAction.IsEmailActived(email)) == true)
-			{
-				CreateMassageAlert("info",
-					"ایمیلی که وارد کرده اید یا نا معتبر است یا از قبل در سامانه فعال شده است",
-					"بروز خطا !");
-				return RedirectToAction("index", "Home");
-			}
-
-			var res = await userAction.SendTheVerificationCodeWithEmail(await userAction.GetUserByEmail(email), "_ActiveEmail", "فعالسازی حساب کاربری شما در تاپ لرن", Request.Scheme + "://" + Request.Host, "");
-			if (res)
-			{
-				CreateMassageAlert("success",
-					"ثبت نام شما با موفقیت انجام شد ." + $"برای فعالسازی حساب کاربری خود لینک فرستاده شده به ایمیل شما را باز کنید ."
-					, "موفق  "
-				);
-				return RedirectToAction("Login", "Account");
-			}
-			else
-			{
-				CreateMassageAlert("danger", " در ارسال لینک فعال سازی اکانت شما مشکلی به وجود آمده است .","نا موفق");
-				return RedirectToAction("Login", "Account");
-			}
-
-
-		}
-
-		#endregion
+        #endregion
 
 		#region ForgotPassWord
 
@@ -310,7 +253,7 @@ namespace Toplearn.Web.Controllers
 
 
 		[Route("Account/ResetPassword/{ActiveCode}/{BackUrl?}")]
-		public async Task<IActionResult> ResetPassword(string ActiveCode, string BackUrl = "Account/Login")
+		public async Task<IActionResult> ResetPassword(string ActiveCode, string BackUrl = "%2UserPanel")
 		{
 			var x = Request.Scheme + "://" + Request.Host;
 			if (await userAction.IsActiveCodeExist(ActiveCode))

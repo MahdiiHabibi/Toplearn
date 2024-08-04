@@ -65,15 +65,15 @@ namespace Toplearn.Core.Services.Implement
 					x.Email == loginViewModel.Email.FixedEmail() &&
 					x.Password == loginViewModel.Password.EncodePasswordMd5());
 
-		public async Task<bool> SendTheVerificationCodeWithEmail(User user, string View, string subject, string HostUrl, string BackUrl = "2%home2%index")
+		public async Task<bool> SendTheVerificationCodeWithEmail(User user, string view, string subject, string hostUrl, string backUrl = "2%home2%index")
 		{
 			try
 			{
-				var MassageModel = mapperAccount.MapTheSendEmailHtmlViewModelFromUser(user);
-				MassageModel.BackUrl = BackUrl;
-				MassageModel.HostUrl = HostUrl;
-				var MassageBody = _viewRender.RenderToStringAsync(View, MassageModel);
-				return SendEmail.Send(user.Email, subject, MassageBody);
+				var massageModel = mapperAccount.MapTheSendEmailHtmlViewModelFromUser(user);
+				massageModel.BackUrl = backUrl;
+				massageModel.HostUrl = hostUrl;
+				var massageBody = _viewRender.RenderToStringAsync(view, massageModel);
+				return SendEmail.Send(user.Email, subject, massageBody);
 			}
 			catch
 			{

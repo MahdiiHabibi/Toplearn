@@ -15,12 +15,14 @@ namespace Toplearn.Core.Services.Interface
 
 		public Task<int> GetBalanceOfUser(int userId);
 
-		public Task<Wallet?> SetWalletIncrease(int userId, int amount, bool? isPay = false);
+		public Task<Wallet?> SetWalletIncrease(int userId, int amount, bool? isPay = false, string? AdminUsername = null);
+
 		public Task<bool> WalletIncrease(int walletId, int refId, int authority);
 
 		public Task<bool> IsUserNameExist(int userId);
 
 		public GetPaymentInformationViewModel GetPaymentInformation(int userId);
 
+		public Task<List<ShowWalletsViewModel>> GetShowWallets(int userId);
 	}
 }

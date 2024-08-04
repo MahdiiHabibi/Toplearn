@@ -18,19 +18,19 @@ namespace Toplearn.Core.Services.Implement
 	{
 		public async Task<int> UserWalletBalanceInquiry(int userId)
 		{
-            var enter =(await _contextActionsForWallet.Get(w => w.UserId == userId && w is { TypeId: 1, IsPay: true }))
-                .Select(w => w.Amount).ToList();
+			var enter = (await _contextActionsForWallet.Get(w => w.UserId == userId && w.TypeId == 1 && w.IsPay))
+				.Select(w => w.Amount).ToList();
 
-            var exit = (await _contextActionsForWallet.Get(w => w.UserId == userId && w is { TypeId: 2, IsPay: true }))
-                .Select(w => w.Amount).ToList();
+			var exit = (await _contextActionsForWallet.Get(w => w.UserId == userId && w.TypeId == 2 && w.IsPay))
+				.Select(w => w.Amount).ToList();
 
-            return (enter.Sum() - exit.Sum());
-        }
+			return (enter.Sum() - exit.Sum());
+		}
 
 		public async Task<int> GetBalanceOfUser(int userId) =>
 			((await _contextActionsForUser.GetOne(x => x.UserId == userId))!).WalletBalance;
-		
-		public async Task<Wallet?> SetWalletIncrease(int userId, int amount, bool? isPay = false)
+
+		public async Task<Wallet?> SetWalletIncrease(int userId, int amount, bool? isPay = false, string? AdminUsername = null)
 		{
 			try
 			{
@@ -44,9 +44,9 @@ namespace Toplearn.Core.Services.Implement
 					CreateDate = DateTime.Now,
 					TypeId = 2,
 					IsPay = (bool)isPay!,
-					Description = "افزایش شارژ"
+					Description = "افزایش شارژ" + (AdminUsername ?? "")
 				};
-
+				
 				bool res = await _contextActionsForWallet.UpdateTblOfContext(newWalletModel);
 				return res ? newWalletModel : null;
 			}
@@ -64,17 +64,9 @@ namespace Toplearn.Core.Services.Implement
 				wallet.IsPay = true;
 				wallet.RefId = refId;
 				wallet.Authority = authority;
-				if (await _contextActionsForWallet.UpdateTblOfContext(wallet))
-                {
-                    wallet.User.WalletBalance += wallet.Amount;
-					if (await _contextActionsForUser.UpdateTblOfContext(wallet.User))
-					{
-						return true;
-					}
-				}
-
-				return false;
-
+				if (!await _contextActionsForWallet.UpdateTblOfContext(wallet)) return false;
+				wallet.User.WalletBalance += wallet.Amount;
+				return await _contextActionsForUser.UpdateTblOfContext(wallet.User);
 			}
 			catch
 			{
@@ -89,6 +81,12 @@ namespace Toplearn.Core.Services.Implement
 		{
 			var Finalwallet = _db.Wallets.OrderByDescending(x => x.WalletId).First(x => x.UserId == userId && !x.IsPay && x.TypeId == 2);
 			return _mapperWallet.MapTheGetPaymentInformationViewModelFromWallet(Finalwallet);
+		}
+
+		public async Task<List<ShowWalletsViewModel>> GetShowWallets(int userId)
+		{
+			var wallet = await _contextActionsForWallet.Get(x => x.UserId == userId);
+			return _mapperWallet.MapTheShowWalletsViewModelFromWallet(wallet.ToList());
 		}
 	}
 }

@@ -1,5 +1,6 @@
 ﻿.field-validation-error {
     color: red;
+    font-size: smaller;
 }
 
 
@@ -34,4 +35,8 @@ input[type="file"]::file-selector-button {
     {
         padding-right:18%;
     }
+}
+
+.color-black {
+    color: rgba(0,0,0,.5) !important;
 }

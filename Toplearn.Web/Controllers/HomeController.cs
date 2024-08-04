@@ -10,7 +10,7 @@ using Toplearn.DataLayer.Entities.User;
 
 namespace Toplearn.Web.Controllers
 {
-	public class HomeController(TopLearnContext _db) : Controller
+	public class HomeController(TopLearnContext _db) : TopLearnController
 	{
 		public IActionResult Index()
 		{
@@ -21,10 +21,7 @@ namespace Toplearn.Web.Controllers
 		{
 			throw new Exception("سلام سایت قفل است ");
 		}
-
-
-
-
+		
 
 	}
 }

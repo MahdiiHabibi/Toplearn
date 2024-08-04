@@ -7,6 +7,7 @@ using Toplearn.Core.Checker;
 using Toplearn.Core.DTOs.Wallet;
 using Toplearn.Core.Services.Implement;
 using Toplearn.Core.Services.Interface;
+using Toplearn.DataLayer.Context;
 using Toplearn.DataLayer.Entities.Wallet;
 using ZarinPal.Class;
 
@@ -14,7 +15,7 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 {
 	[Area("UserPanel")]
 	[Authorize]
-	public class WalletController : Controller
+	public class WalletController : TopLearnController
 	{
 		private readonly IWalletManager _walletManager;
 		private readonly IUserPanelService _userPanelService;
@@ -24,6 +25,7 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 		private readonly Payment _payment;
 		private readonly Authority _authority;
 		private readonly Transactions _transactions;
+		private readonly TopLearnContext _topLearnContext;
 
 		#endregion
 
@@ -45,8 +47,9 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 
 		[HttpGet]
 		[Route("UserPanel/Wallet")]
-		public IActionResult index()
+		public async Task<IActionResult> index()
 		{
+			ViewBag.ListWallet = await _walletManager.GetShowWallets(GetUserIdFromClaims());
 			return View();
 		}
 
@@ -55,12 +58,12 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 		[Route("UserPanel/IncreaseWalletBalance")]
 		public async Task<IActionResult> IncreaseWalletBalance(DepositWalletViewModel depositWalletViewModel)
 		{
-			if (ModelState.IsValid == false) return RedirectToAction("index","Wallet");
+			if (ModelState.IsValid == false) return RedirectToAction("index", "Wallet");
 
 			var userId = GetUserIdFromClaims();
 			var setWallet = await _walletManager.SetWalletIncrease(userId, depositWalletViewModel.Amount);
 
-			
+
 			if (setWallet != null)
 			{
 				return RedirectToAction("RequestZarinPal", "Wallet");
@@ -87,7 +90,7 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 				Description = paymentInformation.Description,
 				Email = "mahdihabibi813@gmail.com",
 				// The amount we receive from the user is in Rials, so we have to convert it to Tomans. Because ZarinPal takes the amount from us in Tomans
-				Amount = paymentInformation.Amount/10,
+				Amount = paymentInformation.Amount / 10,
 				MerchantId = "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
 			}, Payment.Mode.sandbox);
 
@@ -111,7 +114,7 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 			var verification = await _payment.Verification(new DtoVerification
 			{
 				// The amount we receive from the user is in Rials, so we have to convert it to Tomans. Because ZarinPal takes the amount from us in Tomans
-				Amount = paymentInformation.Amount/10,
+				Amount = paymentInformation.Amount / 10,
 				MerchantId = "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
 				Authority = authority
 			}, Payment.Mode.sandbox);
@@ -129,42 +132,19 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 												$"شماره ی پیگیری شما {paymentInformation.WalletId}  و شماره ی درخواست شما {verification.RefId} است"
 						+ "به ادمین سایت خبر دهید تا برای شما مبلغ پرداختی را ثبت کند.", "بروز خطا ! ");
 				}
-				return RedirectToAction("index", "Home");
 			}
 			else
 			{
 				CreateMassageAlert("danger", "مبلغ شارژ شما پرداخت نشد . درصورتی که پول از حسابتان کسر شده تا 72 ساعت آینده برخواهد گشت .", "نا موفق");
-				return RedirectToAction("index", "Home");
 			}
+			return RedirectToAction("index", "Wallet");
 		}
 
-		[Route("oo")]
-		public async Task<IActionResult> Unverified()
-		{
-			var refresh = await _transactions.GetUnverified(new DtoMerchant
-			{
-				MerchantId = "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
-			}, Payment.Mode.sandbox);
-
-			return View();
-		}
 
 
 		#endregion
 
-		#region Methods
-
-		private void CreateMassageAlert(string TypeOfAlert, string DescriptionOfAlert, string TitleOfAlert)
-		{
-			TempData["Massage_TypeOfAlert"] = TypeOfAlert;
-			TempData["Massage_DescriptionOfAlert"] = DescriptionOfAlert;
-			TempData["Massage_TitleOfAlert"] = TitleOfAlert;
-		}
-		private int GetUserIdFromClaims() =>
-			int.Parse(User.Claims.Single(x => x.Type == ClaimTypes.NameIdentifier).Value);
-
-
-		#endregion
+		
 
 	}
 }

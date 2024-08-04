@@ -22,6 +22,6 @@ namespace Toplearn.Core.Services.Interface
 
 		public Task<TEntity?> GetOne(Func<TEntity, bool>? fun = null);
 
-		public Task<IEnumerable<TEntity?>> Get(Func<TEntity, bool>? fun = null);
+		public Task<IList<TEntity?>> Get(Expression<Func<TEntity, bool>>? fun = null);
 	}
 }

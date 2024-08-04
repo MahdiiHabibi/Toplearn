@@ -1,6 +1,6 @@
 ﻿@model DepositWalletViewModel
 @{
-    ViewBag.Title = "کیف پول شما";
+	ViewBag.Title = "کیف پول شما";
 }
 
 
@@ -23,14 +23,18 @@
 				<div class="col-md-9 col-sm-8 col-xs-12">
 					<section class="user-account-content">
 						<header>
-							<h1> کیف پول شما </h1></header>
+							<h1> کیف پول شما </h1>
+						</header>
 						<div class="inner form-layer">
 							<form asp-action="IncreaseWalletBalance" asp-controller="Wallet" method="post">
 								<div class="row">
 									<div class="col-md-7 col-sm-8 col-xs-12" style="margin-bottom: 13px;">
 										<div class="input-group">
-											<span class="input-group-addon" id="username"><i class="zmdi zmdi-balance-wallet"></i></span>
-											<input type="number" class="form-control" asp-for="Amount" placeholder="مبلغ به ریال">
+											<span class="input-group-addon" id="username">
+												<i class="zmdi zmdi-balance-wallet"></i>
+											</span>
+											<input type="number" class="form-control" asp-for="Amount"
+												   placeholder="مبلغ به ریال">
 										</div>
 										<span asp-validation-for="Amount"></span>
 									</div>
@@ -41,8 +45,64 @@
 									</div>
 								</div>
 							</form>
-							<hr/>
+							@{
+								List<ShowWalletsViewModel> wallets = ViewBag.ListWallet as List<ShowWalletsViewModel>;
+								int tr = 1;
+							}
+							@if (wallets != null)
+							{
+								<hr />
 
+								<table class="table table-bordered">
+									<tr>
+										<th>ردیف</th>
+										<th>مبلغ</th>
+										<th>تاریخ</th>
+										<th>نوع تراکنش</th>
+										<th>شرح</th>
+										<th>شناسه ی پرداخت در درگاه</th>
+										<th>کد پیگیری</th>
+
+									</tr>
+									@foreach (var wallet in wallets)
+									{
+
+										<tr class="@(wallet.IsPay ? "success" : "danger")">
+											<td>w-@tr</td>
+											<td>@wallet.Amount.ToString("#,0 ریال")</td>
+											<td>
+												@wallet.CreateDate.ToShamsi()
+											</td>
+											<td>
+												@switch (wallet.TypeId)
+												{
+													case 1:
+														<p>برداشت</p>
+														break;
+													case 2:
+														<p>واریز</p>
+														break;
+													default:
+														<p>
+															خرید مستقیم دوره
+														</p>
+														break;
+												}
+											</td>
+											<td>
+												@wallet.Description
+											</td>
+											<td>
+												@wallet.Authority
+											</td>
+											<td>
+												@wallet.RefId
+											</td>
+										</tr>
+										tr++;
+									}
+								</table>
+							}
 
 						</div>
 					</section>

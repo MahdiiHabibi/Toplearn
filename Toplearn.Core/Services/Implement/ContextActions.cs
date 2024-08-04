@@ -87,16 +87,16 @@ namespace Toplearn.Core.Services.Implement
 			return _entities.Where(fun).SingleOrDefault();
 		}
 
-		public async Task<IEnumerable<TEntity?>> Get(Func<TEntity, bool>? fun = null)
+		public async Task<IList<TEntity?>> Get(Expression<Func<TEntity, bool>>? fun = null)
 		{
-			IEnumerable<TEntity?> query = _entities;
+			IQueryable<TEntity?> query = _entities;
 			// If the input function is null, it means that all data is requested Otherwise, we have data limits
 			if (fun != null)
 			{
 				query = query.Where(fun);
 			}
 
-			return query;
+			return query.ToList();
 		}
 
 	}

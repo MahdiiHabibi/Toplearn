@@ -42,25 +42,30 @@ namespace Toplearn.Core.Convertors.AutoMapper
                 .ForMember(x => x.DateTime, y => y.MapFrom(d => Convert.ToDateTime(d.SingleOrDefault(s => s.Type == "DateTimeOfRegister")!.Value)))
                 .ForMember(x => x.FullName, y => y.MapFrom(d => d.SingleOrDefault(s => s.Type == ClaimTypes.Name)!.Value))
                 .ForMember(x => x.UserName, y => y.MapFrom(d => d.SingleOrDefault(s => s.Type == "UserName")!.Value))
-                .ForMember(x => x.WalletBalance, y => y.MapFrom(d => 0 ))
+                .ForMember(x => x.WalletBalance, y => y.MapFrom(d => 0))
                 .ForMember(x => x.ImageUrl, y => y.MapFrom(d => d.SingleOrDefault(s => s.Type == "ImageUrl")!.Value))
                 .ForMember(x => x.UserId, y => y.MapFrom(d => Convert.ToInt32(d.SingleOrDefault(s => s.Type == ClaimTypes.NameIdentifier)!.Value)));
 
 
-			// Create The EditPanelViewModel From CookiesUser
-			CreateMap<IEnumerable<Claim>, EditPanelViewModel>()
-				.ForMember(x => x.Email,
-					y => y.MapFrom(d =>
-						d.SingleOrDefault(s => s.Type == ClaimTypes.Email)!.Value.CapitalizeFirstLetter()))
-				.ForMember(x => x.FullName,
-					y => y.MapFrom(d => d.SingleOrDefault(s => s.Type == ClaimTypes.Name)!.Value))
-				.ForMember(x => x.UserName, y => y.MapFrom(d => d.SingleOrDefault(s => s.Type == "UserName")!.Value));
+            // Create The EditPanelViewModel From CookiesUser
+            CreateMap<IEnumerable<Claim>, EditPanelViewModel>()
+                .ForMember(x => x.Email,
+                    y => y.MapFrom(d =>
+                        d.SingleOrDefault(s => s.Type == ClaimTypes.Email)!.Value.CapitalizeFirstLetter()))
+                .ForMember(x => x.FullName,
+                    y => y.MapFrom(d => d.SingleOrDefault(s => s.Type == ClaimTypes.Name)!.Value))
+                .ForMember(x => x.UserName, y => y.MapFrom(d => d.SingleOrDefault(s => s.Type == "UserName")!.Value));
 
 
 
-			// Create The GetPaymentInformationViewModel From Wallet
+            // Create The GetPaymentInformationViewModel From Wallet
+            CreateMap<Wallet, GetPaymentInformationViewModel>();
 
-			CreateMap<Wallet, GetPaymentInformationViewModel>();
+
+            // Create The ShowWalletsViewModel From Wallet
+            CreateMap<Wallet, ShowWalletsViewModel>()
+	            .ForMember(x => x.RefId, y => y.MapFrom(d => d.RefId.ToString()))
+	            .ForMember(x => x.Authority, y => y.MapFrom(d => d.Authority.ToString()));
 
         }
 

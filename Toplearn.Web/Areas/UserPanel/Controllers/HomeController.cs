@@ -1,26 +1,21 @@
-﻿using System.Security.Claims;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Toplearn.Core.Convertors;
-using Toplearn.Core.DTOs.UserPanel;
-using Toplearn.Core.Generator;
-using Toplearn.Core.Services.Interface;
 using Toplearn.Core.Services.Interface.Mapper;
-using Toplearn.DataLayer.Context;
-using Toplearn.DataLayer.Entities.User;
-using System.IO;
-using Microsoft.AspNetCore.Authentication;
+using Toplearn.Core.Services.Interface;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
+using System.Security.Claims;
+using Toplearn.Core.DTOs.UserPanel;
 using TopLearn.Core.Security;
+using Toplearn.DataLayer.Entities.User;
 
 namespace Toplearn.Web.Areas.UserPanel.Controllers
 {
 	[Area("UserPanel")]
 	[Authorize]
 	[Route("UserPanel")]
-	public class HomeController(IMapperUserPanel mapperUserPanel, IUserPanelService _userPanelService,IWalletManager walletManager) : Controller
+	public class HomeController(IMapperUserPanel mapperUserPanel, IUserPanelService userPanelService, IWalletManager walletManager) : TopLearnController
 	{
-
 		[Route("")]
 		public async Task<IActionResult> Index()
 		{
@@ -50,7 +45,7 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 			}
 
 			// Check that User Change Image Or Not !
-			var user = await _userPanelService.GetUserByUserId(
+			var user = await userPanelService.GetUserByUserId(
 				int.Parse(User.Claims.Single(x => x.Type == ClaimTypes.NameIdentifier).Value));
 			if (user == null)
 			{
@@ -66,7 +61,7 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 			if (user.UserName != editPanelViewModel.UserName)
 			{
 				// UserName is Unique
-				var IsUserNameExist = await _userPanelService.IsUserNameExist(editPanelViewModel.UserName);
+				var IsUserNameExist = await userPanelService.IsUserNameExist(editPanelViewModel.UserName);
 				if (IsUserNameExist)
 				{
 					ModelState.AddModelError("UserName", "نام کاربری جدیدی که انتخاب کرده اید از قبل موجود است .");
@@ -81,7 +76,7 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 
 			#region CheckUserImage
 
-			var res = await _userPanelService.ImageTaskInEditUser(User.Claims.Single(x => x.Type == "ImageUrl").Value,
+			var res = await userPanelService.ImageTaskInEditUser(User.Claims.Single(x => x.Type == "ImageUrl").Value,
 				editPanelViewModel.ImageFile);
 
 			var imageResDescription = "";
@@ -101,7 +96,7 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 			#endregion
 
 			// Update User 
-			if (await _userPanelService.UpdateUser(user))
+			if (await userPanelService.UpdateUser(user))
 			{
 				await UpdateUserClaims(user);
 				CreateMassageAlert(imageResAlertType, "اطلاعات شما با موفقیت تغییر یافت ." + imageResDescription,
@@ -131,12 +126,12 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 		public async Task<IActionResult> ResetImageOfUser()
 		{
 			var userId = GetUserIdFromClaims();
-			var user = await _userPanelService.GetUserByUserId(userId);
+			var user = await userPanelService.GetUserByUserId(userId);
 			var removedImageUrl = $"{Directory.GetCurrentDirectory()}\\wwwroot{user.ImageUrl}";
 			user.ImageUrl = @"\images\pic\Default.png";
 
 			// Update User 
-			if (await _userPanelService.UpdateUser(user))
+			if (await userPanelService.UpdateUser(user))
 			{
 				await UpdateUserClaims(user);
 
@@ -165,34 +160,8 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 
 		#region Methods
 
-		private void CreateMassageAlert(string TypeOfAlert, string DescriptionOfAlert, string TitleOfAlert)
-		{
-			TempData["Massage_TypeOfAlert"] = TypeOfAlert;
-			TempData["Massage_DescriptionOfAlert"] = DescriptionOfAlert;
-			TempData["Massage_TitleOfAlert"] = TitleOfAlert;
-		}
 
-		private async Task UpdateUserClaims(User user)
-		{
-			await HttpContext.SignOutAsync();
-			var claims = new List<Claim>()
-			{
-				new(ClaimTypes.NameIdentifier, user.UserId.ToString()),
-				new(ClaimTypes.Name, user.FullName),
-				new("ImageUrl", user.ImageUrl),
-				new("UserName", user.UserName),
-				new(ClaimTypes.Email, user.Email),
-				new("DateTimeOfRegister", user.DateTime.ToString())
-			};
-			var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-			var principal = new ClaimsPrincipal(identity);
-			var properties = new AuthenticationProperties
-			{
-				IsPersistent = false
-			};
-			await HttpContext.SignInAsync(principal, properties);
-		}
-
+		
 		[Route("CheckUserInEdit", Name = "CheckUserNameIsExist")]
 		[HttpPost]
 		[ValidateAntiForgeryToken]
@@ -203,7 +172,7 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 				? User.Claims.SingleOrDefault(x => x.Type == "UserName")!.Value
 				: "";
 
-			if (await _userPanelService.IsUserNameExist(username) && UserNameInClaims != username)
+			if (await userPanelService.IsUserNameExist(username) && UserNameInClaims != username)
 			{
 				return Json("این نام کاربری از قبل موجود است .");
 			}
@@ -220,7 +189,7 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 			var emailInUserClaims = User.Identity.IsAuthenticated
 				? User.Claims.SingleOrDefault(x => x.Type == ClaimTypes.Email)!.Value
 				: "";
-			if (await _userPanelService.IsEmailExist(email) && emailInUserClaims != email)
+			if (await userPanelService.IsEmailExist(email) && emailInUserClaims != email)
 			{
 				return Json("این ایمیل از قبل موجود است .");
 			}
@@ -228,10 +197,6 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 			return Json(true);
 		}
 
-		private int GetUserIdFromClaims()
-		{
-			return int.Parse(User.Claims.Single(x => x.Type == ClaimTypes.NameIdentifier).Value);
-		}
 
 		#endregion
 
@@ -248,7 +213,7 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 		public async Task<IActionResult> ChangePassword(ChangePasswordViewModel changePasswordViewModel)
 		{
 			var userId = GetUserIdFromClaims();
-			var user = await _userPanelService.GetUserByUserId(userId);
+			var user = await userPanelService.GetUserByUserId(userId);
 			if (user == null)
 			{
 				CreateMassageAlert("danger", "مشکلی به وجود آمده است . لطفا مجددا وارد شوید .", "بروز خطا");
@@ -261,7 +226,7 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 				return View(changePasswordViewModel);
 			}
 			user.Password = changePasswordViewModel.NewPassword.EncodePasswordMd5();
-			if (await _userPanelService.UpdateUser(user))
+			if (await userPanelService.UpdateUser(user))
 			{
 				await UpdateUserClaims(user);
 				CreateMassageAlert("success", "رمز عبور شما با موفقیت تغییر یافت .",

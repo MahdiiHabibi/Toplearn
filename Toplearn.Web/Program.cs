@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using NuGet.Protocol.Core.Types;
 using Toplearn.Core.Convertors;
@@ -15,7 +16,15 @@ using WebMarkupMin.AspNetCore8;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllersWithViews();
+// TODO:
+builder.Services.AddControllersWithViews()
+	.AddRazorRuntimeCompilation();
+builder.Services.AddElmahIo(o =>
+{
+	o.ApiKey = "e7df4a60042843fabd1894e263c1debc";
+	o.LogId = new Guid("69ab5b1c-5d04-466d-ac52-bfe45c7017bb");
+});
+
 
 #region Ioc
 // Add DbContext (TopLearnContext) with SqlServer
@@ -31,9 +40,12 @@ builder.Services.AddScoped<IViewRenderService, RenderViewToString>();
 // Add User Services that we need to do for some Action Like : Register || Login 
 builder.Services.AddScoped<IUserAction, UserAction>();
 // Add User Services that we need to do for some Action in User Panel
-builder.Services.AddScoped<IUserPanelService,UserPanelService>();
+builder.Services.AddScoped<IUserPanelService, UserPanelService>();
 // Add Services that we need in everyThing That About Wallet
-builder.Services.AddScoped<IWalletManager,WalletManager>();
+builder.Services.AddScoped<IWalletManager, WalletManager>();
+// Add Services that we need in everyThing in Admin Layer
+builder.Services.AddScoped<IAdminServices,AdminServices>();
+
 
 #endregion
 
@@ -44,7 +56,7 @@ builder.Services.AddAutoMapper(typeof(AutoMapperUser));
 // Add Rep Of Maps that we need in Account Actions
 builder.Services.AddScoped<IMapperAccount, MapperAccount>();
 // Add Rep Of Maps that we need in UserPanel Area
-builder.Services.AddScoped<IMapperUserPanel,MapperUserPanel>();
+builder.Services.AddScoped<IMapperUserPanel, MapperUserPanel>();
 // Add Rep Of Maps that we need in UserPanel Area And Wallet Controller
 builder.Services.AddScoped<IMapperWallet, MapperWallet>();
 
@@ -63,7 +75,7 @@ builder.Services.AddAuthentication(options =>
 	options.LoginPath = "/Login";
 	options.LogoutPath = "/Logout";
 	options.ExpireTimeSpan = TimeSpan.FromMinutes(43200);
-	options.ReturnUrlParameter = "BackUrl_Url";
+	options.ReturnUrlParameter = "BackUrl";
 });
 
 #endregion
@@ -77,11 +89,13 @@ builder.Services.AddWebMarkupMin()
 
 #endregion
 
-builder.Services.AddElmahIo(o =>
-{
-	o.ApiKey = "e7df4a60042843fabd1894e263c1debc";
-	o.LogId = new Guid("69ab5b1c-5d04-466d-ac52-bfe45c7017bb");
-});
+
+
+#region RazorPages
+
+builder.Services.AddRazorPages(/*x => x.RootDirectory = "TopLearnRazorPages"*/);
+
+#endregion
 
 #endregion
 
@@ -115,6 +129,7 @@ app.MapControllerRoute(
 	name: "default",
 	pattern: "{controller=Home}/{action=Index}/{id?}");
 
+app.MapRazorPages();
 app.Run();
 
 

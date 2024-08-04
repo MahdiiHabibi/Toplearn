@@ -1,0 +1,15 @@
+﻿@if (TempData["Massage_TypeOfAlert"] != null)
+{
+	<div class="alert alert-@TempData["Massage_TypeOfAlert"]  alert-dismissible fade show position-fixed" style="bottom:9%; left:2px; max-width:fit-content;" role="alert" id="DeleteAlert">
+		<strong>@TempData["Massage_TitleOfAlert"] : </strong> @TempData["Massage_DescriptionOfAlert"]
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+
+	<script>
+
+		setTimeout(function () { $("#DeleteAlert").remove(); }, 10000);
+
+	</script>
+}

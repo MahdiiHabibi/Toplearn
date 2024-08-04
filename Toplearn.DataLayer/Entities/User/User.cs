@@ -21,7 +21,7 @@ namespace Toplearn.DataLayer.Entities.User
 
         [Display(Name = "نام کاربری")]
         [Required(ErrorMessage = "{0} ضروری است .")]
-        [MaxLength(20, ErrorMessage = "{0} شما نمیتواند بیشتر از {1} باشه ")]
+        [MaxLength(100, ErrorMessage = "{0} شما نمیتواند بیشتر از {1} باشه ")]
 
         public string UserName { get; set; }
 

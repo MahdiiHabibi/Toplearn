@@ -1,0 +1,128 @@
+﻿@page
+@using Toplearn.Core.Convertors
+@model Toplearn.Web.Pages.Admin.UserManager.UserModel
+
+@if (Model.UserOfModel != null)
+{
+	ViewBag.Title = Model.UserOfModel.FullName;
+	ViewBag.User = "active";
+	<section class="content">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-3">
+
+					<!-- Profile Image -->
+					<div class="card card-@(Model.UserOfModel.IsActive?"success":"danger") card-outline">
+						<div class="card-body box-profile">
+							<div class="text-center">
+								<img class="profile-user-img img-fluid img-circle" style="border:3px outset @(Model.UserOfModel.IsActive?"#28a745":"#adb5bd") " src="@Model.UserOfModel.ImageUrl" alt="User profile picture">
+							</div>
+
+							<h3 class="profile-username text-center">@Model.UserOfModel.FullName</h3>
+
+							<p class="text-muted text-center">@Model.UserOfModel.Email.CapitalizeFirstLetter()</p>
+
+							<ul class="list-group list-group-unbordered mb-3">
+								<li class="list-group-item">
+									<b>نام کاربری:</b> <a class="float-right">@Model.UserOfModel.UserName</a>
+								</li>
+
+								<li class="list-group-item" style="text-align:center;">
+									<b>
+										وضعیت
+									</b>
+									@if (Model.UserOfModel.IsActive)
+									{
+										<span class="badge badge-success">فعال</span>
+									}
+									else
+									{
+										<a href="/admin/usermanager/ActiveAccount?Email=@Model.UserOfModel.Email.CapitalizeFirstLetter()" class="badge bg-danger">فعال نشده</a>
+									}
+								</li>
+
+								<li class="list-group-item" style="direction:ltr;">
+									<div style="text-align:center;">
+										<b>  تاریخ عضویت</b>
+									</div>
+
+									<div style="text-align:center; display:grid;">
+										<p class="float-right">@Model.UserOfModel.DateTime.ToShamsi()</p>
+									</div>
+								</li>
+								@if (Model.UserOfModel.IsActive)
+								{
+									
+										<li class="list-group-item">
+											<b style="padding-right:5px;"> ریال در کیف پول </b> <a class="float-right">@Model.UserOfModel.WalletBalance.ToString("##,###")</a>
+										</li>
+									
+								}
+
+							</ul>
+							@if (!Model.UserOfModel.IsActive)
+							{
+								<a href="/admin/usermanager/ActiveAccount?Email=@Model.UserOfModel.Email.CapitalizeFirstLetter()" class="btn btn-primary btn-block"><b>فعال سازی</b></a>
+							}
+							
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="col-md-9">
+					<div class="card card-info card-outline">
+						<div class="card-header p-2">
+							<ul class="nav nav-pills">
+
+
+								<li class="nav-item">
+									<strong class="nav-link text-dark " data-toggle="tab">شارژ حساب  -  مبلغ واریزی را به ریال وارد کنید.
+									</strong>
+								</li>
+							</ul>
+						</div><!-- /.card-header -->
+						<div class="card-body">
+							<div class="tab-content">
+								<div class="tab-pane active show" id="settings">
+									<form  method="post" class="form-horizontal">
+										<div class="form-group">
+											<div class="input-group mb-3">
+												
+												<div class="input-group-prepend">
+													<button type="submit" class="btn btn-info">واریز پول درخواستی</button>
+												</div>
+												<!-- /btn-group -->
+												<input type="number" asp-for="Amount" value="" placeholder="مبلغ مورد نظر به ریال" class="form-control">
+											</div>
+										</div>
+										<div asp-validation-summary="All"></div>
+									</form>
+								</div>
+								<!-- /.tab-pane -->
+							</div>
+							<!-- /.tab-content -->
+						</div>
+						<!-- /.card-body -->
+					</div>
+					<!-- /.nav-tabs-custom -->
+				</div>
+				
+
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+}
+else
+{
+	<script>
+		window.open('/admin/usermanager', '_self');
+	</script>
+}

@@ -9,8 +9,9 @@
 				width: fit-content;
 				position: fixed;
 				bottom: 4%;
-				right: 3%;
+				left: 3%;
 				box-shadow: black 1px 1px 1px 1px;
+				transition: margin-right 0.3s ease-out;
 			}
 
 			.success {
@@ -54,19 +55,27 @@
 				background-color: #343a40;
 				border: 2px solid #6c757d;
 			}
+
 		</style>
 
-		<div class="alert-layout @TempData["Massage_TypeOfAlert"]  bold" onclick="DeleteAlert()">
+		<div class="alert-layout @TempData["Massage_TypeOfAlert"]  bold" id="DeleteAlert-Alert" onclick="DeleteAlert()">
 			<strong style="font-weight: bold; ">@TempData["Massage_TitleOfAlert"]  :  </strong>
 			@TempData["Massage_DescriptionOfAlert"]
-			<b style="font-weight: bold; padding-right: 10px;">
-				حذف پیام
+			<b style="font-weight: bold; padding-right: 15px;">
+				&times;
 			</b>
 		</div>
 		<script>
 			function DeleteAlert() {
-				document.getElementById("DeleteAlert").style.display = "none"
+				document.getElementById("DeleteAlert-Alert").style.marginRight = "-337px";
 			}
+
+			setTimeout(function () {
+				document.getElementById("DeleteAlert-Alert").style.marginRight = "-337px";
+			
+			}, 10000);
+			setTimeout(function () { $("#DeleteAlert").remove(); }, 11000);
+			
 		</script>
 	</div>
 }

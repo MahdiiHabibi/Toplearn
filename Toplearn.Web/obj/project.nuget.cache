@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "HkJrAoptio4=",
+  "dgSpecHash": "HdgJiYPz19w=",
   "success": true,
   "projectFilePath": "W:\\Toplearn\\Toplearn.Web\\Toplearn.Web.csproj",
   "expectedPackageFiles": [
@@ -82,7 +82,8 @@
     "C:\\Users\\Mahdi\\.nuget\\packages\\microsoft.aspnetcore.mvc.dataannotations\\2.2.0\\microsoft.aspnetcore.mvc.dataannotations.2.2.0.nupkg.sha512",
     "C:\\Users\\Mahdi\\.nuget\\packages\\microsoft.aspnetcore.mvc.formatters.json\\2.2.0\\microsoft.aspnetcore.mvc.formatters.json.2.2.0.nupkg.sha512",
     "C:\\Users\\Mahdi\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor\\2.2.0\\microsoft.aspnetcore.mvc.razor.2.2.0.nupkg.sha512",
-    "C:\\Users\\Mahdi\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\2.2.0\\microsoft.aspnetcore.mvc.razor.extensions.2.2.0.nupkg.sha512",
+    "C:\\Users\\Mahdi\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\6.0.0\\microsoft.aspnetcore.mvc.razor.extensions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Mahdi\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.runtimecompilation\\8.0.7\\microsoft.aspnetcore.mvc.razor.runtimecompilation.8.0.7.nupkg.sha512",
     "C:\\Users\\Mahdi\\.nuget\\packages\\microsoft.aspnetcore.mvc.viewfeatures\\2.2.0\\microsoft.aspnetcore.mvc.viewfeatures.2.2.0.nupkg.sha512",
     "C:\\Users\\Mahdi\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\Mahdi\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.24\\microsoft.aspnetcore.razor.language.6.0.24.nupkg.sha512",

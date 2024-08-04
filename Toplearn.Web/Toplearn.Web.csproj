@@ -8,12 +8,46 @@
 
   <ItemGroup>
     <Folder Include="Views\Home\" />
+    <Folder Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\objects\info\" />
+    <Folder Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\refs\tags\" />
     <Folder Include="wwwroot\images\UsersAvatar\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\config" />
+    <None Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\description" />
+    <None Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\HEAD" />
+    <None Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\hooks\applypatch-msg.sample" />
+    <None Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\hooks\commit-msg.sample" />
+    <None Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\hooks\fsmonitor-watchman.sample" />
+    <None Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\hooks\post-update.sample" />
+    <None Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\hooks\pre-applypatch.sample" />
+    <None Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\hooks\pre-commit.sample" />
+    <None Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\hooks\pre-merge-commit.sample" />
+    <None Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\hooks\pre-push.sample" />
+    <None Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\hooks\pre-rebase.sample" />
+    <None Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\hooks\pre-receive.sample" />
+    <None Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\hooks\prepare-commit-msg.sample" />
+    <None Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\hooks\push-to-checkout.sample" />
+    <None Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\hooks\sendemail-validate.sample" />
+    <None Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\hooks\update.sample" />
+    <None Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\index" />
+    <None Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\info\exclude" />
+    <None Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\logs\HEAD" />
+    <None Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\logs\refs\heads\master" />
+    <None Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\logs\refs\remotes\origin\HEAD" />
+    <None Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\objects\pack\pack-b5e1d9c92fce542a14ff0a79aef4c4862cbdbe35.idx" />
+    <None Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\objects\pack\pack-b5e1d9c92fce542a14ff0a79aef4c4862cbdbe35.pack" />
+    <None Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\objects\pack\pack-b5e1d9c92fce542a14ff0a79aef4c4862cbdbe35.rev" />
+    <None Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\packed-refs" />
+    <None Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\refs\heads\master" />
+    <None Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\refs\remotes\origin\HEAD" />
   </ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="AutoMapper" Version="13.0.1" />
 		<PackageReference Include="Elmah.Io.AspNetCore" Version="5.1.66" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="8.0.7" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.7" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.7" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.7" />

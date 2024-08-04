@@ -11,5 +11,7 @@ namespace Toplearn.Core.Services.Interface.Mapper
 	public interface IMapperWallet
 	{
 		public GetPaymentInformationViewModel MapTheGetPaymentInformationViewModelFromWallet(Wallet wallet);
+
+		public List<ShowWalletsViewModel> MapTheShowWalletsViewModelFromWallet(List<Wallet> wallets);
 	}
 }

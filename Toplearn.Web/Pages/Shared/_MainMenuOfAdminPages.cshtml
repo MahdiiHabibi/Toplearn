@@ -1,0 +1,140 @@
+﻿@using System.Security.Claims
+
+
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4" id="MainMenu_Me" style="transition: margin-top .3s ease-in-out">
+	<!-- Brand Logo -->
+	<a class="brand-link bg-success">
+		<img src="~/AdminLayerContent/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+			 style="opacity: .8">
+		<span class="brand-text font-weight-light">پنل مدیریت - تاپ لرن</span>
+	</a>
+
+	<!-- Sidebar -->
+	<div class="sidebar" style="direction: ltr">
+		<div style="direction: rtl">
+			<!-- Sidebar user panel (optional) -->
+			<div class="user-panel mt-3 pb-3 mb-3 d-flex">
+				<div class="image">
+					<img src="@(User.Claims.Single(x=>x.Type == "ImageUrl").Value)" class="img-circle elevation-2" alt="User Image">
+				</div>
+
+				<div class="info">
+					<a asp-action="index" asp-controller="Home" asp-area="UserPanel" class="d-block">
+						@User.Identity.Name
+					</a>
+				</div>
+			</div>
+
+
+			<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+				<!-- Add icons to the links using the .nav-icon class
+					 with font-awesome or any other icon font library -->
+				<li class="nav-item has-treeview">
+					<a href="/admin" class="nav-link @ViewBag.AdminIndex">
+						<i class="nav-icon fa fa-dashboard"></i>
+						<p>
+							داشبورد
+						</p>
+					</a>
+				</li>
+				<div class="mt-3 liButtonsElenemnt">
+				<li class="nav-item has-treeview ">
+					<a href="#" class="nav-link">
+						<i class="nav-icon fa fa-tree"></i>
+						<p>
+							نوار بالای سایت
+							<i class="fa fa-angle-left right"></i>
+						</p>
+					</a>
+					<ul class="nav nav-treeview" style="display: none;">
+						<li class="nav-item   @ViewBag.AdminIndex">
+							<a asp-action="Index" asp-controller="Home" asp-area="" class="nav-link ">
+								<i class="nav-icon fa fa-home"></i>
+								<p>
+									خانه
+								</p>
+							</a>
+						</li>
+						<li class="nav-item   @ViewBag.AdminIndex">
+							<a asp-action="Index" asp-controller="Home" asp-area="UserPanel" class="nav-link ">
+								<i class="nav-icon fa fa-user-circle"></i>
+								<p>
+									پنل کاربری
+								</p>
+							</a>
+						</li>
+						<li class="nav-item   @ViewBag.AdminIndex">
+							<a asp-action="Index" asp-controller="Wallet" asp-area="UserPanel" class="nav-link ">
+								<i class="nav-icon fa fa-google-wallet"></i>
+								<p>
+									کیف پول
+								</p>
+							</a>
+						</li>
+
+						<li class="nav-item">
+							<a asp-action="Logout" asp-controller="Account" class="nav-link">
+								<i class="nav-icon fa fa-sign-out"></i>
+								<p>
+									خروج
+								</p>
+							</a>
+						</li>
+
+					</ul>
+				</li>
+		</div>
+		<li class="nav-header">مربوط به کاربران</li>
+		<li class="nav-item has-treeview">
+			<a href="#" class="nav-link">
+				<i class="nav-icon fa fa-table @(ViewBag.ListOfUsers!=null || ViewBag.RoleManagerOfUser != null || ViewBag.User != null?"text-info":"")"></i>
+				<p>
+					مدیریت کاربران
+					<i class="fa fa-angle-left right"></i>
+				</p>
+			</a>
+			<ul class="nav nav-treeview">
+				<li class="nav-item">
+					<a href="/admin/UserManager" class="nav-link @ViewBag.ListOfUsers">
+						<i class="fa fa-list-alt nav-icon"></i>
+						<p>
+							لیست کاربران
+						</p>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="/admin/UserManager/RoleManager" class="nav-link @ViewBag.RoleManagerOfUser">
+						<i class="fa fa-user-secret nav-icon"></i>
+						<p>
+							سطح دسترسی کاربران
+						</p>
+					</a>
+				</li>
+						@if (ViewBag.User != null)
+						{
+					<li class="nav-item">
+						<a href="/admin/UserManager/RoleManager" class="nav-link @ViewBag.User">
+							<i class="fa fa-user-secret nav-icon"></i>
+							<p>
+								کاربر - @TempData["Fullname"]
+							</p>
+						</a>
+					</li>
+						}
+			</ul>
+		</li>
+
+
+		</ul>
+	</div>
+
+
+
+
+	</div>
+
+	<!-- /.sidebar -->
+</aside>
+
+

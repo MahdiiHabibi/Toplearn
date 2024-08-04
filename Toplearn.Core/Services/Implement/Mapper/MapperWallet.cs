@@ -15,5 +15,9 @@ namespace Toplearn.Core.Services.Implement.Mapper
 		public GetPaymentInformationViewModel MapTheGetPaymentInformationViewModelFromWallet(Wallet wallet) =>
 			 _mapper.Map<GetPaymentInformationViewModel>(wallet);
 
+		public List<ShowWalletsViewModel> MapTheShowWalletsViewModelFromWallet(List<Wallet> wallets)=>
+			 wallets.Select(_mapper.Map<ShowWalletsViewModel>).ToList();
+		
+
 	}
 }

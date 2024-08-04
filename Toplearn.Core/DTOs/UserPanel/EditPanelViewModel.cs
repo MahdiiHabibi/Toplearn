@@ -14,7 +14,7 @@ namespace Toplearn.Core.DTOs.UserPanel
 		
 		[Display(Name = "نام کاربری")]
 		[Required(ErrorMessage = "{0} ضروری است .")]
-		[MaxLength(20, ErrorMessage = "{0} شما نمیتواند بیشتر از {1} باشه ")]
+		[MaxLength(40, ErrorMessage = "{0} شما نمیتواند بیشتر از {1} باشه ")]
 		[Remote(routeName: "CheckUserNameIsExist", HttpMethod = "POST",AdditionalFields = "__RequestVerificationToken")]
 
 		public string UserName { get; set; }

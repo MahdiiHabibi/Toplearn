@@ -33,7 +33,8 @@ namespace Toplearn.Core.DTOs.Accounts
         [Required(ErrorMessage = "{0} ضروری است .")]
         [MaxLength(20, ErrorMessage = "{0} شما نمیتواند بیشتر از {1} باشه ")]
         [MinLength(8, ErrorMessage = "{0} شما نمیتواند کمتر از {1} باشه ")]
-        public string Password { get; set; }
+        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,20}$", ErrorMessage = "رمز عبور باید از حروف بزرگ و کوچک انگلیسی و علامت ها اختصاری و اعداد  تشکیل شده باشد .")]
+		public string Password { get; set; }
 
         [Display(Name = "تکرار رمز عبور")]
         [Required(ErrorMessage = "{0} ضروری است .")]

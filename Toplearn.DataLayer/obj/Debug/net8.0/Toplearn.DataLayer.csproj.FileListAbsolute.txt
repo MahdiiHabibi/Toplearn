@@ -7,9 +7,9 @@ W:\Toplearn\Toplearn.DataLayer\obj\Debug\net8.0\Toplearn.DataLayer.GeneratedMSBu
 W:\Toplearn\Toplearn.DataLayer\obj\Debug\net8.0\Toplearn.DataLayer.AssemblyInfoInputs.cache
 W:\Toplearn\Toplearn.DataLayer\obj\Debug\net8.0\Toplearn.DataLayer.AssemblyInfo.cs
 W:\Toplearn\Toplearn.DataLayer\obj\Debug\net8.0\Toplearn.DataLayer.csproj.CoreCompileInputs.cache
+W:\Toplearn\Toplearn.DataLayer\obj\Debug\net8.0\Toplearn.DataLayer.sourcelink.json
 W:\Toplearn\Toplearn.DataLayer\obj\Debug\net8.0\Toplearn.DataLayer.dll
 W:\Toplearn\Toplearn.DataLayer\obj\Debug\net8.0\refint\Toplearn.DataLayer.dll
 W:\Toplearn\Toplearn.DataLayer\obj\Debug\net8.0\Toplearn.DataLayer.pdb
 W:\Toplearn\Toplearn.DataLayer\obj\Debug\net8.0\Toplearn.DataLayer.genruntimeconfig.cache
 W:\Toplearn\Toplearn.DataLayer\obj\Debug\net8.0\ref\Toplearn.DataLayer.dll
-W:\Toplearn\Toplearn.DataLayer\obj\Debug\net8.0\Toplearn.DataLayer.sourcelink.json
