@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ips0umhroRFhOP/N4DDMJTl08egRCep8DzRjaTrR71w=",
+  "Hash": "l6+vcddEi/goLi5jSxhEM9Jt1BW+i/f3zuj386iZG2k=",
   "Source": "Toplearn.Web",
   "BasePath": "_content/Toplearn.Web",
   "Mode": "Default",
@@ -45406,6 +45406,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\UsersAvatar\\24fc70a538b04d6da837c433a035f72d.jpg"
+    },
+    {
+      "Identity": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\UsersAvatar\\46ae22af768e4530a347043854334dc8.jpg",
+      "SourceId": "Toplearn.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\",
+      "BasePath": "_content/Toplearn.Web",
+      "RelativePath": "images/UsersAvatar/46ae22af768e4530a347043854334dc8.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\UsersAvatar\\46ae22af768e4530a347043854334dc8.jpg"
     },
     {
       "Identity": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\UsersAvatar\\83e0cc1a7c6749ebb6158f83339c1544.jpg",

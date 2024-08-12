@@ -1,0 +1,131 @@
+﻿@model UserForShowAddEditRoleViewModel
+
+
+<!-- Profile Image -->
+<div class="card card-@(Model is { IsActive: true }?"success":"danger") card-outline">
+	<div class="card-body box-profile">
+		<div class="text-center">
+			<img class="profile-user-img img-fluid img-circle" style="border:3px outset @(Model.IsActive?"#28a745":"#adb5bd") " src="@Model.ImageUrl" alt="User profile picture">
+		</div>
+
+		<h3 class="profile-username text-center">@Model.FullName</h3>
+
+		<p class="text-muted text-center">@Model.Email.CapitalizeFirstLetter()</p>
+
+		<ul class="list-group list-group-unbordered mb-3">
+			<li class="list-group-item">
+				<b>نام کاربری:</b> <a class="float-right">@Model.UserName</a>
+			</li>
+
+			<li class="list-group-item" style="text-align:center;">
+				<b>
+					وضعیت
+				</b>
+				@if (Model.IsActive)
+				{
+					<span class="badge badge-success">فعال</span>
+				}
+				else
+				{
+					<a href="/admin/UserManager/ActiveAccount?Email=@Model.Email.CapitalizeFirstLetter()" class="badge bg-danger">فعال نشده</a>
+				}
+			</li>
+
+			<li class="list-group-item" style="direction:ltr;">
+				<div style="text-align:center;">
+					<b>  تاریخ عضویت</b>
+				</div>
+
+				<div style="text-align:center; display:grid;">
+					<p class="float-right">@Model.DateTime.ToShamsi()</p>
+				</div>
+			</li>
+			@if (Model.IsActive)
+			{
+
+				<li class="list-group-item">
+					<b style="padding-right:5px;"> ریال در کیف پول </b> <a class="float-right">@Model.WalletBalance.ToString("##,###")</a>
+				</li>
+
+			}
+
+		</ul>
+		@if (!Model.IsActive)
+		{
+			<a href="/admin/UserManager/ActiveAccount?Email=@Model.Email.CapitalizeFirstLetter()" class="btn btn-primary btn-block"><b>فعال سازی</b></a>
+		}
+
+
+	</div>
+
+</div>
+
+
+<!-- About Me Box -->
+<div class="card card-primary">
+	<div class="card-header">
+		<h3 class="card-title">
+			عملیات ها
+		</h3>
+	</div>
+	<!-- /.card-header -->
+	<div class="card-body">
+		<a href="/admin/UserManager/RemoveAccount?email=@Model.Email" style="text-decoration: none; color: #212529;">
+			<strong><i class="fa fa-remove mr-1"></i> حذف حساب کاربری</strong>
+		</a>
+
+		<hr>
+		@if (@Model.ImageUrl != @"\images\pic\Default.png")
+		{
+			<a href="/admin/UserManager/RemoveUserImage?email=@Model.Email" style="text-decoration: none; color: #212529;">
+				<strong><i class="fa fa-file-image-o mr-1"></i> پاک کردن عکس کاربر </strong>
+			</a>
+
+			<hr>
+		}
+
+		<strong>
+			<i class="fa fa-id-card mr-1"></i>
+			مقام ها
+		</strong>
+		<form method="post" asp-action="UpdateUserRole" asp-controller="RoleManager" asp-area="Admin">
+
+			<input type="hidden" asp-for="UserId" />
+			<input type="hidden" asp-for="Email" />
+
+			@for (var i = 0; i < Model.ShowAddEditRoleViewModels.Count; i++)
+			{
+				<label onclick="ChangeRoleStatus(@i.ToString())" for="@i" id="@i" class="badge badge-@(Model.ShowAddEditRoleViewModels[i].IsChecked ? "success" : "danger")">
+					@Model.ShowAddEditRoleViewModels[i].RoleDetail
+				</label>
+				<input type="hidden" value="@Model.ShowAddEditRoleViewModels[i].IsChecked" id="input-@i" />
+				<input type="hidden" asp-for="ShowAddEditRoleViewModels[i].RoleId" />
+				<input style="display:none;" type="checkbox" id="c-@i" asp-for="ShowAddEditRoleViewModels[i].IsChecked" />
+			}
+			<button type="submit" class="btn btn-primary btn-block">
+				<b>
+					ثبت مقام ها
+				</b>
+			</button>
+		</form>
+		<hr>
+
+	</div>
+	<!-- /.card-body -->
+</div>
+
+<script>
+	function ChangeRoleStatus(role) {
+		var status = document.getElementById('input-' + role).value;
+		if (status == "true") {
+			document.getElementById(role).style.backgroundColor = "#dc3545";
+			document.getElementById('input-' + role).value = "false";
+			$("#c-" + role).removeAttr("checked");
+		}
+		else {
+			document.getElementById('input-' + role).value = "true";
+			document.getElementById(role).style.backgroundColor = "#28a745";
+			$("#c-" + role).attr("checked", "checked");
+		}
+	}
+</script>

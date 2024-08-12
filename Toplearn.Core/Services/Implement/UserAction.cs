@@ -81,7 +81,7 @@ namespace Toplearn.Core.Services.Implement
 			}
 		}
 
-		public async Task<User> GetUserByEmail(string email)
+		public async Task<User?> GetUserByEmail(string email)
 		{
 			return await _contextActionsForUser.GetOne(x => x.Email == email.FixedEmail());
 		}
@@ -99,6 +99,8 @@ namespace Toplearn.Core.Services.Implement
 				// AutoMapper was injected in program of WEB and its inheritance is in AutoMapper.cs <Toplearn.Core.Convertors.AutoMapper>
 				// The Method Of Map is in MapperAccount.cs <Toplearn.Core.Services.Interface.Mapper> 
 				User user = mapperAccount.MapTheUserFromRegisterViewModel(registerViewModel);
+				//TODO:
+				user.IsActive = true;
 				// IContextActions is a Dynamic interface for Add & Update & Remove & GetInfo & ... From Database For All type of Entities
 				// AddToContext is in IContextActions and it is the dynamic method too, it will Add to Context and Save in Database
 				if (await _contextActionsForUser.AddToContext(user))

@@ -9421,6 +9421,10 @@
       "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\timepicker\\bootstrap-timepicker.min.js"
     },
     {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\css\\AccessDenied.css",
+      "PackagePath": "staticwebassets\\css\\AccessDenied.css"
+    },
+    {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\css\\CustomCss.css",
       "PackagePath": "staticwebassets\\css\\CustomCss.css"
     },
@@ -9481,16 +9485,16 @@
       "PackagePath": "staticwebassets\\images\\UsersAvatar\\24fc70a538b04d6da837c433a035f72d.jpg"
     },
     {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\UsersAvatar\\46ae22af768e4530a347043854334dc8.jpg",
-      "PackagePath": "staticwebassets\\images\\UsersAvatar\\46ae22af768e4530a347043854334dc8.jpg"
-    },
-    {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\UsersAvatar\\83e0cc1a7c6749ebb6158f83339c1544.jpg",
       "PackagePath": "staticwebassets\\images\\UsersAvatar\\83e0cc1a7c6749ebb6158f83339c1544.jpg"
     },
     {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\UsersAvatar\\95187fb254fb447a8f4e152cfde170c5.jpg",
       "PackagePath": "staticwebassets\\images\\UsersAvatar\\95187fb254fb447a8f4e152cfde170c5.jpg"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\UsersAvatar\\be719b82cae04ac7898f666ac6ba6999.jpg",
+      "PackagePath": "staticwebassets\\images\\UsersAvatar\\be719b82cae04ac7898f666ac6ba6999.jpg"
     },
     {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\captcha.jpg",
@@ -9555,6 +9559,10 @@
     {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\pic\\big-thumb.jpg",
       "PackagePath": "staticwebassets\\images\\pic\\big-thumb.jpg"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\pic\\logo.png",
+      "PackagePath": "staticwebassets\\images\\pic\\logo.png"
     },
     {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\pic\\namad-1.png",

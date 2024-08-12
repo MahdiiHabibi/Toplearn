@@ -14,6 +14,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Areas\UserPanel\Views\Home\ChangePassword.cshtml" />
+    <None Include="Areas\UserPanel\Views\Home\EditProfile.cshtml" />
+    <None Include="Areas\UserPanel\Views\Home\Index.cshtml" />
+    <None Include="Areas\UserPanel\Views\Shared\_BoxOfImageInUserPanel.cshtml" />
+    <None Include="Areas\UserPanel\Views\Shared\_DeskInUserPanel.cshtml" />
+    <None Include="Areas\UserPanel\Views\Wallet\index.cshtml" />
+    <None Include="Areas\UserPanel\Views\_ViewImports.cshtml" />
+    <None Include="Areas\UserPanel\Views\_ViewStart.cshtml" />
     <None Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\config" />
     <None Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\description" />
     <None Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\HEAD" />

@@ -10,7 +10,7 @@ using Toplearn.DataLayer.Entities.User;
 
 namespace Toplearn.Web.Controllers
 {
-	public class HomeController(TopLearnContext _db) : TopLearnController
+	public class HomeController : TopLearnController
 	{
 		public IActionResult Index()
 		{

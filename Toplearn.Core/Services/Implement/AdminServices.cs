@@ -13,7 +13,7 @@ namespace Toplearn.Core.Services.Implement
 {
 	public class AdminServices(TopLearnContext context) : IAdminServices
 	{
-		public ShowUserViewModel GetUsersForShow(int pageId = 1, int take = 2, string filterEmail = "", string filterUserName = "",string filterFullname ="")
+		public ShowUsersViewModel GetUsersForShow(int pageId = 1, int take = 2, string filterEmail = "", string filterUserName = "",string filterFullname ="")
 		{
 			IQueryable<User> result = context.Users;
 
@@ -32,21 +32,38 @@ namespace Toplearn.Core.Services.Implement
 			}
 
 			// Show Item In Page
-
 			int skip = (pageId - 1) * take;
-
 			List<User> users = [];
 			
 			foreach (var user in result.OrderBy(u => u.DateTime).Skip(skip).Take(take)) users.Add(user);
-
-			var list = new ShowUserViewModel
+			
+			var list = new ShowUsersViewModel
 			{
 				CurrentPage = pageId,
-				PageCount = result.Count() / take,
+				PageCount = int.Parse(Math.Ceiling(Convert.ToDouble(result.Count()) / take).ToString()),
 				Users = users
 			};
 
 			return list;
+		}
+
+		public async Task<bool> UpdateUser(User user)
+		{
+			try
+			{
+				context.Update(user);
+
+				// If SaveChangesAsync does its job correctly it will send the number one .
+				int res = await context.SaveChangesAsync();
+
+				// If the result of the above method is True, the number one is returned, and in this case, one is equal to one < (1==1)== true >. But if any other number is returned, the result is false
+				return res == 1;
+
+			}
+			catch
+			{
+				return false;
+			}
 		}
 	}
 

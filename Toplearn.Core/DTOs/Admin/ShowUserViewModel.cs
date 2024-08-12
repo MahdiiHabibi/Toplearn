@@ -3,14 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Toplearn.Core.DTOs.Wallet;
 using Toplearn.DataLayer.Entities.User;
 
 namespace Toplearn.Core.DTOs.Admin
 {
-	public class ShowUserViewModel
+	public class ShowUserViewModel : User
 	{
-		public List<User> Users { get; set; }
-		public int CurrentPage { get; set; }
-		public int PageCount { get; set; }
+		public ShowUserViewModel()
+		{
+			ShowWalletsViewModel = [];
+			ActiveCode = "nullll";
+			Password = "nullll";
+		}
+
+		public List<ShowWalletsViewModel> ShowWalletsViewModel { get; set; }
 	}
 }

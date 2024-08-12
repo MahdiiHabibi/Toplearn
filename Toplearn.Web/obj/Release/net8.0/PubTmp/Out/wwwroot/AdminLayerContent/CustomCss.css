@@ -29,3 +29,10 @@
 .liButtonsElenemnt {
     display: none;
 }
+
+@media (min-width:918px)
+{
+    label.labelOfSkipNumber {
+        margin-top: 20px;
+    }
+}

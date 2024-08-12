@@ -15,11 +15,11 @@ namespace Toplearn.Core.Services.Implement.Mapper
 	// I Initialize the Fields with Primary ctor
 	public class MapperAccount(IMapper mapper) : IMapperAccount
 	{
-		public User MapTheUserFromRegisterViewModel(RegisterViewModel registerViewModel) =>
+		public User? MapTheUserFromRegisterViewModel(RegisterViewModel registerViewModel) =>
 			 mapper.Map<User>(registerViewModel);
 
 
-		public SendEmailHtmlViewModel MapTheSendEmailHtmlViewModelFromUser(User user) =>
+		public SendEmailHtmlViewModel MapTheSendEmailHtmlViewModelFromUser(User? user) =>
 			 mapper.Map<SendEmailHtmlViewModel>(user);
 
 

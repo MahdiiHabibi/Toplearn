@@ -13,23 +13,22 @@
 	<!-- Sidebar -->
 	<div class="sidebar" style="direction: ltr">
 		<div style="direction: rtl">
-			<!-- Sidebar user panel (optional) -->
-			<div class="user-panel mt-3 pb-3 mb-3 d-flex">
+			<!-- Sidebar UserForShow panel (optional) -->
+			<div class="UserForShow-panel mt-3 pb-3 mb-3 d-flex">
 				<div class="image">
-					<img src="@(User.Claims.Single(x=>x.Type == "ImageUrl").Value)" class="img-circle elevation-2" alt="User Image">
+					<img src="@(User.Claims.Single(x=>x.Type == "ImageUrl").Value)" class="img-circle elevation-2" width="45px" alt="User Image">
 				</div>
 
-				<div class="info">
+				<div class="info" style="padding:14px;">
 					<a asp-action="index" asp-controller="Home" asp-area="UserPanel" class="d-block">
-						@User.Identity.Name
+						@User.Identity?.Name
 					</a>
 				</div>
 			</div>
 
 
 			<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-				<!-- Add icons to the links using the .nav-icon class
-					 with font-awesome or any other icon font library -->
+				<!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
 				<li class="nav-item has-treeview">
 					<a href="/admin" class="nav-link @ViewBag.AdminIndex">
 						<i class="nav-icon fa fa-dashboard"></i>
@@ -58,7 +57,7 @@
 						</li>
 						<li class="nav-item   @ViewBag.AdminIndex">
 							<a asp-action="Index" asp-controller="Home" asp-area="UserPanel" class="nav-link ">
-								<i class="nav-icon fa fa-user-circle"></i>
+								<i class="nav-icon fa fa-UserForShow-circle"></i>
 								<p>
 									پنل کاربری
 								</p>
@@ -105,7 +104,7 @@
 				</li>
 				<li class="nav-item">
 					<a href="/admin/UserManager/RoleManager" class="nav-link @ViewBag.RoleManagerOfUser">
-						<i class="fa fa-user-secret nav-icon"></i>
+						<i class="fa fa-UserForShow-secret nav-icon"></i>
 						<p>
 							سطح دسترسی کاربران
 						</p>
@@ -115,7 +114,7 @@
 						{
 					<li class="nav-item">
 						<a href="/admin/UserManager/RoleManager" class="nav-link @ViewBag.User">
-							<i class="fa fa-user-secret nav-icon"></i>
+							<i class="fa fa-UserForShow-secret nav-icon"></i>
 							<p>
 								کاربر - @TempData["Fullname"]
 							</p>

@@ -25,7 +25,6 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 		private readonly Payment _payment;
 		private readonly Authority _authority;
 		private readonly Transactions _transactions;
-		private readonly TopLearnContext _topLearnContext;
 
 		#endregion
 

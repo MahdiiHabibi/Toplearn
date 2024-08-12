@@ -4800,6 +4800,7 @@
         "dependencies": {
           "AutoMapper": "13.0.1",
           "Microsoft.AspNetCore.Mvc.Razor": "2.2.0",
+          "Newtonsoft.Json": "13.0.3",
           "Toplearn.DataLayer": "1.0.0"
         },
         "compile": {

@@ -31,11 +31,22 @@ namespace Toplearn.DataLayer.Context
 		{
 			#region Set Required Data
 
-			modelBuilder.Entity<Role>().HasData(new Role()
-			{
-				RoleId = 1,
-				RoleDetail = "کاربر سایت"
-			});
+			modelBuilder.Entity<Role>().HasData(
+				new Role
+				{
+					RoleId = 1,
+					RoleDetail = "کاربر سایت",
+				},
+				new Role
+				{
+					RoleId = 2,
+					RoleDetail = "ادمین"
+				},
+				new Role()
+				{
+					RoleId = 3,
+					RoleDetail = "استاد"
+				});
 
 			modelBuilder.Entity<WalletType>().HasData(new List<WalletType>()
 			{

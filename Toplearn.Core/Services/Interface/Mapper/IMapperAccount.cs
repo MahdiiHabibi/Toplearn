@@ -8,7 +8,7 @@ namespace Toplearn.Core.Services.Interface.Mapper
 
     public interface IMapperAccount
 	{
-		public User MapTheUserFromRegisterViewModel(RegisterViewModel registerViewModel);
-		public SendEmailHtmlViewModel MapTheSendEmailHtmlViewModelFromUser(User user);
+		public User? MapTheUserFromRegisterViewModel(RegisterViewModel registerViewModel);
+		public SendEmailHtmlViewModel MapTheSendEmailHtmlViewModelFromUser(User? user);
     }
 }

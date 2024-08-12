@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "HaEpKMdcTMbSwJP3SA8KzCY5h6HQrhDVRt7MictTLjU=",
+  "Hash": "0EHfEQq5Te8Cg83CS8q8IwIh3ocYI3eb/wGaf6PkNhs=",
   "Source": "Toplearn.Web",
   "BasePath": "_content/Toplearn.Web",
   "Mode": "Default",
@@ -44762,6 +44762,25 @@
       "OriginalItemSpec": "wwwroot\\AdminLayerContent\\plugins\\timepicker\\bootstrap-timepicker.min.js"
     },
     {
+      "Identity": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\css\\AccessDenied.css",
+      "SourceId": "Toplearn.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\",
+      "BasePath": "_content/Toplearn.Web",
+      "RelativePath": "css/AccessDenied.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\AccessDenied.css"
+    },
+    {
       "Identity": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\css\\bootstrap.min.css",
       "SourceId": "Toplearn.Web",
       "SourceType": "Discovered",
@@ -45313,6 +45332,25 @@
       "OriginalItemSpec": "wwwroot\\images\\pic\\Default.png"
     },
     {
+      "Identity": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\pic\\logo.png",
+      "SourceId": "Toplearn.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\",
+      "BasePath": "_content/Toplearn.Web",
+      "RelativePath": "images/pic/logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\pic\\logo.png"
+    },
+    {
       "Identity": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\pic\\namad.png",
       "SourceId": "Toplearn.Web",
       "SourceType": "Discovered",
@@ -45408,25 +45446,6 @@
       "OriginalItemSpec": "wwwroot\\images\\UsersAvatar\\24fc70a538b04d6da837c433a035f72d.jpg"
     },
     {
-      "Identity": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\UsersAvatar\\46ae22af768e4530a347043854334dc8.jpg",
-      "SourceId": "Toplearn.Web",
-      "SourceType": "Discovered",
-      "ContentRoot": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\",
-      "BasePath": "_content/Toplearn.Web",
-      "RelativePath": "images/UsersAvatar/46ae22af768e4530a347043854334dc8.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\UsersAvatar\\46ae22af768e4530a347043854334dc8.jpg"
-    },
-    {
       "Identity": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\UsersAvatar\\83e0cc1a7c6749ebb6158f83339c1544.jpg",
       "SourceId": "Toplearn.Web",
       "SourceType": "Discovered",
@@ -45463,6 +45482,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\UsersAvatar\\95187fb254fb447a8f4e152cfde170c5.jpg"
+    },
+    {
+      "Identity": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\UsersAvatar\\be719b82cae04ac7898f666ac6ba6999.jpg",
+      "SourceId": "Toplearn.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\",
+      "BasePath": "_content/Toplearn.Web",
+      "RelativePath": "images/UsersAvatar/be719b82cae04ac7898f666ac6ba6999.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\UsersAvatar\\be719b82cae04ac7898f666ac6ba6999.jpg"
     },
     {
       "Identity": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\js\\bootstrap.min.js",

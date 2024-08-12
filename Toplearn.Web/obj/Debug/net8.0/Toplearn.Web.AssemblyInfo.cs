@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Toplearn.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+307f7bef8ae46f5271b4c94e3e48066f185f1f13")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dd4a6d873309d9bf89f29d159bb8062e812d5aea")]
 [assembly: System.Reflection.AssemblyProductAttribute("Toplearn.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Toplearn.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -9,6 +9,7 @@ Toplearn is a site whose frontend is written with html, css, javascript, scss, a
 Due to the vastness of the project, it has been categorized into core, data and application layers. 📋 📁 
 
 TopLearn's Controller in Not Inheritance From `Controller`,Its Default Controller Is `TopLearnController` that is int `TopLearnDefaults.cs` in Root Of `TopLearn.Web` 
+
 ## Tools 🛠  
 
 **Frontend:** Html, css, javaScript, scss
@@ -35,7 +36,7 @@ Go to the project directory
   cd Toplearn
 ```
 
-Install dependencies
+Restore dependencies
 
 ```bash
   dotnet restore
@@ -57,7 +58,6 @@ To deploy this project run
 #### Can we use the TopLearn in Our Technologies' example projects?
 
 If you like someone copying your work, I have worked very hard for this project and I will update it every day, so you can make me happy with your support.💓 😉
-
 
 
 

@@ -2,8 +2,12 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using NuGet.Protocol.Core.Types;
+using System.Net;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 using Toplearn.Core.Convertors;
 using Toplearn.Core.Convertors.AutoMapper;
+using Toplearn.Core.Security.Identity.AdminPagesAuthorization.GeneralAdminPolicy;
 using Toplearn.Core.Services.Implement;
 using Toplearn.Core.Services.Implement.Mapper;
 using Toplearn.Core.Services.Interface;
@@ -44,8 +48,16 @@ builder.Services.AddScoped<IUserPanelService, UserPanelService>();
 // Add Services that we need in everyThing That About Wallet
 builder.Services.AddScoped<IWalletManager, WalletManager>();
 // Add Services that we need in everyThing in Admin Layer
-builder.Services.AddScoped<IAdminServices,AdminServices>();
+builder.Services.AddScoped<IAdminServices, AdminServices>();
+// Add Role Services that we need to do for some Action Like : Get Roles || Add 
+builder.Services.AddScoped<IRoleManager, RoleManager>();
 
+#region Authorization IoC
+
+// Inject The GeneralAdminPolicyRequirement Policy
+builder.Services.AddScoped<IAuthorizationHandler, GeneralAdminPolicyHandler>();
+
+#endregion
 
 #endregion
 
@@ -59,6 +71,8 @@ builder.Services.AddScoped<IMapperAccount, MapperAccount>();
 builder.Services.AddScoped<IMapperUserPanel, MapperUserPanel>();
 // Add Rep Of Maps that we need in UserPanel Area And Wallet Controller
 builder.Services.AddScoped<IMapperWallet, MapperWallet>();
+// Add Rep Of Maps that we need in Admin Area 
+builder.Services.AddScoped<IMapperAdmin, MapperAdmin>();
 
 #endregion
 
@@ -70,13 +84,29 @@ builder.Services.AddAuthentication(options =>
 	options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
 	options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
 
-}).AddCookie(options =>
+})
+	.AddCookie(options =>
 {
 	options.LoginPath = "/Login";
 	options.LogoutPath = "/Logout";
 	options.ExpireTimeSpan = TimeSpan.FromMinutes(43200);
 	options.ReturnUrlParameter = "BackUrl";
+	options.AccessDeniedPath = "/AccessDenied";
 });
+
+
+#endregion
+
+#region AddAuthorization 
+
+builder.Services.AddAuthorization(option =>
+{
+	option.AddPolicy("GeneralAdminPolicy", x =>
+	{
+		x.AddRequirements(new GeneralAdminPolicyRequirement());
+	});
+});
+
 
 #endregion
 
@@ -89,13 +119,6 @@ builder.Services.AddWebMarkupMin()
 
 #endregion
 
-
-
-#region RazorPages
-
-builder.Services.AddRazorPages(/*x => x.RootDirectory = "TopLearnRazorPages"*/);
-
-#endregion
 
 #endregion
 
@@ -110,8 +133,10 @@ var app = builder.Build();
 //	app.UseExceptionHandler("/Home/Error");
 //	app.UseHsts();
 //}
+
 app.UseDeveloperExceptionPage();
 app.UseElmahIo();
+
 app.UseStaticFiles();
 
 app.UseRouting();
@@ -129,8 +154,6 @@ app.MapControllerRoute(
 	name: "default",
 	pattern: "{controller=Home}/{action=Index}/{id?}");
 
-app.MapRazorPages();
 app.Run();
-
 
 #endregion

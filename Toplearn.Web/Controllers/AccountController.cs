@@ -291,6 +291,13 @@ namespace Toplearn.Web.Controllers
 
 		#endregion
 
+		#region Access Denied
 
+		[Route("AccessDenied")]
+		public IActionResult AccessDenied() =>
+			User.Identity is { IsAuthenticated: false } ? Redirect("/") : View();
+
+
+		#endregion
 	}
 }
