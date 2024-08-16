@@ -57,7 +57,7 @@
 						</li>
 						<li class="nav-item   @ViewBag.AdminIndex">
 							<a asp-action="Index" asp-controller="Home" asp-area="UserPanel" class="nav-link ">
-								<i class="nav-icon fa fa-UserForShow-circle"></i>
+								<i class="nav-icon fa fa-user-circle"></i>
 								<p>
 									پنل کاربری
 								</p>
@@ -87,7 +87,7 @@
 		<li class="nav-header">مربوط به کاربران</li>
 		<li class="nav-item has-treeview">
 			<a href="#" class="nav-link">
-				<i class="nav-icon fa fa-table @(ViewBag.ListOfUsers!=null || ViewBag.RoleManagerOfUser != null || ViewBag.User != null?"text-info":"")"></i>
+				<i class="nav-icon fa fa-table @(ViewBag.ListOfUsers!=null || ViewBag.RoleManagerOfUser != null || ViewBag.User != null || ViewBag.Roles!=null?"text-info":"")"></i>
 				<p>
 					مدیریت کاربران
 					<i class="fa fa-angle-left right"></i>
@@ -103,20 +103,31 @@
 					</a>
 				</li>
 				<li class="nav-item">
-					<a href="/admin/UserManager/RoleManager" class="nav-link @ViewBag.RoleManagerOfUser">
-						<i class="fa fa-UserForShow-secret nav-icon"></i>
+					<a asp-action="Index" asp-controller="RoleManager" asp-area="Admin" class="nav-link @ViewBag.Roles">
+						<i class="fa fa-exclamation-circle nav-icon"></i>
 						<p>
-							سطح دسترسی کاربران
+							مقام ها
 						</p>
 					</a>
 				</li>
 						@if (ViewBag.User != null)
 						{
 					<li class="nav-item">
-						<a href="/admin/UserManager/RoleManager" class="nav-link @ViewBag.User">
-							<i class="fa fa-UserForShow-secret nav-icon"></i>
+						<a class="nav-link @ViewBag.User">
+							<i class="fa fa-user-secret nav-icon"></i>
 							<p>
 								کاربر - @TempData["Fullname"]
+							</p>
+						</a>
+					</li>
+						}
+						@if (ViewBag.EditRole != null)
+						{
+					<li class="nav-item">
+						<a class="nav-link @ViewBag.EditRole">
+							<i class="fa fa-exclamation-circle nav-icon"></i>
+							<p>
+								مقام - @TempData["RoleDetail"]
 							</p>
 						</a>
 					</li>

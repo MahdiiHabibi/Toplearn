@@ -13,15 +13,18 @@ using Toplearn.DataLayer.Entities.User;
 using Toplearn.Core.Services.Interface.Mapper;
 using Toplearn.Core.DTOs.Accounts;
 using TopLearn.Core.Security;
+using Toplearn.Core.Services.Interface.ISendEmail;
 
 namespace Toplearn.Core.Services.Implement
 {
-	// I Initialize the Fields with Primary ctor
-	public class UserAction(IContextActions<User> contextActionsForUser, IMapperAccount mapperAccount, IContextActions<User_Role> contextActionsForUserRole, IViewRenderService viewRender) : IUserAction
+    // I Initialize the Fields with Primary ctor
+    public class UserAction(IContextActions<User> contextActionsForUser, IMapperAccount mapperAccount, IContextActions<User_Role> contextActionsForUserRole, IViewRenderService viewRender,ISendEmail sendEmail) : IUserAction
 	{
 		private readonly IContextActions<User> _contextActionsForUser = contextActionsForUser;
 		private readonly IContextActions<User_Role> _contextActionsForUserRole = contextActionsForUserRole;
 		private readonly IViewRenderService _viewRender = viewRender;
+		private readonly ISendEmail _sendEmail = sendEmail;
+
 		public async Task<bool> IsEmailExist(string email) =>
 			await _contextActionsForUser.Exists(x => x.Email == email.FixedEmail());
 
@@ -73,7 +76,8 @@ namespace Toplearn.Core.Services.Implement
 				massageModel.BackUrl = backUrl;
 				massageModel.HostUrl = hostUrl;
 				var massageBody = _viewRender.RenderToStringAsync(view, massageModel);
-				return SendEmail.Send(user.Email, subject, massageBody);
+				
+				return _sendEmail.Send(user.Email, subject, massageBody);
 			}
 			catch
 			{

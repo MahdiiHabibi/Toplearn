@@ -12,25 +12,47 @@ using Toplearn.DataLayer.Entities.User;
 
 namespace Toplearn.Core.Services.Implement
 {
-	public class RoleManager(TopLearnContext context,IContextActions<Role> contextActionsForRole) : IRoleManager
+	public class RoleManager(TopLearnContext context, IContextActions<Role> contextActionsForRole) : IRoleManager
 	{
 		private readonly TopLearnContext _context = context;
 		private readonly IContextActions<Role> _contextActionsForRole = contextActionsForRole;
 
-		public async Task<string[]> GetRolesOfUser(Func<User, bool> func)
-			=> _context.Users.
-				Include(x => x.UserRoles)
-				.ThenInclude(x => x.Role)
-				.Single(func)
-				.UserRoles.Select(x =>
-					new string(x.Role.RoleDetail)).ToArray();
+		public async Task<string[]?> GetRolesOfUser(Func<User, bool> func, bool enableIgnoreQueryFilters = false)
+		{
+			try
+			{
+				var user = _context.Users.Single(func);
 
-		public async Task<List<Role>> GetRolesOfTopLearn() =>
-			_context.Roles.ToList();
+				IQueryable<Role> roles = _context.Roles.Where(x=>x.UserRoles.Any(x=>x.UserId == user.UserId));
+
+				if (enableIgnoreQueryFilters)
+				{
+					roles = roles.IgnoreQueryFilters();
+				}
+
+
+				return roles
+					.Select(x => 
+					new string(x.RoleDetail))
+					.ToArray();
+			}
+			catch
+			{
+				return null;
+			}
+		}
+
+		public Task<List<Role>> GetRolesOfTopLearn() =>
+			Task.FromResult(_context.Roles.IgnoreQueryFilters().ToList());
 
 		public async Task<List<ShowAddEditRoleViewModel>> GetRolesForShows(int userId)
 		{
 			var rolesOfTopLearn = await GetRolesOfTopLearn();
+			foreach (var role in rolesOfTopLearn.Where(x=>x.IsActived == false).ToList())
+			{
+				rolesOfTopLearn.Remove(role);
+			}
+
 			var rolesOfUser = await GetRolesOfUser(x => x.UserId == userId);
 
 			var roles =
@@ -40,7 +62,7 @@ namespace Toplearn.Core.Services.Implement
 						{
 							RoleId = item.RoleId,
 							RoleDetail = item.RoleDetail,
-							IsChecked = rolesOfUser.Any(x => x == item.RoleDetail)
+							IsChecked = rolesOfUser!.Any(x => x == item.RoleDetail)
 						}).ToList();
 
 			return roles;
@@ -53,10 +75,18 @@ namespace Toplearn.Core.Services.Implement
 				// Remove All Role Of User
 				_context.UserRoles.RemoveRange(_context.UserRoles.Where(x => x.UserId == userId));
 
-				IEnumerable<User_Role> userRoles = roles.Select(x => new User_Role()
+				List<User_Role> userRoles = roles.Select(x => new User_Role()
 				{
 					UserId = userId,
 					RoleId = x
+				})
+					.ToList();
+
+				// Remove The owner Of Site Role
+				userRoles.Remove(new User_Role()
+				{
+					UserId = userId,
+					RoleId = 4
 				});
 
 				// Add Checked Roles
@@ -64,7 +94,7 @@ namespace Toplearn.Core.Services.Implement
 
 				// If SaveChangesAsync does its job correctly it will send the number one .
 				await _context.SaveChangesAsync();
-				
+
 				return true;
 
 			}
@@ -84,5 +114,30 @@ namespace Toplearn.Core.Services.Implement
 			};
 			return await _contextActionsForRole.AddToContext(role);
 		}
+
+		public async Task<Role?> GetRoleById(int id, bool enableIgnoreQueryFilters = false)
+		{
+			IQueryable<Role> roles = _context.Roles;
+
+			if (enableIgnoreQueryFilters)
+			{
+				roles = roles.IgnoreQueryFilters();
+			}
+
+			return await roles.SingleOrDefaultAsync(x => x.RoleId == id);
+		}
+
+		public async Task<bool> UpdateRole(Role role)
+		{
+			try
+			{
+				return await _contextActionsForRole.UpdateTblOfContext(role);
+			}
+			catch
+			{
+				return false;
+			}
+		}
+
 	}
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0EHfEQq5Te8Cg83CS8q8IwIh3ocYI3eb/wGaf6PkNhs=",
+  "Hash": "uZxs8ekcSTk7DGpeTgOUbiMztPgxago/1g8/n3L9H8Q=",
   "Source": "Toplearn.Web",
   "BasePath": "_content/Toplearn.Web",
   "Mode": "Default",
@@ -45501,6 +45501,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\UsersAvatar\\be719b82cae04ac7898f666ac6ba6999.jpg"
+    },
+    {
+      "Identity": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\UsersAvatar\\fba636fc32af4493907e7a6bb455692d.jpg",
+      "SourceId": "Toplearn.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\",
+      "BasePath": "_content/Toplearn.Web",
+      "RelativePath": "images/UsersAvatar/fba636fc32af4493907e7a6bb455692d.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\UsersAvatar\\fba636fc32af4493907e7a6bb455692d.jpg"
     },
     {
       "Identity": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\js\\bootstrap.min.js",

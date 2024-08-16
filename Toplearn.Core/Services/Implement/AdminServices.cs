@@ -13,7 +13,7 @@ namespace Toplearn.Core.Services.Implement
 {
 	public class AdminServices(TopLearnContext context) : IAdminServices
 	{
-		public ShowUsersViewModel GetUsersForShow(int pageId = 1, int take = 2, string filterEmail = "", string filterUserName = "",string filterFullname ="")
+		public ShowUsersViewModel GetUsersForShow(int pageId = 1, int take = 2, string filterEmail = "", string filterUserName = "", string filterFullname = "")
 		{
 			IQueryable<User> result = context.Users;
 
@@ -33,10 +33,16 @@ namespace Toplearn.Core.Services.Implement
 
 			// Show Item In Page
 			int skip = (pageId - 1) * take;
+
 			List<User> users = [];
-			
-			foreach (var user in result.OrderBy(u => u.DateTime).Skip(skip).Take(take)) users.Add(user);
-			
+
+			users.AddRange(
+				result.OrderBy(u => u.DateTime)
+					.Skip(skip)
+					.Take(take)
+					.Include(x => x.UserRoles)
+					.ThenInclude(r => r.Role));
+
 			var list = new ShowUsersViewModel
 			{
 				CurrentPage = pageId,

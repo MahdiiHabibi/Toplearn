@@ -46,6 +46,11 @@ namespace Toplearn.DataLayer.Context
 				{
 					RoleId = 3,
 					RoleDetail = "استاد"
+				},
+				new Role()
+				{
+					RoleId = 4,
+					RoleDetail = "صاحب سایت"
 				});
 
 			modelBuilder.Entity<WalletType>().HasData(new List<WalletType>()
@@ -65,6 +70,22 @@ namespace Toplearn.DataLayer.Context
 					TypeTitle = "خرید مستقیم دوره"
 				}
 			});
+
+			#endregion
+
+			#region Query Filter
+
+			modelBuilder.Entity<Role>()
+				.HasQueryFilter(x => x.IsActived);
+
+			modelBuilder.Entity<User_Role>()
+				.HasQueryFilter(x=>x.Role.IsActived && !x.User.IsDeleted);
+
+			modelBuilder.Entity<User>()
+				.HasQueryFilter(x => !x.IsDeleted);
+
+			modelBuilder.Entity<Wallet>()
+				.HasQueryFilter(x => !x.User.IsDeleted);
 
 			#endregion
 

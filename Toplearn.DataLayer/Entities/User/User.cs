@@ -63,6 +63,8 @@ namespace Toplearn.DataLayer.Entities.User
         public int WalletBalance { get; set; } = 0;
 
 
+        public bool IsDeleted { get; set; } = false;
+
         #region Relations || Nav Prop
 
         public virtual List<User_Role> UserRoles { get; set; }

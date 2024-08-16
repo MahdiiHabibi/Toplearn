@@ -1,0 +1,32 @@
+﻿@model Role
+
+@{
+	ViewBag.Title = "تغییرات اطلاعات مقام";
+	ViewBag.EditRole = "active";
+}
+
+
+<section class="content">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="card card-primary card-outline">
+				<div class="card-body box-profile">
+					<form asp-action="EditRole" asp-controller="RoleManager" asp-area="Admin">
+						<div class="form-group">
+							<label for="role">عنوان مقام</label>
+							<input asp-for="RoleDetail" class="form-control"  placeholder="عنوان مقام را وارد کنید">
+							<input asp-for="RoleId" type="hidden"/>
+							<input asp-for="IsActived" type="hidden"/>
+						</div>
+						<div asp-validation-summary="All"></div>
+						<button type="submit" class="btn btn-primary btn-block">
+							<b>
+								ثبت مقام جدید
+							</b>
+						</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

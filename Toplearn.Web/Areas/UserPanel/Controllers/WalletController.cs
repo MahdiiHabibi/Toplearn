@@ -14,7 +14,7 @@ using ZarinPal.Class;
 namespace Toplearn.Web.Areas.UserPanel.Controllers
 {
 	[Area("UserPanel")]
-	[Authorize]
+	[Authorize("CheckIdentityValodationGuid")]
 	public class WalletController : TopLearnController
 	{
 		private readonly IWalletManager _walletManager;

@@ -10,7 +10,7 @@ namespace Toplearn.Core.Services.Interface
 {
 	public interface IRoleManager
 	{
-		public Task<string[]> GetRolesOfUser(Func<User, bool> func);
+		public Task<string[]?> GetRolesOfUser(Func<User, bool> func, bool enableIgnoreQueryFilters = false);
 
 		public Task<List<Role>> GetRolesOfTopLearn();
 
@@ -19,5 +19,9 @@ namespace Toplearn.Core.Services.Interface
 		public Task<bool> UpdateOfUserRoles(int userId, int[] roles);
 
 		public Task<bool> AddRole(string roleDetails);
+
+		public Task<Role?> GetRoleById(int id, bool enableIgnoreQueryFilters = false);
+
+		public Task<bool> UpdateRole(Role role);
 	}
 }

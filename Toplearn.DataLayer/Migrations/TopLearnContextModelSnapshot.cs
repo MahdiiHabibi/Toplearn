@@ -30,6 +30,9 @@ namespace Toplearn.DataLayer.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RoleId"));
 
+                    b.Property<bool>("IsActived")
+                        .HasColumnType("bit");
+
                     b.Property<string>("RoleDetail")
                         .IsRequired()
                         .HasMaxLength(20)
@@ -43,7 +46,20 @@ namespace Toplearn.DataLayer.Migrations
                         new
                         {
                             RoleId = 1,
+                            IsActived = true,
                             RoleDetail = "کاربر سایت"
+                        },
+                        new
+                        {
+                            RoleId = 2,
+                            IsActived = true,
+                            RoleDetail = "ادمین"
+                        },
+                        new
+                        {
+                            RoleId = 3,
+                            IsActived = true,
+                            RoleDetail = "استاد"
                         });
                 });
 
@@ -79,6 +95,9 @@ namespace Toplearn.DataLayer.Migrations
                         .HasColumnType("nvarchar(500)");
 
                     b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
                     b.Property<string>("Password")

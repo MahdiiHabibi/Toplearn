@@ -12,7 +12,7 @@ using Toplearn.DataLayer.Entities.User;
 namespace Toplearn.Web.Areas.UserPanel.Controllers
 {
 	[Area("UserPanel")]
-	[Authorize]
+	[Authorize("CheckIdentityValodationGuid")]
 	[Route("UserPanel")]
 	public class HomeController(IMapperUserPanel mapperUserPanel, IUserPanelService userPanelService, IWalletManager walletManager) : TopLearnController
 	{

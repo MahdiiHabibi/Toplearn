@@ -25,10 +25,12 @@ namespace Toplearn.DataLayer.Entities.User
         [MaxLength(20, ErrorMessage = "{0} شما نمیتواند بیشتر از {1} باشه ")]
         public string RoleDetail { get; set; }
 
+        public bool IsActived { get; set; } = true;
+
 
         #region Relations || Nav Prop
 
-        public virtual List<User_Role> UserRoles { get; set; }
+        public virtual List<User_Role>? UserRoles { get; set; }
 
         #endregion
     }

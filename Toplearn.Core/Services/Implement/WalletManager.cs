@@ -47,7 +47,8 @@ namespace Toplearn.Core.Services.Implement
 					Description = "افزایش شارژ" + (AdminUsername ?? "")
 				};
 				
-				bool res = await _contextActionsForWallet.UpdateTblOfContext(newWalletModel);
+				bool res = await _contextActionsForWallet.AddToContext(newWalletModel);
+
 				return res ? newWalletModel : null;
 			}
 			catch
@@ -64,9 +65,8 @@ namespace Toplearn.Core.Services.Implement
 				wallet.IsPay = true;
 				wallet.RefId = refId;
 				wallet.Authority = authority;
-				if (!await _contextActionsForWallet.UpdateTblOfContext(wallet)) return false;
 				wallet.User.WalletBalance += wallet.Amount;
-				return await _contextActionsForUser.UpdateTblOfContext(wallet.User);
+				return await _contextActionsForWallet.UpdateTblOfContext(wallet);
 			}
 			catch
 			{

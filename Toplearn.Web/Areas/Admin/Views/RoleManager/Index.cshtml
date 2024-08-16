@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Role>
+
+@{
+	ViewBag.Title = "مقام ها";
+	ViewBag.Roles = "active";
+
+}
+<section class="content">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="card card-primary card-outline">
+					<div class="card-body box-profile">
+						<form asp-action="AddRole" asp-controller="RoleManager" asp-area="Admin">
+							<div class="form-group">
+								<label for="role">عنوان مقام</label>
+								<input type="text" class="form-control" id="role" name="role" placeholder="عنوان مقام را وارد کنید">
+							</div>
+							<button type="submit" class="btn btn-primary btn-block">
+								<b>
+									ثبت مقام جدید
+								</b>
+							</button>
+						</form>
+					</div>
+					<!-- /.card-body -->
+				</div>
+			</div>
+
+			<div class="col-md-8">
+				<div class="row">
+					<div class="col-12">
+						<!-- /.nav-tabs-custom -->
+						@if (Model.Any())
+						{
+							<table class="table  table-bordered  table-responsive">
+								<thead>
+									<tr>
+										<th># </th>
+										<th>عنوان مقام </th>
+										<th>وضعیت </th>
+										<th>تعداد افراد دارای این مقام </th>
+										<th>دستورات</th>
+									</tr>
+								</thead>
+								<tbody>
+									@{
+										int tr = 1;
+									}
+									@foreach (var role in Model)
+									{
+										<tr class="table-@(role.IsActived ? "success" : "danger")">
+											<td>@tr</td>
+											<td>@role.RoleDetail</td>
+											<td>
+												<span class="badge bg-@(role.IsActived ? "success" : "danger")">
+													@(role.IsActived ? "فعال" : "غیر فعال")
+												</span>
+											</td>
+											<td>
+												@(role.UserRoles?.Count.ToString("N0") ?? "0")
+											</td>
+											<td>
+												<a asp-action="ChangeRoleStatus" asp-controller="RoleManager" asp-area="Admin" asp-route-roleId="@role.RoleId" class="btn btn-app">
+													<i class="fa fa-arrows-alt"></i>
+													تغییر وضعیت
+												</a>
+
+												<a asp-action="EditRole" asp-controller="RoleManager" asp-area="Admin" asp-route-roleId="@role.RoleId" class="btn btn-app">
+													<i class="fa fa-edit"></i>
+													تغییر اطلاعات
+												</a>
+
+											</td>
+										</tr>
+										tr++;
+									}
+
+								</tbody>
+							</table>
+						}
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+

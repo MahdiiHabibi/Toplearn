@@ -1,19 +1,24 @@
+using IdentitySample.Repositories;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using NuGet.Protocol.Core.Types;
-using System.Net;
-using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Toplearn.Core.Convertors;
 using Toplearn.Core.Convertors.AutoMapper;
 using Toplearn.Core.Security.Identity.AdminPagesAuthorization.GeneralAdminPolicy;
+using Toplearn.Core.Security.Identity.CheckIVGAuthotization;
 using Toplearn.Core.Services.Implement;
 using Toplearn.Core.Services.Implement.Mapper;
 using Toplearn.Core.Services.Interface;
 using Toplearn.Core.Services.Interface.Mapper;
 using Toplearn.DataLayer.Context;
 using WebMarkupMin.AspNetCore8;
+using Toplearn.Core.Services.Implement.SendEmail;
+using Toplearn.Core.Services.Interface.ISendEmail;
+using Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel;
+using Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption;
+using Microsoft.AspNetCore.DataProtection;
+
+
 
 #region Services
 
@@ -50,12 +55,27 @@ builder.Services.AddScoped<IWalletManager, WalletManager>();
 // Add Services that we need in everyThing in Admin Layer
 builder.Services.AddScoped<IAdminServices, AdminServices>();
 // Add Role Services that we need to do for some Action Like : Get Roles || Add 
-builder.Services.AddScoped<IRoleManager, RoleManager>();
-
+builder.Services.AddTransient<IRoleManager, RoleManager>();
+// Add Services Of Email Sender Information For Send
+builder.Services.AddSingleton<ISendEmail, SendEmail>();
+builder.Services.Configure<SendEmailViewModel>(builder.Configuration.GetSection("EmailSenderInformation"));
+// Add Services Of MemoryCache
+builder.Services.AddMemoryCache();
+// Add Services Of App Setting
+builder.Services.AddScoped<IUtilities, Utilities>();
+////////////////
+builder.Services.AddDataProtection()
+	.UseCryptographicAlgorithms(new AuthenticatedEncryptorConfiguration
+	{
+		EncryptionAlgorithm = EncryptionAlgorithm.AES_256_CBC,
+		ValidationAlgorithm = ValidationAlgorithm.HMACSHA256
+	}); ;
 #region Authorization IoC
 
 // Inject The GeneralAdminPolicyRequirement Policy
 builder.Services.AddScoped<IAuthorizationHandler, GeneralAdminPolicyHandler>();
+// Inject The GeneralAdminPolicyRequirement Policy
+builder.Services.AddScoped<IAuthorizationHandler, CheckIVGPolicyHandler>();
 
 #endregion
 
@@ -105,6 +125,11 @@ builder.Services.AddAuthorization(option =>
 	{
 		x.AddRequirements(new GeneralAdminPolicyRequirement());
 	});
+
+	option.AddPolicy("CheckIdentityValodationGuid", x =>
+	{
+		x.AddRequirements(new CheckIVGPolicyRequirment());
+	});
 });
 
 
@@ -128,11 +153,12 @@ builder.Services.AddWebMarkupMin()
 var app = builder.Build();
 
 
-//if (!app.Environment.IsDevelopment())
-//{
-//	app.UseExceptionHandler("/Home/Error");
-//	app.UseHsts();
-//}
+if (!app.Environment.IsDevelopment())
+{
+	//app.UseExceptionHandler("/Home/Error");
+	//app.UseHsts();
+
+}
 
 app.UseDeveloperExceptionPage();
 app.UseElmahIo();

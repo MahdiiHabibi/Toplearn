@@ -26,6 +26,74 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = W:\Toplearn\Toplearn.Web
 build_property._RazorSourceGeneratorDebug = 
 
+[W:/Toplearn/Toplearn.Web/Areas/Admin/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[W:/Toplearn/Toplearn.Web/Areas/Admin/Views/RoleManager/EditRole.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUm9sZU1hbmFnZXJcRWRpdFJvbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[W:/Toplearn/Toplearn.Web/Areas/Admin/Views/RoleManager/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUm9sZU1hbmFnZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[W:/Toplearn/Toplearn.Web/Areas/Admin/Views/Shared/Components/ShowRolesOfUser/ShowRolesOfUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXENvbXBvbmVudHNcU2hvd1JvbGVzT2ZVc2VyXFNob3dSb2xlc09mVXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[W:/Toplearn/Toplearn.Web/Areas/Admin/Views/Shared/_AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[W:/Toplearn/Toplearn.Web/Areas/Admin/Views/Shared/_AlertForMassageOfAdminPages.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BbGVydEZvck1hc3NhZ2VPZkFkbWluUGFnZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[W:/Toplearn/Toplearn.Web/Areas/Admin/Views/Shared/_BoxOfUserForAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9Cb3hPZlVzZXJGb3JBZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[W:/Toplearn/Toplearn.Web/Areas/Admin/Views/Shared/_breadcrumbOfAdminPages.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9icmVhZGNydW1iT2ZBZG1pblBhZ2VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[W:/Toplearn/Toplearn.Web/Areas/Admin/Views/Shared/_MainMenuOfAdminPages.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9NYWluTWVudU9mQWRtaW5QYWdlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[W:/Toplearn/Toplearn.Web/Areas/Admin/Views/Shared/_MetaTagsOfAdminPages.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9NZXRhVGFnc09mQWRtaW5QYWdlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[W:/Toplearn/Toplearn.Web/Areas/Admin/Views/Shared/_ScriptsOfAdminPages.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9TY3JpcHRzT2ZBZG1pblBhZ2VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[W:/Toplearn/Toplearn.Web/Areas/Admin/Views/Shared/_StylesOfAdminPages.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9TdHlsZXNPZkFkbWluUGFnZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[W:/Toplearn/Toplearn.Web/Areas/Admin/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[W:/Toplearn/Toplearn.Web/Areas/Admin/Views/UserManager/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlck1hbmFnZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[W:/Toplearn/Toplearn.Web/Areas/Admin/Views/UserManager/UserForShow.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlck1hbmFnZXJcVXNlckZvclNob3cuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[W:/Toplearn/Toplearn.Web/Areas/Admin/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[W:/Toplearn/Toplearn.Web/Areas/Admin/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [W:/Toplearn/Toplearn.Web/Areas/UserPanel/Views/Home/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclBhbmVsXFZpZXdzXEhvbWVcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -58,68 +126,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclBhbmVsXFZpZXdzXF9WaWV3U3RhcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[W:/Toplearn/Toplearn.Web/Pages/Admin/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[W:/Toplearn/Toplearn.Web/Pages/Admin/RoleManager/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUm9sZU1hbmFnZXJcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[W:/Toplearn/Toplearn.Web/Pages/Admin/UserManager/ActiveAccount.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlck1hbmFnZXJcQWN0aXZlQWNjb3VudC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[W:/Toplearn/Toplearn.Web/Pages/Admin/UserManager/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlck1hbmFnZXJcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[W:/Toplearn/Toplearn.Web/Pages/Admin/UserManager/RoleManager.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlck1hbmFnZXJcUm9sZU1hbmFnZXIuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[W:/Toplearn/Toplearn.Web/Pages/Admin/UserManager/User.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlck1hbmFnZXJcVXNlci5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[W:/Toplearn/Toplearn.Web/Pages/Shared/_AdminLayout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[W:/Toplearn/Toplearn.Web/Pages/Shared/_AlertForMassageOfAdminPages.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9BbGVydEZvck1hc3NhZ2VPZkFkbWluUGFnZXMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[W:/Toplearn/Toplearn.Web/Pages/Shared/_breadcrumbOfAdminPages.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9icmVhZGNydW1iT2ZBZG1pblBhZ2VzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[W:/Toplearn/Toplearn.Web/Pages/Shared/_MainMenuOfAdminPages.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9NYWluTWVudU9mQWRtaW5QYWdlcy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[W:/Toplearn/Toplearn.Web/Pages/Shared/_MetaTagsOfAdminPages.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9NZXRhVGFnc09mQWRtaW5QYWdlcy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[W:/Toplearn/Toplearn.Web/Pages/Shared/_ScriptsOfAdminPages.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9TY3JpcHRzT2ZBZG1pblBhZ2VzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[W:/Toplearn/Toplearn.Web/Pages/Shared/_StylesOfAdminPages.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9TdHlsZXNPZkFkbWluUGFnZXMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[W:/Toplearn/Toplearn.Web/Pages/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[W:/Toplearn/Toplearn.Web/Pages/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[W:/Toplearn/Toplearn.Web/Pages/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+[W:/Toplearn/Toplearn.Web/Views/Account/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [W:/Toplearn/Toplearn.Web/Views/Account/ForgotPassword.cshtml]

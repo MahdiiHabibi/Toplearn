@@ -27,7 +27,12 @@ namespace Toplearn.Core.Security.Identity.AdminPagesAuthorization.GeneralAdminPo
 				context.Fail();
 				return;
 			}
-			if (roles.Any(x => x == "ادمین"))
+
+			if (roles.Any(x=>x.Contains("صاحب سایت")))
+			{
+				context.Succeed(requirement);
+			}
+			else if (roles.Any(x => x == "ادمین"))
 			{
 				context.Succeed(requirement);
 			}

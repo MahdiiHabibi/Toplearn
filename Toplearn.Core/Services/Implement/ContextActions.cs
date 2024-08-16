@@ -5,6 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Toplearn.Core.Convertors;
 using Toplearn.Core.Services.Interface;
 using Toplearn.DataLayer.Context;
 
@@ -53,7 +54,17 @@ namespace Toplearn.Core.Services.Implement
 		{
 			try
 			{
-				db.Update(entity);
+				var local = db.Set<TEntity>()
+					.Local
+					.FirstOrDefault(x => GetProperties<TEntity>.GetValueOfKeyPropertyOfTbl(x) == GetProperties<TEntity>.GetValueOfKeyPropertyOfTbl(entity));
+
+				if (local != null)
+				{
+					db.Entry(local).State = EntityState.Detached;
+				}
+
+				db.Entry(entity).State = EntityState.Modified;
+
 				// It is the same SaveChanges the Database, To prevent its repetition, a method was created to be used for all dynamic object
 				return await SaveContext();
 			}

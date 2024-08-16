@@ -1,12 +1,6 @@
-﻿using System.Data;
-using System.Security.Claims;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authorization;
+﻿
 using Microsoft.AspNetCore.Mvc;
-using Toplearn.Core.Convertors;
-using Toplearn.Core.Services.Interface;
-using Toplearn.DataLayer.Context;
-using Toplearn.DataLayer.Entities.User;
+using Toplearn.DataLayer.Entities.Setting;
 
 namespace Toplearn.Web.Controllers
 {
@@ -16,12 +10,13 @@ namespace Toplearn.Web.Controllers
 		{
 			return View();
 		}
-
-		public IActionResult p()
+		[Route("/p")]
+		public string p()
 		{
-			throw new Exception("سلام سایت قفل است ");
+			return Directory.GetCurrentDirectory();
 		}
-		
+
 
 	}
+
 }

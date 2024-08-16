@@ -2,21 +2,30 @@
 using Microsoft.AspNetCore.Mvc;
 using Toplearn.Core.DTOs.Admin;
 using Toplearn.Core.Services.Interface;
+using Toplearn.DataLayer.Context;
+using Toplearn.DataLayer.Entities.User;
 
 namespace Toplearn.Web.Areas.Admin.Controllers
 {
 	[Area("Admin")]
+	[Authorize("CheckIdentityValodationGuid")]
 	[Authorize(policy: "GeneralAdminPolicy")]
-	public class RoleManagerController(IRoleManager roleManager) : TopLearnController
+	public class RoleManagerController(IRoleManager roleManager,TopLearnContext _context) : TopLearnController
 	{
 
 		private readonly IRoleManager _roleManager = roleManager;
 
-		public IActionResult Index()
+		[Route("/Admin/Roles")]
+		public async Task<IActionResult> Index()
 		{
-			return View();
+			var roles = await _roleManager.GetRolesOfTopLearn();
+			roles.Remove(roles.Single(x=>x.RoleId == 4));
+
+			return View(roles);
 		}
 
+
+		#region Update User Role
 
 		[HttpPost]
 		public async Task<IActionResult> UpdateUserRole(UserForShowAddEditRoleViewModel model)
@@ -37,15 +46,12 @@ namespace Toplearn.Web.Areas.Admin.Controllers
 		}
 
 
-		[HttpGet]
-		public async Task<IActionResult> Add()
-		{
-			return View();
-		}
+		#endregion
 
+		#region Add Role
 
 		[HttpPost]
-		public async Task<IActionResult> Add(string role)
+		public async Task<IActionResult> AddRole(string role)
 		{
 			if (role != null)
 			{
@@ -66,5 +72,69 @@ namespace Toplearn.Web.Areas.Admin.Controllers
 			}
 			return RedirectToAction("index", "RoleManager");
 		}
+
+
+		#endregion
+		
+		#region Change Role Status
+
+		// TODO: Authorize
+		public async Task<IActionResult> ChangeRoleStatus(int roleId)
+		{
+			var role = await _roleManager.GetRoleById(roleId,true);
+			if (role == null)
+			{
+				CreateMassageAlert("danger", "لینک دریافتی برای تغییر اطلاعات مقام اشتباه است .", "خطا ");
+			}
+			else
+			{
+				role.IsActived = !role.IsActived;
+
+				if (await _roleManager.UpdateRole(role))
+				{
+					CreateMassageAlert("success", "تغییرات با موفقیت انجام یافت .", "موفق ");
+				}
+				else
+				{
+					CreateMassageAlert("danger", "در ارسال اطلاعات مشکلی به وجود آمده است .", "خطا ");
+				}
+			}
+			return RedirectToAction("Index", "RoleManager");
+		}
+
+		#endregion
+
+		#region Edit Role
+
+		public async Task<IActionResult> EditRole(int roleId)
+		{
+			var role = await _roleManager.GetRoleById(id: roleId);
+			TempData["RoleDetail"] = role.RoleDetail;
+			return View(role);
+		}
+
+		[HttpPost]
+		public async Task<IActionResult> EditRole(Role role)
+		{
+			if (!ModelState.IsValid)
+			{
+				return View("EditRole", role);
+			}
+
+			if (await _roleManager.UpdateRole(role))
+			{
+				CreateMassageAlert("success", "تغییرات با موفقیت انجام یافت .", "موفق ");
+			}
+			else
+			{
+				CreateMassageAlert("danger", "در ارسال اطلاعات مشکلی به وجود آمده است .", "خطا ");
+			}
+
+
+			return RedirectToAction("Index", "RoleManager");
+		}
+
+		#endregion
+
 	}
 }

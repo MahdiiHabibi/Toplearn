@@ -13,6 +13,7 @@ using Toplearn.DataLayer.Entities.User;
 namespace Toplearn.Web.Areas.Admin.Controllers
 {
 	[Area("Admin")]
+	[Authorize("CheckIdentityValodationGuid")]
 	[Authorize(policy: "GeneralAdminPolicy")]
 	public class UserManagerController(IAdminServices adminServices, IUserAction userAction, IWalletManager walletManager, IMapperAdmin mapperAdmin) : TopLearnController
 	{
@@ -30,6 +31,7 @@ namespace Toplearn.Web.Areas.Admin.Controllers
 			ViewData["filterUserName"] = filterUserName;
 			ViewData["filterEmail"] = filterEmail;
 			ViewData["filterFullname"] = filterFullname;
+
 			var model = _adminServices.GetUsersForShow(pageId, take, filterEmail, filterUserName, filterFullname);
 			return View(model);
 		}

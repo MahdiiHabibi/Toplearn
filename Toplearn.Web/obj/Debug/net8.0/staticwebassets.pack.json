@@ -9497,6 +9497,10 @@
       "PackagePath": "staticwebassets\\images\\UsersAvatar\\be719b82cae04ac7898f666ac6ba6999.jpg"
     },
     {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\UsersAvatar\\fba636fc32af4493907e7a6bb455692d.jpg",
+      "PackagePath": "staticwebassets\\images\\UsersAvatar\\fba636fc32af4493907e7a6bb455692d.jpg"
+    },
+    {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\captcha.jpg",
       "PackagePath": "staticwebassets\\images\\captcha.jpg"
     },

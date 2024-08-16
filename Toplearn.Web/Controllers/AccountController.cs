@@ -1,6 +1,7 @@
-﻿
+﻿using Microsoft.AspNetCore.DataProtection;
 using System.Numerics;
 using System.Security.Claims;
+using IdentitySample.Repositories;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
@@ -8,14 +9,16 @@ using Microsoft.IdentityModel.Tokens;
 using Toplearn.Core.Convertors;
 using Toplearn.Core.DTOs;
 using Toplearn.Core.DTOs.Accounts;
+using Toplearn.Core.Security.Attribute.CheckUserForAccountControllerAttribute;
 using Toplearn.Core.Services.Interface;
 using Toplearn.DataLayer.Entities.User;
 
 namespace Toplearn.Web.Controllers
 {
-
-	public class AccountController(IUserAction userAction) : TopLearnController
+	[CheckNotLogin]
+	public class AccountController(IUserAction userAction, IUtilities utilities, IDataProtectionProvider dataProtectionProvider) : TopLearnController
 	{
+		private readonly IDataProtector _dataProtector = dataProtectionProvider.CreateProtector("IdentityValidationGuid");
 
 		#region Register
 
@@ -90,13 +93,13 @@ namespace Toplearn.Web.Controllers
 		[Route("Login/{BackUrl?}")]
 		public IActionResult Login(string BackUrl = null)
 		{
+
 			var loginViewModel = new LoginViewModel()
 			{
 				RememberMe = false,
 				// Check The Url If there is No Problem : it returns the input , else : It returns the Url Of the Login Page
-				BackUrl = CheckTheBackUrl(BackUrl).Replace("/","%2")
+				BackUrl = CheckTheBackUrl(BackUrl).Replace("/", "%2")
 			};
-
 
 			return View(loginViewModel);
 		}
@@ -104,7 +107,6 @@ namespace Toplearn.Web.Controllers
 		[HttpPost]
 		public async Task<IActionResult> Login(LoginViewModel loginViewModel)
 		{
-
 			if (ModelState.IsValid == false)
 			{
 				return View(loginViewModel);
@@ -133,6 +135,7 @@ namespace Toplearn.Web.Controllers
 							new (ClaimTypes.Email,user.Email),
 							new ("DateTimeOfRegister",user.DateTime.ToString())
 						};
+
 						var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
 						var principal = new ClaimsPrincipal(identity);
 						var properties = new AuthenticationProperties
@@ -141,12 +144,26 @@ namespace Toplearn.Web.Controllers
 						};
 						await HttpContext.SignInAsync(principal, properties);
 
+						#region Set Identity Validation Guid (IVG)
+
+						bool res = await SendIVG(user.UserId);
+
 						#endregion
 
-						CreateMassageAlert("primary"
-							, $"ورود به اکانت خود با موفقیت انجام شد"
-							 , $"سلام  {user.FullName}");
-						return Redirect(loginViewModel.BackUrl.Replace("%2", "/"));
+						#endregion
+						
+						
+						if (res)
+						{
+							CreateMassageAlert("primary"
+								, $"ورود به اکانت خود با موفقیت انجام شد"
+								, $"سلام  {user.FullName}");
+							return Redirect(loginViewModel.BackUrl.Replace("%2", "/"));
+						}
+
+						ModelState.AddModelError("Email","مشکلی به وجود آمده است از بروز بودن مرور گر خود اطمینان حاصل کنید .");
+						return View(loginViewModel);
+
 					}
 				}
 			}
@@ -162,6 +179,7 @@ namespace Toplearn.Web.Controllers
 		public IActionResult Logout()
 		{
 			HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+			HttpContext.Response.Cookies.Delete("IVG");
 			return RedirectToAction("Login", "Account");
 		}
 
@@ -172,6 +190,11 @@ namespace Toplearn.Web.Controllers
 		[Route("Account/ActiveAccount/{ActiveCode}/{BackUrl?}")]
 		public async Task<IActionResult> ActiveAccount(string ActiveCode, string BackUrl = "2%UserPanel")
 		{
+			if (User.Identity.IsAuthenticated)
+			{
+				CreateMassageAlert("danger", "شما با اکانت دیگری وارد سایت شده اید .", "غیر قابل انجام  ");
+				return RedirectToAction("index", "Home");
+			}
 			string TypeOfAlert = string.Empty;
 			string DescriptionOfAlert = string.Empty;
 			string TitleOfAlert = string.Empty;
@@ -205,27 +228,32 @@ namespace Toplearn.Web.Controllers
 
 			return Redirect(
 				(TypeOfAlert == "success" ?
-					Url.Action("Login", "Account", new { BackUrl = CheckTheBackUrl(BackUrl)})
+					Url.Action("Login", "Account", new { BackUrl = CheckTheBackUrl(BackUrl) })
 					: "/") ?? "/");
 
 		}
 
-		
 
-        #endregion
+
+		#endregion
 
 		#region ForgotPassWord
 
 		[Route("/ForgotPassword")]
-		public IActionResult ForgotPassword()
-		{
-			return View();
-		}
+		public IActionResult ForgotPassword() =>
+			 User.Identity.IsAuthenticated ? RedirectToAction("index", "Home") : View();
+
 
 		[Route("/ForgotPassword")]
 		[HttpPost]
 		public async Task<IActionResult> ForgotPassword(string email)
 		{
+			if (User.Identity.IsAuthenticated)
+			{
+				CreateMassageAlert("danger", "شما با اکانت دیگری وارد سایت شده اید .", "غیر قابل انجام  ");
+				return RedirectToAction("index", "Home");
+			}
+
 			ViewBag.Email = email;
 			if (await userAction.IsEmailExist(email))
 			{
@@ -255,6 +283,11 @@ namespace Toplearn.Web.Controllers
 		[Route("Account/ResetPassword/{ActiveCode}/{BackUrl?}")]
 		public async Task<IActionResult> ResetPassword(string ActiveCode, string BackUrl = "%2UserPanel")
 		{
+			if (User.Identity.IsAuthenticated)
+			{
+				CreateMassageAlert("danger", "شما با اکانت دیگری وارد سایت شده اید .", "غیر قابل انجام  ");
+				return RedirectToAction("index", "Home");
+			}
 			var x = Request.Scheme + "://" + Request.Host;
 			if (await userAction.IsActiveCodeExist(ActiveCode))
 				return View(new ResetPasswordViewModel()
@@ -270,6 +303,12 @@ namespace Toplearn.Web.Controllers
 		[Route("/ResetPassword")]
 		public async Task<IActionResult> ResetPassword(ResetPasswordViewModel resetPasswordViewModel)
 		{
+			if (User.Identity.IsAuthenticated)
+			{
+				CreateMassageAlert("danger", "شما با اکانت دیگری وارد سایت شده اید .", "غیر قابل انجام  ");
+				return RedirectToAction("index", "Home");
+			}
+
 			if (!ModelState.IsValid)
 				return View(resetPasswordViewModel);
 
@@ -297,6 +336,37 @@ namespace Toplearn.Web.Controllers
 		public IActionResult AccessDenied() =>
 			User.Identity is { IsAuthenticated: false } ? Redirect("/") : View();
 
+
+		#endregion
+
+		#region Set Identity Validation Guid (IVG)
+
+		private async System.Threading.Tasks.Task<bool> SendIVG(int userId)
+		{
+			var ivg = await utilities.RoleValidationGuid();
+			if (ivg == null)
+			{
+				return false;
+			}
+
+			try
+			{
+				HttpContext.Response.Cookies.Append("IVG", _dataProtector.Protect($"{ivg}|\\|{userId}"),
+					new CookieOptions()
+					{
+						MaxAge = TimeSpan.FromMinutes(43200),
+						HttpOnly = true,
+						Secure = true,
+						SameSite = SameSiteMode.Lax
+					});
+				return true;
+			}
+
+			catch
+			{
+				return false;
+			}
+		}
 
 		#endregion
 	}
