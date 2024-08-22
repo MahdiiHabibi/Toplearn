@@ -1,169 +1,170 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
+﻿using Azure.Core;
+using IdentitySample.Repositories;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
-using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Reflection;
+using System.Security.Claims;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Toplearn.Core.DTOs.Setting;
 using Toplearn.Core.Generator;
-using Toplearn.DataLayer.Context;
+using Toplearn.Core.Services.Interface;
 using Toplearn.DataLayer.Entities.Setting;
+using Toplearn.DataLayer.Entities.User;
+using Toplearn.Core.Security.Identity;
 
-namespace IdentitySample.Repositories
+namespace Toplearn.Core.Services.Implement.Setting
 {
 	public class Utilities(
 		IMemoryCache memoryCache,
 		IHttpContextAccessor contextAccessor,
-		IDataProtectionProvider dataProtectionProvider)
+		IDataProtectionProvider dataProtectionProvider,
+		IContextActions<AppSetting> contextActionsForAppSetting)
 		: IUtilities
 	{
-		private const string ValidCodeFileName = "TopLearnValidationIdentityGuid.json";
-
-		//private static readonly string ValidCodeFilePath =
-		//	@$"{Directory.GetCurrentDirectory().Replace("Toplearn.Web", "Toplearn.DataLayer")}\Entities\Setting\{ValidCodeFileName}";
-
-		private static readonly string ValidCodeFilePath =
-			@$"{Directory.GetCurrentDirectory()}\{ValidCodeFileName}";
 
 		private readonly IMemoryCache _memoryCache = memoryCache;
 		private readonly IDataProtector _dataProtector = dataProtectionProvider.CreateProtector("IdentityValidationGuid");
+		private readonly HttpContext _httpContext = contextAccessor.HttpContext;
 
-
-		public IList<ActionAndControllerAndAreaViewModel> AreaAndActionAndControllerNamesList()
+		public Task<bool> SetCookie(string key, string value)
 		{
-			var asm = Assembly.GetExecutingAssembly();
-
-			var contradistinction = asm.GetTypes()
-				.Where(type => typeof(Controller).IsAssignableFrom(type))
-				.SelectMany(type =>
-					type.GetMethods(BindingFlags.Instance | BindingFlags.DeclaredOnly | BindingFlags.Public))
-				.Select(x => new
-				{
-					Controller = x.DeclaringType?.Name,
-					Action = x.Name,
-					Area = x.DeclaringType?.CustomAttributes.Where(c => c.AttributeType == typeof(AreaAttribute))
-				});
-
-			var list = new List<ActionAndControllerAndAreaViewModel>();
-
-			foreach (var item in contradistinction)
+			
+			try
 			{
-				if (item.Area.Count() != 0)
+				_httpContext.Response.Cookies.Append(key, _dataProtector.Protect(value), new CookieOptions
 				{
-					list.Add(new ActionAndControllerAndAreaViewModel()
-					{
-						ControllerName = item.Controller,
-						ActionName = item.Action,
-						AreaName = item.Area.Select(v => v.ConstructorArguments[0].Value.ToString()).FirstOrDefault()
-					});
-				}
-				else
-				{
-					list.Add(new ActionAndControllerAndAreaViewModel()
-					{
-						ControllerName = item.Controller,
-						ActionName = item.Action,
-						AreaName = null,
-					});
-				}
+					HttpOnly = true,
+					Secure = _httpContext.Request.IsHttps,
+					Path = _httpContext.Request.PathBase.HasValue ? _httpContext.Request.PathBase.ToString() : "/",
+					Expires = DateTime.Now.AddDays(90),
+				});
+				return Task.FromResult(true);
 			}
 
-			return list.Distinct().ToList();
-		}
-
-		public IList<string> GetAllAreasNames()
-		{
-			Assembly asm = Assembly.GetExecutingAssembly();
-			var contradistinction = asm.GetTypes()
-				.Where(type => typeof(Controller).IsAssignableFrom(type))
-				.SelectMany(type =>
-					type.GetMethods(BindingFlags.Instance | BindingFlags.DeclaredOnly | BindingFlags.Public))
-				.Select(x => new
-				{
-					Area = x.DeclaringType?.CustomAttributes.Where(c => c.AttributeType == typeof(AreaAttribute))
-
-				});
-
-			var list = contradistinction.Select(item =>
-				item.Area.Select(v => v.ConstructorArguments[0].Value.ToString()).FirstOrDefault()).ToList();
-
-			if (list.All(string.IsNullOrEmpty))
+			catch
 			{
-				return new List<string>();
+				return Task.FromResult(false);
 			}
-
-			list.RemoveAll(x => x == null);
-
-			return list.Distinct().ToList();
 		}
 
-		public Task<string?> RoleValidationGuid() =>
-			GetIVGFromOwnDB();
-
-		public async Task<string> CreateAndSaveNewValidationCode()
+		public async Task<bool> Login(User user, bool isPersistent)
 		{
-			IdentityCookie identityCookie = new()
+			#region SetLoginCookies
+
+			var claims = new List<Claim>()
 			{
-				CreateTime = DateTime.Now,
-				IdentityCode = StringGenerate.GuidGenerate()
+				new (TopLearnClaimTypes.NameIdentifier,user.UserId.ToString()),
+				new (TopLearnClaimTypes.Name,user.FullName),
+				new (TopLearnClaimTypes.ImageUrl,user.ImageUrl),
+				new (TopLearnClaimTypes.UserName,user.UserName),
+				new (TopLearnClaimTypes.Email,user.Email),
+				new (TopLearnClaimTypes.DateTimeOfRegister,user.DateTime.ToString()),
+				new (TopLearnClaimTypes.IsPersistent,isPersistent.ToString())
 			};
 
-			await File.WriteAllTextAsync(ValidCodeFilePath, JsonConvert.SerializeObject(identityCookie));
+			var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+			var principal = new ClaimsPrincipal(identity);
+			var properties = new AuthenticationProperties
+			{
+				IsPersistent = isPersistent
+			};
+			await _httpContext.SignInAsync(principal, properties);
 
-			return identityCookie.IdentityCode;
+			#region Set Identity Validation Guid (IVG)
+
+			bool res = await SendIVG(user.UserId);
+
+			#endregion
+
+			#endregion
+
+			return res;
 		}
 
-		private async Task<string> GetIVGFromOwnDB()
+		public async Task Logout()
+		{
+			await _httpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+			_httpContext.Response.Cookies.Delete("IVG");
+		}
+
+		#region IVG
+
+		public async Task<string?> IdentityValidationGuid() =>
+			await _memoryCache.GetOrCreateAsync("IVG", async op =>
+			{
+				op.AbsoluteExpiration = DateTimeOffset.MaxValue;
+				return await GetIvgFromOwnDb();
+			});
+		private async Task<string> GetIvgFromOwnDb()
 		{
 			try
 			{
-				var getData = await File.ReadAllTextAsync(ValidCodeFilePath);
+				var IVG = (await contextActionsForAppSetting.GetOne(x => x.Key == "IVG"))?.Value;
 
-				IdentityCookie? identityCookie = JsonConvert.DeserializeObject<IdentityCookie>(getData);
-
-				if (identityCookie == null)
-					throw new NullReferenceException();
-
-				return identityCookie.IdentityCode;
+				if (IVG != null)
+				{
+					return IVG;
+				}
 			}
 			catch
 			{
-				return await CreateAndSaveNewValidationCode();
+				// ignored
 			}
+
+			var model = await ChangeIVGOfTopLearn();
+			return model.Value;
 		}
-
-		public async System.Threading.Tasks.Task<bool> SendIVG(int userId)
+		public async Task<bool> SendIVG(int userId)
 		{
-			var _httpContext = contextAccessor.HttpContext;
 
-			var ivg = await RoleValidationGuid();
+			var ivg = await IdentityValidationGuid();
 			if (ivg == null)
 			{
 				return false;
 			}
 
-			try
-			{
-				_httpContext.Response.Cookies.Append("IVG", _dataProtector.Protect($"{ivg}|\\|{userId}"),
-					new CookieOptions()
-					{
-						MaxAge = TimeSpan.FromMinutes(43200),
-						HttpOnly = true,
-						Secure = true,
-						SameSite = SameSiteMode.Lax
-					});
-				return true;
-			}
-
-			catch
-			{
-				return false;
-
-			}
+			return await SetCookie("IVG", $"{ivg}|\\|{userId}");
 		}
+		public async Task<AppSetting?> ChangeIVGOfTopLearn()
+		{
+			var model = new AppSetting()
+			{
+				Key = "IVG",
+				Value = StringGenerate.GuidGenerate()
+			};
+
+			if (await contextActionsForAppSetting.Exists(x => x.Key == "IVG"))
+			{
+				var res = true;
+				while (res)
+				{
+					res = !(await contextActionsForAppSetting.UpdateTblOfContext(model));
+				}
+			}
+			else
+			{
+				var res = true;
+				while (res)
+				{
+					res = !(await contextActionsForAppSetting.AddToContext(model));
+				}
+			}
+			_memoryCache.Remove("IVG");
+			await IdentityValidationGuid();
+			return model;
+		}
+
+		#endregion
+
 	}
 }

@@ -5,6 +5,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Toplearn.DataLayer.Entities.Permission;
 
 namespace Toplearn.DataLayer.Entities.User
 {
@@ -32,6 +33,9 @@ namespace Toplearn.DataLayer.Entities.User
 
         public virtual List<User_Role>? UserRoles { get; set; }
 
+        public virtual List<RolesPermissions>? RolesPermissionsList { get; set; }
+
+
         #endregion
-    }
+	}
 }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Security.Claims;
 using IdentitySample.Repositories;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -12,9 +6,10 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Caching.Memory;
-using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages;
+using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json;
 using Toplearn.Core.Services.Interface;
-using Toplearn.DataLayer.Context;
+using Toplearn.Core.Services.Interface.ISendEmail;
 using Toplearn.DataLayer.Entities.User;
 
 namespace Toplearn.Core.Security.Identity.CheckIVGAuthotization
@@ -28,108 +23,85 @@ namespace Toplearn.Core.Security.Identity.CheckIVGAuthotization
 		: AuthorizationHandler<CheckIVGPolicyRequirment>
 	{
 		private readonly IDataProtector _dataProtector = dataProtector.CreateProtector("IdentityValidationGuid");
+		private readonly HttpContext _httpContext = contextAccessor.HttpContext;
 
 		protected override async Task HandleRequirementAsync(AuthorizationHandlerContext context, CheckIVGPolicyRequirment requirement)
 		{
-			if (context.User.Identity is { IsAuthenticated: false })
+			
+			if (_httpContext.User.Identity is { IsAuthenticated: false })
 			{
 				context.Fail();
 				return;
 			}
 
-			requirement.UserId = int.Parse(context.User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
-			var sysIVG = await utilities.RoleValidationGuid();
-			//var sysIVG = await memoryCache.GetOrCreateAsync("IVG", async p =>
-			//{
-			//	p.AbsoluteExpiration = DateTimeOffset.MaxValue;
-			//	return await utilities.RoleValidationGuid();
-			//});
+			requirement.UserId = int.Parse(_httpContext.User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+
+			var sysIVG = await utilities.IdentityValidationGuid();
 
 			var protectedIvg = GetIVGOfUserCookie();
-
-			if (protectedIvg == null)
+			if (protectedIvg.IsNullOrEmpty())
 			{
-				await ReLoginOfUser(contextAccessor.HttpContext,requirement.UserId);
-			}
-
-			SplitIvgCookie(_dataProtector.Unprotect(protectedIvg), out string UserCookieIVG, out int UserId);
-
-			if (UserId != requirement.UserId)
-			{
-				Logout(contextAccessor.HttpContext);
-				context.Fail();
-				return;
-			}
-
-			if (UserCookieIVG == sysIVG)
-			{
+				await ReLoginOfUser(requirement.UserId, bool.Parse(context.User.FindFirst(TopLearnClaimTypes.IsPersistent).Value));
+				await utilities.SendIVG(requirement.UserId);
+				_httpContext.Request.Path = "/UserPanel";
 				context.Succeed(requirement);
 				return;
 			}
+
+			var unProtectedIvg = GetUnProtected(protectedIvg, requirement.UserId);
+			if (unProtectedIvg.IsNullOrEmpty())
+			{
+				await utilities.Logout();
+				context.Fail();
+				return;
+			}
+
+			SplitIvgCookie(unProtectedIvg, out var userCookieIvg, out var userId);
+
+			if (userId != requirement.UserId)
+			{
+				await utilities.Logout();
+				context.Fail();
+				return;
+			}
+			if (userCookieIvg == sysIVG)
+			{
+				context.Succeed(requirement);
+			}
 			else
 			{
-				await ReLoginOfUser(contextAccessor.HttpContext, requirement.UserId);
-				contextAccessor.HttpContext.Request.Path = "/";
+				await ReLoginOfUser(requirement.UserId,bool.Parse(context.User.FindFirst(TopLearnClaimTypes.IsPersistent).Value));
+				await File.AppendAllTextAsync("D:\\m.json", JsonConvert.SerializeObject(_httpContext.Request.Cookies));
+				_httpContext.Request.Path = _httpContext.Request.Path;
 			}
 		}
 
 
 		private string GetIVGOfUserCookie() =>
-			contextAccessor.HttpContext.Request.Cookies.SingleOrDefault(x => x.Key == "IVG").Value ?? "";
-
-
-		private void SplitIvgCookie(string ivgCookieData, out string UserCookieIVG, out int UserId)
+			_httpContext.Request.Cookies["IVG"];
+		private void SplitIvgCookie(string ivgCookieData, out string userCookieIvg, out int userId)
 		{
 			var strings = ivgCookieData.Split("|\\|");
-			UserCookieIVG = strings[0];
-			UserId = int.Parse(strings[1]);
+			userCookieIvg = strings[0];
+			userId = int.Parse(strings[1]);
 		}
-
-
-		private async Task ReLoginOfUser(HttpContext _httpContext, int userId)
+		private async Task ReLoginOfUser(int userId,bool isPersistent)
 		{
-			Logout(_httpContext);
+			await utilities.Logout();
 			var user = await userPanelService.GetUserByUserId(userId);
-			await Login(_httpContext, user);
+			await utilities.Login(user,isPersistent);
 		}
-
-
-
-		private void Logout(HttpContext _httpContext)
+		
+		private string GetUnProtected(string protectedIvg, int userId)
 		{
-			_httpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-			_httpContext.Response.Cookies.Delete("IVG");
-		}
-
-		private async Task Login(HttpContext _httpContext, User user)
-		{
-			#region SetLoginCookies
-
-			var claims = new List<Claim>()
+			try
 			{
-				new(ClaimTypes.NameIdentifier,user.UserId.ToString()),
-				new(ClaimTypes.Name,user.FullName),
-				new ("ImageUrl",user.ImageUrl),
-				new ("UserName",user.UserName),
-				new (ClaimTypes.Email,user.Email),
-				new ("DateTimeOfRegister",user.DateTime.ToString())
-			};
-
-			var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-			var principal = new ClaimsPrincipal(identity);
-			var properties = new AuthenticationProperties
+				return _dataProtector.Unprotect(protectedIvg);
+			}
+			catch
 			{
-				IsPersistent = false
-			};
-			await _httpContext.SignInAsync(principal, properties);
-
-			#region Set Identity Validation Guid (IVG)
-
-			await utilities.SendIVG(user.UserId);
-
-			#endregion
-
-			#endregion
+				return null;
+			}
 		}
 	}
 }

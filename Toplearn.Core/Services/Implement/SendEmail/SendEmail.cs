@@ -26,8 +26,8 @@ namespace Toplearn.Core.Services.Implement.SendEmail
 				mail.Body = Body;
 				mail.IsBodyHtml = true;
 
-				var attachment = new Attachment("D:\\attachment.txt");
-				mail.Attachments.Add(attachment);
+				//var attachment = new Attachment("D:\\attachment.txt");
+				//mail.Attachments.Add(attachment);
 
 				smtpServer.Port = 587;
 

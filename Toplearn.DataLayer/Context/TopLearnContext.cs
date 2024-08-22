@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Toplearn.DataLayer.Entities.Permission;
+using Toplearn.DataLayer.Entities.Setting;
 using Toplearn.DataLayer.Entities.User;
 using Toplearn.DataLayer.Entities.Wallet;
 
@@ -26,7 +29,20 @@ namespace Toplearn.DataLayer.Context
 
 		#endregion
 
+		#region App Setting
 
+		public DbSet<AppSetting> AppSettings { get; set; }
+
+		#endregion
+
+		#region Permission
+
+		public DbSet<Permission> Permissions { get; set; }
+
+		public DbSet<RolesPermissions> RolesPermissions { get; set; }
+
+		#endregion
+		
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			#region Set Required Data
@@ -89,7 +105,10 @@ namespace Toplearn.DataLayer.Context
 
 			#endregion
 
+
 			base.OnModelCreating(modelBuilder);
 		}
+
+		
 	}
 }

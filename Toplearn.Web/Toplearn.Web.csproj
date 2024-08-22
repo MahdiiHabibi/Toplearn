@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Home\" />
     <Folder Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\objects\info\" />
     <Folder Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\refs\tags\" />
     <Folder Include="wwwroot\images\UsersAvatar\" />

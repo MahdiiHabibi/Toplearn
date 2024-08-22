@@ -22,6 +22,69 @@ namespace Toplearn.DataLayer.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Toplearn.DataLayer.Entities.Permission.Permission", b =>
+                {
+                    b.Property<int>("PermissionId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PermissionId"));
+
+                    b.Property<int?>("ParentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PermissionDetail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PermissionUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("PermissionId");
+
+                    b.HasIndex("ParentId");
+
+                    b.ToTable("Permissions");
+                });
+
+            modelBuilder.Entity("Toplearn.DataLayer.Entities.Permission.RolesPermissions", b =>
+                {
+                    b.Property<int>("RolesPermissionsId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RolesPermissionsId"));
+
+                    b.Property<int>("PermissionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
+
+                    b.HasKey("RolesPermissionsId");
+
+                    b.HasIndex("PermissionId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("RolesPermissions");
+                });
+
+            modelBuilder.Entity("Toplearn.DataLayer.Entities.Setting.AppSetting", b =>
+                {
+                    b.Property<string>("Key")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Value")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Key");
+
+                    b.ToTable("AppSettings");
+                });
+
             modelBuilder.Entity("Toplearn.DataLayer.Entities.User.Role", b =>
                 {
                     b.Property<int>("RoleId")
@@ -60,6 +123,12 @@ namespace Toplearn.DataLayer.Migrations
                             RoleId = 3,
                             IsActived = true,
                             RoleDetail = "استاد"
+                        },
+                        new
+                        {
+                            RoleId = 4,
+                            IsActived = true,
+                            RoleDetail = "صاحب سایت"
                         });
                 });
 
@@ -216,6 +285,32 @@ namespace Toplearn.DataLayer.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Toplearn.DataLayer.Entities.Permission.Permission", b =>
+                {
+                    b.HasOne("Toplearn.DataLayer.Entities.Permission.Permission", null)
+                        .WithMany("ParentPermission")
+                        .HasForeignKey("ParentId");
+                });
+
+            modelBuilder.Entity("Toplearn.DataLayer.Entities.Permission.RolesPermissions", b =>
+                {
+                    b.HasOne("Toplearn.DataLayer.Entities.Permission.Permission", "Permission")
+                        .WithMany("RolesPermissionsList")
+                        .HasForeignKey("PermissionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Toplearn.DataLayer.Entities.User.Role", "Role")
+                        .WithMany("RolesPermissionsList")
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Permission");
+
+                    b.Navigation("Role");
+                });
+
             modelBuilder.Entity("Toplearn.DataLayer.Entities.User.User_Role", b =>
                 {
                     b.HasOne("Toplearn.DataLayer.Entities.User.Role", "Role")
@@ -254,8 +349,17 @@ namespace Toplearn.DataLayer.Migrations
                     b.Navigation("WalletType");
                 });
 
+            modelBuilder.Entity("Toplearn.DataLayer.Entities.Permission.Permission", b =>
+                {
+                    b.Navigation("ParentPermission");
+
+                    b.Navigation("RolesPermissionsList");
+                });
+
             modelBuilder.Entity("Toplearn.DataLayer.Entities.User.Role", b =>
                 {
+                    b.Navigation("RolesPermissionsList");
+
                     b.Navigation("UserRoles");
                 });
 

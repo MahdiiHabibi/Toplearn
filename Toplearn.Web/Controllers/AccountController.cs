@@ -11,12 +11,15 @@ using Toplearn.Core.DTOs;
 using Toplearn.Core.DTOs.Accounts;
 using Toplearn.Core.Security.Attribute.CheckUserForAccountControllerAttribute;
 using Toplearn.Core.Services.Interface;
+using Toplearn.Core.Services.Interface.ISendEmail;
 using Toplearn.DataLayer.Entities.User;
+using Newtonsoft.Json;
+using Toplearn.Web.Security;
 
 namespace Toplearn.Web.Controllers
 {
-	[CheckNotLogin]
-	public class AccountController(IUserAction userAction, IUtilities utilities, IDataProtectionProvider dataProtectionProvider) : TopLearnController
+    [CheckNotLogin]
+	public class AccountController(IUserAction userAction, IUtilities utilities, IDataProtectionProvider dataProtectionProvider,ISendEmail sendEmail) : TopLearnController
 	{
 		private readonly IDataProtector _dataProtector = dataProtectionProvider.CreateProtector("IdentityValidationGuid");
 
@@ -124,35 +127,8 @@ namespace Toplearn.Web.Controllers
 					}
 					else
 					{
-						#region SetLoginCookies
+						bool res = await utilities.Login(user, HttpContext, loginViewModel.RememberMe);
 
-						var claims = new List<Claim>()
-						{
-							new(ClaimTypes.NameIdentifier,user.UserId.ToString()),
-							new(ClaimTypes.Name,user.FullName),
-							new ("ImageUrl",user.ImageUrl),
-							new ("UserName",user.UserName),
-							new (ClaimTypes.Email,user.Email),
-							new ("DateTimeOfRegister",user.DateTime.ToString())
-						};
-
-						var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-						var principal = new ClaimsPrincipal(identity);
-						var properties = new AuthenticationProperties
-						{
-							IsPersistent = loginViewModel.RememberMe
-						};
-						await HttpContext.SignInAsync(principal, properties);
-
-						#region Set Identity Validation Guid (IVG)
-
-						bool res = await SendIVG(user.UserId);
-
-						#endregion
-
-						#endregion
-						
-						
 						if (res)
 						{
 							CreateMassageAlert("primary"
@@ -176,10 +152,9 @@ namespace Toplearn.Web.Controllers
 		#region Logout
 
 		[Route("Logout")]
-		public IActionResult Logout()
+		public async Task<IActionResult> Logout()
 		{
-			HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-			HttpContext.Response.Cookies.Delete("IVG");
+			await utilities.Logout();
 			return RedirectToAction("Login", "Account");
 		}
 
@@ -330,44 +305,6 @@ namespace Toplearn.Web.Controllers
 
 		#endregion
 
-		#region Access Denied
-
-		[Route("AccessDenied")]
-		public IActionResult AccessDenied() =>
-			User.Identity is { IsAuthenticated: false } ? Redirect("/") : View();
-
-
-		#endregion
-
-		#region Set Identity Validation Guid (IVG)
-
-		private async System.Threading.Tasks.Task<bool> SendIVG(int userId)
-		{
-			var ivg = await utilities.RoleValidationGuid();
-			if (ivg == null)
-			{
-				return false;
-			}
-
-			try
-			{
-				HttpContext.Response.Cookies.Append("IVG", _dataProtector.Protect($"{ivg}|\\|{userId}"),
-					new CookieOptions()
-					{
-						MaxAge = TimeSpan.FromMinutes(43200),
-						HttpOnly = true,
-						Secure = true,
-						SameSite = SameSiteMode.Lax
-					});
-				return true;
-			}
-
-			catch
-			{
-				return false;
-			}
-		}
-
-		#endregion
+		
 	}
 }

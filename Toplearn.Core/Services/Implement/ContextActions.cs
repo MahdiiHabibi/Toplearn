@@ -56,7 +56,7 @@ namespace Toplearn.Core.Services.Implement
 			{
 				var local = db.Set<TEntity>()
 					.Local
-					.FirstOrDefault(x => GetProperties<TEntity>.GetValueOfKeyPropertyOfTbl(x) == GetProperties<TEntity>.GetValueOfKeyPropertyOfTbl(entity));
+					.FirstOrDefault(x => GetProperties<TEntity>.GetValueOfKeyPropertyOfTbl(x).ToString() == GetProperties<TEntity>.GetValueOfKeyPropertyOfTbl(entity).ToString());
 
 				if (local != null)
 				{

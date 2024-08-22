@@ -135,6 +135,27 @@
 			</ul>
 		</li>
 
+				<li class="nav-header">تنظیمات کلی سایت</li>
+				<li class="nav-item has-treeview">
+					<a href="#" class="nav-link">
+						<i class="nav-icon fa fa-table @(ViewBag.ListOfUsers!=null || ViewBag.RoleManagerOfUser != null || ViewBag.User != null || ViewBag.Roles!=null?"text-info":"")"></i>
+						<p>
+					تنظیمات
+							<i class="fa fa-angle-left right"></i>
+						</p>
+					</a>
+					<ul class="nav nav-treeview">
+						<li class="nav-item">
+							<a asp-action="ChangeIVG" asp-controller="RoleManager" asp-area="Admin" asp-route-BackUrl="@(Context.Request.Path)" class="nav-link">
+						<i class="fa fa-minus-circle nav-icon"></i>
+								<p style="font-size:small;">
+									تغییر کد احراز هویت کاربران (IVG)
+								</p>
+							</a>
+						</li>
+						
+					</ul>
+				</li>
 
 		</ul>
 	</div>

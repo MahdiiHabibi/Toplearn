@@ -29,7 +29,7 @@ namespace Toplearn.Core.Convertors
 			return "";
 		}
 
-		public static int GetValueOfKeyPropertyOfTbl(TModel model)
+		public static object GetValueOfKeyPropertyOfTbl(TModel model)
 		{
 			var modelType = typeof(TModel);
 			PropertyInfo[] properties = modelType.GetProperties();
@@ -44,7 +44,7 @@ namespace Toplearn.Core.Convertors
 						.Trim() == "key"))
 				{
 					var value = property.GetValue(model);
-					return int.Parse(value.ToString());
+					return value.ToString().Trim();
 				}
 			}
 			return 0;

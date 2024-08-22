@@ -1,16 +1,18 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using IdentitySample.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Toplearn.Core.DTOs.Admin;
 using Toplearn.Core.Services.Interface;
 using Toplearn.DataLayer.Context;
 using Toplearn.DataLayer.Entities.User;
+using Toplearn.Web.Security;
 
 namespace Toplearn.Web.Areas.Admin.Controllers
 {
-	[Area("Admin")]
+    [Area("Admin")]
 	[Authorize("CheckIdentityValodationGuid")]
 	[Authorize(policy: "GeneralAdminPolicy")]
-	public class RoleManagerController(IRoleManager roleManager,TopLearnContext _context) : TopLearnController
+	public class RoleManagerController(IRoleManager roleManager,TopLearnContext _context,IUtilities utilities) : TopLearnController
 	{
 
 		private readonly IRoleManager _roleManager = roleManager;
@@ -136,5 +138,14 @@ namespace Toplearn.Web.Areas.Admin.Controllers
 
 		#endregion
 
+
+		public async Task<IActionResult> ChangeIvg(string BackUrl = "%2FAdmin")
+		{
+			var appSetting = await utilities.ChangeIVGOfTopLearn();
+			HttpContext.Response.Cookies.Delete("IVG");
+			bool res = await utilities.SendIVG(GetUserIdFromClaims());
+			CreateMassageAlert(res?"success":"warning","تغییر کد احراز هویت سایت با موفقیت انجام شد . " + (res ? "" : "برای کارکرد درست سایت باید دوباره از به حساب خود وارد شوید ."),"موفق  ");
+			return Redirect(CheckTheBackUrl(BackUrl));
+		}
 	}
 }

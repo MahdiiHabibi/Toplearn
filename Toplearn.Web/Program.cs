@@ -17,7 +17,8 @@ using Toplearn.Core.Services.Interface.ISendEmail;
 using Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel;
 using Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption;
 using Microsoft.AspNetCore.DataProtection;
-
+using Toplearn.Core.Services.Implement.Setting;
+using Toplearn.Web.Security.DependencyInjection;
 
 
 #region Services
@@ -28,6 +29,7 @@ var builder = WebApplication.CreateBuilder(args);
 // TODO:
 builder.Services.AddControllersWithViews()
 	.AddRazorRuntimeCompilation();
+
 builder.Services.AddElmahIo(o =>
 {
 	o.ApiKey = "e7df4a60042843fabd1894e263c1debc";
@@ -36,113 +38,23 @@ builder.Services.AddElmahIo(o =>
 
 
 #region Ioc
-// Add DbContext (TopLearnContext) with SqlServer
-builder.Services.AddDbContextFactory<TopLearnContext>(option =>
 
-	option.UseSqlServer("Server=.;Database=Toplearn;Trusted_Connection=SSPI;Encrypt=false;TrustServerCertificate=true")
-);
-
-// All Works that we can do with Database with dynamic Code
-builder.Services.AddScoped(typeof(IContextActions<>), typeof(ContextActions<>));
-// Add Services that we need to Convert View to String
-builder.Services.AddScoped<IViewRenderService, RenderViewToString>();
-// Add User Services that we need to do for some Action Like : Register || Login 
-builder.Services.AddScoped<IUserAction, UserAction>();
-// Add User Services that we need to do for some Action in User Panel
-builder.Services.AddScoped<IUserPanelService, UserPanelService>();
-// Add Services that we need in everyThing That About Wallet
-builder.Services.AddScoped<IWalletManager, WalletManager>();
-// Add Services that we need in everyThing in Admin Layer
-builder.Services.AddScoped<IAdminServices, AdminServices>();
-// Add Role Services that we need to do for some Action Like : Get Roles || Add 
-builder.Services.AddTransient<IRoleManager, RoleManager>();
-// Add Services Of Email Sender Information For Send
-builder.Services.AddSingleton<ISendEmail, SendEmail>();
-builder.Services.Configure<SendEmailViewModel>(builder.Configuration.GetSection("EmailSenderInformation"));
-// Add Services Of MemoryCache
-builder.Services.AddMemoryCache();
-// Add Services Of App Setting
-builder.Services.AddScoped<IUtilities, Utilities>();
-////////////////
-builder.Services.AddDataProtection()
-	.UseCryptographicAlgorithms(new AuthenticatedEncryptorConfiguration
-	{
-		EncryptionAlgorithm = EncryptionAlgorithm.AES_256_CBC,
-		ValidationAlgorithm = ValidationAlgorithm.HMACSHA256
-	}); ;
-#region Authorization IoC
-
-// Inject The GeneralAdminPolicyRequirement Policy
-builder.Services.AddScoped<IAuthorizationHandler, GeneralAdminPolicyHandler>();
-// Inject The GeneralAdminPolicyRequirement Policy
-builder.Services.AddScoped<IAuthorizationHandler, CheckIVGPolicyHandler>();
-
-#endregion
+builder.AddIoCs();
 
 #endregion
 
 #region AutoMapper
 
-// Enable AutoMapper To Convert Objet to other Object
-builder.Services.AddAutoMapper(typeof(AutoMapperUser));
-// Add Rep Of Maps that we need in Account Actions
-builder.Services.AddScoped<IMapperAccount, MapperAccount>();
-// Add Rep Of Maps that we need in UserPanel Area
-builder.Services.AddScoped<IMapperUserPanel, MapperUserPanel>();
-// Add Rep Of Maps that we need in UserPanel Area And Wallet Controller
-builder.Services.AddScoped<IMapperWallet, MapperWallet>();
-// Add Rep Of Maps that we need in Admin Area 
-builder.Services.AddScoped<IMapperAdmin, MapperAdmin>();
+builder.Services.AddAutoMapper();
 
 #endregion
 
-#region Authentication
+#region Identity Services 
 
-builder.Services.AddAuthentication(options =>
-{
-	options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-	options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-	options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-
-})
-	.AddCookie(options =>
-{
-	options.LoginPath = "/Login";
-	options.LogoutPath = "/Logout";
-	options.ExpireTimeSpan = TimeSpan.FromMinutes(43200);
-	options.ReturnUrlParameter = "BackUrl";
-	options.AccessDeniedPath = "/AccessDenied";
-});
-
+builder.Services.AddIdentityServices();
 
 #endregion
 
-#region AddAuthorization 
-
-builder.Services.AddAuthorization(option =>
-{
-	option.AddPolicy("GeneralAdminPolicy", x =>
-	{
-		x.AddRequirements(new GeneralAdminPolicyRequirement());
-	});
-
-	option.AddPolicy("CheckIdentityValodationGuid", x =>
-	{
-		x.AddRequirements(new CheckIVGPolicyRequirment());
-	});
-});
-
-
-#endregion
-
-#region WebMarkupMin
-
-builder.Services.AddWebMarkupMin()
-	.AddHtmlMinification()
-	.AddXhtmlMinification()
-	.AddXmlMinification();
-
-#endregion
 
 
 #endregion

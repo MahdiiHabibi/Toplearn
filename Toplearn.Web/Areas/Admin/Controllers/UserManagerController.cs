@@ -9,10 +9,11 @@ using Toplearn.Core.Services.Interface;
 using Toplearn.Core.Services.Interface.Mapper;
 using Toplearn.DataLayer.Context;
 using Toplearn.DataLayer.Entities.User;
+using Toplearn.Web.Security;
 
 namespace Toplearn.Web.Areas.Admin.Controllers
 {
-	[Area("Admin")]
+    [Area("Admin")]
 	[Authorize("CheckIdentityValodationGuid")]
 	[Authorize(policy: "GeneralAdminPolicy")]
 	public class UserManagerController(IAdminServices adminServices, IUserAction userAction, IWalletManager walletManager, IMapperAdmin mapperAdmin) : TopLearnController

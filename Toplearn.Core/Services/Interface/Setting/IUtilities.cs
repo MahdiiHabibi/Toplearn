@@ -1,19 +1,21 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Toplearn.Core.DTOs.Setting;
+using Toplearn.DataLayer.Entities.Setting;
+using Toplearn.DataLayer.Entities.User;
 
 namespace IdentitySample.Repositories
 {
 	public interface IUtilities
 	{
-		public IList<ActionAndControllerAndAreaViewModel> AreaAndActionAndControllerNamesList();
-		public IList<string> GetAllAreasNames();
-		public Task<string?> RoleValidationGuid();
-		public Task<string> CreateAndSaveNewValidationCode();
-		public System.Threading.Tasks.Task<bool> SendIVG(int userId);
-
-
+		public Task<string?> IdentityValidationGuid();
+		public Task<bool> SendIVG(int userId);
+		public Task<AppSetting?> ChangeIVGOfTopLearn();
+		public Task<bool> SetCookie(string key, string value);
+		public Task<bool> Login(User user,bool isPersistent);
+		public Task Logout();
 	}
 }

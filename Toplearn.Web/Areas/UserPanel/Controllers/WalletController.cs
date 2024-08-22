@@ -9,11 +9,12 @@ using Toplearn.Core.Services.Implement;
 using Toplearn.Core.Services.Interface;
 using Toplearn.DataLayer.Context;
 using Toplearn.DataLayer.Entities.Wallet;
+using Toplearn.Web.Security;
 using ZarinPal.Class;
 
 namespace Toplearn.Web.Areas.UserPanel.Controllers
 {
-	[Area("UserPanel")]
+    [Area("UserPanel")]
 	[Authorize("CheckIdentityValodationGuid")]
 	public class WalletController : TopLearnController
 	{

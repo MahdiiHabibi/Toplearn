@@ -8,10 +8,11 @@ using System.Security.Claims;
 using Toplearn.Core.DTOs.UserPanel;
 using TopLearn.Core.Security;
 using Toplearn.DataLayer.Entities.User;
+using Toplearn.Web.Security;
 
 namespace Toplearn.Web.Areas.UserPanel.Controllers
 {
-	[Area("UserPanel")]
+    [Area("UserPanel")]
 	[Authorize("CheckIdentityValodationGuid")]
 	[Route("UserPanel")]
 	public class HomeController(IMapperUserPanel mapperUserPanel, IUserPanelService userPanelService, IWalletManager walletManager) : TopLearnController
