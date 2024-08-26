@@ -2,8 +2,6 @@
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption;
 using Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel;
-using Toplearn.Core.Security.Identity.AdminPagesAuthorization.GeneralAdminPolicy;
-using Toplearn.Core.Security.Identity.CheckIVGAuthotization;
 
 namespace Toplearn.Web.Security.DependencyInjection
 {
@@ -47,19 +45,7 @@ namespace Toplearn.Web.Security.DependencyInjection
 
 			#region AddAuthorization 
 
-			service.AddAuthorization(option =>
-			{
-				option.AddPolicy("GeneralAdminPolicy", x =>
-				{
-					x.AddRequirements(new GeneralAdminPolicyRequirement());
-				});
-
-				option.AddPolicy("CheckIdentityValodationGuid", x =>
-				{
-					x.AddRequirements(new CheckIVGPolicyRequirment());
-				});
-			});
-
+			
 
 			#endregion
 

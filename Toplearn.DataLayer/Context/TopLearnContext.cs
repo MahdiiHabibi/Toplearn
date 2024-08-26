@@ -14,6 +14,7 @@ namespace Toplearn.DataLayer.Context
 {
 	public class TopLearnContext(DbContextOptions<TopLearnContext> options) : DbContext(options)
 	{
+
 		#region User
 
 		public DbSet<User> Users { get; set; }
@@ -42,7 +43,8 @@ namespace Toplearn.DataLayer.Context
 		public DbSet<RolesPermissions> RolesPermissions { get; set; }
 
 		#endregion
-		
+
+
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			#region Set Required Data
@@ -87,6 +89,128 @@ namespace Toplearn.DataLayer.Context
 				}
 			});
 
+			modelBuilder.Entity<Permission>().HasData(
+				new List<Permission>()
+			{
+				new ()
+				{
+					PermissionId  = 1,
+					PermissionDetail ="Admin_Roles" ,
+					PermissionPersianDetail ="مقام ها" ,
+					PermissionUrl = "POST"
+				},
+				new ()
+				{
+					PermissionId  = 30,
+					PermissionDetail = "Admin_Roles_Index",
+					PermissionPersianDetail ="نمایش مقام ها" ,
+					ParentId = 1,
+					PermissionUrl = "/Admin/Roles"
+				}
+				,new ()
+				{
+					PermissionId  = 31,
+					ParentId = 1,
+					PermissionDetail = "Admin_Roles_UpdateUserRole",
+					PermissionPersianDetail ="بروز رسانی مقام ها" ,
+					PermissionUrl = "POST"
+				}
+				,new ()
+				{
+					PermissionId  = 32,
+					ParentId = 1,
+					PermissionDetail = "Admin_Roles_AddRole",
+					PermissionPersianDetail ="اضافه کردن مقام جدید " ,
+					PermissionUrl = "POST"
+				}
+				,new ()
+				{
+					PermissionId  = 33,
+					ParentId = 1,
+					PermissionDetail = "Admin_Roles_ChangeRoleStatus",
+					PermissionPersianDetail ="تغییر وضعیت مقام " ,
+					PermissionUrl = "/Admin/RoleManager/ChangeRoleStatus"
+				}
+				,new ()
+				{
+					PermissionId  = 34,
+					ParentId = 1,
+					PermissionDetail = "Admin_Roles_EditRole",
+					PermissionPersianDetail ="تغییر در اطلاعات مقام ها" ,
+					PermissionUrl = "POST"
+				}
+				,new ()
+				{
+					PermissionId  = 35,
+					PermissionDetail = "ChangeIvg",
+					PermissionPersianDetail =  "تغییر کد احراز هویت " ,
+					PermissionUrl = "/Admin/ChangeIvg"
+				}
+				,new ()
+				{
+					
+					PermissionId = 2,
+					PermissionDetail = "Admin_Home",
+					PermissionPersianDetail ="ادمین" ,
+					PermissionUrl = "/Admin"
+				}
+				,new ()
+				{
+					PermissionId  = 36,
+					PermissionDetail = "Admin_Home_Index",
+					PermissionPersianDetail ="داشبورد ادمین" ,
+					PermissionUrl = "/Admin",
+					ParentId = 2
+				}
+				,new ()
+				{
+					PermissionId = 3,
+					PermissionDetail = "Admin_User",
+					PermissionPersianDetail ="امور مربوط به کاربران" ,
+					PermissionUrl = "/Admin/UserManager"
+				}
+				,new ()
+				{
+					PermissionId  = 38,
+					PermissionDetail = "Admin_User_Index",
+					PermissionPersianDetail ="نمایش کاربران سایت" ,
+					PermissionUrl = "/Admin/UserManager/",
+					ParentId = 3
+				}
+				,new ()
+				{
+					PermissionId  = 39,
+					PermissionDetail = "Admin_UserManager_ActiveAccount",
+					PermissionPersianDetail ="ارسال کد فعال سازی کاربر" ,
+					PermissionUrl = "/POST",
+					ParentId = 3
+				}
+				,new ()
+				{
+					PermissionId  = 40,
+					PermissionDetail = "Admin_UserManager_RemoveUserImage",
+					PermissionPersianDetail ="حذف آواتار شخصی کاربر" ,
+					PermissionUrl = "/POST",
+					ParentId = 3
+				}
+				,new ()
+				{
+					PermissionId  = 41,
+					PermissionDetail = "Admin_UserManager_UserForShow",
+					PermissionPersianDetail ="دیدن اطلاعات کاربر" ,
+					PermissionUrl = "/POST",
+					ParentId = 3
+				}
+				,new ()
+				{
+					PermissionId  = 42,
+					PermissionDetail = "Admin_UserManager_IncreaseTheWallet",
+					PermissionPersianDetail ="افزایش کیف پول کاربر" ,
+					PermissionUrl = "/POST",
+					ParentId = 3
+				}
+
+			});
 			#endregion
 
 			#region Query Filter
@@ -95,7 +219,7 @@ namespace Toplearn.DataLayer.Context
 				.HasQueryFilter(x => x.IsActived);
 
 			modelBuilder.Entity<User_Role>()
-				.HasQueryFilter(x=>x.Role.IsActived && !x.User.IsDeleted);
+				.HasQueryFilter(x => x.Role.IsActived && !x.User.IsDeleted);
 
 			modelBuilder.Entity<User>()
 				.HasQueryFilter(x => !x.IsDeleted);
@@ -109,6 +233,6 @@ namespace Toplearn.DataLayer.Context
 			base.OnModelCreating(modelBuilder);
 		}
 
-		
+
 	}
 }

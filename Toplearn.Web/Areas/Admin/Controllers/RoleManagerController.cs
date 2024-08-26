@@ -2,6 +2,9 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Toplearn.Core.DTOs.Admin;
+using Toplearn.Core.Security.Attribute.AuthorizeWithPermissionAttribute;
+using Toplearn.Core.Security.Attribute.CheckIdentityCodeOfUserPolicy;
+using Toplearn.Core.Security.Attribute.CheckIdentityValidationGuid;
 using Toplearn.Core.Services.Interface;
 using Toplearn.DataLayer.Context;
 using Toplearn.DataLayer.Entities.User;
@@ -10,14 +13,15 @@ using Toplearn.Web.Security;
 namespace Toplearn.Web.Areas.Admin.Controllers
 {
     [Area("Admin")]
-	[Authorize("CheckIdentityValodationGuid")]
-	[Authorize(policy: "GeneralAdminPolicy")]
+	[CheckIVG]
+    [CheckUIC]
 	public class RoleManagerController(IRoleManager roleManager,TopLearnContext _context,IUtilities utilities) : TopLearnController
 	{
 
 		private readonly IRoleManager _roleManager = roleManager;
 
 		[Route("/Admin/Roles")]
+		[Permission("Admin_Roles_Index")]
 		public async Task<IActionResult> Index()
 		{
 			var roles = await _roleManager.GetRolesOfTopLearn();
@@ -30,6 +34,7 @@ namespace Toplearn.Web.Areas.Admin.Controllers
 		#region Update User Role
 
 		[HttpPost]
+		[Permission("Admin_Roles_UpdateUserRole")]
 		public async Task<IActionResult> UpdateUserRole(UserForShowAddEditRoleViewModel model)
 		{
 			var checkedRoles = model.ShowAddEditRoleViewModels.Where(x => x.IsChecked).Select(r => r.RoleId).ToArray();
@@ -52,7 +57,9 @@ namespace Toplearn.Web.Areas.Admin.Controllers
 
 		#region Add Role
 
+		
 		[HttpPost]
+		[Permission("Admin_Roles_AddRole")]
 		public async Task<IActionResult> AddRole(string role)
 		{
 			if (role != null)
@@ -77,10 +84,10 @@ namespace Toplearn.Web.Areas.Admin.Controllers
 
 
 		#endregion
-		
+
 		#region Change Role Status
 
-		// TODO: Authorize
+		[Permission("Admin_Roles_ChangeRoleStatus")]
 		public async Task<IActionResult> ChangeRoleStatus(int roleId)
 		{
 			var role = await _roleManager.GetRoleById(roleId,true);
@@ -108,6 +115,7 @@ namespace Toplearn.Web.Areas.Admin.Controllers
 
 		#region Edit Role
 
+		[Permission("Admin_Roles_EditRole")]
 		public async Task<IActionResult> EditRole(int roleId)
 		{
 			var role = await _roleManager.GetRoleById(id: roleId);
@@ -116,6 +124,7 @@ namespace Toplearn.Web.Areas.Admin.Controllers
 		}
 
 		[HttpPost]
+		[Permission("Admin_Roles_EditRole")]
 		public async Task<IActionResult> EditRole(Role role)
 		{
 			if (!ModelState.IsValid)
@@ -138,14 +147,7 @@ namespace Toplearn.Web.Areas.Admin.Controllers
 
 		#endregion
 
+		
 
-		public async Task<IActionResult> ChangeIvg(string BackUrl = "%2FAdmin")
-		{
-			var appSetting = await utilities.ChangeIVGOfTopLearn();
-			HttpContext.Response.Cookies.Delete("IVG");
-			bool res = await utilities.SendIVG(GetUserIdFromClaims());
-			CreateMassageAlert(res?"success":"warning","تغییر کد احراز هویت سایت با موفقیت انجام شد . " + (res ? "" : "برای کارکرد درست سایت باید دوباره از به حساب خود وارد شوید ."),"موفق  ");
-			return Redirect(CheckTheBackUrl(BackUrl));
-		}
 	}
 }

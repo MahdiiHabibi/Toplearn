@@ -4,6 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Runtime.InteropServices.JavaScript;
 using System.Threading.Tasks;
+using IdentitySample.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Toplearn.Core.DTOs.Admin;
 using Toplearn.Core.Services.Interface;
@@ -12,7 +13,7 @@ using Toplearn.DataLayer.Entities.User;
 
 namespace Toplearn.Core.Services.Implement
 {
-	public class RoleManager(TopLearnContext context, IContextActions<Role> contextActionsForRole) : IRoleManager
+	public class RoleManager(TopLearnContext context, IContextActions<Role> contextActionsForRole,IUtilities utilities) : IRoleManager
 	{
 		private readonly TopLearnContext _context = context;
 		private readonly IContextActions<Role> _contextActionsForRole = contextActionsForRole;
@@ -95,6 +96,8 @@ namespace Toplearn.Core.Services.Implement
 				// If SaveChangesAsync does its job correctly it will send the number one .
 				await _context.SaveChangesAsync();
 
+				await utilities.ChangeUICOfUser(await _context.Users.SingleAsync(x=>x.UserId == userId));
+
 				return true;
 
 			}
@@ -131,6 +134,7 @@ namespace Toplearn.Core.Services.Implement
 		{
 			try
 			{
+				await utilities.ChangeIVGOfTopLearn();
 				return await _contextActionsForRole.UpdateTblOfContext(role);
 			}
 			catch

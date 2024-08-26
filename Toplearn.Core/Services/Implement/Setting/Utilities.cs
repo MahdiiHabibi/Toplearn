@@ -21,6 +21,10 @@ using Toplearn.Core.Services.Interface;
 using Toplearn.DataLayer.Entities.Setting;
 using Toplearn.DataLayer.Entities.User;
 using Toplearn.Core.Security.Identity;
+using Toplearn.DataLayer.Entities.Permission;
+using System.Data;
+using System.Globalization;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Toplearn.Core.Services.Implement.Setting
 {
@@ -28,7 +32,9 @@ namespace Toplearn.Core.Services.Implement.Setting
 		IMemoryCache memoryCache,
 		IHttpContextAccessor contextAccessor,
 		IDataProtectionProvider dataProtectionProvider,
-		IContextActions<AppSetting> contextActionsForAppSetting)
+		IContextActions<AppSetting> contextActionsForAppSetting,
+		IPermissionServices _permissionServices,
+		IUserPanelService userPanelService)
 		: IUtilities
 	{
 
@@ -38,7 +44,7 @@ namespace Toplearn.Core.Services.Implement.Setting
 
 		public Task<bool> SetCookie(string key, string value)
 		{
-			
+
 			try
 			{
 				_httpContext.Response.Cookies.Append(key, _dataProtector.Protect(value), new CookieOptions
@@ -59,7 +65,20 @@ namespace Toplearn.Core.Services.Implement.Setting
 
 		public async Task<bool> Login(User user, bool isPersistent)
 		{
-			#region SetLoginCookies
+			#region Get Permission
+
+			var permissions = string.Empty;
+			IList<Permission> userPermission = await _permissionServices.GetListOfPermissionsOfUser(user.UserId);
+			permissions = userPermission
+				.Aggregate(
+					permissions, (current, permission) =>
+						current + (permission.PermissionId + "_" + permission.PermissionDetail + "_" + permission.PermissionPersianDetail + "|"));
+			if (!permissions.IsNullOrEmpty())
+				permissions = permissions.Remove(permissions.Length - 1);
+
+			#endregion
+
+			#region Set Login Cookies
 
 			var claims = new List<Claim>()
 			{
@@ -69,7 +88,9 @@ namespace Toplearn.Core.Services.Implement.Setting
 				new (TopLearnClaimTypes.UserName,user.UserName),
 				new (TopLearnClaimTypes.Email,user.Email),
 				new (TopLearnClaimTypes.DateTimeOfRegister,user.DateTime.ToString()),
-				new (TopLearnClaimTypes.IsPersistent,isPersistent.ToString())
+				new (TopLearnClaimTypes.IsPersistent,isPersistent.ToString()),
+				new (TopLearnClaimTypes.Permission,permissions),
+				new (TopLearnClaimTypes.UIC,_dataProtector.Protect(user.ActiveCode))
 			};
 
 			var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
@@ -95,6 +116,12 @@ namespace Toplearn.Core.Services.Implement.Setting
 		{
 			await _httpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
 			_httpContext.Response.Cookies.Delete("IVG");
+		}
+
+		public async Task ChangeUICOfUser(User user)
+		{
+			user.ActiveCode = StringGenerate.GuidGenerate();
+			await userPanelService.UpdateUser(user);
 		}
 
 		#region IVG
@@ -165,6 +192,7 @@ namespace Toplearn.Core.Services.Implement.Setting
 		}
 
 		#endregion
+
 
 	}
 }

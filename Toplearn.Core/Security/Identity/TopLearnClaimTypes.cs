@@ -23,6 +23,10 @@ namespace Toplearn.Core.Security.Identity
 		public const string UserName = nameof(UserName);
 		
 		public const string DateTimeOfRegister = nameof(DateTimeOfRegister);
-		
+
+		public const string Permission = nameof(Permission);
+
+		public const string UIC = nameof(UIC);
+
 	}
 }

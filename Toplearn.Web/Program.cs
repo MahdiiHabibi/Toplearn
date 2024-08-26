@@ -4,8 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using Toplearn.Core.Convertors;
 using Toplearn.Core.Convertors.AutoMapper;
-using Toplearn.Core.Security.Identity.AdminPagesAuthorization.GeneralAdminPolicy;
-using Toplearn.Core.Security.Identity.CheckIVGAuthotization;
 using Toplearn.Core.Services.Implement;
 using Toplearn.Core.Services.Implement.Mapper;
 using Toplearn.Core.Services.Interface;

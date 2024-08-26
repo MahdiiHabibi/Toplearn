@@ -12,8 +12,8 @@ using Toplearn.DataLayer.Context;
 namespace Toplearn.DataLayer.Migrations
 {
     [DbContext(typeof(TopLearnContext))]
-    [Migration("20240818143921_Add_Permission")]
-    partial class Add_Permission
+    [Migration("20240825135549_SetData_PermissionRequired1")]
+    partial class SetData_PermissionRequired1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -40,6 +40,10 @@ namespace Toplearn.DataLayer.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("PermissionPersianDetail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("PermissionUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -49,6 +53,124 @@ namespace Toplearn.DataLayer.Migrations
                     b.HasIndex("ParentId");
 
                     b.ToTable("Permissions");
+
+                    b.HasData(
+                        new
+                        {
+                            PermissionId = 1,
+                            PermissionDetail = "Admin_Roles",
+                            PermissionPersianDetail = "مقام ها",
+                            PermissionUrl = "POST"
+                        },
+                        new
+                        {
+                            PermissionId = 30,
+                            ParentId = 1,
+                            PermissionDetail = "Admin_Roles_Index",
+                            PermissionPersianDetail = "نمایش مقام ها",
+                            PermissionUrl = "/Admin/Roles"
+                        },
+                        new
+                        {
+                            PermissionId = 31,
+                            ParentId = 1,
+                            PermissionDetail = "Admin_Roles_UpdateUserRole",
+                            PermissionPersianDetail = "بروز رسانی مقام ها",
+                            PermissionUrl = "POST"
+                        },
+                        new
+                        {
+                            PermissionId = 32,
+                            ParentId = 1,
+                            PermissionDetail = "Admin_Roles_AddRole",
+                            PermissionPersianDetail = "اضافه کردن مقام جدید ",
+                            PermissionUrl = "POST"
+                        },
+                        new
+                        {
+                            PermissionId = 33,
+                            ParentId = 1,
+                            PermissionDetail = "Admin_Roles_ChangeRoleStatus",
+                            PermissionPersianDetail = "تغییر وضعیت مقام ",
+                            PermissionUrl = "/Admin/RoleManager/ChangeRoleStatus"
+                        },
+                        new
+                        {
+                            PermissionId = 34,
+                            ParentId = 1,
+                            PermissionDetail = "Admin_Roles_8EditRole",
+                            PermissionPersianDetail = "تغییر در اطلاعات مقام ها",
+                            PermissionUrl = "POST"
+                        },
+                        new
+                        {
+                            PermissionId = 35,
+                            PermissionDetail = "ChangeIvg",
+                            PermissionPersianDetail = "تغییر کد احراز هویت ",
+                            PermissionUrl = "/Admin/ChangeIvg"
+                        },
+                        new
+                        {
+                            PermissionId = 2,
+                            PermissionDetail = "Admin_Home",
+                            PermissionPersianDetail = "ادمین",
+                            PermissionUrl = "/Admin"
+                        },
+                        new
+                        {
+                            PermissionId = 36,
+                            ParentId = 2,
+                            PermissionDetail = "Admin_Home_Index",
+                            PermissionPersianDetail = "داشبورد ادمین",
+                            PermissionUrl = "/Admin"
+                        },
+                        new
+                        {
+                            PermissionId = 3,
+                            PermissionDetail = "Admin_User",
+                            PermissionPersianDetail = "امور مربوط به کاربران",
+                            PermissionUrl = "/Admin/UserManager"
+                        },
+                        new
+                        {
+                            PermissionId = 38,
+                            ParentId = 3,
+                            PermissionDetail = "Admin_User_Index",
+                            PermissionPersianDetail = "نمایش کاربران سایت",
+                            PermissionUrl = "/Admin/UserManager/"
+                        },
+                        new
+                        {
+                            PermissionId = 39,
+                            ParentId = 3,
+                            PermissionDetail = "َAdmin_UserManager_ActiveAccount",
+                            PermissionPersianDetail = "ارسال کد فعال سازی کاربر",
+                            PermissionUrl = "/POST"
+                        },
+                        new
+                        {
+                            PermissionId = 40,
+                            ParentId = 3,
+                            PermissionDetail = "Admin_UserManager_RemoveUserImage",
+                            PermissionPersianDetail = "حذف آواتار شخصی کاربر",
+                            PermissionUrl = "/POST"
+                        },
+                        new
+                        {
+                            PermissionId = 41,
+                            ParentId = 3,
+                            PermissionDetail = "Admin_UserManager_UserForShow",
+                            PermissionPersianDetail = "دیدن اطلاعات کاربر",
+                            PermissionUrl = "/POST"
+                        },
+                        new
+                        {
+                            PermissionId = 42,
+                            ParentId = 3,
+                            PermissionDetail = "Admin_UserManager_IncreaseTheWallet",
+                            PermissionPersianDetail = "افزایش کیف پول کاربر",
+                            PermissionUrl = "/POST"
+                        });
                 });
 
             modelBuilder.Entity("Toplearn.DataLayer.Entities.Permission.RolesPermissions", b =>

@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Schema;
-using AutoMapper;
-using Microsoft.Extensions.Configuration;
-using Toplearn.Core.Convertors;
+﻿using Toplearn.Core.Convertors;
 using Toplearn.Core.Generator;
 using Toplearn.Core.Services.Interface;
 using Toplearn.DataLayer.Entities.User;

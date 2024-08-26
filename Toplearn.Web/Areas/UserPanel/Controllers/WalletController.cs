@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using Toplearn.Core.Checker;
 using Toplearn.Core.DTOs.Wallet;
+using Toplearn.Core.Security.Attribute.CheckIdentityValidationGuid;
 using Toplearn.Core.Services.Implement;
 using Toplearn.Core.Services.Interface;
 using Toplearn.DataLayer.Context;
@@ -15,7 +16,7 @@ using ZarinPal.Class;
 namespace Toplearn.Web.Areas.UserPanel.Controllers
 {
     [Area("UserPanel")]
-	[Authorize("CheckIdentityValodationGuid")]
+	[CheckIVG]
 	public class WalletController : TopLearnController
 	{
 		private readonly IWalletManager _walletManager;

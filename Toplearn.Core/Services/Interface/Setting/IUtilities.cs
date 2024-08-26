@@ -17,5 +17,6 @@ namespace IdentitySample.Repositories
 		public Task<bool> SetCookie(string key, string value);
 		public Task<bool> Login(User user,bool isPersistent);
 		public Task Logout();
+		public Task ChangeUICOfUser(User user);
 	}
 }

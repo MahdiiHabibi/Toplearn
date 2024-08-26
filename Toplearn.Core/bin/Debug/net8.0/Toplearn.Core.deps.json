@@ -13,7 +13,8 @@
           "Microsoft.AspNetCore.Mvc.Razor": "2.2.0",
           "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": "8.0.3",
           "Newtonsoft.Json": "13.0.3",
-          "Toplearn.DataLayer": "1.0.0"
+          "Toplearn.DataLayer": "1.0.0",
+          "Microsoft.Extensions.Identity.Core": "8.0.0.0"
         },
         "runtime": {
           "Toplearn.Core.dll": {}
@@ -3106,6 +3107,14 @@
         "runtime": {
           "Toplearn.DataLayer.dll": {}
         }
+      },
+      "Microsoft.Extensions.Identity.Core/8.0.0.0": {
+        "runtime": {
+          "Microsoft.Extensions.Identity.Core.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.824.36908"
+          }
+        }
       }
     }
   },
@@ -4986,6 +4995,11 @@
     },
     "Toplearn.DataLayer/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Extensions.Identity.Core/8.0.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

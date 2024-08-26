@@ -12,8 +12,8 @@ using Toplearn.DataLayer.Context;
 namespace Toplearn.DataLayer.Migrations
 {
     [DbContext(typeof(TopLearnContext))]
-    [Migration("20240816184032_Add_AppSetting")]
-    partial class Add_AppSetting
+    [Migration("20240825140406_SetData_PermissionRequired4")]
+    partial class SetData_PermissionRequired4
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,6 +24,177 @@ namespace Toplearn.DataLayer.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("Toplearn.DataLayer.Entities.Permission.Permission", b =>
+                {
+                    b.Property<int>("PermissionId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PermissionId"));
+
+                    b.Property<int?>("ParentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PermissionDetail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PermissionPersianDetail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PermissionUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("PermissionId");
+
+                    b.HasIndex("ParentId");
+
+                    b.ToTable("Permissions");
+
+                    b.HasData(
+                        new
+                        {
+                            PermissionId = 1,
+                            PermissionDetail = "Admin_Roles",
+                            PermissionPersianDetail = "مقام ها",
+                            PermissionUrl = "POST"
+                        },
+                        new
+                        {
+                            PermissionId = 30,
+                            ParentId = 1,
+                            PermissionDetail = "Admin_Roles_Index",
+                            PermissionPersianDetail = "نمایش مقام ها",
+                            PermissionUrl = "/Admin/Roles"
+                        },
+                        new
+                        {
+                            PermissionId = 31,
+                            ParentId = 1,
+                            PermissionDetail = "Admin_Roles_UpdateUserRole",
+                            PermissionPersianDetail = "بروز رسانی مقام ها",
+                            PermissionUrl = "POST"
+                        },
+                        new
+                        {
+                            PermissionId = 32,
+                            ParentId = 1,
+                            PermissionDetail = "Admin_Roles_AddRole",
+                            PermissionPersianDetail = "اضافه کردن مقام جدید ",
+                            PermissionUrl = "POST"
+                        },
+                        new
+                        {
+                            PermissionId = 33,
+                            ParentId = 1,
+                            PermissionDetail = "Admin_Roles_ChangeRoleStatus",
+                            PermissionPersianDetail = "تغییر وضعیت مقام ",
+                            PermissionUrl = "/Admin/RoleManager/ChangeRoleStatus"
+                        },
+                        new
+                        {
+                            PermissionId = 34,
+                            ParentId = 1,
+                            PermissionDetail = "Admin_Roles_EditRole",
+                            PermissionPersianDetail = "تغییر در اطلاعات مقام ها",
+                            PermissionUrl = "POST"
+                        },
+                        new
+                        {
+                            PermissionId = 35,
+                            PermissionDetail = "ChangeIvg",
+                            PermissionPersianDetail = "تغییر کد احراز هویت ",
+                            PermissionUrl = "/Admin/ChangeIvg"
+                        },
+                        new
+                        {
+                            PermissionId = 2,
+                            PermissionDetail = "Admin_Home",
+                            PermissionPersianDetail = "ادمین",
+                            PermissionUrl = "/Admin"
+                        },
+                        new
+                        {
+                            PermissionId = 36,
+                            ParentId = 2,
+                            PermissionDetail = "Admin_Home_Index",
+                            PermissionPersianDetail = "داشبورد ادمین",
+                            PermissionUrl = "/Admin"
+                        },
+                        new
+                        {
+                            PermissionId = 3,
+                            PermissionDetail = "Admin_User",
+                            PermissionPersianDetail = "امور مربوط به کاربران",
+                            PermissionUrl = "/Admin/UserManager"
+                        },
+                        new
+                        {
+                            PermissionId = 38,
+                            ParentId = 3,
+                            PermissionDetail = "Admin_User_Index",
+                            PermissionPersianDetail = "نمایش کاربران سایت",
+                            PermissionUrl = "/Admin/UserManager/"
+                        },
+                        new
+                        {
+                            PermissionId = 39,
+                            ParentId = 3,
+                            PermissionDetail = "Admin_UserManager_ActiveAccount",
+                            PermissionPersianDetail = "ارسال کد فعال سازی کاربر",
+                            PermissionUrl = "/POST"
+                        },
+                        new
+                        {
+                            PermissionId = 40,
+                            ParentId = 3,
+                            PermissionDetail = "Admin_UserManager_RemoveUserImage",
+                            PermissionPersianDetail = "حذف آواتار شخصی کاربر",
+                            PermissionUrl = "/POST"
+                        },
+                        new
+                        {
+                            PermissionId = 41,
+                            ParentId = 3,
+                            PermissionDetail = "Admin_UserManager_UserForShow",
+                            PermissionPersianDetail = "دیدن اطلاعات کاربر",
+                            PermissionUrl = "/POST"
+                        },
+                        new
+                        {
+                            PermissionId = 42,
+                            ParentId = 3,
+                            PermissionDetail = "Admin_UserManager_IncreaseTheWallet",
+                            PermissionPersianDetail = "افزایش کیف پول کاربر",
+                            PermissionUrl = "/POST"
+                        });
+                });
+
+            modelBuilder.Entity("Toplearn.DataLayer.Entities.Permission.RolesPermissions", b =>
+                {
+                    b.Property<int>("RolesPermissionsId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RolesPermissionsId"));
+
+                    b.Property<int>("PermissionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
+
+                    b.HasKey("RolesPermissionsId");
+
+                    b.HasIndex("PermissionId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("RolesPermissions");
+                });
 
             modelBuilder.Entity("Toplearn.DataLayer.Entities.Setting.AppSetting", b =>
                 {
@@ -239,6 +410,32 @@ namespace Toplearn.DataLayer.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Toplearn.DataLayer.Entities.Permission.Permission", b =>
+                {
+                    b.HasOne("Toplearn.DataLayer.Entities.Permission.Permission", null)
+                        .WithMany("ParentPermission")
+                        .HasForeignKey("ParentId");
+                });
+
+            modelBuilder.Entity("Toplearn.DataLayer.Entities.Permission.RolesPermissions", b =>
+                {
+                    b.HasOne("Toplearn.DataLayer.Entities.Permission.Permission", "Permission")
+                        .WithMany("RolesPermissionsList")
+                        .HasForeignKey("PermissionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Toplearn.DataLayer.Entities.User.Role", "Role")
+                        .WithMany("RolesPermissionsList")
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Permission");
+
+                    b.Navigation("Role");
+                });
+
             modelBuilder.Entity("Toplearn.DataLayer.Entities.User.User_Role", b =>
                 {
                     b.HasOne("Toplearn.DataLayer.Entities.User.Role", "Role")
@@ -277,8 +474,17 @@ namespace Toplearn.DataLayer.Migrations
                     b.Navigation("WalletType");
                 });
 
+            modelBuilder.Entity("Toplearn.DataLayer.Entities.Permission.Permission", b =>
+                {
+                    b.Navigation("ParentPermission");
+
+                    b.Navigation("RolesPermissionsList");
+                });
+
             modelBuilder.Entity("Toplearn.DataLayer.Entities.User.Role", b =>
                 {
+                    b.Navigation("RolesPermissionsList");
+
                     b.Navigation("UserRoles");
                 });
 

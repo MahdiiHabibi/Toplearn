@@ -16,10 +16,11 @@ namespace Toplearn.DataLayer.Entities.Permission
 
 		public string PermissionDetail { get; set; }
 
-		public string PermissionName { get; set; }
+		public string PermissionPersianDetail { get; set; }
 
-		public int? ParentId { get; set; } = -1;
+		public string PermissionUrl { get; set; }
 
+		public int? ParentId { get; set; } 
 
 
 		#region Navigation Props

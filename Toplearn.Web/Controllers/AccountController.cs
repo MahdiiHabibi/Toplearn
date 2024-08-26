@@ -127,14 +127,14 @@ namespace Toplearn.Web.Controllers
 					}
 					else
 					{
-						bool res = await utilities.Login(user, HttpContext, loginViewModel.RememberMe);
+						bool res = await utilities.Login(user, loginViewModel.RememberMe);
 
 						if (res)
 						{
 							CreateMassageAlert("primary"
 								, $"ورود به اکانت خود با موفقیت انجام شد"
 								, $"سلام  {user.FullName}");
-							return Redirect(loginViewModel.BackUrl.Replace("%2", "/"));
+							return Redirect(loginViewModel.BackUrl?.Replace("%2", "/") ?? string.Empty);
 						}
 
 						ModelState.AddModelError("Email","مشکلی به وجود آمده است از بروز بودن مرور گر خود اطمینان حاصل کنید .");

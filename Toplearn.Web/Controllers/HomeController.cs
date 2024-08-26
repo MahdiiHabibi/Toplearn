@@ -2,13 +2,15 @@
 using System.Security.Claims;
 using IdentitySample.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using Toplearn.Core.Services.Interface;
+using Toplearn.DataLayer.Entities.Permission;
 using Toplearn.DataLayer.Entities.Setting;
 using Toplearn.DataLayer.Entities.User;
 using Toplearn.Web.Security;
 
 namespace Toplearn.Web.Controllers
 {
-    public class HomeController(IUtilities utilities) : TopLearnController
+    public class HomeController : TopLearnController
 	{
 		public IActionResult Index()
 		{
@@ -17,8 +19,7 @@ namespace Toplearn.Web.Controllers
 		[Route("/p")]
 		public async Task<string> p()
 		{
-			
-			return ClaimTypes.Email;
+			return "ClaimTypes.Email" ;
 		}
 
 		#region Access Denied

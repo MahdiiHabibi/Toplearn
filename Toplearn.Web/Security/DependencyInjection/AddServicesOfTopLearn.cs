@@ -8,8 +8,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Toplearn.Core.Convertors;
-using Toplearn.Core.Security.Identity.AdminPagesAuthorization.GeneralAdminPolicy;
-using Toplearn.Core.Security.Identity.CheckIVGAuthotization;
 using Toplearn.Core.Services.Implement;
 using Toplearn.Core.Services.Implement.SendEmail;
 using Toplearn.Core.Services.Implement.Setting;
@@ -54,16 +52,9 @@ namespace Toplearn.Web.Security.DependencyInjection
             builder.Services.AddMemoryCache();
             // Add Services Of App Setting
             builder.Services.AddScoped<IUtilities, Utilities>();
+            //
+            builder.Services.AddSingleton<IPermissionServices, PermissionServices>();
 
-
-            #region Authorization IoC
-
-            // Inject The GeneralAdminPolicyRequirement Policy
-            builder.Services.AddScoped<IAuthorizationHandler, GeneralAdminPolicyHandler>();
-            // Inject The GeneralAdminPolicyRequirement Policy
-            builder.Services.AddScoped<IAuthorizationHandler, CheckIVGPolicyHandler>();
-
-			#endregion
 
 			#endregion
 
