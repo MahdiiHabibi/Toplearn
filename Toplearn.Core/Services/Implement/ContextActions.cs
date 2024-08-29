@@ -95,7 +95,14 @@ namespace Toplearn.Core.Services.Implement
 
 		public async Task<TEntity?> GetOne(Func<TEntity, bool>? fun = null)
 		{
-			return _entities.Where(fun).SingleOrDefault();
+			try
+			{
+				return _entities.Where(fun).SingleOrDefault();
+			}
+			catch
+			{
+				return null;
+			}
 		}
 
 		public async Task<IList<TEntity?>> Get(Expression<Func<TEntity, bool>>? fun = null)

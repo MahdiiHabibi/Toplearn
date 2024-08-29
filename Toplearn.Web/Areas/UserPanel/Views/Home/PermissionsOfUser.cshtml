@@ -1,0 +1,74 @@
+﻿@model System.Collections.Immutable.ImmutableHashSet<Toplearn.DataLayer.Entities.Permission.Permission>?
+
+@{
+	ViewBag.Title = "دسترسی های شما ";
+	int take = (int)ViewBag.take;
+}
+
+<main>
+
+	<div class="container">
+		<div class="user-account">
+			<div class="row">
+				<div class="col-md-3 col-sm-4 col-xs-12">
+					<aside>
+
+						<partial name="_BoxOfImageInUserPanel" />
+
+						<partial name="_DeskInUserPanel" />
+
+					</aside>
+				</div>
+				<div class="col-md-9 col-sm-8 col-xs-12">
+					<section class="user-account-content">
+						<header><h1> @ViewBag.Title </h1></header>
+						<div class="inner">
+							<div class="account-information">
+								<h3> دسترسی ها </h3>
+
+								@if (Model is { Count: 0 })
+								{
+									<div class="alert alert-warning" role="alert">هیچ دسترسی ای برای شما پیدا نشد !</div>
+								}
+								else
+								{
+
+									<div class="row">
+										<div class="col-sm-4">
+											
+												@foreach (var permission in Model.Take(take))
+												{
+														<li class="inner-a" style="color:darkgrey;" title="@permission.PermissionDetail" onclick="@(permission.PermissionUrl.Contains("POST")?"":@"")">
+															@permission.PermissionPersianDetail
+														</li>
+												}
+											
+										</div>
+										<div class="col-sm-4">
+											@foreach (var permission in Model.Skip(take).Take(take))
+											{
+													<li class="inner-a" style="color:darkgrey;" title="@permission.PermissionDetail" onclick="">
+														@permission.PermissionPersianDetail
+													</li>
+											}
+										</div>
+										<div class="col-sm-4">
+											@foreach (var permission in Model.Skip(take*2))
+											{
+													<li class="inner-a" style="color:darkgrey;" title="@permission.PermissionDetail" onclick="">
+														@permission.PermissionPersianDetail
+													</li>
+											}
+										</div>
+									</div>
+								}
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</main>
+

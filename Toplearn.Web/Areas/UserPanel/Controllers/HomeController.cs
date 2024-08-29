@@ -6,17 +6,21 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
 using Toplearn.Core.DTOs.UserPanel;
+using Toplearn.Core.Generator;
 using TopLearn.Core.Security;
 using Toplearn.Core.Security.Attribute.CheckIdentityValidationGuid;
 using Toplearn.DataLayer.Entities.User;
 using Toplearn.Web.Security;
+using System.Collections.Immutable;
+using Toplearn.DataLayer.Entities.Permission;
 
 namespace Toplearn.Web.Areas.UserPanel.Controllers
 {
-    [Area("UserPanel")]
+	[Area("UserPanel")]
+	[Authorize]
 	[CheckIVG]
 	[Route("UserPanel")]
-	public class HomeController(IMapperUserPanel mapperUserPanel, IUserPanelService userPanelService, IWalletManager walletManager) : TopLearnController
+	public class HomeController(IMapperUserPanel mapperUserPanel, IUserPanelService userPanelService, IWalletManager walletManager, IPermissionServices permissionServices) : TopLearnController
 	{
 		[Route("")]
 		public async Task<IActionResult> Index()
@@ -41,6 +45,7 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 		[Route("EditProfile")]
 		public async Task<IActionResult> EditProfile(EditPanelViewModel editPanelViewModel)
 		{
+
 			if (ModelState.IsValid == false)
 			{
 				return View();
@@ -97,10 +102,14 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 
 			#endregion
 
+			user.ActiveCode = StringGenerate.GuidGenerate();
+
 			// Update User 
+
 			if (await userPanelService.UpdateUser(user))
 			{
 				await UpdateUserClaims(user);
+
 				CreateMassageAlert(imageResAlertType, "اطلاعات شما با موفقیت تغییر یافت ." + imageResDescription,
 					"موفق");
 				return RedirectToAction("Index", "Home");
@@ -163,7 +172,7 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 		#region Methods
 
 
-		
+
 		[Route("CheckUserInEdit", Name = "CheckUserNameIsExist")]
 		[HttpPost]
 		[ValidateAntiForgeryToken]
@@ -241,6 +250,25 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 				"ناموفق");
 			return RedirectToAction("Index", "Home");
 
+		}
+
+
+		#endregion
+
+		#region Permissions
+
+		[Route("/Permissions")]
+		public async Task<IActionResult> PermissionsOfUser()
+		{
+			var userId = GetUserIdFromClaims();
+			IImmutableSet<Permission>? permissions = await permissionServices.GetUserPermissionsFromCookie();
+			if (permissions is { Count: 0 })
+				return View(model: null);
+
+			var x =  (permissions?.Count / (double) 3)!;
+			ViewBag.take = x;
+
+			return View(permissions);
 		}
 
 

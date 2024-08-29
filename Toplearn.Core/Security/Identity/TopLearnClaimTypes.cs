@@ -28,5 +28,7 @@ namespace Toplearn.Core.Security.Identity
 
 		public const string UIC = nameof(UIC);
 
+		public const string Role = nameof(Role);
+
 	}
 }

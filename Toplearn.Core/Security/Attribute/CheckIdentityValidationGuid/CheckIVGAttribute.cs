@@ -46,7 +46,7 @@ namespace Toplearn.Core.Security.Attribute.CheckIdentityValidationGuid
 				context.Result = new RedirectResult($"/Login?BackUrl={context.HttpContext.Request.Path.ToString().Replace("/", "%2F")}");
 				return;
 			}
-			var UserId = int.Parse(_httpContext.User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+			var UserId = int.Parse(_httpContext.User.FindFirst(TopLearnClaimTypes.NameIdentifier)!.Value);
 
 			var sysIVG = await _utilities.IdentityValidationGuid();
 
@@ -76,12 +76,10 @@ namespace Toplearn.Core.Security.Attribute.CheckIdentityValidationGuid
 				return;
 			}
 
-			if (userCookieIvg == sysIVG)
+			if (userCookieIvg != sysIVG)
 			{
-				return;
+				await ReLoginOfUser(UserId, bool.Parse(context.HttpContext.User.FindFirst(TopLearnClaimTypes.IsPersistent)!.Value));
 			}
-
-			await ReLoginOfUser(UserId, bool.Parse(context.HttpContext.User.FindFirst(TopLearnClaimTypes.IsPersistent)!.Value));
 		}
 
 

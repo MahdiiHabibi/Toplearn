@@ -33,9 +33,9 @@ namespace Toplearn.Core.Security.Attribute.CheckIdentityCodeOfUserPolicy
 			#endregion
 
 
-			var User = await userPanelService.GetUserByUserId(int.Parse(context.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)!.Value));
+			var User = await userPanelService.GetUserByUserId(int.Parse(context.HttpContext.User.FindFirst(TopLearnClaimTypes.NameIdentifier)!.Value));
 
-			var protectedUicOfClaims = context.HttpContext.User.Claims.Single(x => x.Type == TopLearnClaimTypes.UIC).Value;
+			var protectedUicOfClaims = context.HttpContext.User!.Claims.Single(x => x.Type == TopLearnClaimTypes.UIC).Value;
 
 			var unProtectedUICOfClaims = GetUnProtected(protectedUicOfClaims);
 

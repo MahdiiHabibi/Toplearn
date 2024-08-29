@@ -8,7 +8,7 @@ using Toplearn.DataLayer.Entities.User;
 
 namespace Toplearn.Core.DTOs.Admin
 {
-	public class ShowAddEditRoleViewModel
+	public class ShowAddEditRoleOfUserViewModel
 	{
 		public int RoleId { get; set; }
 
@@ -26,6 +26,6 @@ namespace Toplearn.Core.DTOs.Admin
 			Password = "nullll";
 		}
 
-		public  List<ShowAddEditRoleViewModel> ShowAddEditRoleViewModels { get; set; }	
+		public  List<ShowAddEditRoleOfUserViewModel> ShowAddEditRoleViewModels { get; set; }	
 	}
 }

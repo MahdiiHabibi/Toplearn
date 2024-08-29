@@ -112,7 +112,7 @@ namespace Toplearn.DataLayer.Context
 					PermissionId  = 31,
 					ParentId = 1,
 					PermissionDetail = "Admin_Roles_UpdateUserRole",
-					PermissionPersianDetail ="بروز رسانی مقام ها" ,
+					PermissionPersianDetail ="بروز رسانی مقام های کاربران" ,
 					PermissionUrl = "POST"
 				}
 				,new ()
@@ -182,7 +182,7 @@ namespace Toplearn.DataLayer.Context
 					PermissionId  = 39,
 					PermissionDetail = "Admin_UserManager_ActiveAccount",
 					PermissionPersianDetail ="ارسال کد فعال سازی کاربر" ,
-					PermissionUrl = "/POST",
+					PermissionUrl = "POST",
 					ParentId = 3
 				}
 				,new ()
@@ -190,7 +190,7 @@ namespace Toplearn.DataLayer.Context
 					PermissionId  = 40,
 					PermissionDetail = "Admin_UserManager_RemoveUserImage",
 					PermissionPersianDetail ="حذف آواتار شخصی کاربر" ,
-					PermissionUrl = "/POST",
+					PermissionUrl = "POST",
 					ParentId = 3
 				}
 				,new ()
@@ -198,7 +198,7 @@ namespace Toplearn.DataLayer.Context
 					PermissionId  = 41,
 					PermissionDetail = "Admin_UserManager_UserForShow",
 					PermissionPersianDetail ="دیدن اطلاعات کاربر" ,
-					PermissionUrl = "/POST",
+					PermissionUrl = "POST",
 					ParentId = 3
 				}
 				,new ()
@@ -206,7 +206,7 @@ namespace Toplearn.DataLayer.Context
 					PermissionId  = 42,
 					PermissionDetail = "Admin_UserManager_IncreaseTheWallet",
 					PermissionPersianDetail ="افزایش کیف پول کاربر" ,
-					PermissionUrl = "/POST",
+					PermissionUrl = "POST",
 					ParentId = 3
 				}
 

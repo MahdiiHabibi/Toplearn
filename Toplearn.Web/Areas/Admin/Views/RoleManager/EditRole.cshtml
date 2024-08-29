@@ -1,32 +1,78 @@
-﻿@model Role
+﻿@model AddEditRoleViewModel
 
 @{
+	var x = Model;
 	ViewBag.Title = "تغییرات اطلاعات مقام";
 	ViewBag.EditRole = "active";
 }
 
-
 <section class="content">
 	<div class="container-fluid">
-		<div class="row">
-			<div class="card card-primary card-outline">
-				<div class="card-body box-profile">
-					<form asp-action="EditRole" asp-controller="RoleManager" asp-area="Admin">
-						<div class="form-group">
-							<label for="role">عنوان مقام</label>
-							<input asp-for="RoleDetail" class="form-control"  placeholder="عنوان مقام را وارد کنید">
-							<input asp-for="RoleId" type="hidden"/>
-							<input asp-for="IsActived" type="hidden"/>
+		<form asp-action="EditRole" asp-controller="RoleManager" asp-area="Admin">
+			<div class="row">
+				<div class="col-3">
+					<div class="card card-@(Model.IsActived ? "success" : "danger") card-outline">
+						<div class="card-body box-profile">
+							<div class="form-group">
+								<label for="role">عنوان مقام</label>
+								<input asp-for="RoleDetail" class="form-control" placeholder="عنوان مقام را وارد کنید">
+								<input asp-for="RoleId" type="hidden"/>
+								<input asp-for="IsActived" type="hidden"/>
+							</div>
+							<div asp-validation-summary="All"></div>
+							<button type="submit" class="btn btn-@(Model.IsActived ? "success" : "danger") btn-block">
+								<b>
+									ثبت تغییرات مقام
+								</b>
+							</button>
+
 						</div>
-						<div asp-validation-summary="All"></div>
-						<button type="submit" class="btn btn-primary btn-block">
-							<b>
-								ثبت مقام جدید
-							</b>
-						</button>
-					</form>
+					</div>
+
+
+				</div>
+				<div class="col-9">
+					<ul>
+						@for (var index = 0; index < Model.PermissionsOfRole.Count; index++)
+						{
+							var parent = Model.PermissionsOfRole[index];
+							<input type="hidden" asp-for="PermissionsOfRole[index].PermissionId"/>
+							<input type="hidden" asp-for="PermissionsOfRole[index].PermissionDetail"/>
+							<input type="hidden" asp-for="PermissionsOfRole[index].PermissionUrl" />
+							<input type="hidden" asp-for="PermissionsOfRole[index].PermissionPersianDetail"/>
+							<li>@parent.ParentId</li>
+							@if (parent.ParentsPermission.Count != 0)
+							{
+								<ul>
+									@for (var i = 0; i < parent.ParentsPermission.Count; i++)
+									{
+										var permission = parent.ParentsPermission[i];
+										<input type="hidden" asp-for="PermissionsOfRole[index].ParentsPermission[i].PermissionId"/>
+										<input type="hidden" asp-for="PermissionsOfRole[index].ParentsPermission[i].ParentId" />
+										<input type="hidden" asp-for="PermissionsOfRole[index].ParentsPermission[i].PermissionDetail" />
+										<input type="hidden" asp-for="PermissionsOfRole[index].ParentsPermission[i].PermissionUrl" />
+										<input type="hidden" asp-for="PermissionsOfRole[index].ParentsPermission[i].PermissionPersianDetail" />
+										<li>
+											<div class="form-group">
+												<label>
+													<div class="icheckbox_flat-green checked" style="position: relative;" aria-checked="false" aria-disabled="false">
+														<input type="checkbox" asp-for="PermissionsOfRole[index].ParentsPermission[i].IsSelected" class="flat-red" style="position: absolute; ">
+														<ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+													</div>
+												</label>
+												<label>
+													@permission.PermissionPersianDetail
+												</label>
+											</div>
+										</li>
+									}
+								</ul>
+							}
+						}
+
+					</ul>
 				</div>
 			</div>
-		</div>
+		</form>
 	</div>
 </section>

@@ -14,7 +14,7 @@ namespace Toplearn.Core.Services.Interface
 
 		public Task<List<Role>> GetRolesOfTopLearn();
 
-		public Task<List<ShowAddEditRoleViewModel>> GetRolesForShows(int userId);
+		public Task<List<ShowAddEditRoleOfUserViewModel>> GetRolesForShows(int userId);
 
 		public Task<bool> UpdateOfUserRoles(int userId, int[] roles);
 
@@ -23,5 +23,8 @@ namespace Toplearn.Core.Services.Interface
 		public Task<Role?> GetRoleById(int id, bool enableIgnoreQueryFilters = false);
 
 		public Task<bool> UpdateRole(Role role);
+
+		public Task<AddEditRoleViewModel> GetRoleForEdit(int roleId);
+
 	}
 }

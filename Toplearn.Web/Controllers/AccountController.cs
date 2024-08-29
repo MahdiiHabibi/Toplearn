@@ -19,7 +19,7 @@ using Toplearn.Web.Security;
 namespace Toplearn.Web.Controllers
 {
     [CheckNotLogin]
-	public class AccountController(IUserAction userAction, IUtilities utilities, IDataProtectionProvider dataProtectionProvider,ISendEmail sendEmail) : TopLearnController
+	public class AccountController(IUserAction userAction, IUtilities utilities, IDataProtectionProvider dataProtectionProvider) : TopLearnController
 	{
 		private readonly IDataProtector _dataProtector = dataProtectionProvider.CreateProtector("IdentityValidationGuid");
 
@@ -165,7 +165,7 @@ namespace Toplearn.Web.Controllers
 		[Route("Account/ActiveAccount/{ActiveCode}/{BackUrl?}")]
 		public async Task<IActionResult> ActiveAccount(string ActiveCode, string BackUrl = "2%UserPanel")
 		{
-			if (User.Identity.IsAuthenticated)
+			if (User.Identity!.IsAuthenticated)
 			{
 				CreateMassageAlert("danger", "شما با اکانت دیگری وارد سایت شده اید .", "غیر قابل انجام  ");
 				return RedirectToAction("index", "Home");
@@ -216,14 +216,14 @@ namespace Toplearn.Web.Controllers
 
 		[Route("/ForgotPassword")]
 		public IActionResult ForgotPassword() =>
-			 User.Identity.IsAuthenticated ? RedirectToAction("index", "Home") : View();
+			 User.Identity!.IsAuthenticated ? RedirectToAction("index", "Home") : View();
 
 
 		[Route("/ForgotPassword")]
 		[HttpPost]
 		public async Task<IActionResult> ForgotPassword(string email)
 		{
-			if (User.Identity.IsAuthenticated)
+			if (User.Identity!.IsAuthenticated)
 			{
 				CreateMassageAlert("danger", "شما با اکانت دیگری وارد سایت شده اید .", "غیر قابل انجام  ");
 				return RedirectToAction("index", "Home");
@@ -258,7 +258,7 @@ namespace Toplearn.Web.Controllers
 		[Route("Account/ResetPassword/{ActiveCode}/{BackUrl?}")]
 		public async Task<IActionResult> ResetPassword(string ActiveCode, string BackUrl = "%2UserPanel")
 		{
-			if (User.Identity.IsAuthenticated)
+			if (User.Identity!.IsAuthenticated)
 			{
 				CreateMassageAlert("danger", "شما با اکانت دیگری وارد سایت شده اید .", "غیر قابل انجام  ");
 				return RedirectToAction("index", "Home");
@@ -278,7 +278,7 @@ namespace Toplearn.Web.Controllers
 		[Route("/ResetPassword")]
 		public async Task<IActionResult> ResetPassword(ResetPasswordViewModel resetPasswordViewModel)
 		{
-			if (User.Identity.IsAuthenticated)
+			if (User.Identity!.IsAuthenticated)
 			{
 				CreateMassageAlert("danger", "شما با اکانت دیگری وارد سایت شده اید .", "غیر قابل انجام  ");
 				return RedirectToAction("index", "Home");

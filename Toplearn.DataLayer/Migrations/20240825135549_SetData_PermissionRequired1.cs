@@ -222,10 +222,10 @@ namespace Toplearn.DataLayer.Migrations
                     { 34, 1, "Admin_Roles_8EditRole", "تغییر در اطلاعات مقام ها", "POST" },
                     { 36, 2, "Admin_Home_Index", "داشبورد ادمین", "/Admin" },
                     { 38, 3, "Admin_User_Index", "نمایش کاربران سایت", "/Admin/UserManager/" },
-                    { 39, 3, "َAdmin_UserManager_ActiveAccount", "ارسال کد فعال سازی کاربر", "/POST" },
-                    { 40, 3, "Admin_UserManager_RemoveUserImage", "حذف آواتار شخصی کاربر", "/POST" },
-                    { 41, 3, "Admin_UserManager_UserForShow", "دیدن اطلاعات کاربر", "/POST" },
-                    { 42, 3, "Admin_UserManager_IncreaseTheWallet", "افزایش کیف پول کاربر", "/POST" }
+                    { 39, 3, "َAdmin_UserManager_ActiveAccount", "ارسال کد فعال سازی کاربر", "POST" },
+                    { 40, 3, "Admin_UserManager_RemoveUserImage", "حذف آواتار شخصی کاربر", "POST" },
+                    { 41, 3, "Admin_UserManager_UserForShow", "دیدن اطلاعات کاربر", "POST" },
+                    { 42, 3, "Admin_UserManager_IncreaseTheWallet", "افزایش کیف پول کاربر", "POST" }
                 });
 
             migrationBuilder.CreateIndex(

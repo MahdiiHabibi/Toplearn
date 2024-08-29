@@ -597,192 +597,8 @@
       "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\Chart.min.js"
     },
     {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\axes\\cartesian\\category.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\axes\\cartesian\\category.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\axes\\cartesian\\index.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\axes\\cartesian\\index.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\axes\\cartesian\\linear.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\axes\\cartesian\\linear.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\axes\\cartesian\\logarithmic.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\axes\\cartesian\\logarithmic.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\axes\\cartesian\\time.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\axes\\cartesian\\time.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\axes\\index.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\axes\\index.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\axes\\labelling.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\axes\\labelling.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\axes\\radial\\index.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\axes\\radial\\index.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\axes\\radial\\linear.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\axes\\radial\\linear.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\axes\\styling.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\axes\\styling.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\charts\\area.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\charts\\area.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\charts\\bar.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\charts\\bar.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\charts\\bubble.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\charts\\bubble.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\charts\\doughnut.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\charts\\doughnut.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\charts\\index.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\charts\\index.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\charts\\line.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\charts\\line.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\charts\\mixed.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\charts\\mixed.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\charts\\polar.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\charts\\polar.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\charts\\radar.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\charts\\radar.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\charts\\scatter.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\charts\\scatter.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\configuration\\animations.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\configuration\\animations.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\configuration\\elements.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\configuration\\elements.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\configuration\\index.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\configuration\\index.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\configuration\\layout.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\configuration\\layout.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\configuration\\legend.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\configuration\\legend.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\configuration\\title.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\configuration\\title.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\configuration\\tooltip.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\configuration\\tooltip.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\developers\\api.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\developers\\api.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\developers\\axes.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\developers\\axes.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\developers\\charts.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\developers\\charts.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\developers\\contributing.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\developers\\contributing.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\developers\\index.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\developers\\index.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\developers\\plugins.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\developers\\plugins.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\developers\\updates.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\developers\\updates.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\general\\colors.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\general\\colors.html"
-    },
-    {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\general\\device-pixel-ratio.md",
       "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\general\\device-pixel-ratio.md"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\general\\fonts.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\general\\fonts.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\general\\index.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\general\\index.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\general\\interactions\\events.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\general\\interactions\\events.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\general\\interactions\\index.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\general\\interactions\\index.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\general\\interactions\\modes.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\general\\interactions\\modes.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\general\\options.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\general\\options.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\general\\responsive.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\general\\responsive.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\getting-started\\index.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\getting-started\\index.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\getting-started\\installation.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\getting-started\\installation.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\getting-started\\integration.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\getting-started\\integration.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\getting-started\\usage.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\getting-started\\usage.html"
     },
     {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\gitbook\\fonts\\fontawesome\\FontAwesome.otf",
@@ -895,26 +711,6 @@
     {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\gitbook\\theme.js",
       "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\gitbook\\theme.js"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\index.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\index.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\notes\\comparison.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\notes\\comparison.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\notes\\extensions.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\notes\\extensions.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\notes\\index.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\notes\\index.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\notes\\license.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\notes\\license.html"
     },
     {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\dist\\js\\plugins\\chartjs2\\docs\\search_plus_index.json",
@@ -1205,196 +1001,8 @@
       "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\Chart.min.js"
     },
     {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\axes\\cartesian\\category.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\axes\\cartesian\\category.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\axes\\cartesian\\index.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\axes\\cartesian\\index.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\axes\\cartesian\\linear.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\axes\\cartesian\\linear.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\axes\\cartesian\\logarithmic.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\axes\\cartesian\\logarithmic.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\axes\\cartesian\\time.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\axes\\cartesian\\time.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\axes\\index.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\axes\\index.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\axes\\labelling.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\axes\\labelling.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\axes\\radial\\index.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\axes\\radial\\index.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\axes\\radial\\linear.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\axes\\radial\\linear.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\axes\\styling.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\axes\\styling.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\charts\\area.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\charts\\area.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\charts\\bar.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\charts\\bar.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\charts\\bubble.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\charts\\bubble.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\charts\\doughnut.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\charts\\doughnut.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\charts\\index.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\charts\\index.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\charts\\line.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\charts\\line.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\charts\\mixed.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\charts\\mixed.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\charts\\polar.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\charts\\polar.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\charts\\radar.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\charts\\radar.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\charts\\scatter.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\charts\\scatter.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\configuration\\animations.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\configuration\\animations.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\configuration\\elements.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\configuration\\elements.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\configuration\\index.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\configuration\\index.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\configuration\\layout.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\configuration\\layout.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\configuration\\legend.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\configuration\\legend.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\configuration\\title.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\configuration\\title.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\configuration\\tooltip.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\configuration\\tooltip.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\developers\\api.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\developers\\api.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\developers\\axes.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\developers\\axes.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\developers\\charts.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\developers\\charts.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\developers\\contributing.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\developers\\contributing.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\developers\\index.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\developers\\index.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\developers\\plugins.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\developers\\plugins.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\developers\\updates.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\developers\\updates.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\general\\colors.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\general\\colors.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\general\\device-pixel-ratio.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\general\\device-pixel-ratio.html"
-    },
-    {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\general\\device-pixel-ratio.md",
       "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\general\\device-pixel-ratio.md"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\general\\fonts.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\general\\fonts.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\general\\index.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\general\\index.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\general\\interactions\\events.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\general\\interactions\\events.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\general\\interactions\\index.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\general\\interactions\\index.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\general\\interactions\\modes.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\general\\interactions\\modes.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\general\\options.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\general\\options.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\general\\responsive.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\general\\responsive.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\getting-started\\index.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\getting-started\\index.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\getting-started\\installation.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\getting-started\\installation.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\getting-started\\integration.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\getting-started\\integration.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\getting-started\\usage.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\getting-started\\usage.html"
     },
     {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\gitbook\\fonts\\fontawesome\\FontAwesome.otf",
@@ -1507,26 +1115,6 @@
     {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\gitbook\\theme.js",
       "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\gitbook\\theme.js"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\index.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\index.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\notes\\comparison.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\notes\\comparison.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\notes\\extensions.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\notes\\extensions.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\notes\\index.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\notes\\index.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\notes\\license.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\chart.js\\docs\\notes\\license.html"
     },
     {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\chart.js\\docs\\search_plus_index.json",
@@ -1781,38 +1369,6 @@
       "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\AutoFill\\css\\dataTables.autoFill.min.css"
     },
     {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\AutoFill\\examples\\columns.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\AutoFill\\examples\\columns.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\AutoFill\\examples\\complete-callback.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\AutoFill\\examples\\complete-callback.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\AutoFill\\examples\\fill-both.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\AutoFill\\examples\\fill-both.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\AutoFill\\examples\\fill-horizontal.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\AutoFill\\examples\\fill-horizontal.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\AutoFill\\examples\\index.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\AutoFill\\examples\\index.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\AutoFill\\examples\\scrolling.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\AutoFill\\examples\\scrolling.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\AutoFill\\examples\\simple.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\AutoFill\\examples\\simple.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\AutoFill\\examples\\step-callback.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\AutoFill\\examples\\step-callback.html"
-    },
-    {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\AutoFill\\images\\filler.png",
       "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\AutoFill\\images\\filler.png"
     },
@@ -1839,66 +1395,6 @@
     {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\ColReorder\\css\\dataTables.colReorder.min.css",
       "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\ColReorder\\css\\dataTables.colReorder.min.css"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\ColReorder\\examples\\alt_insert.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\ColReorder\\examples\\alt_insert.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\ColReorder\\examples\\col_filter.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\ColReorder\\examples\\col_filter.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\ColReorder\\examples\\colvis.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\ColReorder\\examples\\colvis.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\ColReorder\\examples\\fixedcolumns.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\ColReorder\\examples\\fixedcolumns.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\ColReorder\\examples\\fixedheader.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\ColReorder\\examples\\fixedheader.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\ColReorder\\examples\\index.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\ColReorder\\examples\\index.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\ColReorder\\examples\\jqueryui.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\ColReorder\\examples\\jqueryui.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\ColReorder\\examples\\new_init.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\ColReorder\\examples\\new_init.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\ColReorder\\examples\\predefined.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\ColReorder\\examples\\predefined.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\ColReorder\\examples\\realtime.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\ColReorder\\examples\\realtime.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\ColReorder\\examples\\reset.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\ColReorder\\examples\\reset.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\ColReorder\\examples\\scrolling.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\ColReorder\\examples\\scrolling.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\ColReorder\\examples\\server_side.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\ColReorder\\examples\\server_side.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\ColReorder\\examples\\simple.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\ColReorder\\examples\\simple.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\ColReorder\\examples\\state_save.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\ColReorder\\examples\\state_save.html"
     },
     {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\ColReorder\\images\\insert.png",
@@ -1933,58 +1429,6 @@
       "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\ColVis\\css\\dataTables.colvis.jqueryui.css"
     },
     {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\ColVis\\examples\\button_order.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\ColVis\\examples\\button_order.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\ColVis\\examples\\exclude_columns.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\ColVis\\examples\\exclude_columns.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\ColVis\\examples\\group_columns.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\ColVis\\examples\\group_columns.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\ColVis\\examples\\index.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\ColVis\\examples\\index.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\ColVis\\examples\\jqueryui.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\ColVis\\examples\\jqueryui.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\ColVis\\examples\\mouseover.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\ColVis\\examples\\mouseover.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\ColVis\\examples\\new_init.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\ColVis\\examples\\new_init.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\ColVis\\examples\\restore.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\ColVis\\examples\\restore.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\ColVis\\examples\\simple.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\ColVis\\examples\\simple.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\ColVis\\examples\\text.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\ColVis\\examples\\text.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\ColVis\\examples\\title_callback.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\ColVis\\examples\\title_callback.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\ColVis\\examples\\two_tables.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\ColVis\\examples\\two_tables.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\ColVis\\examples\\two_tables_identical.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\ColVis\\examples\\two_tables_identical.html"
-    },
-    {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\ColVis\\js\\dataTables.colVis.js",
       "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\ColVis\\js\\dataTables.colVis.js"
     },
@@ -2009,62 +1453,6 @@
       "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedColumns\\css\\dataTables.fixedColumns.min.css"
     },
     {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedColumns\\examples\\bootstrap.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedColumns\\examples\\bootstrap.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedColumns\\examples\\col_filter.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedColumns\\examples\\col_filter.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedColumns\\examples\\colvis.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedColumns\\examples\\colvis.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedColumns\\examples\\css_size.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedColumns\\examples\\css_size.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedColumns\\examples\\index.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedColumns\\examples\\index.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedColumns\\examples\\index_column.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedColumns\\examples\\index_column.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedColumns\\examples\\left_right_columns.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedColumns\\examples\\left_right_columns.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedColumns\\examples\\right_column.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedColumns\\examples\\right_column.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedColumns\\examples\\rowspan.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedColumns\\examples\\rowspan.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedColumns\\examples\\server-side-processing.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedColumns\\examples\\server-side-processing.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedColumns\\examples\\simple.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedColumns\\examples\\simple.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedColumns\\examples\\size_fixed.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedColumns\\examples\\size_fixed.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedColumns\\examples\\size_fluid.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedColumns\\examples\\size_fluid.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedColumns\\examples\\two_columns.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedColumns\\examples\\two_columns.html"
-    },
-    {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedColumns\\js\\dataTables.fixedColumns.js",
       "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedColumns\\js\\dataTables.fixedColumns.js"
     },
@@ -2085,30 +1473,6 @@
       "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedHeader\\css\\dataTables.fixedHeader.min.css"
     },
     {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedHeader\\examples\\header_footer.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedHeader\\examples\\header_footer.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedHeader\\examples\\index.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedHeader\\examples\\index.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedHeader\\examples\\simple.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedHeader\\examples\\simple.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedHeader\\examples\\top_left_right.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedHeader\\examples\\top_left_right.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedHeader\\examples\\two_tables.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedHeader\\examples\\two_tables.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedHeader\\examples\\zIndexes.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedHeader\\examples\\zIndexes.html"
-    },
-    {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedHeader\\js\\dataTables.fixedHeader.js",
       "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\FixedHeader\\js\\dataTables.fixedHeader.js"
     },
@@ -2127,26 +1491,6 @@
     {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\KeyTable\\css\\dataTables.keyTable.min.css",
       "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\KeyTable\\css\\dataTables.keyTable.min.css"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\KeyTable\\examples\\events.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\KeyTable\\examples\\events.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\KeyTable\\examples\\html.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\KeyTable\\examples\\html.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\KeyTable\\examples\\index.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\KeyTable\\examples\\index.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\KeyTable\\examples\\scrolling.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\KeyTable\\examples\\scrolling.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\KeyTable\\examples\\simple.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\KeyTable\\examples\\simple.html"
     },
     {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\KeyTable\\js\\dataTables.keyTable.js",
@@ -2173,102 +1517,6 @@
       "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\css\\dataTables.responsive.scss"
     },
     {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\child-rows\\column-control.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\child-rows\\column-control.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\child-rows\\custom-renderer.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\child-rows\\custom-renderer.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\child-rows\\disable-child-rows.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\child-rows\\disable-child-rows.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\child-rows\\index.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\child-rows\\index.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\child-rows\\right-column.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\child-rows\\right-column.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\child-rows\\whole-row-control.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\child-rows\\whole-row-control.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\display-control\\auto.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\display-control\\auto.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\display-control\\classes.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\display-control\\classes.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\display-control\\complexHeader.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\display-control\\complexHeader.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\display-control\\fixedHeader.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\display-control\\fixedHeader.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\display-control\\index.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\display-control\\index.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\display-control\\init-classes.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\display-control\\init-classes.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\index.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\index.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\initialisation\\ajax.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\initialisation\\ajax.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\initialisation\\className.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\initialisation\\className.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\initialisation\\default.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\initialisation\\default.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\initialisation\\index.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\initialisation\\index.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\initialisation\\new.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\initialisation\\new.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\initialisation\\option.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\initialisation\\option.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\styling\\bootstrap.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\styling\\bootstrap.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\styling\\compact.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\styling\\compact.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\styling\\foundation.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\styling\\foundation.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\styling\\index.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\styling\\index.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\styling\\scrolling.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\examples\\styling\\scrolling.html"
-    },
-    {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\js\\dataTables.responsive.js",
       "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\Responsive\\js\\dataTables.responsive.js"
     },
@@ -2289,36 +1537,12 @@
       "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\Scroller\\css\\dataTables.scroller.min.css"
     },
     {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\Scroller\\examples\\api_scrolling.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\Scroller\\examples\\api_scrolling.html"
-    },
-    {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\Scroller\\examples\\data\\2500.txt",
       "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\Scroller\\examples\\data\\2500.txt"
     },
     {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\Scroller\\examples\\data\\ssp.php",
       "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\Scroller\\examples\\data\\ssp.php"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\Scroller\\examples\\index.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\Scroller\\examples\\index.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\Scroller\\examples\\large_js_source.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\Scroller\\examples\\large_js_source.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\Scroller\\examples\\server-side_processing.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\Scroller\\examples\\server-side_processing.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\Scroller\\examples\\simple.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\Scroller\\examples\\simple.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\Scroller\\examples\\state_saving.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\Scroller\\examples\\state_saving.html"
     },
     {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\Scroller\\images\\loading-background.png",
@@ -2343,82 +1567,6 @@
     {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\css\\dataTables.tableTools.min.css",
       "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\css\\dataTables.tableTools.min.css"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\ajax.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\ajax.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\alter_buttons.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\alter_buttons.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\bootstrap.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\bootstrap.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\button_text.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\button_text.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\collection.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\collection.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\defaults.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\defaults.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\index.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\index.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\jqueryui.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\jqueryui.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\multi_instance.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\multi_instance.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\multiple_tables.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\multiple_tables.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\new_init.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\new_init.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\pdf_message.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\pdf_message.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\plug-in.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\plug-in.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\select_column.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\select_column.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\select_multi.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\select_multi.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\select_os.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\select_os.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\select_single.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\select_single.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\simple.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\simple.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\swf_path.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\examples\\swf_path.html"
     },
     {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\datatables\\extensions\\TableTools\\images\\collection.png",
@@ -3481,14 +2629,6 @@
       "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\ionicons-v2.0.1\\builder\\build_data.json"
     },
     {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\ionicons-v2.0.1\\builder\\cheatsheet\\icon-row.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\ionicons-v2.0.1\\builder\\cheatsheet\\icon-row.html"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\ionicons-v2.0.1\\builder\\cheatsheet\\template.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\ionicons-v2.0.1\\builder\\cheatsheet\\template.html"
-    },
-    {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\ionicons-v2.0.1\\builder\\generate.py",
       "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\ionicons-v2.0.1\\builder\\generate.py"
     },
@@ -3507,10 +2647,6 @@
     {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\ionicons-v2.0.1\\builder\\scripts\\sfnt2woff",
       "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\ionicons-v2.0.1\\builder\\scripts"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\ionicons-v2.0.1\\cheatsheet.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\ionicons-v2.0.1\\cheatsheet.html"
     },
     {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\ionicons-v2.0.1\\component.json",
@@ -3535,10 +2671,6 @@
     {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\ionicons-v2.0.1\\docs\\app.js",
       "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\ionicons-v2.0.1\\docs\\app.js"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\ionicons-v2.0.1\\docs\\cheatsheet.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\ionicons-v2.0.1\\docs\\cheatsheet.html"
     },
     {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\ionicons-v2.0.1\\docs\\css\\ionicons.css",
@@ -3575,10 +2707,6 @@
     {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\ionicons-v2.0.1\\docs\\img\\ionicons-logo@2x.png",
       "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\ionicons-v2.0.1\\docs\\img\\ionicons-logo@2x.png"
-    },
-    {
-      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\ionicons-v2.0.1\\docs\\index.html",
-      "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\ionicons-v2.0.1\\docs\\index.html"
     },
     {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\AdminLayerContent\\plugins\\ionicons-v2.0.1\\docs\\site-fonts\\28882F_0_0.eot",
@@ -9491,6 +8619,10 @@
     {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\UsersAvatar\\95187fb254fb447a8f4e152cfde170c5.jpg",
       "PackagePath": "staticwebassets\\images\\UsersAvatar\\95187fb254fb447a8f4e152cfde170c5.jpg"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\UsersAvatar\\a64732b4d62a4cc59a1704b0cbd471b4.jpg",
+      "PackagePath": "staticwebassets\\images\\UsersAvatar\\a64732b4d62a4cc59a1704b0cbd471b4.jpg"
     },
     {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\images\\UsersAvatar\\be719b82cae04ac7898f666ac6ba6999.jpg",

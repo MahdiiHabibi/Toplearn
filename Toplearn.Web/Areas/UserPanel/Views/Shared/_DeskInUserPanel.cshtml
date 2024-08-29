@@ -1,6 +1,6 @@
 ﻿@using System.Security.Claims
+@using Toplearn.Core.Security.Identity
 @using Toplearn.Core.Services.Interface
-@inject IRoleManager _roleManager
 
 <section>
 	<header><h3> میز کار </h3></header>
@@ -9,9 +9,10 @@
 			<li><a asp-area="UserPanel" asp-controller="Home" asp-action="index"> مشاهده حساب کابری </a></li>
 			<li><a asp-action="EditProfile" asp-controller="Home" asp-area="UserPanel"> ویرایش حساب کابری </a></li>
 			<li><a asp-action="index" asp-controller="Wallet" asp-area="UserPanel">  کیف پول  </a></li>
+			<li><a asp-action="PermissionsOfUser" asp-controller="Home">دسترسی های کاربر</a></li>
 			<li><a asp-action="ChangePassword" asp-controller="Home" asp-area="UserPanel"> تغییر رمز عبور </a></li>
 			<li><a asp-controller="Account" asp-action="ForgotPassword"> فراموشی رمز عبور </a></li>
-			@if ((await _roleManager.GetRolesOfUser(x=>x.UserId == int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)))).Any(x=>x == "ادمین"))
+			@if (User.FindFirstValue(TopLearnClaimTypes.Role)!.Split("|").Any(x=>x == "ادمین"))
 			{
 				<li>
 					<a asp-controller="Home" asp-action="Index" asp-area="Admin">
@@ -20,7 +21,7 @@
 				</li>
 			}
 			<li><a href=""> تنظیمات حساب کاربری </a></li>
-			@if (User.Claims.Single(x => x.Type == "ImageUrl").Value != @"\images\pic\Default.png")
+			@if (User.Claims.Single(x => x.Type == TopLearnClaimTypes.ImageUrl).Value != @"\images\pic\Default.png")
 			{
 				<li><a asp-action="ResetImageOfUser" asp-controller="Home" asp-area="UserPanel">حذف عکس حساب کاربری</a></li>
 			}

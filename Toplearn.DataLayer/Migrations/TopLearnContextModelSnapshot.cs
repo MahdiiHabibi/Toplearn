@@ -142,7 +142,7 @@ namespace Toplearn.DataLayer.Migrations
                             ParentId = 3,
                             PermissionDetail = "Admin_UserManager_ActiveAccount",
                             PermissionPersianDetail = "ارسال کد فعال سازی کاربر",
-                            PermissionUrl = "/POST"
+                            PermissionUrl = "POST"
                         },
                         new
                         {
@@ -150,7 +150,7 @@ namespace Toplearn.DataLayer.Migrations
                             ParentId = 3,
                             PermissionDetail = "Admin_UserManager_RemoveUserImage",
                             PermissionPersianDetail = "حذف آواتار شخصی کاربر",
-                            PermissionUrl = "/POST"
+                            PermissionUrl = "POST"
                         },
                         new
                         {
@@ -158,7 +158,7 @@ namespace Toplearn.DataLayer.Migrations
                             ParentId = 3,
                             PermissionDetail = "Admin_UserManager_UserForShow",
                             PermissionPersianDetail = "دیدن اطلاعات کاربر",
-                            PermissionUrl = "/POST"
+                            PermissionUrl = "POST"
                         },
                         new
                         {
@@ -166,7 +166,7 @@ namespace Toplearn.DataLayer.Migrations
                             ParentId = 3,
                             PermissionDetail = "Admin_UserManager_IncreaseTheWallet",
                             PermissionPersianDetail = "افزایش کیف پول کاربر",
-                            PermissionUrl = "/POST"
+                            PermissionUrl = "POST"
                         });
                 });
 

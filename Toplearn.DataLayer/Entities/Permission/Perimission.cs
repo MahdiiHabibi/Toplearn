@@ -29,7 +29,7 @@ namespace Toplearn.DataLayer.Entities.Permission
 
 
 		[ForeignKey(nameof(ParentId))]
-		public virtual List<Permission> ParentPermission { get; set; }
+		public virtual List<Permission>? ParentPermission { get; set; }
 
 		#endregion
 

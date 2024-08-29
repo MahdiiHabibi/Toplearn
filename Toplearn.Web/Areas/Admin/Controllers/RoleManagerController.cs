@@ -12,10 +12,10 @@ using Toplearn.Web.Security;
 
 namespace Toplearn.Web.Areas.Admin.Controllers
 {
-    [Area("Admin")]
+	[Area("Admin")]
 	[CheckIVG]
-    [CheckUIC]
-	public class RoleManagerController(IRoleManager roleManager,TopLearnContext _context,IUtilities utilities) : TopLearnController
+	[CheckUIC]
+	public class RoleManagerController(IRoleManager roleManager, IContextActions<Role> contextActionsForRole,IPermissionServices permissionServices) : TopLearnController
 	{
 
 		private readonly IRoleManager _roleManager = roleManager;
@@ -25,7 +25,7 @@ namespace Toplearn.Web.Areas.Admin.Controllers
 		public async Task<IActionResult> Index()
 		{
 			var roles = await _roleManager.GetRolesOfTopLearn();
-			roles.Remove(roles.Single(x=>x.RoleId == 4));
+			roles.Remove(roles.Single(x => x.RoleId == 4));
 
 			return View(roles);
 		}
@@ -57,7 +57,7 @@ namespace Toplearn.Web.Areas.Admin.Controllers
 
 		#region Add Role
 
-		
+
 		[HttpPost]
 		[Permission("Admin_Roles_AddRole")]
 		public async Task<IActionResult> AddRole(string role)
@@ -90,7 +90,7 @@ namespace Toplearn.Web.Areas.Admin.Controllers
 		[Permission("Admin_Roles_ChangeRoleStatus")]
 		public async Task<IActionResult> ChangeRoleStatus(int roleId)
 		{
-			var role = await _roleManager.GetRoleById(roleId,true);
+			var role = await _roleManager.GetRoleById(roleId, true);
 			if (role == null)
 			{
 				CreateMassageAlert("danger", "لینک دریافتی برای تغییر اطلاعات مقام اشتباه است .", "خطا ");
@@ -118,14 +118,17 @@ namespace Toplearn.Web.Areas.Admin.Controllers
 		[Permission("Admin_Roles_EditRole")]
 		public async Task<IActionResult> EditRole(int roleId)
 		{
-			var role = await _roleManager.GetRoleById(id: roleId);
-			TempData["RoleDetail"] = role.RoleDetail;
+			var role = await _roleManager.GetRoleForEdit(roleId);
+			if (role == null)
+				return NotFound();
+
+			TempData["RoleDetail"] = role!.RoleDetail;
 			return View(role);
 		}
 
 		[HttpPost]
 		[Permission("Admin_Roles_EditRole")]
-		public async Task<IActionResult> EditRole(Role role)
+		public async Task<IActionResult> EditRole(AddEditRoleViewModel role)
 		{
 			if (!ModelState.IsValid)
 			{
@@ -134,7 +137,15 @@ namespace Toplearn.Web.Areas.Admin.Controllers
 
 			if (await _roleManager.UpdateRole(role))
 			{
-				CreateMassageAlert("success", "تغییرات با موفقیت انجام یافت .", "موفق ");
+				if (await permissionServices.UpdateRolePermissions(role.PermissionsOfRole,role.RoleId))
+				{
+					CreateMassageAlert("success", "تغییرات با موفقیت انجام یافت .", "موفق ");
+				}
+
+				else
+				{
+					CreateMassageAlert("warning","اطلاعات مقام تغییر یافت ولی در ثبت دسترسی مقام مشکلی به وجود آمده است .","توجه");
+				}
 			}
 			else
 			{
@@ -147,7 +158,16 @@ namespace Toplearn.Web.Areas.Admin.Controllers
 
 		#endregion
 
-		
+		#region Edit Permissions Of Role
+
+		[Route("/Admin/RoleManager/EditPermissions/{roleId:int}")]
+		[Permission("Admin_Roles_EditPermissionsOfRole")]
+		public async Task<IActionResult> EditPermissionsOfRole(int roleId)
+		{
+			return View();
+		}
+
+		#endregion
 
 	}
 }

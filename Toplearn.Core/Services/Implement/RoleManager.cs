@@ -4,8 +4,11 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Runtime.InteropServices.JavaScript;
 using System.Threading.Tasks;
+using System.Xml.Schema;
 using IdentitySample.Repositories;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Toplearn.Core.DTOs.Admin;
 using Toplearn.Core.Services.Interface;
 using Toplearn.DataLayer.Context;
@@ -13,18 +16,19 @@ using Toplearn.DataLayer.Entities.User;
 
 namespace Toplearn.Core.Services.Implement
 {
-	public class RoleManager(TopLearnContext context, IContextActions<Role> contextActionsForRole,IUtilities utilities) : IRoleManager
+	public class RoleManager(TopLearnContext context, IContextActions<Role> contextActionsForRole, IUtilities utilities, IPermissionServices permissionServices) : IRoleManager
 	{
 		private readonly TopLearnContext _context = context;
 		private readonly IContextActions<Role> _contextActionsForRole = contextActionsForRole;
+		private readonly IPermissionServices _permissionServices = permissionServices;
 
-		public async Task<string[]?> GetRolesOfUser(Func<User, bool> func, bool enableIgnoreQueryFilters = false)
+		public Task<string[]?> GetRolesOfUser(Func<User, bool> func, bool enableIgnoreQueryFilters = false)
 		{
 			try
 			{
 				var user = _context.Users.Single(func);
 
-				IQueryable<Role> roles = _context.Roles.Where(x=>x.UserRoles.Any(x=>x.UserId == user.UserId));
+				IQueryable<Role> roles = _context.Roles.Where(x => x.UserRoles.Any(x => x.UserId == user.UserId));
 
 				if (enableIgnoreQueryFilters)
 				{
@@ -32,24 +36,24 @@ namespace Toplearn.Core.Services.Implement
 				}
 
 
-				return roles
-					.Select(x => 
-					new string(x.RoleDetail))
-					.ToArray();
+				return Task.FromResult(roles
+					.Select(x =>
+						new string(x.RoleDetail))
+					.ToArray());
 			}
 			catch
 			{
-				return null;
+				return Task.FromResult<string[]?>(null);
 			}
 		}
 
 		public Task<List<Role>> GetRolesOfTopLearn() =>
 			Task.FromResult(_context.Roles.IgnoreQueryFilters().ToList());
 
-		public async Task<List<ShowAddEditRoleViewModel>> GetRolesForShows(int userId)
+		public async Task<List<ShowAddEditRoleOfUserViewModel>> GetRolesForShows(int userId)
 		{
 			var rolesOfTopLearn = await GetRolesOfTopLearn();
-			foreach (var role in rolesOfTopLearn.Where(x=>x.IsActived == false).ToList())
+			foreach (var role in rolesOfTopLearn.Where(x => x.IsActived == false).ToList())
 			{
 				rolesOfTopLearn.Remove(role);
 			}
@@ -59,7 +63,7 @@ namespace Toplearn.Core.Services.Implement
 			var roles =
 				rolesOfTopLearn
 					.Select(item =>
-						new ShowAddEditRoleViewModel()
+						new ShowAddEditRoleOfUserViewModel()
 						{
 							RoleId = item.RoleId,
 							RoleDetail = item.RoleDetail,
@@ -96,7 +100,7 @@ namespace Toplearn.Core.Services.Implement
 				// If SaveChangesAsync does its job correctly it will send the number one .
 				await _context.SaveChangesAsync();
 
-				await utilities.ChangeUICOfUser(await _context.Users.SingleAsync(x=>x.UserId == userId));
+				await utilities.ChangeUICOfUser(await _context.Users.SingleAsync(x => x.UserId == userId));
 
 				return true;
 
@@ -142,6 +146,31 @@ namespace Toplearn.Core.Services.Implement
 				return false;
 			}
 		}
+		
+        public async Task<AddEditRoleViewModel> GetRoleForEdit(int roleId)
+		{
+			var role = (await _context.Roles.IgnoreQueryFilters()
+				.Where(x => x.RoleId == roleId)
+				.Include(x => x.RolesPermissionsList)!
+				.ThenInclude(x => x.Permission)
+				.SingleOrDefaultAsync());
 
+			if (role == null)
+			{
+				return null;
+			}
+
+			AddEditRoleViewModel model = new()
+			{
+				RoleId = role.RoleId,
+				RoleDetail = role.RoleDetail,
+				IsActived = role.IsActived,
+				PermissionsOfRole = []
+			};
+
+			model.PermissionsOfRole.AddRange(await _permissionServices.GetPermissionForShowInRole(role));
+			
+			return model;
+		}
 	}
 }

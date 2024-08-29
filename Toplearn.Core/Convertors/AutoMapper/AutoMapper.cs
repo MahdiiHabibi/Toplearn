@@ -12,6 +12,7 @@ using Toplearn.Core.DTOs.Accounts;
 using Toplearn.Core.DTOs.Admin;
 using Toplearn.Core.DTOs.UserPanel;
 using Toplearn.Core.DTOs.Wallet;
+using Toplearn.Core.Security.Identity;
 using Toplearn.DataLayer.Entities.Wallet;
 
 namespace Toplearn.Core.Convertors.AutoMapper
@@ -39,22 +40,22 @@ namespace Toplearn.Core.Convertors.AutoMapper
 
 			// Create The UsePanelViewModel From CookiesUser
 			CreateMap<IEnumerable<Claim>, UserPanelViewModel>()
-				.ForMember(x => x.Email, y => y.MapFrom(d => d.SingleOrDefault(s => s.Type == ClaimTypes.Email)!.Value))
+				.ForMember(x => x.Email, y => y.MapFrom(d => d.SingleOrDefault(s => s.Type == TopLearnClaimTypes.Email)!.Value))
 				.ForMember(x => x.DateTime, y => y.MapFrom(d => Convert.ToDateTime(d.SingleOrDefault(s => s.Type == "DateTimeOfRegister")!.Value)))
-				.ForMember(x => x.FullName, y => y.MapFrom(d => d.SingleOrDefault(s => s.Type == ClaimTypes.Name)!.Value))
+				.ForMember(x => x.FullName, y => y.MapFrom(d => d.SingleOrDefault(s => s.Type == TopLearnClaimTypes.Name)!.Value))
 				.ForMember(x => x.UserName, y => y.MapFrom(d => d.SingleOrDefault(s => s.Type == "UserName")!.Value))
 				.ForMember(x => x.WalletBalance, y => y.MapFrom(d => 0))
 				.ForMember(x => x.ImageUrl, y => y.MapFrom(d => d.SingleOrDefault(s => s.Type == "ImageUrl")!.Value))
-				.ForMember(x => x.UserId, y => y.MapFrom(d => Convert.ToInt32(d.SingleOrDefault(s => s.Type == ClaimTypes.NameIdentifier)!.Value)));
+				.ForMember(x => x.UserId, y => y.MapFrom(d => Convert.ToInt32(d.SingleOrDefault(s => s.Type == TopLearnClaimTypes.NameIdentifier)!.Value)));
 
 
 			// Create The EditPanelViewModel From CookiesUser
 			CreateMap<IEnumerable<Claim>, EditPanelViewModel>()
 				.ForMember(x => x.Email,
 					y => y.MapFrom(d =>
-						d.SingleOrDefault(s => s.Type == ClaimTypes.Email)!.Value.CapitalizeFirstLetter()))
+						d.SingleOrDefault(s => s.Type == TopLearnClaimTypes.Email)!.Value.CapitalizeFirstLetter()))
 				.ForMember(x => x.FullName,
-					y => y.MapFrom(d => d.SingleOrDefault(s => s.Type == ClaimTypes.Name)!.Value))
+					y => y.MapFrom(d => d.SingleOrDefault(s => s.Type == TopLearnClaimTypes.Name)!.Value))
 				.ForMember(x => x.UserName, y => y.MapFrom(d => d.SingleOrDefault(s => s.Type == "UserName")!.Value));
 
 

@@ -24,6 +24,7 @@ using Toplearn.Core.Security.Identity;
 using Toplearn.DataLayer.Entities.Permission;
 using System.Data;
 using System.Globalization;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 
 namespace Toplearn.Core.Services.Implement.Setting
@@ -68,13 +69,45 @@ namespace Toplearn.Core.Services.Implement.Setting
 			#region Get Permission
 
 			var permissions = string.Empty;
-			IList<Permission> userPermission = await _permissionServices.GetListOfPermissionsOfUser(user.UserId);
+			List<Permission> userPermission =
+				(await _permissionServices.GetListOfPermissionsOfUser(user.UserId))!
+				.DistinctBy(x=>x.PermissionId)
+				.ToList();
+
 			permissions = userPermission
 				.Aggregate(
 					permissions, (current, permission) =>
-						current + (permission.PermissionId + "_" + permission.PermissionDetail + "_" + permission.PermissionPersianDetail + "|"));
+						current + (permission.PermissionId + "\\" + permission.PermissionDetail + "\\" + permission.PermissionPersianDetail + "|"));
 			if (!permissions.IsNullOrEmpty())
 				permissions = permissions.Remove(permissions.Length - 1);
+
+			#endregion
+
+			#region Get Roles
+
+
+			var roles = string.Empty;
+			await using (var scope = _httpContext.RequestServices.CreateAsyncScope())
+			{
+				IRoleManager roleManager =
+					(IRoleManager)
+							scope.ServiceProvider.GetService(typeof(IRoleManager))!;
+
+				var userRoles = await roleManager.GetRolesOfUser(x => x.UserId == user.UserId);
+
+				if (userRoles != null)
+				{
+					roles = userRoles.Aggregate(roles, (current, role) => current + (role + "|"));
+					if (!roles.IsNullOrEmpty())
+						roles = roles.Remove(roles.Length - 1);
+				}
+
+				else
+				{
+					roles = "بدون مقام";
+				}
+			}
+
 
 			#endregion
 
@@ -90,7 +123,8 @@ namespace Toplearn.Core.Services.Implement.Setting
 				new (TopLearnClaimTypes.DateTimeOfRegister,user.DateTime.ToString()),
 				new (TopLearnClaimTypes.IsPersistent,isPersistent.ToString()),
 				new (TopLearnClaimTypes.Permission,permissions),
-				new (TopLearnClaimTypes.UIC,_dataProtector.Protect(user.ActiveCode))
+				new (TopLearnClaimTypes.UIC,_dataProtector.Protect(user.ActiveCode)),
+				new (TopLearnClaimTypes.Role,roles)
 			};
 
 			var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);

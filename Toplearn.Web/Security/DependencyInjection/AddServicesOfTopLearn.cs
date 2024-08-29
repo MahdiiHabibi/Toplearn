@@ -44,7 +44,7 @@ namespace Toplearn.Web.Security.DependencyInjection
             // Add Services that we need in everyThing in Admin Layer
             builder.Services.AddScoped<IAdminServices, AdminServices>();
             // Add Role Services that we need to do for some Action Like : Get Roles || Add 
-            builder.Services.AddTransient<IRoleManager, RoleManager>();
+            builder.Services.AddScoped<IRoleManager, RoleManager>();
             // Add Services Of Email Sender Information For Send
             builder.Services.AddSingleton<ISendEmail, SendEmail>();
             builder.Services.Configure<SendEmailViewModel>(builder.Configuration.GetSection("EmailSenderInformation"));
