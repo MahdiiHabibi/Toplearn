@@ -17,6 +17,9 @@ using Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption;
 using Microsoft.AspNetCore.DataProtection;
 using Toplearn.Core.Services.Implement.Setting;
 using Toplearn.Web.Security.DependencyInjection;
+using Microsoft.AspNetCore.Http.Features;
+
+
 
 
 #region Services
@@ -33,6 +36,9 @@ builder.Services.AddElmahIo(o =>
 	o.ApiKey = "e7df4a60042843fabd1894e263c1debc";
 	o.LogId = new Guid("69ab5b1c-5d04-466d-ac52-bfe45c7017bb");
 });
+
+builder.WebHost.ConfigureKestrel(options => options.Limits.MaxRequestBodySize = 507374182);
+builder.Services.Configure<FormOptions>(options => { options.MultipartBodyLengthLimit = 507374182;options.ValueLengthLimit = 507374182; });
 
 
 #region Ioc

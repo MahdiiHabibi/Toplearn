@@ -8024,7 +8024,7 @@ function EventManager(options) { // assumed to be a calendar
 				var error = source.error;
 				var complete = source.complete;
 
-				// retrieve any outbound GET/POST $.ajax data from the options
+				// retrieve any outbound GETPOST $.ajax data from the options
 				var customData;
 				if ($.isFunction(source.data)) {
 					// supplied as a function that returns a key/value object

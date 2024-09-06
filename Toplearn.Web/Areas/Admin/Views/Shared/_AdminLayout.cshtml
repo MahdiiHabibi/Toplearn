@@ -6,7 +6,12 @@
 	<title>پنل مدیریت | @ViewBag.Title</title>
 	<partial name="_StylesOfAdminPages" />
 
-
+	<style>
+		.field-validation-error
+		{
+			color : red;
+		}
+	</style>
 </head>
 <body class="hold-transition sidebar-mini">
 	<div class="wrapper">
@@ -52,7 +57,9 @@
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper">
 			<!-- Content Header (Page header) -->
-			<partial name="_breadcrumbOfAdminPages" />
+			<section class="content-header">
+				<partial name="_breadcrumbOfAdminPages" />
+			</section>
 			<!-- /.content-header -->
 			<!-- Main content -->
 			@RenderBody()
@@ -64,8 +71,9 @@
 		</footer>
 	</div>
 	<!-- ./wrapper -->
-	
-	<partial name="_AlertForMassageOfAdminPages"/>
+
+	<partial name="_AlertForMassageOfAdminPages" />
 	<partial name="_ScriptsOfAdminPages" />
+	@await RenderSectionAsync("Script", false)
 </body>
 </html>

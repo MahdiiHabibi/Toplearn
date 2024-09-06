@@ -9,7 +9,7 @@ namespace Toplearn.Core.DTOs.UserPanel
 {
 	public class UserPanelViewModel
 	{
-		
+
 		public int UserId { get; set; }
 
 		[Display(Name = "نام کاربری")]
@@ -39,6 +39,12 @@ namespace Toplearn.Core.DTOs.UserPanel
 		[DataType(DataType.ImageUrl)]
 		public string ImageUrl { get; set; }
 
+
 		public int WalletBalance { get; set; }
+
+		[Display(Name = "توضیحات")]
+        [MinLength(40,ErrorMessage = "{0} شما نمیتواند کمتر از {1} باشه ")]
+		[MaxLength(450, ErrorMessage = "{0} شما نمیتواند بیشتر از {1} باشه ")]
+		public string? UserDescription { get; set; }
 	}
 }

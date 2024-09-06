@@ -62,6 +62,7 @@ namespace Toplearn.DataLayer.Entities.User
 
         public int WalletBalance { get; set; } = 0;
 
+        public string? UserDescription { get; set; } = null;
 
         public bool IsDeleted { get; set; } = false;
 
@@ -70,6 +71,8 @@ namespace Toplearn.DataLayer.Entities.User
         public virtual List<User_Role> UserRoles { get; set; }
 
         public virtual List<Wallet.Wallet> Wallets { get; set; }
+
+        public virtual ICollection<Course.Course> Courses { get; set; }
 
         #endregion
 

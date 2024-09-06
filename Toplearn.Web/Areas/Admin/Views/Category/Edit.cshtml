@@ -1,0 +1,51 @@
+﻿@model EditCategoryViewModel
+
+@{
+	ViewBag.Title = "تغییر گروه";
+	ViewBag.CategoryEdit = "active";
+}
+
+
+<div class="card card-success card-outline">
+	<div class="card-header">
+		<h3 class="card-title">تغییر اطلاعات گروه</h3>
+	</div> <!-- /.card-body -->
+	<div class="card-body">
+		<form asp-action="Edit" asp-controller="Category" asp-area="Admin" method="post">
+			<input type="hidden" asp-for="CategoryId" />
+			<input type="hidden" asp-for="OldCategoryName" />
+			<div class="row">
+				<div class="col-6">
+					<div class="form-group">
+						<label>سرگروه</label>
+						<select asp-for="ParentCategoryId" asp-items="@ViewData["Categories"] as SelectList" class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+						</select>
+						<p></p>
+						<span style="color:#28a745;">
+							در صورتی که نمیخواهید زیر گروه باشد چیزی را انجام نکنید .
+						</span>
+
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="form-group">
+						<label for="CategoryName">
+							نام گروه
+						</label>
+						<input type="text" class="form-control" asp-for="CategoryName" placeholder="نام گروه را وارد کنید">
+					</div>
+					<span asp-validation-for="CategoryName"></span>
+				</div>
+				<button type="submit" class="btn btn-block btn-outline-success">ثبت</button>
+				<a asp-action="Index" asp-controller="Category" asp-area="Admin" class="btn btn-block btn-outline-success">لغو تغییرات</a>
+			</div>
+		</form>
+
+	</div><!-- /.card-body -->
+</div>
+
+
+@section Script
+{
+<partial name="_ValidationScriptsPartial"/>
+}

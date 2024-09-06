@@ -84,10 +84,10 @@
 					</ul>
 				</li>
 		</div>
-		<li class="nav-header">مربوط به کاربران</li>
+		<li class="nav-header"> عملیات ها </li>
 		<li class="nav-item has-treeview">
 			<a href="#" class="nav-link">
-				<i class="nav-icon fa fa-table @(ViewBag.ListOfUsers!=null || ViewBag.RoleManagerOfUser != null || ViewBag.User != null || ViewBag.Roles!=null?"text-info":"")"></i>
+				<i class="nav-icon fa fa-table @(ViewBag.ListOfUsers!=null || ViewBag.RoleManagerOfUser != null || ViewBag.User != null || ViewBag.Roles!=null|| ViewBag.EditRole!= null?"text-info":"")"></i>
 				<p>
 					مدیریت کاربران
 					<i class="fa fa-angle-left right"></i>
@@ -135,27 +135,104 @@
 			</ul>
 		</li>
 
-				<li class="nav-header">تنظیمات کلی سایت</li>
-				<li class="nav-item has-treeview">
-					<a href="#" class="nav-link">
-						<i class="nav-icon fa fa-table"></i>
+		<li class="nav-item has-treeview">
+			<a href="#" class="nav-link">
+				<i class="nav-icon fa fa-table @(ViewBag.CategoryIndex!=null || ViewBag.CategoryAdd != null || ViewBag.CategoryEdit != null ?"text-info":"")"></i>
+				<p>
+					مدیریت گروه ها
+					<i class="fa fa-angle-left right"></i>
+				</p>
+			</a>
+			<ul class="nav nav-treeview">
+				<li class="nav-item">
+					<a asp-action="Index" asp-controller="Category" asp-area="Admin" class="nav-link @ViewBag.CategoryIndex">
+						<i class="fa fa-list-alt nav-icon"></i>
 						<p>
-					تنظیمات
-							<i class="fa fa-angle-left right"></i>
+							لیست گروه ها
 						</p>
 					</a>
-					<ul class="nav nav-treeview">
-						<li class="nav-item">
-							<a asp-action="ChangeIVG" asp-controller="Home" asp-area="Admin" asp-route-BackUrl="@(Context.Request.Path)" class="nav-link">
-						<i class="fa fa-minus-circle nav-icon"></i>
-								<p style="font-size:small;">
-									تغییر کد احراز هویت کاربران (IVG)
-								</p>
-							</a>
-						</li>
-						
-					</ul>
 				</li>
+
+				<li class="nav-item">
+					<a asp-action="Create" asp-controller="Category" asp-area="Admin" class="nav-link @ViewBag.CategoryAdd">
+						<i class="fa fa-list-alt nav-icon"></i>
+						<p>
+							افزودن گروه
+						</p>
+					</a>
+				</li>
+
+						@if (ViewBag.CategoryEdit != null)
+						{
+					<li class="nav-item">
+						<a asp-action="Index" asp-controller="Category" asp-area="Admin" class="nav-link @ViewBag.CategoryEdit">
+							<i class="fa fa-list-alt nav-icon"></i>
+							<p>
+								تغییر گروه - @ViewBag.Edit
+							</p>
+						</a>
+					</li>
+						}
+
+			</ul>
+		</li>
+
+
+
+		<li onclick="location.href = '/Teacher'" class="nav-header">پنل استاد</li>
+				@* Courses *@
+		<li class="nav-item has-treeview">
+			<a href="#" class="nav-link">
+				<i class="nav-icon fa fa-product-hunt @(ViewBag.AddCourse != null || ViewBag.Courses != null?"text-info":"")"></i>
+				<p>
+					دوره ها
+					<i class="fa fa-angle-left right"></i>
+				</p>
+			</a>
+			<ul class="nav nav-treeview">
+				<li class="nav-item">
+					<a asp-action="Courses" asp-controller="Teacher" asp-area="Admin" class="nav-link @ViewBag.Courses">
+						<i class="fa fa-th-list nav-icon"></i>
+						<p style="font-size:small;">
+							لیست دوره ها
+						</p>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a asp-action="AddCourse" asp-controller="Teacher" asp-area="Admin" class="nav-link @ViewBag.AddCourse">
+						<i class="fa fa-creative-commons nav-icon"></i>
+						<p style="font-size:small;">
+							افزودن دوره ی جدید
+						</p>
+					</a>
+				</li>
+
+			</ul>
+		</li>
+
+
+		<li class="nav-header">تنظیمات کلی سایت</li>
+		<li class="nav-item has-treeview">
+			<a href="#" class="nav-link">
+				<i class="nav-icon fa fa-table"></i>
+				<p>
+					تنظیمات
+					<i class="fa fa-angle-left right"></i>
+				</p>
+			</a>
+			<ul class="nav nav-treeview">
+				<li class="nav-item">
+					<a asp-action="ChangeIVG" asp-controller="Home" asp-area="Admin" asp-route-BackUrl="@(Context.Request.Path)" class="nav-link">
+						<i class="fa fa-minus-circle nav-icon"></i>
+						<p style="font-size:small;">
+							تغییر کد احراز هویت کاربران (IVG)
+						</p>
+					</a>
+				</li>
+
+			</ul>
+		</li>
+
 
 		</ul>
 	</div>

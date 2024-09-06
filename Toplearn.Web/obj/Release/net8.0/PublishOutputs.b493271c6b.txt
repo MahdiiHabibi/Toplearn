@@ -1,4 +1,5 @@
 W:\Toplearn\Toplearn.Web\obj\Release\net8.0\PubTmp\Out\Toplearn.Web.exe
+W:\Toplearn\Toplearn.Web\obj\Release\net8.0\PubTmp\Out\web.config
 W:\Toplearn\Toplearn.Web\obj\Release\net8.0\PubTmp\Out\appsettings.json
 W:\Toplearn\Toplearn.Web\obj\Release\net8.0\PubTmp\Out\refs\Microsoft.AspNetCore.Antiforgery.dll
 W:\Toplearn\Toplearn.Web\obj\Release\net8.0\PubTmp\Out\refs\Microsoft.AspNetCore.Authentication.Abstractions.dll

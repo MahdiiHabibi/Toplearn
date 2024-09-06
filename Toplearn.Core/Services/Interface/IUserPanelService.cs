@@ -13,6 +13,7 @@ namespace Toplearn.Core.Services.Interface
 		public Task<string?> ImageTaskInEditUser(string lastImageUrl,IFormFile? newImageFile);
 		public Task<bool> UpdateUser(User user);
 		public Task<bool> IsPasswordCorrect(User user,string password);
+		public Task<string?> CheckUserDescription(int userId);
 	}
 
 }

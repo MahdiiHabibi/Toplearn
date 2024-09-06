@@ -26,6 +26,7 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 		public async Task<IActionResult> Index()
 		{
 			var userModel = mapperUserPanel.MapTheUserPanelViewModelFromClaims(User.Claims.ToList());
+			userModel.UserDescription = (await userPanelService.CheckUserDescription(userModel.UserId));
 			userModel.WalletBalance = await walletManager.GetBalanceOfUser(userModel.UserId);
 			return View(userModel);
 		}
@@ -35,9 +36,10 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 
 
 		[Route("EditProfile")]
-		public IActionResult EditProfile()
+		public async Task<IActionResult> EditProfile()
 		{
 			var userModel = mapperUserPanel.MapTheEditPanelViewModelFromClaims(User.Claims);
+			userModel.UserDescription = (await userPanelService.CheckUserDescription(GetUserIdFromClaims()));
 			return View(userModel);
 		}
 
@@ -103,6 +105,8 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 			#endregion
 
 			user.ActiveCode = StringGenerate.GuidGenerate();
+
+			user.UserDescription = editPanelViewModel.UserDescription;
 
 			// Update User 
 
@@ -257,11 +261,11 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 
 		#region Permissions
 
-		[Route("/Permissions")]
+		[Route("Permissions")]
 		public async Task<IActionResult> PermissionsOfUser()
 		{
 			var userId = GetUserIdFromClaims();
-			IImmutableSet<Permission>? permissions = await permissionServices.GetUserPermissionsFromCookie();
+			IImmutableSet<Permission> permissions = (await permissionServices.GetUserPermissionsFromCookie())!;
 			if (permissions is { Count: 0 })
 				return View(model: null);
 
@@ -273,5 +277,6 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 
 
 		#endregion
+
 	}
 }

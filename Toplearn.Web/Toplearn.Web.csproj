@@ -9,6 +9,8 @@
   <ItemGroup>
     <Folder Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\objects\info\" />
     <Folder Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\refs\tags\" />
+    <Folder Include="wwwroot\CourseInfo\Images\thumb\" />
+    <Folder Include="wwwroot\CourseInfo\EpisodesFile\" />
     <Folder Include="wwwroot\images\UsersAvatar\" />
   </ItemGroup>
 
@@ -49,6 +51,108 @@
     <None Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\packed-refs" />
     <None Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\refs\heads\master" />
     <None Include="wwwroot\AdminLayerContent\plugins\ionicons-v2.0.1\.git\refs\remotes\origin\HEAD" />
+    <None Include="wwwroot\CkEditor\translations\af.js" />
+    <None Include="wwwroot\CkEditor\translations\af.umd.js" />
+    <None Include="wwwroot\CkEditor\translations\ar.js" />
+    <None Include="wwwroot\CkEditor\translations\ar.umd.js" />
+    <None Include="wwwroot\CkEditor\translations\ast.js" />
+    <None Include="wwwroot\CkEditor\translations\az.js" />
+    <None Include="wwwroot\CkEditor\translations\az.umd.js" />
+    <None Include="wwwroot\CkEditor\translations\bg.js" />
+    <None Include="wwwroot\CkEditor\translations\bn.js" />
+    <None Include="wwwroot\CkEditor\translations\bs.js" />
+    <None Include="wwwroot\CkEditor\translations\ca.js" />
+    <None Include="wwwroot\CkEditor\translations\cs.js" />
+    <None Include="wwwroot\CkEditor\translations\cs.umd.js" />
+    <None Include="wwwroot\CkEditor\translations\da.js" />
+    <None Include="wwwroot\CkEditor\translations\da.umd.js" />
+    <None Include="wwwroot\CkEditor\translations\de-ch.js" />
+    <None Include="wwwroot\CkEditor\translations\de-ch.umd.js" />
+    <None Include="wwwroot\CkEditor\translations\de.js" />
+    <None Include="wwwroot\CkEditor\translations\de.umd.js" />
+    <None Include="wwwroot\CkEditor\translations\el.js" />
+    <None Include="wwwroot\CkEditor\translations\el.umd.js" />
+    <None Include="wwwroot\CkEditor\translations\en-au.js" />
+    <None Include="wwwroot\CkEditor\translations\en-gb.js" />
+    <None Include="wwwroot\CkEditor\translations\en.js" />
+    <None Include="wwwroot\CkEditor\translations\eo.js" />
+    <None Include="wwwroot\CkEditor\translations\eo.umd.js" />
+    <None Include="wwwroot\CkEditor\translations\es-co.js" />
+    <None Include="wwwroot\CkEditor\translations\es.js" />
+    <None Include="wwwroot\CkEditor\translations\es.umd.js" />
+    <None Include="wwwroot\CkEditor\translations\et.js" />
+    <None Include="wwwroot\CkEditor\translations\et.umd.js" />
+    <None Include="wwwroot\CkEditor\translations\eu.js" />
+    <None Include="wwwroot\CkEditor\translations\eu.umd.js" />
+    <None Include="wwwroot\CkEditor\translations\fa.js" />
+    <None Include="wwwroot\CkEditor\translations\fi.js" />
+    <None Include="wwwroot\CkEditor\translations\fi.umd.js" />
+    <None Include="wwwroot\CkEditor\translations\fr.js" />
+    <None Include="wwwroot\CkEditor\translations\fr.umd.js" />
+    <None Include="wwwroot\CkEditor\translations\gl.js" />
+    <None Include="wwwroot\CkEditor\translations\gu.js" />
+    <None Include="wwwroot\CkEditor\translations\gu.umd.js" />
+    <None Include="wwwroot\CkEditor\translations\he.js" />
+    <None Include="wwwroot\CkEditor\translations\hi.js" />
+    <None Include="wwwroot\CkEditor\translations\hi.umd.js" />
+    <None Include="wwwroot\CkEditor\translations\hr.js" />
+    <None Include="wwwroot\CkEditor\translations\hu.js" />
+    <None Include="wwwroot\CkEditor\translations\hy.js" />
+    <None Include="wwwroot\CkEditor\translations\id.js" />
+    <None Include="wwwroot\CkEditor\translations\it.js" />
+    <None Include="wwwroot\CkEditor\translations\it.umd.js" />
+    <None Include="wwwroot\CkEditor\translations\ja.js" />
+    <None Include="wwwroot\CkEditor\translations\jv.js" />
+    <None Include="wwwroot\CkEditor\translations\kk.js" />
+    <None Include="wwwroot\CkEditor\translations\km.js" />
+    <None Include="wwwroot\CkEditor\translations\kn.js" />
+    <None Include="wwwroot\CkEditor\translations\kn.umd.js" />
+    <None Include="wwwroot\CkEditor\translations\ko.js" />
+    <None Include="wwwroot\CkEditor\translations\ku.js" />
+    <None Include="wwwroot\CkEditor\translations\ku.umd.js" />
+    <None Include="wwwroot\CkEditor\translations\lt.js" />
+    <None Include="wwwroot\CkEditor\translations\lt.umd.js" />
+    <None Include="wwwroot\CkEditor\translations\lv.js" />
+    <None Include="wwwroot\CkEditor\translations\ms.js" />
+    <None Include="wwwroot\CkEditor\translations\nb.js" />
+    <None Include="wwwroot\CkEditor\translations\ne.js" />
+    <None Include="wwwroot\CkEditor\translations\nl.js" />
+    <None Include="wwwroot\CkEditor\translations\no.js" />
+    <None Include="wwwroot\CkEditor\translations\no.umd.js" />
+    <None Include="wwwroot\CkEditor\translations\oc.js" />
+    <None Include="wwwroot\CkEditor\translations\oc.umd.js" />
+    <None Include="wwwroot\CkEditor\translations\pl.js" />
+    <None Include="wwwroot\CkEditor\translations\pl.umd.js" />
+    <None Include="wwwroot\CkEditor\translations\pt-br.js" />
+    <None Include="wwwroot\CkEditor\translations\pt-br.umd.js" />
+    <None Include="wwwroot\CkEditor\translations\pt.js" />
+    <None Include="wwwroot\CkEditor\translations\ro.js" />
+    <None Include="wwwroot\CkEditor\translations\ru.js" />
+    <None Include="wwwroot\CkEditor\translations\si.js" />
+    <None Include="wwwroot\CkEditor\translations\si.umd.js" />
+    <None Include="wwwroot\CkEditor\translations\sk.js" />
+    <None Include="wwwroot\CkEditor\translations\sl.js" />
+    <None Include="wwwroot\CkEditor\translations\sq.js" />
+    <None Include="wwwroot\CkEditor\translations\sr-latn.js" />
+    <None Include="wwwroot\CkEditor\translations\sr-latn.umd.js" />
+    <None Include="wwwroot\CkEditor\translations\sr.js" />
+    <None Include="wwwroot\CkEditor\translations\sr.umd.js" />
+    <None Include="wwwroot\CkEditor\translations\sv.js" />
+    <None Include="wwwroot\CkEditor\translations\th.js" />
+    <None Include="wwwroot\CkEditor\translations\th.umd.js" />
+    <None Include="wwwroot\CkEditor\translations\tk.js" />
+    <None Include="wwwroot\CkEditor\translations\tr.js" />
+    <None Include="wwwroot\CkEditor\translations\tr.umd.js" />
+    <None Include="wwwroot\CkEditor\translations\tt.js" />
+    <None Include="wwwroot\CkEditor\translations\tt.umd.js" />
+    <None Include="wwwroot\CkEditor\translations\ug.js" />
+    <None Include="wwwroot\CkEditor\translations\ug.umd.js" />
+    <None Include="wwwroot\CkEditor\translations\uk.js" />
+    <None Include="wwwroot\CkEditor\translations\ur.js" />
+    <None Include="wwwroot\CkEditor\translations\uz.js" />
+    <None Include="wwwroot\CkEditor\translations\vi.js" />
+    <None Include="wwwroot\CkEditor\translations\zh-cn.js" />
+    <None Include="wwwroot\CkEditor\translations\zh.js" />
   </ItemGroup>
 
 	<ItemGroup>
@@ -77,6 +181,50 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Shared\Components\ShowCategoriesInMainMenu\ShowCategoriesInMainMenu.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Shared\Components\ShowCategoriesInMainMenu\ShowCategoriesInMainMenu.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="wwwroot\CkEditor\translations\af.d.ts" />
+    <TypeScriptCompile Include="wwwroot\CkEditor\translations\ast.d.ts" />
+    <TypeScriptCompile Include="wwwroot\CkEditor\translations\bn.d.ts" />
+    <TypeScriptCompile Include="wwwroot\CkEditor\translations\da.d.ts" />
+    <TypeScriptCompile Include="wwwroot\CkEditor\translations\en.d.ts" />
+    <TypeScriptCompile Include="wwwroot\CkEditor\translations\es-co.d.ts" />
+    <TypeScriptCompile Include="wwwroot\CkEditor\translations\et.d.ts" />
+    <TypeScriptCompile Include="wwwroot\CkEditor\translations\eu.d.ts" />
+    <TypeScriptCompile Include="wwwroot\CkEditor\translations\he.d.ts" />
+    <TypeScriptCompile Include="wwwroot\CkEditor\translations\hy.d.ts" />
+    <TypeScriptCompile Include="wwwroot\CkEditor\translations\km.d.ts" />
+    <TypeScriptCompile Include="wwwroot\CkEditor\translations\kn.d.ts" />
+    <TypeScriptCompile Include="wwwroot\CkEditor\translations\ko.d.ts" />
+    <TypeScriptCompile Include="wwwroot\CkEditor\translations\ku.d.ts" />
+    <TypeScriptCompile Include="wwwroot\CkEditor\translations\nl.d.ts" />
+    <TypeScriptCompile Include="wwwroot\CkEditor\translations\pt-br.d.ts" />
+    <TypeScriptCompile Include="wwwroot\CkEditor\translations\pt.d.ts" />
+    <TypeScriptCompile Include="wwwroot\CkEditor\translations\ro.d.ts" />
+    <TypeScriptCompile Include="wwwroot\CkEditor\translations\si.d.ts" />
+    <TypeScriptCompile Include="wwwroot\CkEditor\translations\sk.d.ts" />
+    <TypeScriptCompile Include="wwwroot\CkEditor\translations\sl.d.ts" />
+    <TypeScriptCompile Include="wwwroot\CkEditor\translations\sq.d.ts" />
+    <TypeScriptCompile Include="wwwroot\CkEditor\translations\sr-latn.d.ts" />
+    <TypeScriptCompile Include="wwwroot\CkEditor\translations\sr.d.ts" />
+    <TypeScriptCompile Include="wwwroot\CkEditor\translations\th.d.ts" />
+    <TypeScriptCompile Include="wwwroot\CkEditor\translations\ti.d.ts" />
+    <TypeScriptCompile Include="wwwroot\CkEditor\translations\tt.d.ts" />
+    <TypeScriptCompile Include="wwwroot\CkEditor\translations\ug.d.ts" />
+    <TypeScriptCompile Include="wwwroot\CkEditor\translations\uk.d.ts" />
+    <TypeScriptCompile Include="wwwroot\CkEditor\translations\ur.d.ts" />
+    <TypeScriptCompile Include="wwwroot\CkEditor\translations\uz.d.ts" />
+    <TypeScriptCompile Include="wwwroot\CkEditor\translations\vi.d.ts" />
+    <TypeScriptCompile Include="wwwroot\CkEditor\translations\zh.d.ts" />
   </ItemGroup>
 
 </Project>

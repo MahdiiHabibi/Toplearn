@@ -13,7 +13,8 @@ namespace Toplearn.Web.ViewComponents
 			User user = await _userPanelService.GetUserByUserId(userId);
 			var userForShowAddEditRoleViewModel = _mapperAdmin.MapUserForShowAddEditRoleViewModelFromUser(user);
 			userForShowAddEditRoleViewModel.ShowAddEditRoleViewModels = await roleManager.GetRolesForShows(userId);
-			return View("ShowRolesOfUser", userForShowAddEditRoleViewModel);
+			return await Task.FromResult((IViewComponentResult)
+				View("ShowRolesOfUser", userForShowAddEditRoleViewModel));
 		}
 	}
 }

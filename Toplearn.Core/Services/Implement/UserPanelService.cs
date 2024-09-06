@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Toplearn.Core.Convertors;
 using Toplearn.Core.DTOs.UserPanel;
 using Toplearn.Core.Generator;
+using Toplearn.Core.Security;
 using TopLearn.Core.Security;
 using Toplearn.Core.Services.Interface;
 using Toplearn.DataLayer.Entities.User;
@@ -27,7 +28,8 @@ namespace Toplearn.Core.Services.Implement
 			var newImageUrl = string.Empty;
 			try
 			{
-				if (newImageFile == null) return @"\images\pic\Default.png";
+				if (newImageFile == null || !newImageFile.IsImage())
+					return @"\images\pic\Default.png";
 
 				if (lastImageUrl != @"\images\pic\Default.png" &&
 					File.Exists($"{Directory.GetCurrentDirectory()}\\wwwroot{lastImageUrl}"))
@@ -58,7 +60,9 @@ namespace Toplearn.Core.Services.Implement
 		public async Task<bool> IsPasswordCorrect(User user, string password) =>
 			 user.Password == password.EncodePasswordMd5();
 
-
+		public async Task<string?> CheckUserDescription(int userId)=>
+			(await _contextActionsForUser.GetOne(x=>x.UserId == userId))?.UserDescription;
+		
 
 		public async Task<bool> IsEmailExist(string email) =>
 			await _contextActionsForUser.Exists(x => x.Email == email.FixedEmail());

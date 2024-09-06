@@ -8549,6 +8549,650 @@
       "PackagePath": "staticwebassets\\AdminLayerContent\\plugins\\timepicker\\bootstrap-timepicker.min.js"
     },
     {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\ckeditor.js",
+      "PackagePath": "staticwebassets\\CkEditor\\ckeditor.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\ckeditor.js.map",
+      "PackagePath": "staticwebassets\\CkEditor\\ckeditor.js.map"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\ckeditor5.css",
+      "PackagePath": "staticwebassets\\CkEditor\\ckeditor5.css"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\af.d.ts",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\af.d.ts"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\af.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\af.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\af.umd.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\af.umd.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\ar.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\ar.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\ar.umd.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\ar.umd.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\ast.d.ts",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\ast.d.ts"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\ast.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\ast.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\az.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\az.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\az.umd.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\az.umd.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\bg.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\bg.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\bn.d.ts",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\bn.d.ts"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\bn.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\bn.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\bs.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\bs.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\ca.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\ca.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\cs.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\cs.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\cs.umd.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\cs.umd.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\da.d.ts",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\da.d.ts"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\da.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\da.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\da.umd.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\da.umd.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\de-ch.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\de-ch.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\de-ch.umd.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\de-ch.umd.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\de.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\de.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\de.umd.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\de.umd.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\el.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\el.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\el.umd.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\el.umd.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\en-au.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\en-au.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\en-gb.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\en-gb.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\en.d.ts",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\en.d.ts"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\en.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\en.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\eo.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\eo.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\eo.umd.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\eo.umd.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\es-co.d.ts",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\es-co.d.ts"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\es-co.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\es-co.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\es.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\es.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\es.umd.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\es.umd.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\et.d.ts",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\et.d.ts"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\et.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\et.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\et.umd.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\et.umd.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\eu.d.ts",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\eu.d.ts"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\eu.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\eu.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\eu.umd.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\eu.umd.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\fa.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\fa.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\fi.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\fi.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\fi.umd.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\fi.umd.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\fr.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\fr.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\fr.umd.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\fr.umd.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\gl.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\gl.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\gu.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\gu.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\gu.umd.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\gu.umd.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\he.d.ts",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\he.d.ts"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\he.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\he.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\hi.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\hi.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\hi.umd.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\hi.umd.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\hr.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\hr.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\hu.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\hu.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\hy.d.ts",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\hy.d.ts"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\hy.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\hy.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\id.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\id.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\it.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\it.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\it.umd.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\it.umd.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\ja.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\ja.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\jv.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\jv.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\kk.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\kk.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\km.d.ts",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\km.d.ts"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\km.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\km.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\kn.d.ts",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\kn.d.ts"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\kn.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\kn.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\kn.umd.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\kn.umd.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\ko.d.ts",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\ko.d.ts"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\ko.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\ko.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\ku.d.ts",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\ku.d.ts"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\ku.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\ku.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\ku.umd.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\ku.umd.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\lt.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\lt.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\lt.umd.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\lt.umd.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\lv.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\lv.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\ms.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\ms.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\nb.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\nb.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\ne.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\ne.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\nl.d.ts",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\nl.d.ts"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\nl.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\nl.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\no.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\no.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\no.umd.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\no.umd.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\oc.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\oc.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\oc.umd.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\oc.umd.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\pl.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\pl.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\pl.umd.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\pl.umd.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\pt-br.d.ts",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\pt-br.d.ts"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\pt-br.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\pt-br.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\pt-br.umd.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\pt-br.umd.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\pt.d.ts",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\pt.d.ts"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\pt.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\pt.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\ro.d.ts",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\ro.d.ts"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\ro.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\ro.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\ru.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\ru.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\si.d.ts",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\si.d.ts"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\si.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\si.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\si.umd.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\si.umd.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\sk.d.ts",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\sk.d.ts"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\sk.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\sk.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\sl.d.ts",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\sl.d.ts"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\sl.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\sl.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\sq.d.ts",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\sq.d.ts"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\sq.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\sq.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\sr-latn.d.ts",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\sr-latn.d.ts"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\sr-latn.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\sr-latn.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\sr-latn.umd.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\sr-latn.umd.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\sr.d.ts",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\sr.d.ts"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\sr.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\sr.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\sr.umd.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\sr.umd.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\sv.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\sv.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\th.d.ts",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\th.d.ts"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\th.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\th.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\th.umd.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\th.umd.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\ti.d.ts",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\ti.d.ts"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\tk.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\tk.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\tr.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\tr.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\tr.umd.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\tr.umd.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\tt.d.ts",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\tt.d.ts"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\tt.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\tt.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\tt.umd.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\tt.umd.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\ug.d.ts",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\ug.d.ts"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\ug.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\ug.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\ug.umd.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\ug.umd.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\uk.d.ts",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\uk.d.ts"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\uk.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\uk.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\ur.d.ts",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\ur.d.ts"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\ur.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\ur.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\uz.d.ts",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\uz.d.ts"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\uz.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\uz.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\vi.d.ts",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\vi.d.ts"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\vi.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\vi.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\zh-cn.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\zh-cn.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\zh.d.ts",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\zh.d.ts"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CkEditor\\translations\\zh.js",
+      "PackagePath": "staticwebassets\\CkEditor\\translations\\zh.js"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CourseInfo\\EpisodesFile\\جاوا اسکریپت_6\\جاوا اسکریپت_6_Intro\\جاوا اسکریپت_Intro.mp4",
+      "PackagePath": "staticwebassets\\CourseInfo\\EpisodesFile\\جاوا اسکریپت_6\\جاوا اسکریپت_6_Intro\\جاوا اسکریپت_Intro.mp4"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CourseInfo\\EpisodesFile\\سیشارپ مقدماتی_3\\سیشارپ مقدماتی_3_Intro\\سیشارپ مقدماتی_Intro.mp4",
+      "PackagePath": "staticwebassets\\CourseInfo\\EpisodesFile\\سیشارپ مقدماتی_3\\سیشارپ مقدماتی_3_Intro\\سیشارپ مقدماتی_Intro.mp4"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CourseInfo\\EpisodesFile\\سیشارپ مقدماتی_5\\سیشارپ مقدماتی_5_Intro\\سیشارپ مقدماتی_Intro.mp4",
+      "PackagePath": "staticwebassets\\CourseInfo\\EpisodesFile\\سیشارپ مقدماتی_5\\سیشارپ مقدماتی_5_Intro\\سیشارپ مقدماتی_Intro.mp4"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CourseInfo\\Images\\image\\0eecb4d532fe465e8376d1c6cab71c70.png",
+      "PackagePath": "staticwebassets\\CourseInfo\\Images\\image\\0eecb4d532fe465e8376d1c6cab71c70.png"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CourseInfo\\Images\\image\\217fd1b9227445248be6ec5e812f5867.png",
+      "PackagePath": "staticwebassets\\CourseInfo\\Images\\image\\217fd1b9227445248be6ec5e812f5867.png"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CourseInfo\\Images\\image\\56500c59ce674a179fe4be0c65b9fbd2.png",
+      "PackagePath": "staticwebassets\\CourseInfo\\Images\\image\\56500c59ce674a179fe4be0c65b9fbd2.png"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CourseInfo\\Images\\image\\6337d8de36e14e858bdddb0889c34e90.png",
+      "PackagePath": "staticwebassets\\CourseInfo\\Images\\image\\6337d8de36e14e858bdddb0889c34e90.png"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CourseInfo\\Images\\image\\8684466f32dd4fdf8dd82d7030b88b9e.png",
+      "PackagePath": "staticwebassets\\CourseInfo\\Images\\image\\8684466f32dd4fdf8dd82d7030b88b9e.png"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CourseInfo\\Images\\image\\ac7915392ffe41a1add55b1651d0ca27.png",
+      "PackagePath": "staticwebassets\\CourseInfo\\Images\\image\\ac7915392ffe41a1add55b1651d0ca27.png"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CourseInfo\\Images\\image\\b8bc37018937407bb26f290d24ef60b2.png",
+      "PackagePath": "staticwebassets\\CourseInfo\\Images\\image\\b8bc37018937407bb26f290d24ef60b2.png"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CourseInfo\\Images\\image\\c9d7fd4c1fb6468ab7ddfc559bb81749.png",
+      "PackagePath": "staticwebassets\\CourseInfo\\Images\\image\\c9d7fd4c1fb6468ab7ddfc559bb81749.png"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CourseInfo\\Images\\image\\cee73c4aa2254d98a8e2a19ed65037ec.png",
+      "PackagePath": "staticwebassets\\CourseInfo\\Images\\image\\cee73c4aa2254d98a8e2a19ed65037ec.png"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CourseInfo\\Images\\image\\no-photo.jpg",
+      "PackagePath": "staticwebassets\\CourseInfo\\Images\\image\\no-photo.jpg"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CourseInfo\\Images\\thumb\\0eecb4d532fe465e8376d1c6cab71c70.png",
+      "PackagePath": "staticwebassets\\CourseInfo\\Images\\thumb\\0eecb4d532fe465e8376d1c6cab71c70.png"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CourseInfo\\Images\\thumb\\217fd1b9227445248be6ec5e812f5867.png",
+      "PackagePath": "staticwebassets\\CourseInfo\\Images\\thumb\\217fd1b9227445248be6ec5e812f5867.png"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CourseInfo\\Images\\thumb\\56500c59ce674a179fe4be0c65b9fbd2.png",
+      "PackagePath": "staticwebassets\\CourseInfo\\Images\\thumb\\56500c59ce674a179fe4be0c65b9fbd2.png"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CourseInfo\\Images\\thumb\\6337d8de36e14e858bdddb0889c34e90.png",
+      "PackagePath": "staticwebassets\\CourseInfo\\Images\\thumb\\6337d8de36e14e858bdddb0889c34e90.png"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CourseInfo\\Images\\thumb\\8684466f32dd4fdf8dd82d7030b88b9e.png",
+      "PackagePath": "staticwebassets\\CourseInfo\\Images\\thumb\\8684466f32dd4fdf8dd82d7030b88b9e.png"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CourseInfo\\Images\\thumb\\ac7915392ffe41a1add55b1651d0ca27.png",
+      "PackagePath": "staticwebassets\\CourseInfo\\Images\\thumb\\ac7915392ffe41a1add55b1651d0ca27.png"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CourseInfo\\Images\\thumb\\b8bc37018937407bb26f290d24ef60b2.png",
+      "PackagePath": "staticwebassets\\CourseInfo\\Images\\thumb\\b8bc37018937407bb26f290d24ef60b2.png"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CourseInfo\\Images\\thumb\\c9d7fd4c1fb6468ab7ddfc559bb81749.png",
+      "PackagePath": "staticwebassets\\CourseInfo\\Images\\thumb\\c9d7fd4c1fb6468ab7ddfc559bb81749.png"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CourseInfo\\Images\\thumb\\cee73c4aa2254d98a8e2a19ed65037ec.png",
+      "PackagePath": "staticwebassets\\CourseInfo\\Images\\thumb\\cee73c4aa2254d98a8e2a19ed65037ec.png"
+    },
+    {
+      "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\CourseInfo\\Images\\thumb\\no-photo.jpg",
+      "PackagePath": "staticwebassets\\CourseInfo\\Images\\thumb\\no-photo.jpg"
+    },
+    {
       "Id": "W:\\Toplearn\\Toplearn.Web\\wwwroot\\css\\AccessDenied.css",
       "PackagePath": "staticwebassets\\css\\AccessDenied.css"
     },

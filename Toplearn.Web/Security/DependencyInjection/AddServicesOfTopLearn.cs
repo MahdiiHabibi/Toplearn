@@ -54,8 +54,10 @@ namespace Toplearn.Web.Security.DependencyInjection
             builder.Services.AddScoped<IUtilities, Utilities>();
             //
             builder.Services.AddSingleton<IPermissionServices, PermissionServices>();
-
-
+            //
+            builder.Services.AddScoped<ICourseServices,CourseServices>();
+            //
+            builder.Services.AddScoped(typeof(ICategoryServices), typeof(CategoryServices));
 			#endregion
 
 			#region WebMarkupMin

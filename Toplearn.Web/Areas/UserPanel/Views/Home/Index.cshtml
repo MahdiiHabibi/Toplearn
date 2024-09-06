@@ -1,4 +1,5 @@
-﻿@model UserPanelViewModel
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model UserPanelViewModel
 
 @{
 	ViewBag.Title = "پنل کاربری" + " " + Model.FullName;
@@ -14,10 +15,10 @@
 				<div class="col-md-3 col-sm-4 col-xs-12">
 					<aside>
 
-						<partial name="_BoxOfImageInUserPanel"/>
-						
-						<partial name="_DeskInUserPanel"/>
-						
+						<partial name="_BoxOfImageInUserPanel" />
+
+						<partial name="_DeskInUserPanel" />
+
 					</aside>
 				</div>
 				<div class="col-md-9 col-sm-8 col-xs-12">
@@ -30,10 +31,27 @@
 									<li> <i class="zmdi zmdi-account"></i> نام و نام خانوادگی : @Model.FullName </li>
 									<li> <i class="zmdi zmdi-assignment-account"></i> نام کاربری :  @Model.UserName </li>
 									<li> <i class="zmdi zmdi-email"></i> ایمیل : @Model.Email.CapitalizeFirstLetter() </li>
+									@if (Model.UserDescription == null)
+									{
+										<li>
+											<a asp-action="EditProfile" asp-controller="Home" asp-area="UserPanel">
+												<i class="zmdi zmdi-edit"></i>
+												توضیحات : برای ثبت یک توضیح مختصر برای خود کلیک کنید .
+											</a>
+										</li>
+									}
+									else
+									{
+										<li> <i class="zmdi zmdi-collection-bookmark"></i>  توضیحات : 
+											<div class="ck-content">
+												@Html.Raw(Model.UserDescription)
+											</div>
+											</li>
+									}
 									<li> <i class="zmdi zmdi-calendar-check"></i> تاریخ عضویت : @Model.DateTime.ToShamsi() </li>
 									<li>
-										<i class="zmdi zmdi-balance-wallet"></i> مانده ی کیف پول : @Model.WalletBalance.ToString("N0") ریال - معادل  (@(((Model.WalletBalance)/10).ToString("N0")) تومان)
-									
+										<i class="zmdi zmdi-balance-wallet"></i> مانده ی کیف پول : @Model.WalletBalance.ToString("N0") ریال - معادل  (@(((Model.WalletBalance) / 10).ToString("N0")) تومان)
+
 									</li>
 								</ul>
 							</div>

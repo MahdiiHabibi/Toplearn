@@ -29,6 +29,11 @@ namespace Toplearn.Core.DTOs.UserPanel
 		[EmailAddress]
 		public string Email { get; set; }
 
+		[Display(Name = "توضیحات")]
+		[Required(ErrorMessage = "{0} ضروری است .")]
+		[MinLength(40, ErrorMessage = "{0} شما نمیتواند کمتر از {1} کاراکتر باشد ")]
+		public string? UserDescription { get; set; }
+
 
 		public IFormFile? ImageFile { get; set; }
 	}

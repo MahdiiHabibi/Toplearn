@@ -22,6 +22,152 @@ namespace Toplearn.DataLayer.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Toplearn.DataLayer.Entities.Course.Category", b =>
+                {
+                    b.Property<int>("CategoryId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CategoryId"));
+
+                    b.Property<string>("CategoryName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("ParentCategoryId")
+                        .HasColumnType("int");
+
+                    b.HasKey("CategoryId");
+
+                    b.HasIndex("ParentCategoryId");
+
+                    b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            CategoryId = 1,
+                            CategoryName = "برنامه نویسی سایت",
+                            IsActive = true
+                        },
+                        new
+                        {
+                            CategoryId = 2,
+                            CategoryName = "برنامه نویسی موبایل ",
+                            IsActive = true
+                        },
+                        new
+                        {
+                            CategoryId = 3,
+                            CategoryName = "طراحی سایت",
+                            IsActive = true
+                        },
+                        new
+                        {
+                            CategoryId = 4,
+                            CategoryName = "بانک اطلاعاتی",
+                            IsActive = true
+                        });
+                });
+
+            modelBuilder.Entity("Toplearn.DataLayer.Entities.Course.Course", b =>
+                {
+                    b.Property<int>("CourseId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CourseId"));
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CourseDetail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CourseImagePath")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("CourseLevel")
+                        .HasMaxLength(20)
+                        .HasColumnType("int");
+
+                    b.Property<string>("CourseName")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<int>("CoursePrice")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CourseStatus")
+                        .HasMaxLength(20)
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("LastUpdateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Tags")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TeacherId")
+                        .HasColumnType("int");
+
+                    b.HasKey("CourseId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("TeacherId");
+
+                    b.ToTable("Courses");
+                });
+
+            modelBuilder.Entity("Toplearn.DataLayer.Entities.Course.CourseEpisode", b =>
+                {
+                    b.Property<int>("EpisodeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EpisodeId"));
+
+                    b.Property<int>("CourseId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("EpisodeFileUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("EpisodeNumber")
+                        .HasColumnType("int");
+
+                    b.Property<string>("EpisodeTitle")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("EpisodeVideoTime")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("EpisodeId");
+
+                    b.HasIndex("CourseId");
+
+                    b.ToTable("CourseEpisodes");
+                });
+
             modelBuilder.Entity("Toplearn.DataLayer.Entities.Permission.Permission", b =>
                 {
                     b.Property<int>("PermissionId")
@@ -72,7 +218,7 @@ namespace Toplearn.DataLayer.Migrations
                             PermissionId = 31,
                             ParentId = 1,
                             PermissionDetail = "Admin_Roles_UpdateUserRole",
-                            PermissionPersianDetail = "بروز رسانی مقام ها",
+                            PermissionPersianDetail = "بروز رسانی مقام های کاربران",
                             PermissionUrl = "POST"
                         },
                         new
@@ -167,6 +313,29 @@ namespace Toplearn.DataLayer.Migrations
                             PermissionDetail = "Admin_UserManager_IncreaseTheWallet",
                             PermissionPersianDetail = "افزایش کیف پول کاربر",
                             PermissionUrl = "POST"
+                        },
+                        new
+                        {
+                            PermissionId = 4,
+                            PermissionDetail = "Teacher",
+                            PermissionPersianDetail = "پنل استاد",
+                            PermissionUrl = "POST"
+                        },
+                        new
+                        {
+                            PermissionId = 43,
+                            ParentId = 4,
+                            PermissionDetail = "Teacher_Index",
+                            PermissionPersianDetail = "داشبورد پنل استاد",
+                            PermissionUrl = "/Teacher/Index"
+                        },
+                        new
+                        {
+                            PermissionId = 44,
+                            ParentId = 4,
+                            PermissionDetail = "Teacher_AddCourse",
+                            PermissionPersianDetail = "اضافه کردن دوره ی جدید",
+                            PermissionUrl = "/Teacher/AddCourse"
                         });
                 });
 
@@ -296,6 +465,9 @@ namespace Toplearn.DataLayer.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
+                    b.Property<string>("UserDescription")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("UserName")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -407,6 +579,43 @@ namespace Toplearn.DataLayer.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Toplearn.DataLayer.Entities.Course.Category", b =>
+                {
+                    b.HasOne("Toplearn.DataLayer.Entities.Course.Category", null)
+                        .WithMany("ChildCategories")
+                        .HasForeignKey("ParentCategoryId");
+                });
+
+            modelBuilder.Entity("Toplearn.DataLayer.Entities.Course.Course", b =>
+                {
+                    b.HasOne("Toplearn.DataLayer.Entities.Course.Category", "Category")
+                        .WithMany("Courses")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Toplearn.DataLayer.Entities.User.User", "Teacher")
+                        .WithMany("Courses")
+                        .HasForeignKey("TeacherId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+
+                    b.Navigation("Teacher");
+                });
+
+            modelBuilder.Entity("Toplearn.DataLayer.Entities.Course.CourseEpisode", b =>
+                {
+                    b.HasOne("Toplearn.DataLayer.Entities.Course.Course", "Course")
+                        .WithMany("Episodes")
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Course");
+                });
+
             modelBuilder.Entity("Toplearn.DataLayer.Entities.Permission.Permission", b =>
                 {
                     b.HasOne("Toplearn.DataLayer.Entities.Permission.Permission", null)
@@ -471,6 +680,18 @@ namespace Toplearn.DataLayer.Migrations
                     b.Navigation("WalletType");
                 });
 
+            modelBuilder.Entity("Toplearn.DataLayer.Entities.Course.Category", b =>
+                {
+                    b.Navigation("ChildCategories");
+
+                    b.Navigation("Courses");
+                });
+
+            modelBuilder.Entity("Toplearn.DataLayer.Entities.Course.Course", b =>
+                {
+                    b.Navigation("Episodes");
+                });
+
             modelBuilder.Entity("Toplearn.DataLayer.Entities.Permission.Permission", b =>
                 {
                     b.Navigation("ParentPermission");
@@ -487,6 +708,8 @@ namespace Toplearn.DataLayer.Migrations
 
             modelBuilder.Entity("Toplearn.DataLayer.Entities.User.User", b =>
                 {
+                    b.Navigation("Courses");
+
                     b.Navigation("UserRoles");
 
                     b.Navigation("Wallets");

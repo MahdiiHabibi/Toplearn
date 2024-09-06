@@ -1,4 +1,5 @@
-﻿@model EditPanelViewModel
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model EditPanelViewModel
 
 
 @{
@@ -54,7 +55,13 @@
 										</div>
 										<span asp-validation-for="UserName"></span>
 									</div>
-
+									<div class="col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 13px;">
+										<div class="input-group">
+											<span class="input-group-addon" id="username"><i class="zmdi zmdi-account"></i></span>
+											<textarea id="UserDescription" asp-for="UserDescription"></textarea>
+										</div>
+										<span asp-validation-for="UserDescription"></span>
+									</div>
 									<div class="col-md-4 col-sm-12 col-xs-12" style="margin-bottom: 13px;">
 										<p class="help-block">
 											آواتار
@@ -67,35 +74,7 @@
 										<img id="profile-img-tag" src="@User.Claims.Single(x => x.Type == "ImageUrl").Value" class="img-rounded thumbnail" style="max-width:66%;" />
 									</div>
 
-									<script type="text/javascript">
-
-										function readURL(input) {
-
-											if (input.files && input.files[0]) {
-
-												var reader = new FileReader();
-
-
-
-												reader.onload = function (e) {
-
-													$('#profile-img-tag').attr('src', e.target.result);
-
-												}
-
-												reader.readAsDataURL(input.files[0]);
-
-											}
-
-										}
-
-										$("#ImageFile").change(function () {
-
-											readURL(this);
-
-										});
-
-									</script>
+									
 									<div class="col-md-7 col-sm-8 col-xs-12">
 										<button class="btn btn-success"> ویرایش اطلاعات </button>
 									</div>
@@ -109,3 +88,80 @@
 		</div>
 	</div>
 </main>
+
+@section Script
+{
+	<script type="text/javascript">
+
+		function readURL(input) {
+
+			if (input.files && input.files[0]) {
+
+				var reader = new FileReader();
+
+
+
+				reader.onload = function (e) {
+
+					$('#profile-img-tag').attr('src', e.target.result);
+
+				}
+
+				reader.readAsDataURL(input.files[0]);
+
+			}
+
+		}
+
+		$("#ImageFile").change(function () {
+
+			readURL(this);
+
+		});
+
+	</script>
+
+	<script>
+		ClassicEditor
+			.create(document.querySelector('#UserDescription'),
+				{
+					ckfinder: {
+						// Upload the images to the server using the CKFinder QuickUpload command.
+						uploadUrl: '/UploadImage'
+					},
+					htmlSupport: {
+						allow: [
+							{
+								name: /.*/,
+								attributes: true,
+								classes: true,
+								styles: true
+							}
+						]
+					}
+				})
+			.catch(error => { console.error(error); });
+
+
+		const editorConfig = {
+			toolbar: ['heading', 'bold', 'italic', 'bulletedList', 'numberedList'],
+			removePlugins: ['Image', 'ImageToolbar', 'ImageStyle', 'ImageUpload', 'ImageCaption'],
+			heading: {
+				options: [
+					{
+						model: 'paragraph',
+						title: 'Paragraph',
+						class: 'ck-heading_paragraph',
+					},
+					{
+						model: 'heading2',
+						view: 'h2',
+						title: 'Heading',
+						class: 'ck-heading_heading2',
+					},
+				],
+			},
+		};
+	</script>
+
+}

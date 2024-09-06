@@ -1,0 +1,244 @@
+﻿@model ShowsCourseViewModel
+
+@{
+	ViewBag.Title = " دوره های شما ";
+	ViewBag.Courses = "active";
+	bool OodOrEven = true;
+	int i;
+}
+
+
+
+
+<link href="~/ckeditor/ckeditor5.css" rel="stylesheet" />
+
+
+<!-- Main content -->
+<section class="content">
+	<div class="row">
+		<div class="col-12">
+
+			<!-- /.card -->
+
+			<div class="card">
+				<div class="card-header">
+					<h3 class="card-title">@ViewBag.Title</h3>
+				</div>
+				<!-- /.card-header -->
+				<div class="card-body">
+					<div id="example1_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
+						<div>
+							<form asp-action="Courses" asp-controller="Teacher" asp-area="Admin" method="get">
+								<div class="row">
+									<div class="dataTables_length col-12 col-sm-4" id="example1_length">
+										<label class="d-flex labelOfSkipNumber" style="max-width:max-content">
+											نمایش
+											<select name="take" id="take" aria-controls="جستجو" class="form-control form-control-sm" style="margin:0px 13px;">
+												<option id="option-2" value="2">2</option>
+												<option id="option-5" value="5">5</option>
+												<option id="option-10" value="10">10</option>
+												<option id="option-20" value="20">20</option>
+											</select>دوره
+										</label>
+									</div>
+
+									<div id="example1_filter " class="dataTables_filter col-12 col-sm-8">
+										<label>
+											نام دوره :
+											<input type="search" value="@ViewData["nameFilter"]" name="nameFilter" class="form-control form-control-sm" placeholder="نام دوره :" aria-controls="example1">
+										</label>
+										<input type="hidden" name="pageId" id="pageId" value="@ViewData["pageId"]" />
+									</div>
+								</div>
+								<div>
+									<button type="submit" class="btn btn-block btn-outline-success">جستجو</button>
+									<a asp-action="Courses" asp-controller="Teacher" class="btn btn-block btn-outline-success">حذف فیلتر های جستجو</a>
+								</div>
+
+							</form>
+						</div>
+						<div class="row">
+							<div class="col-12">
+								<div class="card">
+
+									<!-- /.card-header -->
+									<div class="card-body table-responsive p-0">
+										<table class="table table-hover" style="font-size:xx-small;">
+											<thead>
+												<tr role="row">
+													<th>نام دوره  </th>
+													<th>گروه</th>
+													<th>تعداد جلسات</th>
+													<th>قیمت دوره</th>
+													<th>تاریخ به وجود آمدن</th>
+													<th>تاریخ آخرین آپدیت  </th>
+													<th> وضعیت دوره </th>
+													<th>سطح دوره</th>
+													<th>دستورات</th>
+												</tr>
+											</thead>
+											<tbody>
+												@foreach (var course in Model.Courses)
+												{
+													<tr role="row" class="@(OodOrEven?"odd":"even")">
+														<td class="sorting_1">@course.CourseName</td>
+														<td>@course.Category.CategoryName</td>
+														<td>@course.Episodes?.Count()</td>
+														<td title=" معادل @((course.CoursePrice/10).ToString("##,###")) تومان">@course.CoursePrice.ToString("N0") ریال </td>
+														<td>@course.CreateTime.ToShamsi()</td>
+														<td>@course.LastUpdateTime.ToShamsi()</td>
+														<td>@(course.CourseStatus.ToString().Replace("_", " "))</td>
+														<td>@course.CourseLevel.ToString()</td>
+
+														<td>
+															
+															@* TODO: *@
+															@if (course.Episodes != null && course.Episodes.Any())
+															{
+																<a onclick="Video('@($"/CourseInfo/Images/thumb/{course.CourseImagePath}")','@($"{course.Episodes?.Single(x=>x.EpisodeNumber == 0).EpisodeFileUrl}")')" target="_blank" class="btn btn-app" style="min-width:fit-content; font-size:xx-small;">
+																	<i class="fa fa-file-video-o" style="font-size:small;"></i>
+																	عکس 
+																	<br/>
+																	ویدیو ی معرفی
+																</a>
+															}
+															<a onclick="GetCourseDescription(@course.CourseId)" target="_blank" class="btn btn-app" style="min-width:fit-content;">
+																<i class="fa fa-newspaper-o"></i> متن توضیحات
+															</a>
+															<a asp-action="EditCourse" asp-controller="Teacher" asp-area="Admin" asp-route-courseName="@course.CourseName" asp-route-courseId="@course.CourseId"  class="btn btn-app" style="min-width:fit-content;">
+																<i class="fa fa-arrow-circle-o-down"></i>  
+																تغییر اطلاعات
+															</a>
+														</td>
+													</tr>
+													OodOrEven = !OodOrEven;
+												}
+											</tbody>
+										</table>
+									</div>
+									<!-- /.card-body -->
+								</div>
+								<!-- /.card -->
+							</div>
+						</div>
+
+
+
+						@if (Model.PageCount > 1)
+						{
+							<div class="row">
+								<div class="col-sm-12 col-md-5"></div>
+								<div class="col-sm-12 col-md-7">
+									<div class="dataTables_paginate paging_simple_numbers" id="example1_paginate">
+										<ul class="pagination">
+											<li class="paginate_button page-item previous @(@Model.CurrentPage == 1?"disabled":"")" id="example1_previous">
+												<a asp-action="Courses" asp-controller="Teacher" asp-area="Admin" asp-route-take="@ViewData["take"]" asp-route-pageId="@(Model.CurrentPage-1)" asp-route-nameFilter="@ViewData["nameFilter"]" aria-controls="example1" data-dt-idx="0" tabindex="0" class="page-link">قبلی</a>
+											</li>
+											@for (i = 1; i <= Model.PageCount; i++)
+											{
+												<li class="paginate_button page-item previous @((i == Model.CurrentPage) ? "active" : "")" id="example1_previous">
+													<a asp-action="Courses" asp-controller="Teacher" asp-area="Admin" asp-route-take="@ViewData["take"]" asp-route-pageId="@i" asp-route-nameFilter="@ViewData["nameFilter"]" aria-controls="example1" data-dt-idx="0" tabindex="0" class="page-link">
+														@i
+													</a>
+												</li>
+											}
+											<li class="paginate_button page-item previous @(Model.CurrentPage == Model.PageCount?"disabled":"")" id="example1_previous">
+												<a asp-action="Courses" asp-controller="Teacher" asp-area="Admin" asp-route-take="@ViewData["take"]" asp-route-pageId="@(Model.CurrentPage+1)" asp-route-nameFilter="@ViewData["nameFilter"]" aria-controls="example1" data-dt-idx="0" tabindex="0" class="page-link">بعدی</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+
+							</div>
+						}
+					</div>
+				</div>
+				<!-- /.card-body -->
+			</div>
+			<!-- /.card -->
+		</div>
+		<!-- /.col -->
+	</div>
+	<!-- /.row -->
+</section>
+<!-- /.content -->
+
+
+
+<div class="card card-success card-outline" id="10" style="position:fixed; top:30%; left: 30%; display:none; transition:all 2s;">
+	<div class="card-header no-border">
+		<h3 class="card-title">
+			فیلم و عکس ابتدایی دوره
+		</h3>
+		<div class="card-tools">
+			<button type="button" onclick="RemoveVideo()" class="btn btn-tool" data-widget="remove">
+				<i class="fa fa-times"></i>
+			</button>
+		</div>
+	</div>
+	<div class="text-center pt-5">
+		<img id="Image-Course" class="profile-user-img img-fluid " style="border:3px outset #28a745 " src="/CourseInfo/Images/thumb/217fd1b9227445248be6ec5e812f5867.png" alt="User profile picture">
+	</div>
+	<div class="card-body box-profile">
+		<video id="video-Course" style="max-width:500px; border:#28a745 dashed 3px; border-radius:5px;" controls ></video>
+	</div>
+</div>
+
+
+<div class="card card-success card-outline" id="20" style="position:fixed; top:25%; right: 25%; left:10%; display:none; transition:all 2s;">
+	<div class="card-header no-border">
+		<h3 class="card-title">
+			توضیحات دوره
+		</h3>
+		<div class="card-tools">
+			<button type="button" onclick="RemoveDescription()" class="btn btn-tool" data-widget="remove">
+				<i class="fa fa-times"></i>
+			</button>
+		</div>
+	</div>
+	<div id="ck-content" class="card-body box-profile ck-content ck-editor" style="font-size:small;">
+	</div>
+</div>
+
+
+<input type="hidden" value="@("option-".Trim() + @ViewData["take"].ToString().Trim())" id="100" />
+
+
+@section Script
+{
+	<script>
+
+		function Video(ImagePath, VideoPath) {
+			document.getElementById("Image-Course").src = ImagePath;
+			document.getElementById("video-Course").src = VideoPath;
+			document.getElementById("10").style.display = "block";
+		}
+
+		function RemoveVideo() {
+			document.getElementById("10").style.display = "none";
+			var videoCourse = document.getElementById("video-Course");
+			videoCourse.pause();
+			videoCourse.src = "";
+			document.getElementById("Image-Course").src = "";
+		}
+
+		function GetCourseDescription(CourseId) {
+			document.getElementById("20").style.display = "block";
+			$.getJSON("/Teacher/GetCourseDescription?CourseId=" + CourseId ,
+				function (data) {
+					document.getElementById("ck-content").innerHTML = data;
+				});
+		}
+
+		function RemoveDescription() {
+			document.getElementById("20").style.display = "none";
+			document.getElementById("ck-content").innerHTML = "";
+		}
+
+	</script>
+
+
+	<script>
+		document.getElementById(document.getElementById("100").value).setAttribute("selected", "selected");
+	</script>
+}

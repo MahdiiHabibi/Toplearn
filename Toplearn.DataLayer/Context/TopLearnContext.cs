@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Toplearn.DataLayer.DataAnnotations;
+using Toplearn.DataLayer.Entities.Course;
+using Toplearn.DataLayer.Entities.Course.CourseRequirements;
 using Toplearn.DataLayer.Entities.Permission;
 using Toplearn.DataLayer.Entities.Setting;
 using Toplearn.DataLayer.Entities.User;
@@ -42,8 +45,23 @@ namespace Toplearn.DataLayer.Context
 
 		public DbSet<RolesPermissions> RolesPermissions { get; set; }
 
+
 		#endregion
 
+		#region Course
+
+		#region Categories
+
+		public DbSet<Category> Categories { get; set; }
+
+		#endregion
+
+
+		public DbSet<Course> Courses { get; set; }
+
+		public DbSet<CourseEpisode> CourseEpisodes { get; set; }
+
+		#endregion
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
@@ -71,7 +89,8 @@ namespace Toplearn.DataLayer.Context
 					RoleDetail = "صاحب سایت"
 				});
 
-			modelBuilder.Entity<WalletType>().HasData(new List<WalletType>()
+			modelBuilder.Entity<WalletType>()
+				.HasData(new List<WalletType>()
 			{
 				new()
 				{
@@ -89,7 +108,8 @@ namespace Toplearn.DataLayer.Context
 				}
 			});
 
-			modelBuilder.Entity<Permission>().HasData(
+			modelBuilder.Entity<Permission>()
+				.HasData(
 				new List<Permission>()
 			{
 				new ()
@@ -148,7 +168,7 @@ namespace Toplearn.DataLayer.Context
 				}
 				,new ()
 				{
-					
+
 					PermissionId = 2,
 					PermissionDetail = "Admin_Home",
 					PermissionPersianDetail ="ادمین" ,
@@ -208,8 +228,69 @@ namespace Toplearn.DataLayer.Context
 					PermissionPersianDetail ="افزایش کیف پول کاربر" ,
 					PermissionUrl = "POST",
 					ParentId = 3
-				}
+				},
+				new ()
+				{
+					PermissionId = 4,
+					PermissionDetail = "Teacher",
+					PermissionPersianDetail = "پنل استاد",
+					PermissionUrl = "POST"
+				},
+				new ()
+				{
+					PermissionId = 43,
+					ParentId = 4,
+					PermissionDetail = "Teacher_Index",
+					PermissionPersianDetail = "داشبورد پنل استاد",
+					PermissionUrl = "/Teacher/Index"
+				},
+				new ()
+				{
+					PermissionId =44,
+					PermissionDetail = "Teacher_AddCourse",
+					PermissionPersianDetail = "اضافه کردن دوره ی جدید",
+					PermissionUrl = "/Teacher/AddCourse",
+					ParentId = 4
+				},
+				//new ()
+				//{
+				//	PermissionDetail = "",
+				//	PermissionPersianDetail = "",
+				//	PermissionUrl = "",
+				//	ParentId = 4
+				//},
+				//new ()
+				//{
+				//	PermissionDetail = "",
+				//	PermissionPersianDetail = "",
+				//	PermissionUrl = "",
+				//	ParentId = 4
+				//}
 
+			});
+			modelBuilder.Entity<Category>()
+				.HasData(new List<Category>()
+			{
+				new ()
+				{
+					CategoryId = 1,
+					CategoryName = "برنامه نویسی سایت"
+				},
+				new ()
+				{
+					CategoryId = 2,
+					CategoryName = "برنامه نویسی موبایل "
+				},
+				new ()
+				{
+					CategoryId = 3,
+					CategoryName = "طراحی سایت"
+				},
+				new ()
+				{
+					CategoryId = 4,
+					CategoryName = "بانک اطلاعاتی"
+				}
 			});
 			#endregion
 
@@ -227,6 +308,8 @@ namespace Toplearn.DataLayer.Context
 			modelBuilder.Entity<Wallet>()
 				.HasQueryFilter(x => !x.User.IsDeleted);
 
+			modelBuilder.Entity<Category>()
+				.HasQueryFilter(c => c.IsActive);
 			#endregion
 
 

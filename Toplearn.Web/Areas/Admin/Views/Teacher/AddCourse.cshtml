@@ -1,0 +1,211 @@
+﻿@model Toplearn.Core.DTOs.Teacher.AddCourseViewModel
+
+@{
+	ViewBag.Title = "افزودن دوره ی جدید";
+	ViewBag.AddCourse = "active";
+}
+
+<section class="content">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<!-- interactive chart -->
+				<div class="card card-success card-outline">
+					<div class="card-header">
+						<h3 class="card-title">
+							<i class="fa fa-bar-chart-o"></i>
+							افزودن دوره ی جدید
+						</h3>
+					</div>
+					<div class="card-body">
+						<form asp-action="AddCourse" asp-controller="Teacher" asp-area="Admin" method="post" enctype="multipart/form-data">
+							<div class="row">
+								<div class="col-8">
+
+									<div class="card-body">
+										<div class="form-group">
+											<label for="CourseName">
+												نام دوره
+											</label>
+											<input asp-for="CourseName" class="form-control" placeholder="نام دوره را وارد کنید">
+										</div>
+
+										<div class="form-group">
+											<label title="اجباری"> گروه  </label>
+											<select  class="form-control" asp-for="CategoryId" asp-items="@(TempData["Categories"] as SelectList)">
+											</select>
+										</div>
+										<div class="form-group">
+											<label title="اختیاری"> زیر گروه </label>
+											<select class="form-control" asp-for="SubCategoryId" asp-items="@(ViewBag.SubCategories as SelectList)">
+											</select>
+										</div>
+
+										<div class="form-group">
+											<label for="CourseDetail"> توضیحات دوره </label>
+											<textarea asp-for="CourseDetail"></textarea>
+										</div>
+										<div class="form-group">
+											<label for="CoursePrice">
+												قیمت دوره
+												(به ریال)
+											</label>
+											<input type="number" asp-for="CoursePrice" class="form-control" placeholder="قیمت دوره را به ریال وارد کنید">
+										</div>
+
+										<div class="form-group">
+											<label for="CourseDemoVideo"> فایل توضیحات دوره </label>
+											<div class="input-group">
+												<div class="custom-file">
+													<input type="file" class="custom-file-input" asp-for="CourseDemoVideo">
+													<label class="custom-file-label" for="CourseDemoVideo">انتخاب فایل</label>
+												</div>
+											</div>
+											<br />
+											<span>
+												فقط عکس وارد کنید
+											</span>
+										</div>
+
+										<div class="form-group">
+											<label for="Tags">
+												هشتگ های دوره
+											</label>
+											<input asp-for="Tags" class="form-control" placeholder="هشتگ های دوره را وارد کنید">
+											<br />
+											<span>
+												هشتگ ها را با کاراکتر - از هم جدا کنید .
+											</span>
+										</div>
+									</div>
+									<!-- /.card-body -->
+
+									<div class="card-footer">
+										<button type="submit" class="btn btn-success">ارسال</button>
+									</div>
+
+								</div>
+								<div class="col-4">
+									<img src="~/CourseInfo/Images/image/no-photo.jpg" class="" id="CourseImage" style="width:100%" alt="Course Image ! >= (Your Image Not Valid!)" />
+									<div class="form-group">
+										<label for="CourseImageFile">  عکس  دوره </label>
+										<div class="input-group">
+											<div class="custom-file">
+												<input type="file" class="custom-file-input" asp-for="CourseImageFile">
+												<label class="custom-file-label" for="CourseImageFile">انتخاب فایل</label>
+											</div>
+										</div>
+										<br />
+										<span>
+											فقط عکس وارد کنید
+										</span>
+									</div>
+
+									<div class="form-group">
+										<label title="اجباری"> سطح دوره </label>
+										<select class="form-control" asp-for="Level" asp-items="@(ViewBag.CourseLevel as SelectList)">
+										</select>
+									</div>
+									<div class="form-group">
+										<label title="اجباری">  وضعیت دوره </label>
+										<select class="form-control" asp-for="Status" asp-items="@(ViewBag.CourseStatus as SelectList)">
+										</select>
+									</div>
+									<div class="text-danger form-group pr-3" asp-validation-summary="All"></div>
+
+								</div>
+
+							</div>
+						</form>
+					</div>
+					<!-- /.card-body-->
+				</div>
+				<!-- /.card -->
+
+			</div>
+			<!-- /.col -->
+		</div>
+		<!-- /.row -->
+		<!-- /.row -->
+	</div><!-- /.container-fluid -->
+</section>
+
+
+@section Script
+{
+	<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+	<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/lib/jquery/dist/jquery.js"></script>
+
+	<script type="text/javascript">
+
+		function readURL(input) {
+
+			if (input.files && input.files[0]) {
+
+				var reader = new FileReader();
+
+
+
+				reader.onload = function (e) {
+
+					$('#CourseImage').attr('src', e.target.result);
+
+				}
+
+				reader.readAsDataURL(input.files[0]);
+
+			}
+
+		}
+
+		$("#CourseImageFile").change(function () {
+
+			readURL(this);
+
+		});
+
+	</script>
+	<script src="~/ckeditor/ckeditor.js"></script>
+	<script>
+		ClassicEditor
+			.create(document.querySelector('#CourseDetail'),
+				{
+					ckfinder: {
+						// Upload the images to the server using the CKFinder QuickUpload command.
+						uploadUrl: '/UploadImage'
+					},
+					htmlSupport: {
+						allow: [
+							{
+								name: /.*/,
+								attributes: true,
+								classes: true,
+								styles: true
+							}
+						]
+					}
+				})
+			.catch(error => { console.error(error); });
+
+		$("#CategoryId").change(function () {
+			$("#SubCategoryId").empty();
+			$.getJSON("/Teacher/GetSubCategoriesJson?Catid=" + $("#CategoryId :selected").val(),
+				function (data) {
+					$.each(data,
+						function () {
+							$("#SubCategoryId").append('<option value=' + this.value + '>' + this.text + '</option>');
+
+						});
+
+				});
+
+
+		});
+
+	</script>
+
+
+
+}

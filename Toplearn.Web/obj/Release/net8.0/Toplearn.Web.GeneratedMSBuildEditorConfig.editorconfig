@@ -78,6 +78,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[W:/Toplearn/Toplearn.Web/Areas/Admin/Views/Teacher/AddCourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGVhY2hlclxBZGRDb3Vyc2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[W:/Toplearn/Toplearn.Web/Areas/Admin/Views/Teacher/Courses.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGVhY2hlclxDb3Vyc2VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[W:/Toplearn/Toplearn.Web/Areas/Admin/Views/Teacher/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGVhY2hlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [W:/Toplearn/Toplearn.Web/Areas/Admin/Views/UserManager/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlck1hbmFnZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -104,6 +116,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [W:/Toplearn/Toplearn.Web/Areas/UserPanel/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclBhbmVsXFZpZXdzXEhvbWVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[W:/Toplearn/Toplearn.Web/Areas/UserPanel/Views/Home/PermissionsOfUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclBhbmVsXFZpZXdzXEhvbWVcUGVybWlzc2lvbnNPZlVzZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [W:/Toplearn/Toplearn.Web/Areas/UserPanel/Views/Shared/_BoxOfImageInUserPanel.cshtml]
@@ -148,6 +164,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [W:/Toplearn/Toplearn.Web/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[W:/Toplearn/Toplearn.Web/Views/Shared/Components/ShowCategoriesInMainMenu/ShowCategoriesInMainMenu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU2hvd0NhdGVnb3JpZXNJbk1haW5NZW51XFNob3dDYXRlZ29yaWVzSW5NYWluTWVudS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [W:/Toplearn/Toplearn.Web/Views/Shared/_ActiveEmail.cshtml]

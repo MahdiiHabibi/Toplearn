@@ -11,8 +11,17 @@ namespace Toplearn.Core.Convertors
     {
         public static string ToShamsi(this DateTime time)
         {
-            var pc = new PersianCalendar();
-            return pc.GetYear(time).ToString() + "/" + pc.GetMonth(time).ToString("00") + "/" + pc.GetDayOfMonth(time).ToString("00");
+	        try
+	        {
+		        var pc = new PersianCalendar();
+		        return pc.GetYear(time).ToString() + "/" + pc.GetMonth(time).ToString("00") + "/" +
+		               pc.GetDayOfMonth(time).ToString("00");
+
+	        }
+	        catch
+	        {
+		        return "بدون دیتا";
+	        }
         }
     }
 }

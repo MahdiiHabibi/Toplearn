@@ -1,4 +1,5 @@
-﻿@model DepositWalletViewModel
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model DepositWalletViewModel
 @{
 	ViewBag.Title = "کیف پول شما";
 }
@@ -33,8 +34,7 @@
 											<span class="input-group-addon" id="username">
 												<i class="zmdi zmdi-balance-wallet"></i>
 											</span>
-											<input type="number" class="form-control" asp-for="Amount"
-												   placeholder="مبلغ به ریال">
+											<input type="number" class="form-control" asp-for="Amount" placeholder="مبلغ به ریال">
 										</div>
 										<span asp-validation-for="Amount"></span>
 									</div>
@@ -46,7 +46,7 @@
 								</div>
 							</form>
 							@{
-								List<ShowWalletsViewModel> wallets = ViewBag.ListWallet as List<ShowWalletsViewModel>;
+								List<ShowWalletsViewModel>? wallets = ViewBag.ListWallet as List<ShowWalletsViewModel>;
 								int tr = 1;
 							}
 							@if (wallets != null)
