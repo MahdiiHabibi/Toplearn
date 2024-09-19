@@ -13,7 +13,7 @@ namespace Toplearn.Core.DTOs.Accounts
         [Display(Name = "نام کاربری")]
         [Required(ErrorMessage = "{0} ضروری است .")]
         [MaxLength(40, ErrorMessage = "{0} شما نمیتواند بیشتر از {1} باشه ")]
-		[Remote(routeName: "CheckUserNameIsExist", HttpMethod = "POST", AdditionalFields = "__RequestVerificationToken")]
+		[Remote("CheckUserNameIsExist","Home", HttpMethod = "POST", AdditionalFields = "__RequestVerificationToken")]
 		public string UserName { get; set; }
 
         [Display(Name = "نام و نام خانوادگی")]
@@ -26,7 +26,7 @@ namespace Toplearn.Core.DTOs.Accounts
         [Required(ErrorMessage = "{0} ضروری است .")]
         [MaxLength(200, ErrorMessage = "{0} شما نمیتواند بیشتر از {1} باشه ")]
         [EmailAddress(ErrorMessage = "{0} وارد شده معتبر نمی باشد .")]
-		[Remote(routeName: "CheckEmailIsExist", HttpMethod = "POST", AdditionalFields = "__RequestVerificationToken")]
+		[Remote("CheckEmailIsExist","Home", HttpMethod = "POST", AdditionalFields = "__RequestVerificationToken")]
 		public string Email { get; set; }
 
         [Display(Name = "رمز عبور")]

@@ -27,11 +27,15 @@ namespace Toplearn.DataLayer.Entities.Course
 
 		public DateTime CreateDate { get; set; }
 
-		public string EpisodeVideoTime { get; set; }
+
+		[Display(Name = "زمان")]
+		[Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+		public TimeSpan EpisodeVideoTime { get; set; }
+
 
 		public int EpisodeNumber { get; set; }
 
-
+		public bool IsFree { get; set; } = false;
 
 		#region Relations
 

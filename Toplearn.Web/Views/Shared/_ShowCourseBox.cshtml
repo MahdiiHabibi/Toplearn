@@ -1,0 +1,24 @@
+﻿@model ShowCoursesWithBoxViewModel
+
+
+	<article>
+		<a asp-action="Index" asp-controller="Course" asp-route-courseId="@Model.CourseId" asp-route-courseName="@Model.CourseName" class="img-layer">
+			<img src="~/CourseInfo/Images/thumb/@Model.CourseImagePath" alt="Course Image " height="187.5px">
+		</a>
+		<h2>
+		<a asp-action="Index" asp-controller="Course" asp-route-courseId="@Model.CourseId" asp-route-courseName="@Model.CourseName">
+				@Model.CourseName
+			</a>
+		</h2>
+		@if (Model.CoursePrice > 0)
+		{
+			<span title="@Model.CoursePrice.ToString("N0") ریال"> @((Model.CoursePrice / 10).ToString("N0")) تومان </span>
+		}
+		else
+		{
+			<span> رایگان  </span>
+		}
+
+		<i>@Model.CourseVideoTime</i>
+	</article>
+

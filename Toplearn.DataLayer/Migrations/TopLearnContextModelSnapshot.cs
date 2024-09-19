@@ -95,20 +95,21 @@ namespace Toplearn.DataLayer.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<int>("CourseLevel")
-                        .HasMaxLength(20)
                         .HasColumnType("int");
 
                     b.Property<string>("CourseName")
                         .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<int>("CoursePrice")
                         .HasColumnType("int");
 
                     b.Property<int>("CourseStatus")
-                        .HasMaxLength(20)
                         .HasColumnType("int");
+
+                    b.Property<TimeSpan>("CourseVideosTime")
+                        .HasColumnType("time");
 
                     b.Property<DateTime>("CreateTime")
                         .HasColumnType("datetime2");
@@ -157,9 +158,11 @@ namespace Toplearn.DataLayer.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("EpisodeVideoTime")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<TimeSpan>("EpisodeVideoTime")
+                        .HasColumnType("time");
+
+                    b.Property<bool>("IsFree")
+                        .HasColumnType("bit");
 
                     b.HasKey("EpisodeId");
 

@@ -4,10 +4,7 @@
 
 @{
 	ViewBag.Title = "تغییر اطلاعات دوره";
-	var categories = JsonConvert.DeserializeObject<SelectList>(TempData["Categories"]!.ToString() ?? throw new NullReferenceException("TempData is null"));
-	var subCategories = JsonConvert.DeserializeObject<SelectList>(TempData["SubCategories"]!.ToString() ?? throw new NullReferenceException("TempData is null"));
-	var courseLevel = JsonConvert.DeserializeObject<SelectList>(TempData["CourseLevel"]!.ToString() ?? throw new NullReferenceException("TempData is null"));
-	var courseStatus = JsonConvert.DeserializeObject<SelectList>(TempData["CourseStatus"]!.ToString() ?? throw new NullReferenceException("TempData is null"));
+	ViewBag.ClassicEditor = nameof(Model.CourseDetail);
 }
 
 
@@ -40,12 +37,12 @@
 
 										<div class="form-group">
 											<label title="اجباری"> گروه  </label>
-											<select class="form-control" asp-for="CategoryId" asp-items="@(categories as SelectList)">
+											<select class="form-control" asp-for="CategoryId" asp-items="@(Model.Category)">
 											</select>
 										</div>
 										<div class="form-group">
 											<label title="اختیاری"> زیر گروه </label>
-											<select class="form-control" asp-for="SubCategoryId" asp-items="@(subCategories)">
+											<select class="form-control" asp-for="SubCategoryId" asp-items="@(Model.SubCategory)">
 											</select>
 										</div>
 
@@ -70,7 +67,7 @@
 												</div>
 											</div>
 											<br />
-											<span>
+											<span class="text-warning">
 												فقط ویدیو وارد کنید
 
 												.
@@ -85,18 +82,30 @@
 
 										<div class="form-group">
 											<label for="Tags">
-												هشتگ های دوره
+												مدت زمان فایل توضیحات دوره
 											</label>
-											<input asp-for="Tags" class="form-control" placeholder="هشتگ های دوره را وارد کنید">
-											<br />
-											<span>
-												هشتگ ها را با کاراکتر - از هم جدا کنید .
+											<input asp-for="EpisodeVideoTime" value="@(Model.EpisodeVideoTime == null?"00:00:00":Model.EpisodeVideoTime)" class="form-control" placeholder="مدت زمان فایل توضیحات دوره را وارد کنید">
+											<p></p>
+											<span class="text-warning">
+												به طور مثال :  00:21:29
+												<br />
+												در صورتی که هنوز ویدیویی وارد نمیکنید به این مورد دست نزنید .
 											</span>
 										</div>
+
+										<div class="form-group">
+											<label for="Tags">
+												کلمات کلیدی دوره
+											</label>
+											<input asp-for="Tags" class="form-control" placeholder="کلمات کلیدی دوره را وارد کنید">
+										</div>
+										<span>
+											هر هشتک را با  -  جدا کنید
+										</span>
 									</div>
 									<!-- /.card-body -->
 
-									
+
 
 
 								</div>
@@ -111,23 +120,23 @@
 											</div>
 										</div>
 										<br />
-										<span>
+										<span class="text-warning">
 											فقط عکس وارد کنید
 										</span>
 									</div>
 
 									<div class="form-group">
 										<label title="اجباری"> سطح دوره </label>
-										<select class="form-control" asp-for="Level" asp-items="@(courseLevel)">
+										<select class="form-control" asp-for="Level" asp-items="@(Model.LevelOfCourse)">
 										</select>
 									</div>
 									<div class="form-group">
 										<label title="اجباری">  وضعیت دوره </label>
-										<select class="form-control" asp-for="Status" asp-items="@(courseStatus)">
+										<select class="form-control" asp-for="Status" asp-items="@(Model.StatusOfCourse)">
 										</select>
 									</div>
-									
-									
+
+
 									@if (!Model.LastFileDemoName.IsNullOrEmpty())
 									{
 										<div class="card card-success card-outline" id="10" style="display:none; transition:all 2s;">
@@ -145,12 +154,12 @@
 												<video id="video-Course" style="max-width:100%; border:#28a745 dashed 3px; border-radius:5px;" controls src=""></video>
 											</div>
 										</div>
-										<input asp-for="LastFileDemoName" type="hidden"/>
+										<input asp-for="LastFileDemoName" type="hidden" />
 									}
-									
-									
+
+
 									<div class="text-danger form-group pr-3" asp-validation-summary="All"></div>
-									
+
 
 								</div>
 								<div class=" col-6 ">
@@ -181,6 +190,8 @@
 
 @section Script
 {
+	<partial name="_CkEditorScripts" />
+
 	<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
 	<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 	<script src="~/lib/jquery/dist/jquery.min.js"></script>
@@ -230,27 +241,7 @@
 
 
 	</script>
-	<script src="~/ckeditor/ckeditor.js"></script>
 	<script>
-		ClassicEditor
-			.create(document.querySelector('#CourseDetail'),
-				{
-					ckfinder: {
-						// Upload the images to the server using the CKFinder QuickUpload command.
-						uploadUrl: '/UploadImage'
-					},
-					htmlSupport: {
-						allow: [
-							{
-								name: /.*/,
-								attributes: true,
-								classes: true,
-								styles: true
-							}
-						]
-					}
-				})
-			.catch(error => { console.error(error); });
 
 		$("#CategoryId").change(function () {
 			$("#SubCategoryId").empty();

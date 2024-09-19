@@ -1,0 +1,85 @@
+﻿@model Toplearn.Core.DTOs.Teacher.AddCourseEpisode
+
+@{
+	ViewBag.Title = "اضافه کردن جلسه ی جدید";
+}
+
+
+<section class="content">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<!-- interactive chart -->
+				<div class="card card-success card-outline">
+					<div class="card-header">
+						<h3 class="card-title">
+							<i class="fa fa-bar-chart-o"></i>
+							برای دوره ی « @ViewBag.CourseName »
+						</h3>
+					</div>
+					<div class="card-body">
+						<form asp-action="AddEpisodeForCourse" asp-controller="Teacher" asp-area="Admin" method="post" enctype="multipart/form-data">
+						
+							<input type="hidden" asp-for="CourseId"/>
+							<div class="row">
+								
+										<div class="col-6">
+
+											<div class="form-group">
+										<label for="EpisodeTitle">
+													عنوان جلسه
+												</label>
+												<input asp-for="EpisodeTitle" class="form-control" placeholder="عنوان جلسه را وارد کنید">
+											</div>
+											<div class="form-group">
+												<div class="form-check">
+													<input class="form-check-input" type="checkbox" asp-for="IsFree">
+											<label class="form-check-label" for="IsFree">
+														رایگان است ؟
+													</label>
+												</div>
+											</div>
+										
+
+										</div>
+										<div class="col-6">
+											<div class="form-group">
+										<label for="EpisodeFile"> فایل رار فیلم و فایل جلسه </label>
+												<div class="input-group">
+													<div class="custom-file">
+														<input type="file" class="custom-file-input" asp-for="EpisodeFile">
+														<label class="custom-file-label" for="EpisodeFile">انتخاب فایل</label>
+													</div>
+												</div>
+												<br/>
+												<span class="text-danger" asp-validation-for="EpisodeFile">
+													فایل رار وارد کنید
+												</span>
+											</div>
+
+											<div class="form-group">
+										<label for="EpisodeVideoTime">
+													مدت زمان ویدیو جلسه
+												</label>
+												<input asp-for="EpisodeVideoTime" value="00:00:00" class="form-control" placeholder="مدت زمان ویدیو جلسه را وارد کنید">
+												<p></p>
+												<span class="text-danger" asp-validation-for="EpisodeVideoTime"></span>
+											</div>
+										</div>
+										<button type="submit" class="btn btn-success">ارسال</button>
+							</div>
+						</form>
+					</div>
+					<!-- /.card-body-->
+				</div>
+				<!-- /.card -->
+
+			</div>
+			<!-- /.col -->
+		</div>
+		<!-- /.row -->
+		<!-- /.row -->
+	</div><!-- /.container-fluid -->
+</section>
+
+

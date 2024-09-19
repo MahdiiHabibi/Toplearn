@@ -6,14 +6,13 @@
 <head>
 	<meta charset="UTF-8">
 	<title> تاپ لرن  -  @ViewBag.Title </title>
+
 	<partial name="_MetaTags" />
 	<partial name="_Styles" />
-	<link href="~/nouislider/nouislider.min.css" rel="stylesheet" />
-	<script src="~/js/modernizr-custom.js"></script>
 	<script src="~/js/jquery.min.js"></script>
-
 </head>
 <body>
+	<script src="~/js/modernizr-custom.js"></script>
 
 	<div class="landing-layer">
 		<div class="container">
@@ -22,11 +21,11 @@
 					<div class="col-sm-6 col-xs-12">
 						<ul>
 							<li>
-								<a href="/"> 
+								<a href="/">
 									<strong>
 										تاپ لرن
 									</strong>
-									</a>
+								</a>
 								<a href="~"> همکاری در فروش </a>
 								<a href="~"> درباره ما </a>
 								<a href="~"> تماس با ما </a>
@@ -59,22 +58,24 @@
 	</div>
 
 	<!-- main manu -->
-	@await Component.InvokeAsync("ShowCategoriesInMainMenu");
+	<cache expires-after="@TimeSpan.FromHours(8)">
+		@await Component.InvokeAsync("ShowCategoriesInMainMenu");
+	</cache>
 	<!-- /main manu -->
 	<!-- content -->
-	
 	@RenderBody()
 	<!-- /content -->
 	<!-- footer -->
 	<partial name="_Footer" />
 	<!-- /footer -->
 	<!--Alert-->
-	<partial name="_AlertForMassage"/>
+	<partial name="_AlertForMassage" />
 	<!--Alert-->
+
 	<script src="~/js/bootstrap.min.js"></script>
+	<script src="~/noUiSlider/nouislider.min.js"></script>
 	<script src="~/js/script.js"></script>
-	<script src="~/ckeditor/ckeditor.js"></script>
-	
-	@await RenderSectionAsync("Script",false)
-	</body>
+
+	@await RenderSectionAsync("Script", false)
+</body>
 </html>

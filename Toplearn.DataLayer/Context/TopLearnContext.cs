@@ -61,8 +61,12 @@ namespace Toplearn.DataLayer.Context
 
 		public DbSet<CourseEpisode> CourseEpisodes { get; set; }
 
-		#endregion
+        #endregion
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder);
+        }
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			#region Set Required Data
@@ -92,205 +96,205 @@ namespace Toplearn.DataLayer.Context
 			modelBuilder.Entity<WalletType>()
 				.HasData(new List<WalletType>()
 			{
-				new()
-				{
-					TypeId = 1,
-					TypeTitle = "برداشت"
-				},
-				new()
-				{
-					TypeId = 2,
-					TypeTitle = "واریز"
-				},
-				new() {
-					TypeId = 3,
-					TypeTitle = "خرید مستقیم دوره"
-				}
+			 	new()
+			 	{
+			 		TypeId = 1,
+			 		TypeTitle = "برداشت"
+			 	},
+			 	new()
+			 	{
+			 		TypeId = 2,
+			 		TypeTitle = "واریز"
+			 	},
+			 	new() {
+			 		TypeId = 3,
+			 		TypeTitle = "خرید مستقیم دوره"
+			 	}
 			});
 
 			modelBuilder.Entity<Permission>()
 				.HasData(
 				new List<Permission>()
 			{
-				new ()
-				{
-					PermissionId  = 1,
-					PermissionDetail ="Admin_Roles" ,
-					PermissionPersianDetail ="مقام ها" ,
-					PermissionUrl = "POST"
-				},
-				new ()
-				{
-					PermissionId  = 30,
-					PermissionDetail = "Admin_Roles_Index",
-					PermissionPersianDetail ="نمایش مقام ها" ,
-					ParentId = 1,
-					PermissionUrl = "/Admin/Roles"
-				}
-				,new ()
-				{
-					PermissionId  = 31,
-					ParentId = 1,
-					PermissionDetail = "Admin_Roles_UpdateUserRole",
-					PermissionPersianDetail ="بروز رسانی مقام های کاربران" ,
-					PermissionUrl = "POST"
-				}
-				,new ()
-				{
-					PermissionId  = 32,
-					ParentId = 1,
-					PermissionDetail = "Admin_Roles_AddRole",
-					PermissionPersianDetail ="اضافه کردن مقام جدید " ,
-					PermissionUrl = "POST"
-				}
-				,new ()
-				{
-					PermissionId  = 33,
-					ParentId = 1,
-					PermissionDetail = "Admin_Roles_ChangeRoleStatus",
-					PermissionPersianDetail ="تغییر وضعیت مقام " ,
-					PermissionUrl = "/Admin/RoleManager/ChangeRoleStatus"
-				}
-				,new ()
-				{
-					PermissionId  = 34,
-					ParentId = 1,
-					PermissionDetail = "Admin_Roles_EditRole",
-					PermissionPersianDetail ="تغییر در اطلاعات مقام ها" ,
-					PermissionUrl = "POST"
-				}
-				,new ()
-				{
-					PermissionId  = 35,
-					PermissionDetail = "ChangeIvg",
-					PermissionPersianDetail =  "تغییر کد احراز هویت " ,
-					PermissionUrl = "/Admin/ChangeIvg"
-				}
-				,new ()
-				{
+			 	new ()
+			 	{
+			 		PermissionId  = 1,
+			 		PermissionDetail ="Admin_Roles" ,
+			 		PermissionPersianDetail ="مقام ها" ,
+			 		PermissionUrl = "POST"
+			 	},
+			 	new ()
+			 	{
+			 		PermissionId  = 30,
+			 		PermissionDetail = "Admin_Roles_Index",
+			 		PermissionPersianDetail ="نمایش مقام ها" ,
+			 		ParentId = 1,
+			 		PermissionUrl = "/Admin/Roles"
+			 	}
+			 	,new ()
+			 	{
+			 		PermissionId  = 31,
+			 		ParentId = 1,
+			 		PermissionDetail = "Admin_Roles_UpdateUserRole",
+			 		PermissionPersianDetail ="بروز رسانی مقام های کاربران" ,
+			 		PermissionUrl = "POST"
+			 	}
+			 	,new ()
+			 	{
+			 		PermissionId  = 32,
+			 		ParentId = 1,
+			 		PermissionDetail = "Admin_Roles_AddRole",
+			 		PermissionPersianDetail ="اضافه کردن مقام جدید " ,
+			 		PermissionUrl = "POST"
+			 	}
+			 	,new ()
+			 	{
+			 		PermissionId  = 33,
+			 		ParentId = 1,
+			 		PermissionDetail = "Admin_Roles_ChangeRoleStatus",
+			 		PermissionPersianDetail ="تغییر وضعیت مقام " ,
+			 		PermissionUrl = "/Admin/RoleManager/ChangeRoleStatus"
+			 	}
+			 	,new ()
+			 	{
+			 		PermissionId  = 34,
+			 		ParentId = 1,
+			 		PermissionDetail = "Admin_Roles_EditRole",
+			 		PermissionPersianDetail ="تغییر در اطلاعات مقام ها" ,
+			 		PermissionUrl = "POST"
+			 	}
+			 	,new ()
+			 	{
+			 		PermissionId  = 35,
+			 		PermissionDetail = "ChangeIvg",
+			 		PermissionPersianDetail =  "تغییر کد احراز هویت " ,
+			 		PermissionUrl = "/Admin/ChangeIvg"
+			 	}
+			 	,new ()
+			 	{
 
-					PermissionId = 2,
-					PermissionDetail = "Admin_Home",
-					PermissionPersianDetail ="ادمین" ,
-					PermissionUrl = "/Admin"
-				}
-				,new ()
-				{
-					PermissionId  = 36,
-					PermissionDetail = "Admin_Home_Index",
-					PermissionPersianDetail ="داشبورد ادمین" ,
-					PermissionUrl = "/Admin",
-					ParentId = 2
-				}
-				,new ()
-				{
-					PermissionId = 3,
-					PermissionDetail = "Admin_User",
-					PermissionPersianDetail ="امور مربوط به کاربران" ,
-					PermissionUrl = "/Admin/UserManager"
-				}
-				,new ()
-				{
-					PermissionId  = 38,
-					PermissionDetail = "Admin_User_Index",
-					PermissionPersianDetail ="نمایش کاربران سایت" ,
-					PermissionUrl = "/Admin/UserManager/",
-					ParentId = 3
-				}
-				,new ()
-				{
-					PermissionId  = 39,
-					PermissionDetail = "Admin_UserManager_ActiveAccount",
-					PermissionPersianDetail ="ارسال کد فعال سازی کاربر" ,
-					PermissionUrl = "POST",
-					ParentId = 3
-				}
-				,new ()
-				{
-					PermissionId  = 40,
-					PermissionDetail = "Admin_UserManager_RemoveUserImage",
-					PermissionPersianDetail ="حذف آواتار شخصی کاربر" ,
-					PermissionUrl = "POST",
-					ParentId = 3
-				}
-				,new ()
-				{
-					PermissionId  = 41,
-					PermissionDetail = "Admin_UserManager_UserForShow",
-					PermissionPersianDetail ="دیدن اطلاعات کاربر" ,
-					PermissionUrl = "POST",
-					ParentId = 3
-				}
-				,new ()
-				{
-					PermissionId  = 42,
-					PermissionDetail = "Admin_UserManager_IncreaseTheWallet",
-					PermissionPersianDetail ="افزایش کیف پول کاربر" ,
-					PermissionUrl = "POST",
-					ParentId = 3
-				},
-				new ()
-				{
-					PermissionId = 4,
-					PermissionDetail = "Teacher",
-					PermissionPersianDetail = "پنل استاد",
-					PermissionUrl = "POST"
-				},
-				new ()
-				{
-					PermissionId = 43,
-					ParentId = 4,
-					PermissionDetail = "Teacher_Index",
-					PermissionPersianDetail = "داشبورد پنل استاد",
-					PermissionUrl = "/Teacher/Index"
-				},
-				new ()
-				{
-					PermissionId =44,
-					PermissionDetail = "Teacher_AddCourse",
-					PermissionPersianDetail = "اضافه کردن دوره ی جدید",
-					PermissionUrl = "/Teacher/AddCourse",
-					ParentId = 4
-				},
-				//new ()
-				//{
-				//	PermissionDetail = "",
-				//	PermissionPersianDetail = "",
-				//	PermissionUrl = "",
-				//	ParentId = 4
-				//},
-				//new ()
-				//{
-				//	PermissionDetail = "",
-				//	PermissionPersianDetail = "",
-				//	PermissionUrl = "",
-				//	ParentId = 4
-				//}
+			 		PermissionId = 2,
+			 		PermissionDetail = "Admin_Home",
+			 		PermissionPersianDetail ="ادمین" ,
+			 		PermissionUrl = "/Admin"
+			 	}
+			 	,new ()
+			 	{
+			 		PermissionId  = 36,
+			 		PermissionDetail = "Admin_Home_Index",
+			 		PermissionPersianDetail ="داشبورد ادمین" ,
+			 		PermissionUrl = "/Admin",
+			 		ParentId = 2
+			 	}
+			 	,new ()
+			 	{
+			 		PermissionId = 3,
+			 		PermissionDetail = "Admin_User",
+			 		PermissionPersianDetail ="امور مربوط به کاربران" ,
+			 		PermissionUrl = "/Admin/UserManager"
+			 	}
+			 	,new ()
+			 	{
+			 		PermissionId  = 38,
+			 		PermissionDetail = "Admin_User_Index",
+			 		PermissionPersianDetail ="نمایش کاربران سایت" ,
+			 		PermissionUrl = "/Admin/UserManager/",
+			 		ParentId = 3
+			 	}
+			 	,new ()
+			 	{
+			 		PermissionId  = 39,
+			 		PermissionDetail = "Admin_UserManager_ActiveAccount",
+			 		PermissionPersianDetail ="ارسال کد فعال سازی کاربر" ,
+			 		PermissionUrl = "POST",
+			 		ParentId = 3
+			 	}
+			 	,new ()
+			 	{
+			 		PermissionId  = 40,
+			 		PermissionDetail = "Admin_UserManager_RemoveUserImage",
+			 		PermissionPersianDetail ="حذف آواتار شخصی کاربر" ,
+			 		PermissionUrl = "POST",
+			 		ParentId = 3
+			 	}
+			 	,new ()
+			 	{
+			 		PermissionId  = 41,
+			 		PermissionDetail = "Admin_UserManager_UserForShow",
+			 		PermissionPersianDetail ="دیدن اطلاعات کاربر" ,
+			 		PermissionUrl = "POST",
+			 		ParentId = 3
+			 	}
+			 	,new ()
+			 	{
+			 		PermissionId  = 42,
+			 		PermissionDetail = "Admin_UserManager_IncreaseTheWallet",
+			 		PermissionPersianDetail ="افزایش کیف پول کاربر" ,
+			 		PermissionUrl = "POST",
+			 		ParentId = 3
+			 	},
+			 	new ()
+			 	{
+			 		PermissionId = 4,
+			 		PermissionDetail = "Teacher",
+			 		PermissionPersianDetail = "پنل استاد",
+			 		PermissionUrl = "POST"
+			 	},
+			 	new ()
+			 	{
+			 		PermissionId = 43,
+			 		ParentId = 4,
+			 		PermissionDetail = "Teacher_Index",
+			 		PermissionPersianDetail = "داشبورد پنل استاد",
+			 		PermissionUrl = "/Teacher/Index"
+			 	},
+			 	new ()
+			 	{
+			 		PermissionId =44,
+			 		PermissionDetail = "Teacher_AddCourse",
+			 		PermissionPersianDetail = "اضافه کردن دوره ی جدید",
+			 		PermissionUrl = "/Teacher/AddCourse",
+			 		ParentId = 4
+			 	},
+					//new ()
+					//{
+					//	PermissionDetail = "",
+					//	PermissionPersianDetail = "",
+					//	PermissionUrl = "",
+					//	ParentId = 4
+					//},
+					//new ()
+					//{
+					//	PermissionDetail = "",
+					//	PermissionPersianDetail = "",
+					//	PermissionUrl = "",
+					//	ParentId = 4
+					//}
 
 			});
 			modelBuilder.Entity<Category>()
 				.HasData(new List<Category>()
 			{
-				new ()
-				{
-					CategoryId = 1,
-					CategoryName = "برنامه نویسی سایت"
-				},
-				new ()
-				{
-					CategoryId = 2,
-					CategoryName = "برنامه نویسی موبایل "
-				},
-				new ()
-				{
-					CategoryId = 3,
-					CategoryName = "طراحی سایت"
-				},
-				new ()
-				{
-					CategoryId = 4,
-					CategoryName = "بانک اطلاعاتی"
-				}
+			 	new ()
+			 	{
+			 		CategoryId = 1,
+			 		CategoryName = "برنامه نویسی سایت"
+			 	},
+			 	new ()
+			 	{
+			 		CategoryId = 2,
+			 		CategoryName = "برنامه نویسی موبایل "
+			 	},
+			 	new ()
+			 	{
+			 		CategoryId = 3,
+			 		CategoryName = "طراحی سایت"
+			 	},
+			 	new ()
+			 	{
+			 		CategoryId = 4,
+			 		CategoryName = "بانک اطلاعاتی"
+			 	}
 			});
 			#endregion
 
@@ -317,5 +321,5 @@ namespace Toplearn.DataLayer.Context
 		}
 
 
-	}
+    }
 }

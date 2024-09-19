@@ -1,0 +1,25 @@
+﻿
+<script src="~/ckeditor/ckeditor.js"></script>
+<script>
+
+	ClassicEditor
+		.create(document.querySelector('#@ViewBag.ClassicEditor'),
+			{
+				ckfinder: {
+					// Upload the images to the server using the CKFinder QuickUpload command.
+					uploadUrl: '/CK-FileUpload'
+				},
+				htmlSupport: {
+					allow: [
+						{
+							name: /.*/,
+							attributes: true,
+							classes: true,
+							styles: true
+						}
+					]
+				},
+
+			})
+		.catch(error => { console.error(error); });
+</script>

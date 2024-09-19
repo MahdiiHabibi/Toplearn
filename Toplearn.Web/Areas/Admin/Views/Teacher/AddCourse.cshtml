@@ -3,6 +3,7 @@
 @{
 	ViewBag.Title = "افزودن دوره ی جدید";
 	ViewBag.AddCourse = "active";
+	ViewBag.ClassicEditor = nameof(Model.CourseDetail);
 }
 
 <section class="content">
@@ -32,7 +33,7 @@
 
 										<div class="form-group">
 											<label title="اجباری"> گروه  </label>
-											<select  class="form-control" asp-for="CategoryId" asp-items="@(TempData["Categories"] as SelectList)">
+											<select class="form-control" asp-for="CategoryId" asp-items="@(TempData["Categories"] as SelectList)">
 											</select>
 										</div>
 										<div class="form-group">
@@ -64,6 +65,19 @@
 											<br />
 											<span>
 												فقط عکس وارد کنید
+											</span>
+										</div>
+										
+										<div class="form-group">
+											<label for="Tags">
+												مدت زمان فایل توضیحات دوره
+											</label>
+											<input asp-for="EpisodeVideoTime" value="00:00:00" class="form-control" placeholder="مدت زمان فایل توضیحات دوره را وارد کنید">
+											<p></p>
+											<span class="text-warning">
+												به طور مثال :  00:21:29
+												<br />
+												در صورتی که هنوز ویدیویی وارد نمیکنید به این مورد دست نزنید .
 											</span>
 										</div>
 
@@ -133,6 +147,8 @@
 
 @section Script
 {
+	<partial name="_CkEditorScripts"/>
+
 	<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
 	<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 	<script src="~/lib/jquery/dist/jquery.min.js"></script>
@@ -167,27 +183,7 @@
 		});
 
 	</script>
-	<script src="~/ckeditor/ckeditor.js"></script>
 	<script>
-		ClassicEditor
-			.create(document.querySelector('#CourseDetail'),
-				{
-					ckfinder: {
-						// Upload the images to the server using the CKFinder QuickUpload command.
-						uploadUrl: '/UploadImage'
-					},
-					htmlSupport: {
-						allow: [
-							{
-								name: /.*/,
-								attributes: true,
-								classes: true,
-								styles: true
-							}
-						]
-					}
-				})
-			.catch(error => { console.error(error); });
 
 		$("#CategoryId").change(function () {
 			$("#SubCategoryId").empty();

@@ -1,0 +1,234 @@
+﻿@using System.Linq;
+@model Toplearn.Core.DTOs.Course.ShowCoursesInSearchViewModel
+
+@{
+	ViewBag.Title = "جستجوی دوره";
+	var res = "";
+}
+<partial name="_breadcrumb" />
+<form asp-action="Index" asp-controller="Course" method="get">
+	<input type="hidden" name="pageId" value="@ViewData["pageId"]"/>
+	<div class="container">
+		<section class="term-categories">
+
+			<div class="top-bar">
+
+				<header>
+					<h1> دوره های <span> برنامه نویسی وب </span> </h1> <span> @Model.TotalCourses دوره </span>
+				</header>
+
+				<div class="row">
+					<div class="col-md-4 col-sm-12 col-xs-12 pull-right">
+
+						<div class="input">
+							<input type="text" name="filter" placeholder="موضوع مورد نظر ..." value="@Model.Filter">
+							<button style="margin-left:30px;"><i class="zmdi zmdi-search"></i></button>
+							<button onclick="location.href = '/course'" type="reset" title="حذف همه ی فیلتر ها"><i class="zmdi zmdi-delete"></i></button>
+						</div>
+
+					</div>
+					<div class="col-md-4 col-sm-6 col-xs-12 pull-right">
+						<div class="switch-field available">
+							<input id="available-filter-1" name="priceType" @(Model.PriceType == "all" ? "checked" : "") value="all" checked="" type="radio">
+							<label for="available-filter-1"> همه </label>
+							<input id="available-filter-2" name="priceType" @(Model.PriceType == "buy" ? "checked" : "") value="buy" type="radio">
+							<label for="available-filter-2"> خریدنی </label>
+							<input id="available-filter-3" name="priceType" @(Model.PriceType == "free" ? "checked" : "") value="free" type="radio">
+							<label for="available-filter-3"> رایگان </label>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 col-xs-12 pull-left">
+						<div class="select-ddl">
+							<select name="orderByType">
+								<option id="orderByType-date" value="date"> مرتب سازی </option>
+								<option id="orderByType-date" value="date"> تاریخ شروع </option>
+								<option id="orderByType-updatedate" value="updatedate">تاریخ بروزرسانی</option>
+								<option id="orderByType-price" value="price">قیمت</option>
+								<option id="orderByType-totaltime" value="totaltime">مدت زمان دوره</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+
+				<aside class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+					<section class="aside-section filter-by-price">
+						<header><h3> فیلتر بر اساس قیمت </h3></header>
+						<div class="price-range">
+							<input type="hidden" value="@Model.StartPrice" id="min-value" name="startPrice">
+							<input type="hidden" value="@Model.EndPrice" id="max-value" name="endPrice">
+							<div class="price-bar"><div id="priceFilter"></div></div>
+							<div class="max-price">تا <span id="max-text">500000</span> تومان</div>
+							<div class="min-price">از <span id="min-text">20000</span> تومان</div>
+							<div class="clearfix"></div>
+						</div>
+					</section>
+
+					<section class="aside-section filter-by-category">
+						<header>
+							<h3> دسته بندی موضوعات </h3>
+						</header>
+						<div class="inner">
+							<ul>
+								@foreach (var category in Model.Categories.Where(x => x.ParentCategoryId == null))
+								{
+									<li>
+										<input type="checkbox" name="selectedGroups" id="@category.CategoryId" @(Model.CategoriesId.Any(x => x == category.CategoryId) ? "checked" : "") value="@category.CategoryId">
+										<label for="@category.CategoryId"> <strong>@category.CategoryName</strong> </label>
+									</li>
+
+									@if (Model.Categories.Any(x => x.ParentCategoryId == category.CategoryId))
+									{
+										<ul>
+											@foreach (var subcategory in Model.Categories.Where(x => x.ParentCategoryId == category.CategoryId))
+											{
+												<li style="padding-right:25px;">
+													<input type="checkbox" name="selectedGroups" id="@subcategory.CategoryId" @(Model.CategoriesId.Any(x => x == subcategory.CategoryId) ? "checked" : "") value="@subcategory.CategoryId">
+													<label for="@subcategory.CategoryId"> @subcategory.CategoryName </label>
+												</li>
+
+											}
+										</ul>
+									}
+								}
+							</ul>
+						</div>
+					</section>
+
+				</aside>
+
+				<div class="col-lg-9 col-md-8 col-sm-12 col-xs-12">
+
+					<section class="terms-items">
+						<div class="row">
+
+							@if (Model.ShowCoursesWithBoxViewModels.Any())
+							{
+								foreach (var course in Model.ShowCoursesWithBoxViewModels)
+								{
+									<!-- col -->
+									<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 term-col">
+										<partial name="_ShowCourseBox" model="course" />
+									</div>
+									<!-- col -->
+								}
+							}
+							else
+							{
+
+							}
+						</div>
+
+
+						@if (Model.PageCount > 1)
+						{
+							<nav aria-label="Page navigation">
+								<ul class="pagination justify-content-center">
+									<li class="page-item">
+										<a class="page-link" asp-action="Index" asp-controller="Course" asp-route-take="@ViewData["take"]"  asp-route-endPrice="@Model.EndPrice" asp-route-pageId="@(int.Parse(ViewData["pageId"].ToString()))-1" asp-route-startPrice="@Model.StartPrice" asp-route-filter="@Model.Filter" asp-route-orderByType="@Model.OrderType" asp-route-priceType="@Model.PriceType" aria-label="Previous">
+											<span aria-hidden="true"><i class="zmdi zmdi-chevron-right"></i></span>
+										</a>
+									</li>
+									@for (int i = 1; i <= Model.PageCount; i++)
+									{
+										<li class="page-item">
+											<a class="page-link" asp-action="Index" asp-controller="Course" asp-route-pageId="@i" asp-route-take="@ViewData["take"]" asp-route-endPrice="@Model.EndPrice" asp-route-startPrice="@Model.StartPrice" asp-route-filter="@Model.Filter" asp-route-orderByType="@Model.OrderType" asp-route-priceType="@Model.PriceType">
+												@i 
+											</a>
+										</li>
+									}
+									<li class="page-item">
+										<a class="page-link" asp-action="Index" asp-controller="Course" asp-route-take="@ViewData["take"]"  asp-route-endPrice="@Model.EndPrice" asp-route-pageId="@(int.Parse(ViewData["pageId"].ToString()))+1" asp-route-startPrice="@Model.StartPrice" asp-route-filter="@Model.Filter" asp-route-orderByType="@Model.OrderType" asp-route-priceType="@Model.PriceType" aria-label="Next">
+											<span aria-hidden="true"><i class="zmdi zmdi-chevron-left"></i></span>
+										</a>
+									</li>
+								</ul>
+							</nav>
+						}
+					</section>
+
+				</div>
+			</div>
+		</section>
+	</div>
+
+</form>
+
+
+
+
+
+<input type="hidden" value="@("orderByType-".Trim() + @Model.OrderType.Trim())" id="100" />
+
+@section Script
+{
+
+	<script type="text/javascript">
+		$(function () {
+
+			var slider = document.getElementById('priceFilter');
+			noUiSlider.create(slider, {
+				start: [parseInt(document.getElementById('min-value').value), parseInt(document.getElementById('max-value').value)],
+				step: 5000,
+				connect: true,
+				direction: 'rtl',
+				range: {
+					'min': 0,
+					'max': 10000000
+				}
+			});
+
+			var marginMin = document.getElementById('min-text'),
+				marginMax = document.getElementById('max-text');
+
+			slider.noUiSlider.on('update', function (values, handle) {
+				var xvalue = Math.round(values[handle]);
+				if (handle) {
+					marginMax.innerHTML = xvalue;
+				} else {
+					marginMin.innerHTML = xvalue;
+				}
+				//console.log(values[handle]);
+			});
+
+			slider.noUiSlider.on('change', function (values, handle) {
+				var xvalue = Math.round(values[handle]);
+				if (handle) {
+					// setGetParameter('max_price', xvalue);
+					$('#max-value').val(xvalue);
+				} else {
+					// setGetParameter('min_price', xvalue);
+					$('#min-value').val(xvalue);
+				}
+			});
+
+
+			slider.noUiSlider.on('slide', function (values, handle) {
+
+				console.log(values[0]);
+				console.log(values[1]);
+
+				var xvalue = Math.round(values[handle]);
+				//updateSliderRange( Math.round(values[0]), Math.round(values[1]) );
+			});
+
+
+			function updateSliderRange(min, max) {
+				slider.noUiSlider.updateOptions({
+					range: {
+						'min': min,
+						'max': max
+					}
+				});
+			}
+		});
+	</script>
+
+	<script>
+		document.getElementById(document.getElementById("100").value).setAttribute("selected", "selected");
+	</script>
+
+
+}

@@ -50,7 +50,7 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 
 			if (ModelState.IsValid == false)
 			{
-				return View();
+				return View(editPanelViewModel);
 			}
 
 			// Check that User Change Image Or Not !
@@ -168,48 +168,6 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 			}
 
 
-		}
-
-
-		#endregion
-
-		#region Methods
-
-
-
-		[Route("CheckUserInEdit", Name = "CheckUserNameIsExist")]
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		[AllowAnonymous]
-		public async Task<IActionResult> CheckUserNameIsExist(string username)
-		{
-			var UserNameInClaims = User.Identity.IsAuthenticated
-				? User.Claims.SingleOrDefault(x => x.Type == "UserName")!.Value
-				: "";
-
-			if (await userPanelService.IsUserNameExist(username) && UserNameInClaims != username)
-			{
-				return Json("این نام کاربری از قبل موجود است .");
-			}
-
-			return Json(true);
-		}
-
-		[Route("CheckEmailIsExist", Name = "CheckEmailIsExist")]
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		[AllowAnonymous]
-		public async Task<IActionResult> CheckEmailIsExist(string email)
-		{
-			var emailInUserClaims = User.Identity.IsAuthenticated
-				? User.Claims.SingleOrDefault(x => x.Type == ClaimTypes.Email)!.Value
-				: "";
-			if (await userPanelService.IsEmailExist(email) && emailInUserClaims != email)
-			{
-				return Json("این ایمیل از قبل موجود است .");
-			}
-
-			return Json(true);
 		}
 
 

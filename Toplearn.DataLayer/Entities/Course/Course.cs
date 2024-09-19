@@ -29,7 +29,7 @@ namespace Toplearn.DataLayer.Entities.Course
 
 		[Display(Name = "نام دوره")]
 		[Required(ErrorMessage = "{0} ضروری است .")]
-		[MaxLength(20, ErrorMessage = "{0} شما نمیتواند بیشتر از {1} باشه ")]
+		[MaxLength(100, ErrorMessage = "{0} شما نمیتواند بیشتر از {1} باشه ")]
 		public string CourseName { get; set; }
 
 
@@ -46,13 +46,11 @@ namespace Toplearn.DataLayer.Entities.Course
 
 		[Display(Name = "سطح دوره")]
 		[Required(ErrorMessage = "{0} ضروری است .")]
-		[MaxLength(20, ErrorMessage = "{0} شما نمیتواند بیشتر از {1} باشه ")]
 		public CourseLevel CourseLevel { get; set; }
 
 
 		[Display(Name = "وضعیت دوره")]
 		[Required(ErrorMessage = "{0} ضروری است .")]
-		[MaxLength(20, ErrorMessage = "{0} شما نمیتواند بیشتر از {1} باشه ")]
 		public CourseStatus CourseStatus { get; set; }
 
 
@@ -70,6 +68,7 @@ namespace Toplearn.DataLayer.Entities.Course
 		[MaxLengthTagsOfCourses(ErrorMessage = "دقت کنید که هشتگ ها را درست وارد کنید ؛ همچنین " + "هشتگ ها نمیتوانند بیشتر از 1000 کاراکتر باشند .")]
 		public string? Tags { get; set; }
 
+		public TimeSpan CourseVideosTime { get; set; } = TimeSpan.Zero;
 
 		#region Nav Props
 
@@ -82,7 +81,7 @@ namespace Toplearn.DataLayer.Entities.Course
 		public Category Category { get; set; }
 
 
-		public List<CourseEpisode>? Episodes { get; set; }
+		public List<CourseEpisode> Episodes { get; set; }
 
 
 		#endregion

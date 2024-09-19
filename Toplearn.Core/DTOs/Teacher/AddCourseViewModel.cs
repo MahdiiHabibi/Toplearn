@@ -23,7 +23,7 @@ namespace Toplearn.Core.DTOs.Teacher
 
 		[Display(Name = "قیمت")]
 		[Required(ErrorMessage = "{0} ضروری است .")]
-		[MinLengthOfPrice(ErrorMessage = "قیمت دوره باید بیشتر از 50 هزار تومن باشد . دقت کنید قیمت را به ریال وارد کنید .")]
+		[CheckPriceOfCourse(ErrorMessage = "قیمت دوره باید بیشتر از 50 هزار تومن باشد . دقت کنید قیمت را به ریال وارد کنید .")]
 		public int CoursePrice { get; set; }
 
 		[MaxLengthTagsOfCourses(ErrorMessage = "دقت کنید که هشتگ ها را درست وارد کنید ؛ همچنین " + "هشتگ ها نمیتوانند بیشتر از 1000 کاراکتر باشند .")]
@@ -31,6 +31,10 @@ namespace Toplearn.Core.DTOs.Teacher
 
 		public IFormFile? CourseImageFile { get; set; }
 		public IFormFile? CourseDemoVideo { get; set; }
+
+		[Display(Name = "زمان")]
+		[Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+		public TimeSpan EpisodeVideoTime { get; set; } 
 
 
 		[Display(Name = "گروه ها")]

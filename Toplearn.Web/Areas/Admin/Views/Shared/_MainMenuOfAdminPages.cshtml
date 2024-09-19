@@ -183,7 +183,7 @@
 				@* Courses *@
 		<li class="nav-item has-treeview">
 			<a href="#" class="nav-link">
-				<i class="nav-icon fa fa-product-hunt @(ViewBag.AddCourse != null || ViewBag.Courses != null?"text-info":"")"></i>
+				<i class="nav-icon fa fa-product-hunt @(ViewBag.AddCourse != null || ViewBag.Courses != null || ViewBag.CourseEpisodes != null?"text-info":"")"></i>
 				<p>
 					دوره ها
 					<i class="fa fa-angle-left right"></i>
@@ -206,6 +206,26 @@
 						</p>
 					</a>
 				</li>
+				<li class="nav-item">
+					<a asp-action="CourseEpisodes" asp-controller="Teacher" asp-area="Admin" asp-route-courseId="0" asp-route-pageId="1" asp-route-take="10" asp-route-nameFilter="" class="nav-link @ViewBag.CourseEpisodes">
+						<i class="fa fa-caret-square-o-right nav-icon"></i>
+						<p style="font-size:small;">
+							لیست قسمت ها
+						</p>
+					</a>
+				</li>
+				
+						@if (ViewBag.EditEpisodeForCourse != null)
+				{
+					<li class="nav-item">
+						<a asp-action="Index" asp-controller="Category" asp-area="Admin" class="nav-link @ViewBag.EditEpisodeForCourse">
+							<i class="fa fa-list-alt nav-icon"></i>
+							<p>
+								تغییر قسمت دوره ی  - « @ViewBag.CourseName »
+							</p>
+						</a>
+					</li>
+				}
 
 			</ul>
 		</li>

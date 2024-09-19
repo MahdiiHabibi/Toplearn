@@ -8,15 +8,16 @@
 			<ul>
 				@foreach (var category in Model.Where(x => x.ParentCategoryId == null))
 				{
+					
 					<li>
-						<a href="~/"> @category.CategoryName </a>
+						<a asp-action="index" asp-controller="Course" asp-route-selectedGroups="@category.CategoryId"> @category.CategoryName </a>
 						@if (category.ChildCategories != null && category.ChildCategories.Any())
 						{
 							<ul>
 								@foreach (var childCategory in category.ChildCategories)
 								{
 
-									<li><a href="~/"> @childCategory.CategoryName </a></li>
+									<li><a asp-action="index" asp-controller="Course" asp-route-selectedGroups="@childCategory.CategoryId"> @childCategory.CategoryName </a></li>
 
 								}
 							</ul>

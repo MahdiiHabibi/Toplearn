@@ -6,10 +6,6 @@ $(function(){
 
 });
 
-
-
-
-
 $(document).load($(window).bind("resize", checkPosition));
 
 function checkPosition() {

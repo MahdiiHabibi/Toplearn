@@ -14,5 +14,21 @@ namespace Toplearn.Core.Generator
 				.ToString()
 				.Replace("-", "");
 		}
+		public static string GuidGenerateWithOutNum()
+		{
+			return Guid.NewGuid()
+				.ToString()
+				.Replace("-", "")
+				.Replace("1", "a")
+				.Replace("2", "b")
+				.Replace("3", "c")
+				.Replace("4", "d")
+				.Replace("5", "e")
+				.Replace("6", "r")
+				.Replace("7", "t")
+				.Replace("8", "y")
+				.Replace("9", "u")
+				.Replace("0", "i");
+		}
 	}
 }

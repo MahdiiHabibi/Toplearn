@@ -52,7 +52,8 @@
 								</div>
 								<div>
 									<button type="submit" class="btn btn-block btn-outline-success">جستجو</button>
-									<a asp-action="Courses" asp-controller="Teacher" class="btn btn-block btn-outline-success">حذف فیلتر های جستجو</a>
+									<a asp-action="Courses" asp-controller="Teacher" class="btn btn-block btn-outline-warning">حذف فیلتر های جستجو</a>
+									<a asp-action="AddCourse" asp-controller="Teacher" class="btn btn-block btn-outline-primary">افزودن دوره ی جدید </a>
 								</div>
 
 							</form>
@@ -93,9 +94,9 @@
 														<td>
 															
 															@* TODO: *@
-															@if (course.Episodes != null && course.Episodes.Any())
+															@if (course.Episodes != null && course.Episodes.Any(x=>x.EpisodeNumber==0))
 															{
-																<a onclick="Video('@($"/CourseInfo/Images/thumb/{course.CourseImagePath}")','@($"{course.Episodes?.Single(x=>x.EpisodeNumber == 0).EpisodeFileUrl}")')" target="_blank" class="btn btn-app" style="min-width:fit-content; font-size:xx-small;">
+																<a onclick="Video('@($"/CourseInfo/Images/thumb/{course.CourseImagePath}")','@($"{course.Episodes?.Single(x=>x.EpisodeNumber == 0).EpisodeFileUrl.Replace("\\","/")}")')" target="_blank" class="btn btn-app" style="min-width:fit-content; font-size:xx-small;">
 																	<i class="fa fa-file-video-o" style="font-size:small;"></i>
 																	عکس 
 																	<br/>
@@ -109,6 +110,11 @@
 																<i class="fa fa-arrow-circle-o-down"></i>  
 																تغییر اطلاعات
 															</a>
+															<a asp-action="CourseEpisodes" asp-controller="Teacher" asp-area="Admin"  asp-route-courseId="@course.CourseId" class="btn btn-app" style="min-width:fit-content;">
+																<i class="fa fa-align-justify"></i>
+																جلسات دوره
+															</a>
+
 														</td>
 													</tr>
 													OodOrEven = !OodOrEven;

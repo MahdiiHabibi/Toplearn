@@ -36400,12 +36400,12 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CkEditor\translations\zh.js))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\جاوا اسکریپت_6\جاوا اسکریپت_6_Intro\جاوا اسکریپت_Intro.mp4))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\++C_4\03\++C03.rar))">
       <SourceType>Package</SourceType>
       <SourceId>Toplearn.Web</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Toplearn.Web</BasePath>
-      <RelativePath>CourseInfo/EpisodesFile/جاوا اسکریپت_6/جاوا اسکریپت_6_Intro/جاوا اسکریپت_Intro.mp4</RelativePath>
+      <RelativePath>CourseInfo/EpisodesFile/++C_4/03/++C03.rar</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -36414,14 +36414,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\جاوا اسکریپت_6\جاوا اسکریپت_6_Intro\جاوا اسکریپت_Intro.mp4))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\++C_4\03\++C03.rar))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\سیشارپ مقدماتی_3\سیشارپ مقدماتی_3_Intro\سیشارپ مقدماتی_Intro.mp4))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\++C_4\1\++C1.rar))">
       <SourceType>Package</SourceType>
       <SourceId>Toplearn.Web</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Toplearn.Web</BasePath>
-      <RelativePath>CourseInfo/EpisodesFile/سیشارپ مقدماتی_3/سیشارپ مقدماتی_3_Intro/سیشارپ مقدماتی_Intro.mp4</RelativePath>
+      <RelativePath>CourseInfo/EpisodesFile/++C_4/1/++C1.rar</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -36430,14 +36430,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\سیشارپ مقدماتی_3\سیشارپ مقدماتی_3_Intro\سیشارپ مقدماتی_Intro.mp4))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\++C_4\1\++C1.rar))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\سیشارپ مقدماتی_5\سیشارپ مقدماتی_5_Intro\سیشارپ مقدماتی_Intro.mp4))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\++C_4\2\++C2.rar))">
       <SourceType>Package</SourceType>
       <SourceId>Toplearn.Web</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Toplearn.Web</BasePath>
-      <RelativePath>CourseInfo/EpisodesFile/سیشارپ مقدماتی_5/سیشارپ مقدماتی_5_Intro/سیشارپ مقدماتی_Intro.mp4</RelativePath>
+      <RelativePath>CourseInfo/EpisodesFile/++C_4/2/++C2.rar</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -36446,14 +36446,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\سیشارپ مقدماتی_5\سیشارپ مقدماتی_5_Intro\سیشارپ مقدماتی_Intro.mp4))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\++C_4\2\++C2.rar))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\image\0eecb4d532fe465e8376d1c6cab71c70.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\++C_4\Intro\++C_Intro.mp4))">
       <SourceType>Package</SourceType>
       <SourceId>Toplearn.Web</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Toplearn.Web</BasePath>
-      <RelativePath>CourseInfo/Images/image/0eecb4d532fe465e8376d1c6cab71c70.png</RelativePath>
+      <RelativePath>CourseInfo/EpisodesFile/++C_4/Intro/++C_Intro.mp4</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -36462,14 +36462,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\image\0eecb4d532fe465e8376d1c6cab71c70.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\++C_4\Intro\++C_Intro.mp4))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\image\217fd1b9227445248be6ec5e812f5867.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\آموزش مقدماتی تا پیشرفته جاوا اسکریپت_3\1\آموزش مقدماتی تا پیشرفته جاوا اسکریپت1.rar))">
       <SourceType>Package</SourceType>
       <SourceId>Toplearn.Web</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Toplearn.Web</BasePath>
-      <RelativePath>CourseInfo/Images/image/217fd1b9227445248be6ec5e812f5867.png</RelativePath>
+      <RelativePath>CourseInfo/EpisodesFile/آموزش مقدماتی تا پیشرفته جاوا اسکریپت_3/1/آموزش مقدماتی تا پیشرفته جاوا اسکریپت1.rar</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -36478,14 +36478,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\image\217fd1b9227445248be6ec5e812f5867.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\آموزش مقدماتی تا پیشرفته جاوا اسکریپت_3\1\آموزش مقدماتی تا پیشرفته جاوا اسکریپت1.rar))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\image\56500c59ce674a179fe4be0c65b9fbd2.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\آموزش مقدماتی تا پیشرفته جاوا اسکریپت_3\2\آموزش مقدماتی تا پیشرفته جاوا اسکریپت2.rar))">
       <SourceType>Package</SourceType>
       <SourceId>Toplearn.Web</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Toplearn.Web</BasePath>
-      <RelativePath>CourseInfo/Images/image/56500c59ce674a179fe4be0c65b9fbd2.png</RelativePath>
+      <RelativePath>CourseInfo/EpisodesFile/آموزش مقدماتی تا پیشرفته جاوا اسکریپت_3/2/آموزش مقدماتی تا پیشرفته جاوا اسکریپت2.rar</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -36494,14 +36494,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\image\56500c59ce674a179fe4be0c65b9fbd2.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\آموزش مقدماتی تا پیشرفته جاوا اسکریپت_3\2\آموزش مقدماتی تا پیشرفته جاوا اسکریپت2.rar))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\image\6337d8de36e14e858bdddb0889c34e90.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\آموزش مقدماتی تا پیشرفته جاوا اسکریپت_3\3\آموزش مقدماتی تا پیشرفته جاوا اسکریپت3.rar))">
       <SourceType>Package</SourceType>
       <SourceId>Toplearn.Web</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Toplearn.Web</BasePath>
-      <RelativePath>CourseInfo/Images/image/6337d8de36e14e858bdddb0889c34e90.png</RelativePath>
+      <RelativePath>CourseInfo/EpisodesFile/آموزش مقدماتی تا پیشرفته جاوا اسکریپت_3/3/آموزش مقدماتی تا پیشرفته جاوا اسکریپت3.rar</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -36510,14 +36510,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\image\6337d8de36e14e858bdddb0889c34e90.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\آموزش مقدماتی تا پیشرفته جاوا اسکریپت_3\3\آموزش مقدماتی تا پیشرفته جاوا اسکریپت3.rar))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\image\8684466f32dd4fdf8dd82d7030b88b9e.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\آموزش مقدماتی تا پیشرفته جاوا اسکریپت_3\Intro\آموزش مقدماتی تا پیشرفته جاوا اسکریپت_Intro.mp4))">
       <SourceType>Package</SourceType>
       <SourceId>Toplearn.Web</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Toplearn.Web</BasePath>
-      <RelativePath>CourseInfo/Images/image/8684466f32dd4fdf8dd82d7030b88b9e.png</RelativePath>
+      <RelativePath>CourseInfo/EpisodesFile/آموزش مقدماتی تا پیشرفته جاوا اسکریپت_3/Intro/آموزش مقدماتی تا پیشرفته جاوا اسکریپت_Intro.mp4</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -36526,14 +36526,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\image\8684466f32dd4fdf8dd82d7030b88b9e.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\آموزش مقدماتی تا پیشرفته جاوا اسکریپت_3\Intro\آموزش مقدماتی تا پیشرفته جاوا اسکریپت_Intro.mp4))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\image\ac7915392ffe41a1add55b1651d0ca27.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\آموزش مقدماتی پایتون_5\02\آموزش مقدماتی پایتون02.rar))">
       <SourceType>Package</SourceType>
       <SourceId>Toplearn.Web</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Toplearn.Web</BasePath>
-      <RelativePath>CourseInfo/Images/image/ac7915392ffe41a1add55b1651d0ca27.png</RelativePath>
+      <RelativePath>CourseInfo/EpisodesFile/آموزش مقدماتی پایتون_5/02/آموزش مقدماتی پایتون02.rar</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -36542,14 +36542,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\image\ac7915392ffe41a1add55b1651d0ca27.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\آموزش مقدماتی پایتون_5\02\آموزش مقدماتی پایتون02.rar))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\image\b8bc37018937407bb26f290d24ef60b2.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\آموزش مقدماتی پایتون_5\1\آموزش مقدماتی پایتون1.rar))">
       <SourceType>Package</SourceType>
       <SourceId>Toplearn.Web</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Toplearn.Web</BasePath>
-      <RelativePath>CourseInfo/Images/image/b8bc37018937407bb26f290d24ef60b2.png</RelativePath>
+      <RelativePath>CourseInfo/EpisodesFile/آموزش مقدماتی پایتون_5/1/آموزش مقدماتی پایتون1.rar</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -36558,14 +36558,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\image\b8bc37018937407bb26f290d24ef60b2.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\آموزش مقدماتی پایتون_5\1\آموزش مقدماتی پایتون1.rar))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\image\c9d7fd4c1fb6468ab7ddfc559bb81749.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\آموزش مقدماتی پایتون_5\2\آموزش مقدماتی پایتون2.rar))">
       <SourceType>Package</SourceType>
       <SourceId>Toplearn.Web</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Toplearn.Web</BasePath>
-      <RelativePath>CourseInfo/Images/image/c9d7fd4c1fb6468ab7ddfc559bb81749.png</RelativePath>
+      <RelativePath>CourseInfo/EpisodesFile/آموزش مقدماتی پایتون_5/2/آموزش مقدماتی پایتون2.rar</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -36574,14 +36574,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\image\c9d7fd4c1fb6468ab7ddfc559bb81749.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\آموزش مقدماتی پایتون_5\2\آموزش مقدماتی پایتون2.rar))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\image\cee73c4aa2254d98a8e2a19ed65037ec.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\آموزش مقدماتی پایتون_5\Intro\آموزش مقدماتی پایتون_Intro.mp4))">
       <SourceType>Package</SourceType>
       <SourceId>Toplearn.Web</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Toplearn.Web</BasePath>
-      <RelativePath>CourseInfo/Images/image/cee73c4aa2254d98a8e2a19ed65037ec.png</RelativePath>
+      <RelativePath>CourseInfo/EpisodesFile/آموزش مقدماتی پایتون_5/Intro/آموزش مقدماتی پایتون_Intro.mp4</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -36590,14 +36590,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\image\cee73c4aa2254d98a8e2a19ed65037ec.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\آموزش مقدماتی پایتون_5\Intro\آموزش مقدماتی پایتون_Intro.mp4))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\image\no-photo.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\دوره آموزش زبان Go به همراه پروژه_1\1\دوره آموزش زبان Go به همراه پروژه1.rar))">
       <SourceType>Package</SourceType>
       <SourceId>Toplearn.Web</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Toplearn.Web</BasePath>
-      <RelativePath>CourseInfo/Images/image/no-photo.jpg</RelativePath>
+      <RelativePath>CourseInfo/EpisodesFile/دوره آموزش زبان Go به همراه پروژه_1/1/دوره آموزش زبان Go به همراه پروژه1.rar</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -36606,14 +36606,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\image\no-photo.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\دوره آموزش زبان Go به همراه پروژه_1\1\دوره آموزش زبان Go به همراه پروژه1.rar))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\thumb\0eecb4d532fe465e8376d1c6cab71c70.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\دوره آموزش زبان Go به همراه پروژه_1\2\دوره آموزش زبان Go به همراه پروژه2.rar))">
       <SourceType>Package</SourceType>
       <SourceId>Toplearn.Web</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Toplearn.Web</BasePath>
-      <RelativePath>CourseInfo/Images/thumb/0eecb4d532fe465e8376d1c6cab71c70.png</RelativePath>
+      <RelativePath>CourseInfo/EpisodesFile/دوره آموزش زبان Go به همراه پروژه_1/2/دوره آموزش زبان Go به همراه پروژه2.rar</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -36622,14 +36622,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\thumb\0eecb4d532fe465e8376d1c6cab71c70.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\دوره آموزش زبان Go به همراه پروژه_1\2\دوره آموزش زبان Go به همراه پروژه2.rar))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\thumb\217fd1b9227445248be6ec5e812f5867.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\دوره آموزش زبان Go به همراه پروژه_1\3\دوره آموزش زبان Go به همراه پروژه3.rar))">
       <SourceType>Package</SourceType>
       <SourceId>Toplearn.Web</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Toplearn.Web</BasePath>
-      <RelativePath>CourseInfo/Images/thumb/217fd1b9227445248be6ec5e812f5867.png</RelativePath>
+      <RelativePath>CourseInfo/EpisodesFile/دوره آموزش زبان Go به همراه پروژه_1/3/دوره آموزش زبان Go به همراه پروژه3.rar</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -36638,14 +36638,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\thumb\217fd1b9227445248be6ec5e812f5867.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\دوره آموزش زبان Go به همراه پروژه_1\3\دوره آموزش زبان Go به همراه پروژه3.rar))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\thumb\56500c59ce674a179fe4be0c65b9fbd2.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\دوره آموزش زبان Go به همراه پروژه_1\Intro\دوره آموزش زبان Go به همراه پروژه_Intro.mp4))">
       <SourceType>Package</SourceType>
       <SourceId>Toplearn.Web</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Toplearn.Web</BasePath>
-      <RelativePath>CourseInfo/Images/thumb/56500c59ce674a179fe4be0c65b9fbd2.png</RelativePath>
+      <RelativePath>CourseInfo/EpisodesFile/دوره آموزش زبان Go به همراه پروژه_1/Intro/دوره آموزش زبان Go به همراه پروژه_Intro.mp4</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -36654,14 +36654,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\thumb\56500c59ce674a179fe4be0c65b9fbd2.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\دوره آموزش زبان Go به همراه پروژه_1\Intro\دوره آموزش زبان Go به همراه پروژه_Intro.mp4))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\thumb\6337d8de36e14e858bdddb0889c34e90.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\سیشارپ مقدماتی تا پیشرفته_2\1\سیشارپ مقدماتی تا پیشرفته1.rar))">
       <SourceType>Package</SourceType>
       <SourceId>Toplearn.Web</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Toplearn.Web</BasePath>
-      <RelativePath>CourseInfo/Images/thumb/6337d8de36e14e858bdddb0889c34e90.png</RelativePath>
+      <RelativePath>CourseInfo/EpisodesFile/سیشارپ مقدماتی تا پیشرفته_2/1/سیشارپ مقدماتی تا پیشرفته1.rar</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -36670,14 +36670,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\thumb\6337d8de36e14e858bdddb0889c34e90.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\سیشارپ مقدماتی تا پیشرفته_2\1\سیشارپ مقدماتی تا پیشرفته1.rar))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\thumb\8684466f32dd4fdf8dd82d7030b88b9e.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\سیشارپ مقدماتی تا پیشرفته_2\2\سیشارپ مقدماتی تا پیشرفته2.rar))">
       <SourceType>Package</SourceType>
       <SourceId>Toplearn.Web</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Toplearn.Web</BasePath>
-      <RelativePath>CourseInfo/Images/thumb/8684466f32dd4fdf8dd82d7030b88b9e.png</RelativePath>
+      <RelativePath>CourseInfo/EpisodesFile/سیشارپ مقدماتی تا پیشرفته_2/2/سیشارپ مقدماتی تا پیشرفته2.rar</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -36686,14 +36686,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\thumb\8684466f32dd4fdf8dd82d7030b88b9e.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\سیشارپ مقدماتی تا پیشرفته_2\2\سیشارپ مقدماتی تا پیشرفته2.rar))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\thumb\ac7915392ffe41a1add55b1651d0ca27.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\سیشارپ مقدماتی تا پیشرفته_2\3\سیشارپ مقدماتی تا پیشرفته3.rar))">
       <SourceType>Package</SourceType>
       <SourceId>Toplearn.Web</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Toplearn.Web</BasePath>
-      <RelativePath>CourseInfo/Images/thumb/ac7915392ffe41a1add55b1651d0ca27.png</RelativePath>
+      <RelativePath>CourseInfo/EpisodesFile/سیشارپ مقدماتی تا پیشرفته_2/3/سیشارپ مقدماتی تا پیشرفته3.rar</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -36702,14 +36702,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\thumb\ac7915392ffe41a1add55b1651d0ca27.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\سیشارپ مقدماتی تا پیشرفته_2\3\سیشارپ مقدماتی تا پیشرفته3.rar))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\thumb\b8bc37018937407bb26f290d24ef60b2.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\سیشارپ مقدماتی تا پیشرفته_2\Intro\سیشارپ مقدماتی تا پیشرفته_Intro.mp4))">
       <SourceType>Package</SourceType>
       <SourceId>Toplearn.Web</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Toplearn.Web</BasePath>
-      <RelativePath>CourseInfo/Images/thumb/b8bc37018937407bb26f290d24ef60b2.png</RelativePath>
+      <RelativePath>CourseInfo/EpisodesFile/سیشارپ مقدماتی تا پیشرفته_2/Intro/سیشارپ مقدماتی تا پیشرفته_Intro.mp4</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -36718,14 +36718,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\thumb\b8bc37018937407bb26f290d24ef60b2.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\EpisodesFile\سیشارپ مقدماتی تا پیشرفته_2\Intro\سیشارپ مقدماتی تا پیشرفته_Intro.mp4))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\thumb\c9d7fd4c1fb6468ab7ddfc559bb81749.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\image\589007b3ef184649b988e09cd987997f.png))">
       <SourceType>Package</SourceType>
       <SourceId>Toplearn.Web</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Toplearn.Web</BasePath>
-      <RelativePath>CourseInfo/Images/thumb/c9d7fd4c1fb6468ab7ddfc559bb81749.png</RelativePath>
+      <RelativePath>CourseInfo/Images/image/589007b3ef184649b988e09cd987997f.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -36734,14 +36734,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\thumb\c9d7fd4c1fb6468ab7ddfc559bb81749.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\image\589007b3ef184649b988e09cd987997f.png))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\thumb\cee73c4aa2254d98a8e2a19ed65037ec.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\image\6a5113a7edd945ad830d5271c7dfd584.png))">
       <SourceType>Package</SourceType>
       <SourceId>Toplearn.Web</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Toplearn.Web</BasePath>
-      <RelativePath>CourseInfo/Images/thumb/cee73c4aa2254d98a8e2a19ed65037ec.png</RelativePath>
+      <RelativePath>CourseInfo/Images/image/6a5113a7edd945ad830d5271c7dfd584.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -36750,14 +36750,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\thumb\cee73c4aa2254d98a8e2a19ed65037ec.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\image\6a5113a7edd945ad830d5271c7dfd584.png))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\thumb\no-photo.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\image\924db4b365c84740ae37af723a604682.png))">
       <SourceType>Package</SourceType>
       <SourceId>Toplearn.Web</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Toplearn.Web</BasePath>
-      <RelativePath>CourseInfo/Images/thumb/no-photo.jpg</RelativePath>
+      <RelativePath>CourseInfo/Images/image/924db4b365c84740ae37af723a604682.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -36766,7 +36766,119 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\thumb\no-photo.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\image\924db4b365c84740ae37af723a604682.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\image\d733b7820777458185c3acbcbcf34c4c.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Toplearn.Web</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Toplearn.Web</BasePath>
+      <RelativePath>CourseInfo/Images/image/d733b7820777458185c3acbcbcf34c4c.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\image\d733b7820777458185c3acbcbcf34c4c.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\image\f13af82241104942b482ffeb7233b0bf.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Toplearn.Web</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Toplearn.Web</BasePath>
+      <RelativePath>CourseInfo/Images/image/f13af82241104942b482ffeb7233b0bf.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\image\f13af82241104942b482ffeb7233b0bf.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\thumb\589007b3ef184649b988e09cd987997f.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Toplearn.Web</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Toplearn.Web</BasePath>
+      <RelativePath>CourseInfo/Images/thumb/589007b3ef184649b988e09cd987997f.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\thumb\589007b3ef184649b988e09cd987997f.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\thumb\6a5113a7edd945ad830d5271c7dfd584.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Toplearn.Web</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Toplearn.Web</BasePath>
+      <RelativePath>CourseInfo/Images/thumb/6a5113a7edd945ad830d5271c7dfd584.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\thumb\6a5113a7edd945ad830d5271c7dfd584.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\thumb\924db4b365c84740ae37af723a604682.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Toplearn.Web</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Toplearn.Web</BasePath>
+      <RelativePath>CourseInfo/Images/thumb/924db4b365c84740ae37af723a604682.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\thumb\924db4b365c84740ae37af723a604682.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\thumb\d733b7820777458185c3acbcbcf34c4c.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Toplearn.Web</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Toplearn.Web</BasePath>
+      <RelativePath>CourseInfo/Images/thumb/d733b7820777458185c3acbcbcf34c4c.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\thumb\d733b7820777458185c3acbcbcf34c4c.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\thumb\f13af82241104942b482ffeb7233b0bf.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Toplearn.Web</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Toplearn.Web</BasePath>
+      <RelativePath>CourseInfo/Images/thumb/f13af82241104942b482ffeb7233b0bf.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CourseInfo\Images\thumb\f13af82241104942b482ffeb7233b0bf.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\css\AccessDenied.css))">
       <SourceType>Package</SourceType>
@@ -37007,6 +37119,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\captcha.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\CKEditorImages\tfcucauuddbyddaiyaituybdefadddeb.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Toplearn.Web</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Toplearn.Web</BasePath>
+      <RelativePath>images/CKEditorImages/tfcucauuddbyddaiyaituybdefadddeb.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\CKEditorImages\tfcucauuddbyddaiyaituybdefadddeb.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\logo.png))">
       <SourceType>Package</SourceType>
@@ -37312,12 +37440,12 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\slide.jpg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\UsersAvatar\1271a3648352465ca4522945ffb23cde.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\UsersAvatar\45e654d5ad8b41c8ba385e30cd4126a9.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Toplearn.Web</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Toplearn.Web</BasePath>
-      <RelativePath>images/UsersAvatar/1271a3648352465ca4522945ffb23cde.jpg</RelativePath>
+      <RelativePath>images/UsersAvatar/45e654d5ad8b41c8ba385e30cd4126a9.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -37326,14 +37454,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\UsersAvatar\1271a3648352465ca4522945ffb23cde.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\UsersAvatar\45e654d5ad8b41c8ba385e30cd4126a9.jpg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\UsersAvatar\24fc70a538b04d6da837c433a035f72d.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\UsersAvatar\91b18aaaf2564fa49f5ec2e99ecc614f.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Toplearn.Web</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Toplearn.Web</BasePath>
-      <RelativePath>images/UsersAvatar/24fc70a538b04d6da837c433a035f72d.jpg</RelativePath>
+      <RelativePath>images/UsersAvatar/91b18aaaf2564fa49f5ec2e99ecc614f.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -37342,87 +37470,7 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\UsersAvatar\24fc70a538b04d6da837c433a035f72d.jpg))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\UsersAvatar\83e0cc1a7c6749ebb6158f83339c1544.jpg))">
-      <SourceType>Package</SourceType>
-      <SourceId>Toplearn.Web</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Toplearn.Web</BasePath>
-      <RelativePath>images/UsersAvatar/83e0cc1a7c6749ebb6158f83339c1544.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\UsersAvatar\83e0cc1a7c6749ebb6158f83339c1544.jpg))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\UsersAvatar\95187fb254fb447a8f4e152cfde170c5.jpg))">
-      <SourceType>Package</SourceType>
-      <SourceId>Toplearn.Web</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Toplearn.Web</BasePath>
-      <RelativePath>images/UsersAvatar/95187fb254fb447a8f4e152cfde170c5.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\UsersAvatar\95187fb254fb447a8f4e152cfde170c5.jpg))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\UsersAvatar\a64732b4d62a4cc59a1704b0cbd471b4.jpg))">
-      <SourceType>Package</SourceType>
-      <SourceId>Toplearn.Web</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Toplearn.Web</BasePath>
-      <RelativePath>images/UsersAvatar/a64732b4d62a4cc59a1704b0cbd471b4.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\UsersAvatar\a64732b4d62a4cc59a1704b0cbd471b4.jpg))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\UsersAvatar\be719b82cae04ac7898f666ac6ba6999.jpg))">
-      <SourceType>Package</SourceType>
-      <SourceId>Toplearn.Web</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Toplearn.Web</BasePath>
-      <RelativePath>images/UsersAvatar/be719b82cae04ac7898f666ac6ba6999.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\UsersAvatar\be719b82cae04ac7898f666ac6ba6999.jpg))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\UsersAvatar\fba636fc32af4493907e7a6bb455692d.jpg))">
-      <SourceType>Package</SourceType>
-      <SourceId>Toplearn.Web</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Toplearn.Web</BasePath>
-      <RelativePath>images/UsersAvatar/fba636fc32af4493907e7a6bb455692d.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\UsersAvatar\fba636fc32af4493907e7a6bb455692d.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\UsersAvatar\91b18aaaf2564fa49f5ec2e99ecc614f.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\js\bootstrap.min.js))">
       <SourceType>Package</SourceType>
@@ -37439,6 +37487,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\js\bootstrap.min.js))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\js\Config.js))">
+      <SourceType>Package</SourceType>
+      <SourceId>Toplearn.Web</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Toplearn.Web</BasePath>
+      <RelativePath>js/Config.js</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\js\Config.js))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\js\jquery.min.js))">
       <SourceType>Package</SourceType>
