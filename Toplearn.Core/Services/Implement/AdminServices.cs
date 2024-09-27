@@ -1,12 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Toplearn.Core.DTOs.Admin;
 using Toplearn.Core.Services.Interface;
 using Toplearn.DataLayer.Context;
+using Toplearn.DataLayer.Entities.Order;
 using Toplearn.DataLayer.Entities.User;
 
 namespace Toplearn.Core.Services.Implement
@@ -65,6 +61,57 @@ namespace Toplearn.Core.Services.Implement
 				// If the result of the above method is True, the number one is returned, and in this case, one is equal to one < (1==1)== true >. But if any other number is returned, the result is false
 				return res == 1;
 
+			}
+			catch
+			{
+				return false;
+			}
+		}
+
+		public ShowDiscountsInAdminViewModel GetDiscountsForShow(int pageId = 1, int take = 2, string filter = "")
+		{
+			IQueryable<OrderDiscount> result = context.OrderDiscounts;
+
+			if (!string.IsNullOrEmpty(filter))
+			{
+				result = result.Where(u => u.DiscountCode.Contains(filter));
+			}
+
+
+			// Show Item In Page
+			int skip = (pageId - 1) * take;
+
+			List<OrderDiscount> discounts = [];
+
+			discounts.AddRange(
+				result.OrderByDescending(d => d.StartDate)
+					.Skip(skip)
+					.Take(take)
+					.Include(x => x.OrderToDiscounts));
+
+			var list = new ShowDiscountsInAdminViewModel
+			{
+				CurrentPage = pageId,
+				PageCount = (int) Math.Ceiling(Convert.ToDouble(result.Count()) / take),
+				Discounts = discounts
+			};
+
+			return list;
+
+		}
+
+		public bool IsDiscountCodeExist(string discountCode)
+		{
+			return context.OrderDiscounts.Any(x => x.DiscountCode == discountCode);
+		}
+
+		public bool AddDiscount(OrderDiscount orderDiscount)
+		{
+			try
+			{
+				context.OrderDiscounts.Add(orderDiscount);
+				context.SaveChanges();
+				return true;
 			}
 			catch
 			{

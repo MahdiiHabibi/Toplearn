@@ -1,0 +1,197 @@
+﻿@using System.Security.Claims
+@using Toplearn.Core.Security.Identity
+@using Toplearn.Core.Services.Interface
+@using Toplearn.DataLayer.Entities.Order
+@model Toplearn.DataLayer.Entities.Order.Order
+@inject IWalletManager WalletManager
+
+@{
+	var discounts = ViewBag.discounts as List<OrderDiscount>;
+	ViewBag.Title = "فاکتور" + " - " + Model.OrderId;
+}
+<partial name="_breadcrumb" />
+
+<main>
+	<div class="container">
+		<div class="user-account">
+			<div class="row">
+				<div class="col-md-3 col-sm-4 col-xs-12">
+					<aside>
+
+						<partial name="_BoxOfImageInUserPanel" />
+
+						<partial name="_DeskInUserPanel" />
+
+					</aside>
+				</div>
+				<div class="col-md-9 col-sm-8 col-xs-12">
+					<section class="user-account-content">
+						<header><h1> فاکتور شماره ی   « @Model.OrderId » </h1></header>
+						@if (ViewBag.finaly == true)
+						{
+							<div class="alert alert-success">
+								فاکتور با موفقیت پرداخت گردید
+							</div>
+						}
+						<div class="container" style="width:unset;">
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>دوره</th>
+										<th>قیمت فعلی</th>
+										<th>قیمت در فاکتور </th>
+									</tr>
+								</thead>
+								<tbody>
+									@foreach (var item in Model.OrderDetails)
+									{
+										<tr>
+											<td>
+												<a asp-action="Index" asp-controller="Course" asp-route-courseId="@item.CourseId" asp-route-courseName="@item.Course.CourseName" target="_blank">@item.Course.CourseName</a>
+											</td>
+											<td title="@((item.Course.CoursePrice/10).ToString("N0")) تومان ">@item.Course.CoursePrice.ToString("N0") ریال</td>
+
+											<td title="@((item.Price/10).ToString("N0")) تومان ">
+												@item.Price.ToString("N0") ریال
+											</td>
+										</tr>
+									}
+									<hr />
+									@if (!Model.IsFinally)
+									{
+										<tr>
+											<td>
+												<div class="row" style="margin:0;">
+													@foreach (var discount in discounts)
+													{
+														<div class="col-lg-3 col-sm-3" style="background-color:darkgray;padding:2px 8px 3px 8px;border:1px dashed white; font-size:smaller;border-radius:30px; max-width:fit-content;">
+															@discount.DiscountCode
+														</div>
+													}
+												</div>
+
+											</td>
+											<td class="text-left">کد تخفیف</td>
+											<td>
+												<form asp-action="UseDiscount" asp-controller="Order" asp-area="UserPanel" method="post">
+													<input type="hidden" name="orderId" value="@Model.OrderId" />
+													<input type="text" name="discountCode" class="form-control" />
+													<input type="submit" class="btn btn-primary btn-block" style="margin-top: 5px;" value="اعمال" />
+												</form>
+												@{
+													var discountType = "";
+												}
+												@if (discountType != "")
+												{
+													switch (discountType)
+													{
+														case "Success":
+															{
+																<div class="alert alert-success">
+																	<p class="text-muted">کد با موفقیت اعمال شد</p>
+																</div>
+																break;
+															}
+														case "ExpierDate":
+															{
+																<div class="alert alert-danger">
+																	<p class="text-muted">تاریخ کد به اتمام رسیده است</p>
+																</div>
+																break;
+															}
+														case "NotFound":
+															{
+																<div class="alert alert-warning">
+																	<p class="text-muted">کد معتبر نیست</p>
+																</div>
+																break;
+															}
+														case "Finished":
+															{
+																<div class="alert alert-danger">
+																	<p class="text-muted">کد به اتمام رسیده است</p>
+																</div>
+																break;
+															}
+														case "UserUsed":
+															{
+																<div class="alert alert-info">
+																	<p class="text-muted">این کد قبلا توسط شما استفاده شده است</p>
+																</div>
+																break;
+															}
+													}
+												}
+
+
+											</td>
+
+
+										</tr>
+									}
+									<tr>
+										<th>
+											تخفیف لحاظ شده :
+											@if (Model.IsFinally)
+											{
+
+												<span style="color:#2aaf27;" title="@(((Model.OrderDetails.Sum(x => x.Price) - Model.OrderSum) / 10).ToString("N0")) تومان">
+													@(((Model.OrderDetails.Sum(x => x.Price) - Model.OrderSum)).ToString("N0")) ریال
+												</span>
+											}
+										</th>
+										<td class="text-left">جمع کل :</td>
+										<td>
+											@Model.OrderSum.ToString("#,0") ریال
+										</td>
+
+									</tr>
+									@if (!Model.IsFinally)
+									{
+										<tr>
+											<td>
+
+												@if (discounts == null)
+												{
+													<p>
+														0
+													</p>
+												}
+												else
+												{
+													<p>
+														با در نظر گرفتن کد تخفیف های شما مقدار <span style="color:#2aaf27;" title="@(((Model.OrderDetails.Sum(x => x.Price) - Model.OrderSum)/10).ToString("N0")) تومان">@(((Model.OrderDetails.Sum(x => x.Price) - Model.OrderSum)).ToString("N0")) ریال</span>  تخفیف برای شما لحاظ شد
+													</p>
+												}
+
+											</td>
+											<td class="text-left">عملیات :</td>
+											<td>
+												@if (await WalletManager.GetBalanceOfUser(int.Parse(User.FindFirstValue(TopLearnClaimTypes.NameIdentifier)!)) >= Model.OrderSum)
+												{
+													<a class="btn btn-success btn-block" asp-action="ConfirmOrder" asp-controller="Order" asp-area="UserPanel" asp-route-orderId="@Model.OrderId">تایید فاکتور</a>
+												}
+												else
+												{
+													<a class="btn btn-success btn-block" disabled>تایید فاکتور</a>
+													<div class="alert alert-danger">
+														موجودی کیف پول شما کافی نمی باشد ، لطفا از طریق این
+														<a asp-action="index" asp-controller="Wallet" asp-area="UserPanel" class="alert-link">  لینک  </a>
+														اقدام به شارژ حساب کنید
+													</div>
+												}
+
+											</td>
+										</tr>
+									}
+								</tbody>
+							</table>
+
+						</div>
+
+					</section>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>

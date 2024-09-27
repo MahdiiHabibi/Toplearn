@@ -1,4 +1,5 @@
 ﻿
+using System.Diagnostics;
 using System.Security.Claims;
 using IdentitySample.Repositories;
 using Microsoft.AspNetCore.Authentication;
@@ -19,13 +20,13 @@ using WebMarkupMin.AspNet.Common.Resources;
 
 namespace Toplearn.Web.Controllers
 {
-	public class HomeController(IUserPanelService userPanelService) : TopLearnController
+	public class HomeController(IUserPanelService userPanelService,IAdminServices adminServices,TopLearnContext db) : TopLearnController
 	{
 		public IActionResult Index()
 		{
 			return View();
 		}
-
+		
 
 		[ValidateAntiForgeryToken]
 		[HttpPost]
@@ -60,15 +61,8 @@ namespace Toplearn.Web.Controllers
 			return Json(true);
 		}
 
-		#region Access Denied
 
-
-		[Route("AccessDenied")]
-		public IActionResult AccessDenied() => View();
-
-
-		#endregion
-
+		
 
 		#region CK Editor
 
@@ -124,6 +118,6 @@ namespace Toplearn.Web.Controllers
 
 		#endregion
 
+		
 	}
-
 }

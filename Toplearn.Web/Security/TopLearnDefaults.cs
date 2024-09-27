@@ -27,7 +27,7 @@ namespace Toplearn.Web.Security
 		// Check The Url If there is No Problem : it returns the input , else : It returns the Url Of the Login Page
 		public string CheckTheBackUrl(string BackUrl)
 		{
-			if (!BackUrl.IsNullOrEmpty() && Url.IsLocalUrl(BackUrl.Replace("%2", "/")))
+			if (!BackUrl.IsNullOrEmpty() && Url.IsLocalUrl(BackUrl.Replace("%2F", "/")))
 			{
 				return BackUrl;
 			}

@@ -84,24 +84,28 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 			#endregion
 
 			#region CheckUserImage
-
-			var res = await userPanelService.ImageTaskInEditUser(User.Claims.Single(x => x.Type == "ImageUrl").Value,
-				editPanelViewModel.ImageFile);
-
 			var imageResDescription = "";
 			var imageResAlertType = "";
-			if (res != string.Empty)
+			var res = string.Empty;
+			if (editPanelViewModel.ImageFile != null)
 			{
-				imageResAlertType = "success";
-				user.ImageUrl = res;
-				claims.Add(new Claim("ImageUrl", res));
-			}
-			else
-			{
-				imageResAlertType = "info";
-				imageResDescription = "ولی در ثبت عکس جدید شما مشکلی به وجود آمد";
-			}
+				 res = await userPanelService.ImageTaskInEditUser(User.Claims.Single(x => x.Type == "ImageUrl").Value,
+					editPanelViewModel.ImageFile);
 
+
+				if (res != string.Empty)
+				{
+					imageResAlertType = "success";
+					user.ImageUrl = res;
+					claims.Add(new Claim("ImageUrl", res));
+				}
+				else
+				{
+					imageResAlertType = "info";
+					imageResDescription = "ولی در ثبت عکس جدید شما مشکلی به وجود آمد";
+				}
+
+			}
 			#endregion
 
 			user.ActiveCode = StringGenerate.GuidGenerate();
@@ -227,7 +231,7 @@ namespace Toplearn.Web.Areas.UserPanel.Controllers
 			if (permissions is { Count: 0 })
 				return View(model: null);
 
-			var x =  (permissions?.Count / (double) 3)!;
+			var x = (permissions?.Count / (double)3)!;
 			ViewBag.take = x;
 
 			return View(permissions);

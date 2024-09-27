@@ -1,21 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Toplearn.DataLayer.DataAnnotations;
 using Toplearn.DataLayer.Entities.Course.CourseRequirements;
+using Toplearn.DataLayer.Entities.Order;
 
 namespace Toplearn.DataLayer.Entities.Course
 {
-	public sealed class Course
+	public class Course
 	{
 		public Course()
 		{
-			Episodes = [];
+			
 		}
+
 
 		[Key]
 		public int CourseId { get; set; }
@@ -74,14 +71,21 @@ namespace Toplearn.DataLayer.Entities.Course
 
 
 		[ForeignKey(nameof(TeacherId))]
-		public User.User Teacher { get; set; }
+		public virtual User.User Teacher { get; set; }
 
 
 		[ForeignKey(nameof(CategoryId))]
-		public Category Category { get; set; }
+		public virtual Category Category { get; set; }
 
+		public virtual List<CourseEpisode> Episodes { get; set; }
 
-		public List<CourseEpisode> Episodes { get; set; }
+		public virtual List<UserCourse>? UserOfCourses { get; set; }
+
+		public virtual List<OrderDetail> OrderDetails { get; set; }
+
+		public virtual List<CourseComment> CourseComments { get; set; }
+
+		public virtual CourseOff CourseOff { get; set; }
 
 
 		#endregion

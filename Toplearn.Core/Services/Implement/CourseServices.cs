@@ -346,7 +346,7 @@ namespace Toplearn.Core.Services.Implement
 
 			if (!string.IsNullOrEmpty(filter))
 			{
-				result = result.Where(c => c.CourseName.Contains(filter)||c.Tags!.Contains(filter.Replace("-"," ")));
+				result = result.Where(c => c.CourseName.Contains(filter) || c.Tags!.Contains(filter.Replace("-", " ")));
 			}
 
 			result = priceType.ToLower() switch
@@ -448,7 +448,63 @@ namespace Toplearn.Core.Services.Implement
 		{
 			return Context.Courses.Include(c => c.Episodes)
 				.Include(c => c.Teacher)
-				.FirstOrDefault(c => c.CourseId == courseId);
+				.SingleOrDefault(c => c.CourseId == courseId)!;
+		}
+
+		public int GetCourseStudentCounts(int courseId)
+		{
+			return Context.Courses
+				.Include(x => x.UserOfCourses)
+				.First(x => x.CourseId == courseId).UserOfCourses?.Count ?? 0;
+		}
+
+		public ShowCommentsViewModel ShowComments(int courseId, int take, int pageId)
+		{
+			IQueryable<CourseComment> result = Context.CourseComments;
+
+
+			if (courseId != 0)
+			{
+				result = result.Where(x => x.CourseId == courseId);
+			}
+
+			result = result
+				.Include(x => x.User);
+
+
+			// Show Item In Page
+			int skip = (pageId - 1) * take;
+
+			var model = new ShowCommentsViewModel
+			{
+				CurrentPage = pageId,
+				PageCount = int.Parse(Math.Ceiling(Convert.ToDouble(result.Count()) / take).ToString())
+			};
+
+			model.CourseComments.AddRange(result.OrderByDescending(u => u.CreateDate)
+				.Skip(skip)
+				.Take(take));
+
+			if (model.PageCount == 0)
+			{
+				model.CourseComments = [];
+			}
+
+			return model;
+		}
+
+		public bool AddComment(CourseComment courseComment)
+		{
+			try
+			{
+				context.CourseComments.Add(courseComment);
+				context.SaveChangesAsync();
+				return true;
+			}
+			catch
+			{
+				return false;
+			}
 		}
 	}
 }

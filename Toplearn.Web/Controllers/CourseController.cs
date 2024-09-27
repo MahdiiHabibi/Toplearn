@@ -26,9 +26,9 @@ namespace Toplearn.Web.Controllers
 			//	});
 			//}
 
-			if (model.PageCount < pageId && model.PageCount !=0)
+			if (model.PageCount < pageId && model.PageCount != 0)
 			{
-				return RedirectToAction("Index","Course",new { pageId = 1 ,filter = filter,priceType = priceType, orderByType = orderByType, startPrice = startPrice,endPrice = endPrice,selectedGroups = selectedGroups,take = take});
+				return RedirectToAction("Index", "Course", new { pageId = 1, filter = filter, priceType = priceType, orderByType = orderByType, startPrice = startPrice, endPrice = endPrice, selectedGroups = selectedGroups, take = take });
 			}
 
 			return View(model);
@@ -36,11 +36,75 @@ namespace Toplearn.Web.Controllers
 
 
 		[Route("/course/{courseName}/{courseId:int}")]
-		public IActionResult Index(int courseId,string courseName)
+		public IActionResult Index(int courseId, string courseName, int pageId = 1)
 		{
 			var model = courseServices.GetCourseForShow(courseId);
+
+			if (model == null)
+			{
+				return NotFound();
+			}
+
+			ViewBag.Comment = "";
+			ViewBag.DegreeOfTeacher = null;
+			ViewBag.DegreeOfCourse = null;
+			ViewBag.Errors = TempData["Errors"]!;
+
+			ViewBag.CourseStudentCount = courseServices.GetCourseStudentCounts(courseId);
+			ViewData["pageId"] = pageId;
+
+			return View("course", model);
+		}
+
+
+		[HttpPost]
+		public IActionResult SubmitComment(SubmitCommentViewModel submitCommentViewModel)
+		{
+			if (User.Identity == null || User.Identity.IsAuthenticated == false)
+			{
+				return RedirectToAction("Login", "Account", new { BackUrl = $"/course/TopLearn/{submitCommentViewModel.CourseId}?pageId={submitCommentViewModel.pageId}" });
+			}
+
+			if (!ModelState.IsValid)
+			{
+				List<string> errors = new List<string>();
+				foreach (var error in ModelState
+							 .Where(x =>
+								 x.Value != null && !x.Value.ValidationState
+									 .ToString()
+									 .Equals("Valid", StringComparison.CurrentCultureIgnoreCase))
+							 .Select(x => x.Value.Errors))
+				{
+					errors.AddRange(error.Select(x => x.ErrorMessage));
+				}
+
+				errors.DistinctBy(x => x);
+				TempData["Errors"] = errors;
+				ViewBag.Comment = submitCommentViewModel.Comment;
+				ViewBag.DegreeOfTeacher = submitCommentViewModel.DegreeOfTeacher;
+				ViewBag.DegreeOfCourse = submitCommentViewModel.DegreeOfCourse;
+
+				return Redirect($"/Course/TopLearn/{submitCommentViewModel.CourseId}?pageId={submitCommentViewModel.pageId}");
+			}
+
+			var comment = new CourseComment()
+			{
+				UserId = GetUserIdFromClaims(),
+				AccessFromAdmin = false,
+				Comment = submitCommentViewModel.Comment,
+				CourseId = submitCommentViewModel.CourseId,
+				CreateDate = DateTime.Now
+			};
+
+			bool res = courseServices.AddComment(comment);
 			
-			return View("course",model);
+			if (res)
+				CreateMassageAlert("success", "دید گاه شما ثبت شد بعد از تایید به نمایش خواهد آمد .", "موفق ");
+			else
+				CreateMassageAlert("danger", "عملیات با شکست رو به رو شد .", "ناموفق ");
+
+
+			return Redirect($"/Course/TopLearn/{submitCommentViewModel.CourseId}?pageId={submitCommentViewModel.pageId}");
 		}
 	}
 }

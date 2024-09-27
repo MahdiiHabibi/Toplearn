@@ -33,5 +33,7 @@ namespace Toplearn.Web.Areas.Admin.Controllers
 			CreateMassageAlert(appSetting != null ? "success" : "warning", appSetting != null ? "تغییر کد احراز هویت سایت با موفقیت انجام شد . " : "مشکلی به وجود آمده است", appSetting != null ? "موفق  " : "نا موفق");
 			return Redirect(CheckTheBackUrl(BackUrl));
 		}
+
+		
 	}
 }

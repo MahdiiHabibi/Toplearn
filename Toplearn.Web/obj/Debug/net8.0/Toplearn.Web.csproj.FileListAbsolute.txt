@@ -1,15 +1,5 @@
-W:\Toplearn\Toplearn.Web\obj\Debug\net8.0\Toplearn.Web.csproj.AssemblyReference.cache
-W:\Toplearn\Toplearn.Web\obj\Debug\net8.0\Toplearn.Web.GeneratedMSBuildEditorConfig.editorconfig
-W:\Toplearn\Toplearn.Web\obj\Debug\net8.0\Toplearn.Web.AssemblyInfoInputs.cache
-W:\Toplearn\Toplearn.Web\obj\Debug\net8.0\Toplearn.Web.AssemblyInfo.cs
-W:\Toplearn\Toplearn.Web\obj\Debug\net8.0\Toplearn.Web.csproj.CoreCompileInputs.cache
-W:\Toplearn\Toplearn.Web\obj\Debug\net8.0\Toplearn.Web.MvcApplicationPartsAssemblyInfo.cs
-W:\Toplearn\Toplearn.Web\obj\Debug\net8.0\Toplearn.Web.MvcApplicationPartsAssemblyInfo.cache
-W:\Toplearn\Toplearn.Web\obj\Debug\net8.0\Toplearn.Web.RazorAssemblyInfo.cache
-W:\Toplearn\Toplearn.Web\obj\Debug\net8.0\Toplearn.Web.RazorAssemblyInfo.cs
-W:\Toplearn\Toplearn.Web\obj\Debug\net8.0\Toplearn.Web.sourcelink.json
+W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\web.config
 W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\appsettings.json
-W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\Toplearn.Web.staticwebassets.runtime.json
 W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\Toplearn.Web.exe
 W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\Toplearn.Web.deps.json
 W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\Toplearn.Web.runtimeconfig.json
@@ -320,6 +310,7 @@ W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\AdvancedStringBuilder.dll
 W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\AutoMapper.dll
 W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\Azure.Core.dll
 W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\Azure.Identity.dll
+W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\Castle.Core.dll
 W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\Elmah.Io.AspNetCore.dll
 W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\Elmah.Io.Client.dll
 W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\Humanizer.dll
@@ -346,6 +337,7 @@ W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\Microsoft.DotNet.Scaffolding.Shared.dl
 W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
 W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Proxies.dll
 W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
 W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
@@ -379,6 +371,7 @@ W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\NuGet.Packaging.dll
 W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\NuGet.ProjectModel.dll
 W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\NuGet.Protocol.dll
 W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\NuGet.Versioning.dll
+W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\Quartz.dll
 W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\System.CodeDom.dll
 W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\System.Composition.AttributedModel.dll
 W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\System.Composition.Convention.dll
@@ -554,6 +547,16 @@ W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\Toplearn.Core.dll
 W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\Toplearn.DataLayer.dll
 W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\Toplearn.Core.pdb
 W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\Toplearn.DataLayer.pdb
+W:\Toplearn\Toplearn.Web\obj\Debug\net8.0\Toplearn.Web.csproj.AssemblyReference.cache
+W:\Toplearn\Toplearn.Web\obj\Debug\net8.0\Toplearn.Web.GeneratedMSBuildEditorConfig.editorconfig
+W:\Toplearn\Toplearn.Web\obj\Debug\net8.0\Toplearn.Web.AssemblyInfoInputs.cache
+W:\Toplearn\Toplearn.Web\obj\Debug\net8.0\Toplearn.Web.AssemblyInfo.cs
+W:\Toplearn\Toplearn.Web\obj\Debug\net8.0\Toplearn.Web.csproj.CoreCompileInputs.cache
+W:\Toplearn\Toplearn.Web\obj\Debug\net8.0\Toplearn.Web.MvcApplicationPartsAssemblyInfo.cs
+W:\Toplearn\Toplearn.Web\obj\Debug\net8.0\Toplearn.Web.MvcApplicationPartsAssemblyInfo.cache
+W:\Toplearn\Toplearn.Web\obj\Debug\net8.0\Toplearn.Web.RazorAssemblyInfo.cache
+W:\Toplearn\Toplearn.Web\obj\Debug\net8.0\Toplearn.Web.RazorAssemblyInfo.cs
+W:\Toplearn\Toplearn.Web\obj\Debug\net8.0\Toplearn.Web.sourcelink.json
 W:\Toplearn\Toplearn.Web\obj\Debug\net8.0\staticwebassets.build.json
 W:\Toplearn\Toplearn.Web\obj\Debug\net8.0\staticwebassets.development.json
 W:\Toplearn\Toplearn.Web\obj\Debug\net8.0\staticwebassets\msbuild.Toplearn.Web.Microsoft.AspNetCore.StaticWebAssets.props
@@ -568,4 +571,3 @@ W:\Toplearn\Toplearn.Web\obj\Debug\net8.0\refint\Toplearn.Web.dll
 W:\Toplearn\Toplearn.Web\obj\Debug\net8.0\Toplearn.Web.pdb
 W:\Toplearn\Toplearn.Web\obj\Debug\net8.0\Toplearn.Web.genruntimeconfig.cache
 W:\Toplearn\Toplearn.Web\obj\Debug\net8.0\ref\Toplearn.Web.dll
-W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\web.config

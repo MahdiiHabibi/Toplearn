@@ -40,7 +40,7 @@ namespace Toplearn.DataLayer.Entities.Course
 		#region Relations
 
 		[ForeignKey(nameof(CourseId))]
-		public Course Course { get; set; }
+		public virtual Course Course { get; set; }
 
 
 		#endregion

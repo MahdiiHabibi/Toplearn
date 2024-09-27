@@ -1,0 +1,188 @@
+﻿@model AddEditDiscountViewModel
+
+@{
+	ViewBag.Title = "اضافه کردن کد تخفیف جدید";
+	ViewBag.discountAdd = "active";
+}
+
+
+<section class="content">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<!-- interactive chart -->
+				<div class="card card-success card-outline">
+					<div class="card-header">
+						<h3 class="card-title">
+							<i class="fa fa-bar-chart-o"></i>
+							کد تخفیف جدید :
+						</h3>
+					</div>
+					<div class="card-body">
+						<form asp-action="AddDiscount" asp-controller="Discount" asp-area="Admin" method="post">
+
+							<div class="row">
+
+								<div class="col-6">
+
+									<div class="form-group">
+										<label for="DiscountCode">
+											کد تخفیف
+										</label>
+										<input asp-for="DiscountCode" class="form-control" placeholder="کد تخفیف را وارد کنید">
+									</div> 
+									<span class="text-danger" asp-validation-for="DiscountCode"></span>
+									<br/>
+									<span class="text-warning">
+										این کد صرفا به طور شانسی تولید شده است اگه نمی خواهید تغییرش دهید !
+									</span>
+									<p></p>
+									<div class="form-group">
+										<label for="DiscountCode">
+											تعداد فاکتور قابل استفاده
+										</label>
+										<input type="number" asp-for="UsableCount" class="form-control" placeholder="تعداد را وارد کنید">
+
+										<div class="form-check" style="padding-top:2px;">
+											<input class="form-check-input" type="checkbox" asp-for="HaveUsableCount" onchange="ChangeDisabledOfInput('UsableCount')">
+											<label class="form-check-label" for="HaveUsableCount" >
+												بدون محدودیت تعداد است ؟
+											</label>
+										</div>
+									</div>
+									<span class="text-danger" asp-validation-for="UsableCount"></span>
+
+
+
+
+
+								</div>
+								<div class="col-6">
+
+									<div class="form-group">
+										<label for="DiscountPercent">
+											درصد تخفیف
+										</label>
+										<input type="number" asp-for="DiscountPercent" class="form-control" placeholder="درصد تخفیف را وارد کنید">
+									</div>
+									<span class="text-danger" asp-validation-for="DiscountPercent"></span>
+
+									<div class="form-group">
+										<label>انتخاب تاریخ شروع :</label>
+
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">
+													<i class="fa fa-calendar"></i>
+												</span>
+											</div>
+											<input type="date" asp-for="StartDate" class="normal-example form-control pwt-datepicker-input-element">
+										</div>
+										<!-- /.input group -->
+										<div class="form-check" style="padding-top:2px;">
+											<input class="form-check-input" type="checkbox" asp-for="HaveStartDate" onchange="ChangeDisabledOfInput('StartDate')">
+											<label class="form-check-label" for="HaveStartDate">
+												بدون محدودیت تاریخ زمان شروع است ؟
+											</label>
+										</div>
+									</div>
+									<span class="text-danger" asp-validation-for="StartDate"></span>
+
+									<div class="form-group">
+										<label>انتخاب تاریخ پایان مهلت :</label>
+
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">
+													<i class="fa fa-calendar"></i>
+												</span>
+											</div>
+											<input type="date" asp-for="EndDate" class="normal-example form-control pwt-datepicker-input-element">
+										</div>
+										<!-- /.input group -->
+										<div class="form-check" style="padding-top:2px;">
+											<input class="form-check-input" type="checkbox" asp-for="HaveEndDate" onchange="ChangeDisabledOfInput('EndDate')">
+											<label class="form-check-label" for="HaveEndDate" >
+												بدون محدودیت تاریخ زمان پایان است ؟
+											</label>
+										</div>
+									</div>
+									<span class="text-danger" asp-validation-for="EndDate"></span>
+
+
+								</div>
+								<button type="submit" class="btn btn-success">ارسال</button>
+							</div>
+						</form>
+					</div>
+					<!-- /.card-body-->
+				</div>
+				<!-- /.card -->
+
+			</div>
+			<!-- /.col -->
+		</div>
+		<!-- /.row -->
+		<!-- /.row -->
+	</div><!-- /.container-fluid -->
+</section>
+
+@section Script
+{
+	<partial name="_ValidationScriptsPartial"/>
+	
+	<script>
+
+		var checked1 = true;
+		var checked2 = true;
+		var checked3 = true;
+
+		function ChangeDisabledOfInput(id) {
+
+			var input = document.getElementById(id);
+			var model = false;
+			switch (id) {
+				case "StartDate": {
+					model = checked1;
+					break;
+				}
+				case "EndDate": {
+					model = checked2;
+					break;
+				}
+				case "UsableCount": {
+					model = checked3;
+					break;
+				}
+			}
+
+			
+
+			if (model) {
+				input.setAttribute("disabled", "disabled");
+			}
+			else {
+				input.removeAttribute("disabled", "disabled");
+			}
+
+			switch (id) {
+				case "StartDate": {
+					checked1 = !checked1;
+					break;
+				}
+				case "EndDate": {
+					checked2 = !checked2;
+					break;
+				}
+				case "UsableCount": {
+					checked3 = !checked3;
+					break;
+				}
+			}
+		}
+
+	
+	</script>
+	
+
+}

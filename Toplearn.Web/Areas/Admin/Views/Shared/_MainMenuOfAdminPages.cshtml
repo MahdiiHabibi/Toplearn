@@ -137,6 +137,49 @@
 
 		<li class="nav-item has-treeview">
 			<a href="#" class="nav-link">
+				<i class="nav-icon fa fa-table @(ViewBag.discounts!=null || ViewBag.discountAdd != null || ViewBag.discountEdit != null ?"text-info":"")"></i>
+				<p>
+					مدیریت کد های تخفیف
+					<i class="fa fa-angle-left right"></i>
+				</p>
+			</a>
+			<ul class="nav nav-treeview">
+				<li class="nav-item">
+					<a asp-action="Index" asp-controller="Discount" asp-area="Admin" class="nav-link @ViewBag.discounts">
+						<i class="fa fa-list-alt nav-icon"></i>
+						<p>
+							لیست کد تخفیف ها
+						</p>
+					</a>
+				</li>
+
+				<li class="nav-item">
+					<a asp-action="AddDiscount" asp-controller="Discount" asp-area="Admin" class="nav-link @ViewBag.discountAdd">
+						<i class="fa fa-list-alt nav-icon"></i>
+						<p>
+							افزودن کد تخفیف
+						</p>
+					</a>
+				</li>
+
+						@if (ViewBag.CategoryEdit != null)
+						{
+					<li class="nav-item">
+						<a class="nav-link @ViewBag.discountEdit">
+							<i class="fa fa-list-alt nav-icon"></i>
+							<p>
+								تغییر کد تخفیف - @ViewBag.Edit
+							</p>
+						</a>
+					</li>
+						}
+
+			</ul>
+		</li>
+
+
+		<li class="nav-item has-treeview">
+			<a href="#" class="nav-link">
 				<i class="nav-icon fa fa-table @(ViewBag.CategoryIndex!=null || ViewBag.CategoryAdd != null || ViewBag.CategoryEdit != null ?"text-info":"")"></i>
 				<p>
 					مدیریت گروه ها
@@ -214,9 +257,9 @@
 						</p>
 					</a>
 				</li>
-				
+
 						@if (ViewBag.EditEpisodeForCourse != null)
-				{
+						{
 					<li class="nav-item">
 						<a asp-action="Index" asp-controller="Category" asp-area="Admin" class="nav-link @ViewBag.EditEpisodeForCourse">
 							<i class="fa fa-list-alt nav-icon"></i>
@@ -225,7 +268,7 @@
 							</p>
 						</a>
 					</li>
-				}
+						}
 
 			</ul>
 		</li>

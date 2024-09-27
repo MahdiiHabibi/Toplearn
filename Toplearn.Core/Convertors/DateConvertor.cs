@@ -23,5 +23,17 @@ namespace Toplearn.Core.Convertors
 		        return "بدون دیتا";
 	        }
         }
+
+        public static string ToShamsi(this DateTime? time)
+        {
+	        try
+	        {
+		        return ((DateTime)time!).ToShamsi();
+	        }
+	        catch
+	        {
+		        return "بدون دیتا";
+	        }
+		}
     }
 }

@@ -4,11 +4,12 @@
 <!DOCTYPE html>
 <html class="no-js" dir="rtl" lang="fa-IR">
 <head>
+	@await RenderSectionAsync("MetaTags",false)
 	<meta charset="UTF-8">
-	<title> تاپ لرن  -  @ViewBag.Title </title>
+	<title> تاپ لرن - @ViewBag.Title </title>
 
-	<partial name="_MetaTags" />
-	<partial name="_Styles" />
+	<partial name="_MetaTags"/>
+	<partial name="_Styles"/>
 	<script src="~/js/jquery.min.js"></script>
 </head>
 <body>

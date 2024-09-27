@@ -1,3 +1,4 @@
+using System.Net;
 using IdentitySample.Repositories;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
@@ -18,8 +19,7 @@ using Microsoft.AspNetCore.DataProtection;
 using Toplearn.Core.Services.Implement.Setting;
 using Toplearn.Web.Security.DependencyInjection;
 using Microsoft.AspNetCore.Http.Features;
-
-
+using Microsoft.IdentityModel.Tokens;
 
 
 #region Services
@@ -38,7 +38,7 @@ builder.Services.AddElmahIo(o =>
 });
 
 builder.WebHost.ConfigureKestrel(options => options.Limits.MaxRequestBodySize = 507374182);
-builder.Services.Configure<FormOptions>(options => { options.MultipartBodyLengthLimit = 507374182;options.ValueLengthLimit = 507374182; });
+builder.Services.Configure<FormOptions>(options => { options.MultipartBodyLengthLimit = 507374182; options.ValueLengthLimit = 507374182; });
 
 
 #region Ioc
@@ -71,12 +71,37 @@ var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
 {
-	//app.UseExceptionHandler("/Home/Error");
-	//app.UseHsts();
-
+	app.UseExceptionHandler("/Error");
+	app.UseHsts();
 }
 
 app.UseDeveloperExceptionPage();
+
+app.UseStatusCodePages(context =>
+{
+
+	var request = context.HttpContext.Request;
+	var response = context.HttpContext.Response;
+
+	var statusCode = response.StatusCode switch
+	{
+		(int)HttpStatusCode.OK => string.Empty,
+		(int)HttpStatusCode.Forbidden => "/AccessDenied",
+		(int)HttpStatusCode.NotFound => "/NotFound",
+		(int)HttpStatusCode.InternalServerError => "/ServerError",
+		(int)HttpStatusCode.BadRequest => "/BadRequest",
+		_ => string.Empty
+	};
+
+	if (!statusCode.IsNullOrEmpty())
+	{
+		response.Redirect(statusCode);
+	}
+
+	return Task.CompletedTask;
+
+});
+
 app.UseElmahIo();
 
 app.UseStaticFiles();

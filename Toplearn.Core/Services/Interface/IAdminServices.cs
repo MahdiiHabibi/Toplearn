@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Toplearn.Core.DTOs.Admin;
+using Toplearn.DataLayer.Entities.Order;
 using Toplearn.DataLayer.Entities.User;
 
 namespace Toplearn.Core.Services.Interface
@@ -13,5 +14,11 @@ namespace Toplearn.Core.Services.Interface
 		public ShowUsersViewModel GetUsersForShow(int pageId = 1, int take = 2, string filterEmail = "", string filterUserName = "", string filterFullname = "");
 
 		public Task<bool> UpdateUser(User user);
+
+		public ShowDiscountsInAdminViewModel GetDiscountsForShow(int pageId = 1, int take = 2, string filter = "");
+
+		public bool IsDiscountCodeExist(string  discountCode);
+
+		public bool AddDiscount(OrderDiscount orderDiscount);
 	}
 }

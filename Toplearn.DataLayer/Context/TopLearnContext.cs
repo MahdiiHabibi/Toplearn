@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Toplearn.DataLayer.DataAnnotations;
 using Toplearn.DataLayer.Entities.Course;
 using Toplearn.DataLayer.Entities.Course.CourseRequirements;
+using Toplearn.DataLayer.Entities.Order;
 using Toplearn.DataLayer.Entities.Permission;
 using Toplearn.DataLayer.Entities.Setting;
 using Toplearn.DataLayer.Entities.User;
@@ -61,14 +62,38 @@ namespace Toplearn.DataLayer.Context
 
 		public DbSet<CourseEpisode> CourseEpisodes { get; set; }
 
-        #endregion
+		public DbSet<UserCourse> UserCourses { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            base.OnConfiguring(optionsBuilder);
-        }
+		public DbSet<CourseComment> CourseComments { get; set; }
+
+		public DbSet<CourseOff> CourseOffs { get; set; }
+		#endregion
+
+		#region Order
+
+		public DbSet<Order> Orders { get; set; }
+
+		public DbSet<OrderDetail> OrderDetails { get; set; }
+
+		public DbSet<OrderDiscount> OrderDiscounts { get; set; }
+
+		public DbSet<OrderToDiscount> OrdersToDiscounts { get; set; }
+
+		#endregion
+
+
+		
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
+
+			var cascadeFKs = modelBuilder.Model.GetEntityTypes()
+				.SelectMany(t => t.GetForeignKeys())
+				.Where(fk => fk is { IsOwnership: false, DeleteBehavior: DeleteBehavior.Cascade });
+
+			foreach (var fk in cascadeFKs)
+				fk.DeleteBehavior = DeleteBehavior.Restrict;
+
+
 			#region Set Required Data
 
 			modelBuilder.Entity<Role>().HasData(
@@ -321,5 +346,5 @@ namespace Toplearn.DataLayer.Context
 		}
 
 
-    }
+	}
 }

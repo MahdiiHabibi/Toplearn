@@ -18,46 +18,49 @@ using WebMarkupMin.AspNetCore8;
 
 namespace Toplearn.Web.Security.DependencyInjection
 {
-    public static class AddServicesOfTopLearn
-    {
-        public static WebApplicationBuilder AddIoCs(this WebApplicationBuilder builder)
-        {
-            #region Ioc
+	public static class AddServicesOfTopLearn
+	{
+		public static WebApplicationBuilder AddIoCs(this WebApplicationBuilder builder)
+		{
+			#region Ioc
 
-            // Add DbContext (TopLearnContext) with SqlServer
-            builder.Services.AddDbContextFactory<TopLearnContext>(option =>
+			// Add DbContext (TopLearnContext) with SqlServer
+			builder.Services.AddDbContextFactory<TopLearnContext>(option =>
+					option.UseLazyLoadingProxies(false).UseSqlServer(
+						"Server=.;Database=Toplearn;Trusted_Connection=SSPI;Encrypt=false;TrustServerCertificate=true")
+				, ServiceLifetime.Transient);
 
-                option.UseSqlServer("Server=.;Database=Toplearn;Trusted_Connection=SSPI;Encrypt=false;TrustServerCertificate=true")
-            );
 
+			// All Works that we can do with Database with dynamic Code
+			builder.Services.AddScoped(typeof(IContextActions<>), typeof(ContextActions<>));
+			// Add Services that we need to Convert View to String
+			builder.Services.AddScoped<IViewRenderService, RenderViewToString>();
+			// Add User Services that we need to do for some Action Like : Register || Login 
+			builder.Services.AddScoped<IUserAction, UserAction>();
+			// Add User Services that we need to do for some Action in User Panel
+			builder.Services.AddScoped<IUserPanelService, UserPanelService>();
+			// Add Services that we need in everyThing That About Wallet
+			builder.Services.AddScoped<IWalletManager, WalletManager>();
+			// Add Services that we need in everyThing in Admin Layer
+			builder.Services.AddScoped<IAdminServices, AdminServices>();
+			// Add Role Services that we need to do for some Action Like : Get Roles || Add 
+			builder.Services.AddScoped<IRoleManager, RoleManager>();
+			// Add Services Of Email Sender Information For Send
+			builder.Services.AddSingleton<ISendEmail, SendEmail>();
+			builder.Services.Configure<SendEmailViewModel>(builder.Configuration.GetSection("EmailSenderInformation"));
+			// Add Services Of MemoryCache
+			builder.Services.AddMemoryCache();
+			// Add Services Of App Setting
+			builder.Services.AddScoped<IUtilities, Utilities>();
+			//
+			builder.Services.AddSingleton<IPermissionServices, PermissionServices>();
+			//
+			builder.Services.AddScoped<ICourseServices, CourseServices>();
+			//
+			builder.Services.AddScoped(typeof(ICategoryServices), typeof(CategoryServices));
+			// 
+			builder.Services.AddTransient<IOrderServices, OrderServices>();
 
-            // All Works that we can do with Database with dynamic Code
-            builder.Services.AddScoped(typeof(IContextActions<>), typeof(ContextActions<>));
-            // Add Services that we need to Convert View to String
-            builder.Services.AddScoped<IViewRenderService, RenderViewToString>();
-            // Add User Services that we need to do for some Action Like : Register || Login 
-            builder.Services.AddScoped<IUserAction, UserAction>();
-            // Add User Services that we need to do for some Action in User Panel
-            builder.Services.AddScoped<IUserPanelService, UserPanelService>();
-            // Add Services that we need in everyThing That About Wallet
-            builder.Services.AddScoped<IWalletManager, WalletManager>();
-            // Add Services that we need in everyThing in Admin Layer
-            builder.Services.AddScoped<IAdminServices, AdminServices>();
-            // Add Role Services that we need to do for some Action Like : Get Roles || Add 
-            builder.Services.AddScoped<IRoleManager, RoleManager>();
-            // Add Services Of Email Sender Information For Send
-            builder.Services.AddSingleton<ISendEmail, SendEmail>();
-            builder.Services.Configure<SendEmailViewModel>(builder.Configuration.GetSection("EmailSenderInformation"));
-            // Add Services Of MemoryCache
-            builder.Services.AddMemoryCache();
-            // Add Services Of App Setting
-            builder.Services.AddScoped<IUtilities, Utilities>();
-            //
-            builder.Services.AddSingleton<IPermissionServices, PermissionServices>();
-            //
-            builder.Services.AddScoped<ICourseServices,CourseServices>();
-            //
-            builder.Services.AddScoped(typeof(ICategoryServices), typeof(CategoryServices));
 			#endregion
 
 			#region WebMarkupMin
@@ -70,6 +73,6 @@ namespace Toplearn.Web.Security.DependencyInjection
 			#endregion
 
 			return builder;
-        }
+		}
 	}
 }

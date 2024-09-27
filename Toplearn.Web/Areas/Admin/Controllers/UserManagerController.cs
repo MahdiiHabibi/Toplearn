@@ -28,7 +28,7 @@ namespace Toplearn.Web.Areas.Admin.Controllers
 		private readonly IWalletManager _walletManager = walletManager;
 		private readonly IMapperAdmin _mapperAdmin = mapperAdmin;
 
-		[Permission("Admin_User_Index")]
+		//[Permission("Admin_User_Index")]
 		public IActionResult Index(int pageId = 1, int take = 2, string filterUserName = "", string filterEmail = "", string filterFullname = "")
 		{
 			ViewData["take"] = take;
@@ -111,7 +111,7 @@ namespace Toplearn.Web.Areas.Admin.Controllers
 
 
 		[Route("/Admin/UserManager/User/{email}")]
-		[Permission("Admin_UserManager_UserForShow")]
+		//[Permission("Admin_UserManager_UserForShow")]
 		public async Task<IActionResult> UserForShow(string email)
 		{
 			if (email == null) return RedirectToPage("index");
@@ -125,7 +125,7 @@ namespace Toplearn.Web.Areas.Admin.Controllers
 		}
 
 		[HttpPost]
-		[Permission("Admin_UserManager_IncreaseTheWallet")]
+		//[Permission("Admin_UserManager_IncreaseTheWallet")]
 		public async Task<IActionResult> IncreaseTheWallet(int amount, string email)
 		{
 			if (amount <= 0 || email == null)

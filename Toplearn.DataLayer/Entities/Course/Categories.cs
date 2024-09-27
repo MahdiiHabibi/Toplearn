@@ -35,7 +35,7 @@ namespace Toplearn.DataLayer.Entities.Course
 		[ForeignKey(nameof(ParentCategoryId))]
 		public virtual List<Category>? ChildCategories { get; set; }
 
-		public ICollection<Course> Courses { get; set; }
+		public virtual ICollection<Course> Courses { get; set; }
 		#endregion
 
 	}

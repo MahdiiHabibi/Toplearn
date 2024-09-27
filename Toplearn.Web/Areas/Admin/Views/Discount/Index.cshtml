@@ -1,0 +1,170 @@
+﻿@using Toplearn.Core.Convertors
+@model ShowDiscountsInAdminViewModel
+
+@{
+	ViewBag.Title = "کد های تخفیف";
+	ViewBag.discounts = "active";
+	bool OodOrEven = false;
+}
+
+
+
+<!-- Main content -->
+<section class="content">
+	<div class="row">
+		<div class="col-12">
+
+			<!-- /.card -->
+
+			<div class="card">
+				<div class="card-header">
+					<h3 class="card-title">@ViewBag.Title</h3>
+				</div>
+				<!-- /.card-header -->
+				<div class="card-body">
+					<div id="example1_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
+						<div>
+							<form asp-action="Index" asp-controller="Discount" asp-area="Admin" method="get">
+								<div class="row">
+									<div class="dataTables_length col-12 col-sm-6" id="example1_length">
+										<label class="d-flex labelOfSkipNumber" style="max-width:max-content">
+											نمایش
+											<select name="take" id="take" aria-controls="جستجو" class="form-control form-control-sm" style="margin:0px 13px;">
+												<option id="option-2" value="2">2</option>
+												<option id="option-5" value="5">5</option>
+												<option id="option-10" value="10">10</option>
+												<option id="option-20" value="20">20</option>
+											</select>کد تخفیف
+										</label>
+									</div>
+
+									<div id="example1_filter " class="dataTables_filter col-12 col-sm-6">
+										<label>
+											کد  تخفیف :
+											<input type="search" value="@ViewData["Filter"]" name="Filter" class="form-control form-control-sm" placeholder="کد  تخفیف :" aria-controls="example1">
+										</label>
+										<input type="hidden" name="pageId" id="pageId" value="@ViewData["pageId"]" />
+									</div>
+								</div>
+								<div>
+									<button type="submit" class="btn btn-block btn-outline-success">جستجو</button>
+									<a asp-action="Index" asp-controller="Discount" asp-area="Admin" class="btn btn-block btn-outline-warning">حذف فیلتر های جستجو</a>
+									<a asp-action="AddDiscount" asp-controller="Discount" asp-area="Admin" class="btn btn-block btn-outline-primary">افزودن کد  تخفیف جدید </a>
+								</div>
+
+							</form>
+						</div>
+						<div class="row">
+							<div class="col-12">
+								<div class="card">
+
+									<!-- /.card-header -->
+									<div class="card-body table-responsive p-0">
+										<table class="table table-hover" style="font-size:xx-small;">
+											<thead>
+												<tr role="row">
+													<th> کد  تخفیف  </th>
+													<th>زمان شروع </th>
+													<th> زمان پایان مهلت</th>
+													<th> تعداد قابل استفاده</th>
+													<th>
+														وضعیت
+													</th>
+													<th>
+														تعداد استفاده ی فعلی
+													</th>
+													<th>
+														دستورات
+													</th>
+												</tr>
+											</thead>
+											<tbody>
+												@foreach (var discount in Model.Discounts)
+												{
+													<tr role="row" class="@(OodOrEven?"odd":"even")">
+														<td class="sorting_1">@discount.DiscountCode</td>
+														<td>@discount.StartDate.ToShamsi()</td>
+														<td>@discount.StartDate.ToShamsi()</td>
+														<td>@discount.UsableCount</td>
+														@if ((discount is { EndDate: not null, StartDate: not null } &&
+														      !(discount.StartDate <= DateTime.Now || DateTime.Now <= discount.EndDate))
+														     || discount.UsableCount <= 0)
+														{
+															<td>
+																<span class="badge bg-danger">فعال نشده</span>
+															</td>
+														}
+														else
+														{
+															<td><span class="badge badge-success">فعال</span></td>
+														}
+														<td>
+															@discount.OrderToDiscounts.Count.ToString("N0")
+														</td>
+														<td>
+															<a asp-action="EditDiscount" asp-controller="Discount" asp-area="Admin" asp-route-DiscountCode="@discount.DiscountCode" class="btn btn-app" style="min-width:fit-content;">
+																<i class="fa fa-arrow-circle-o-down"></i>
+																تغییر اطلاعات
+															</a>
+														</td>
+													</tr>
+													OodOrEven = !OodOrEven;
+												}
+											</tbody>
+										</table>
+									</div>
+									<!-- /.card-body -->
+								</div>
+								<!-- /.card -->
+							</div>
+						</div>
+
+
+
+						@if (Model.PageCount > 1)
+						{
+							<div class="row">
+								<div class="col-sm-12 col-md-5"></div>
+								<div class="col-sm-12 col-md-7">
+									<div class="dataTables_paginate paging_simple_numbers" id="example1_paginate">
+										<ul class="pagination">
+											<li class="paginate_button page-item previous @(@Model.CurrentPage == 1?"disabled":"")" id="example1_previous">
+												<a asp-action="Index" asp-controller="Discount" asp-area="Admin" asp-route-take="@ViewData["take"]" asp-route-pageId="@(Model.CurrentPage-1)" asp-route-Filter="@ViewData["Filter"]" aria-controls="example1" data-dt-idx="0" tabindex="0" class="page-link">قبلی</a>
+											</li>
+											@for (int i = 1; i <= Model.PageCount; i++)
+											{
+												<li class="paginate_button page-item previous @((i == Model.CurrentPage) ? "active" : "")" id="example1_previous">
+													<a asp-action="Index" asp-controller="Discount" asp-area="Admin" asp-route-take="@ViewData["take"]" asp-route-pageId="@i" asp-route-Filter="@ViewData["Filter"]" aria-controls="example1" data-dt-idx="0" tabindex="0" class="page-link">
+														@i
+													</a>
+												</li>
+											}
+											<li class="paginate_button page-item previous @(Model.CurrentPage == Model.PageCount?"disabled":"")" id="example1_previous">
+												<a asp-action="Index" asp-controller="Discount" asp-area="Admin" asp-route-take="@ViewData["take"]" asp-route-pageId="@(Model.CurrentPage+1)" asp-route-Filter="@ViewData["Filter"]" aria-controls="example1" data-dt-idx="0" tabindex="0" class="page-link">بعدی</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+
+							</div>
+						}
+					</div>
+				</div>
+				<!-- /.card-body -->
+			</div>
+			<!-- /.card -->
+		</div>
+		<!-- /.col -->
+	</div>
+	<!-- /.row -->
+</section>
+<!-- /.content -->
+
+<input type="hidden" value="@("option-".Trim() + @ViewData["take"].ToString().Trim())" id="100" />
+
+@section Script
+{
+	<script>
+		document.getElementById(document.getElementById("100").value).setAttribute("selected", "selected");
+	</script>
+}

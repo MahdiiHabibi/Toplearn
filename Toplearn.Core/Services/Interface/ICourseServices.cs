@@ -55,5 +55,11 @@ namespace Toplearn.Core.Services.Interface
 		public Task<TimeSpan> CourseVideosTimeInquiry(int courseId);
 
 		public Course GetCourseForShow(int courseId);
+
+		public int GetCourseStudentCounts(int courseId);
+
+		public ShowCommentsViewModel ShowComments(int courseId,int take,int pageId);
+
+		public bool AddComment(CourseComment courseComment);
 	}
 }

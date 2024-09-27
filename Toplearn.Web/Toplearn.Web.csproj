@@ -159,17 +159,19 @@
 	<ItemGroup>
 		<PackageReference Include="AutoMapper" Version="13.0.1" />
 		<PackageReference Include="Elmah.Io.AspNetCore" Version="5.1.66" />
-		<PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.0" />
-		<PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="8.0.7" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.7" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.7" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.7" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.7">
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="8.0.8" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.8" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="8.0.8" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.8" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.8" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.8">
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 			<PrivateAssets>all</PrivateAssets>
 		</PackageReference>
 		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.5" />
-		<PackageReference Include="WebMarkupMin.AspNetCore8" Version="2.16.1" />
+		<PackageReference Include="Quartz" Version="3.13.0" />
+		<PackageReference Include="WebMarkupMin.AspNetCore8" Version="2.17.0" />
 		<PackageReference Include="Zarinpal" Version="3.0.1" />
 	</ItemGroup>
 
@@ -190,6 +192,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Shared\Components\ShowCourseCommentsViewComponents\Default.cshtml" />
     <_ContentIncludedByDefault Remove="Views\Shared\Components\ShowCategoriesInMainMenu\ShowCategoriesInMainMenu.cshtml" />
   </ItemGroup>
 
@@ -227,6 +230,10 @@
     <TypeScriptCompile Include="wwwroot\CkEditor\translations\uz.d.ts" />
     <TypeScriptCompile Include="wwwroot\CkEditor\translations\vi.d.ts" />
     <TypeScriptCompile Include="wwwroot\CkEditor\translations\zh.d.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Shared\Components\ShowCourseCommentsViewComponents\Default.cshtml" />
   </ItemGroup>
 
 </Project>

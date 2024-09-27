@@ -18,10 +18,10 @@ namespace Toplearn.Core.Services.Implement
 	{
 		public async Task<int> UserWalletBalanceInquiry(int userId)
 		{
-			var enter = (await _contextActionsForWallet.Get(w => w.UserId == userId && w.TypeId == 1 && w.IsPay))
+			var enter = (await _contextActionsForWallet.Get(w => w.UserId == userId && w.TypeId == 2 && w.IsPay))
 				.Select(w => w.Amount).ToList();
 
-			var exit = (await _contextActionsForWallet.Get(w => w.UserId == userId && w.TypeId == 2 && w.IsPay))
+			var exit = (await _contextActionsForWallet.Get(w => w.UserId == userId && w.TypeId == 1 && w.IsPay))
 				.Select(w => w.Amount).ToList();
 
 			return (enter.Sum() - exit.Sum());
@@ -34,8 +34,9 @@ namespace Toplearn.Core.Services.Implement
 		{
 			try
 			{
-				var user = await IsUserNameExist(userId);
-				if (!user) return null;
+				var userRes = await IsUserNameExist(userId);
+
+				if (!userRes) return null;
 
 				var newWalletModel = new Wallet()
 				{
@@ -46,10 +47,21 @@ namespace Toplearn.Core.Services.Implement
 					IsPay = (bool)isPay!,
 					Description = "افزایش شارژ" + (AdminUsername ?? "")
 				};
-				
+
 				bool res = await _contextActionsForWallet.AddToContext(newWalletModel);
 
-				return res ? newWalletModel : null;
+				if (res)
+				{
+					var user = await _contextActionsForUser.GetOne(x => x.UserId == userId);
+					user.WalletBalance += amount;
+					await _contextActionsForUser.UpdateTblOfContext(user);
+					return newWalletModel;
+				}
+				else
+				{
+					return null;
+				}
+
 			}
 			catch
 			{
