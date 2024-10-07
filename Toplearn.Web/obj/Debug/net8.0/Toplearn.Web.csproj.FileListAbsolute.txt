@@ -1,5 +1,6 @@
 W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\web.config
 W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\appsettings.json
+W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\Toplearn.Web.staticwebassets.runtime.json
 W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\Toplearn.Web.exe
 W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\Toplearn.Web.deps.json
 W:\Toplearn\Toplearn.Web\bin\Debug\net8.0\Toplearn.Web.runtimeconfig.json

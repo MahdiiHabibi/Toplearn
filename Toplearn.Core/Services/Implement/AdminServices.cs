@@ -1,7 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using Toplearn.Core.Convertors;
 using Toplearn.Core.DTOs.Admin;
 using Toplearn.Core.Services.Interface;
 using Toplearn.DataLayer.Context;
+using Toplearn.DataLayer.Entities.Course;
 using Toplearn.DataLayer.Entities.Order;
 using Toplearn.DataLayer.Entities.User;
 
@@ -92,7 +95,7 @@ namespace Toplearn.Core.Services.Implement
 			var list = new ShowDiscountsInAdminViewModel
 			{
 				CurrentPage = pageId,
-				PageCount = (int) Math.Ceiling(Convert.ToDouble(result.Count()) / take),
+				PageCount = (int)Math.Ceiling(Convert.ToDouble(result.Count()) / take),
 				Discounts = discounts
 			};
 
@@ -111,6 +114,80 @@ namespace Toplearn.Core.Services.Implement
 			{
 				context.OrderDiscounts.Add(orderDiscount);
 				context.SaveChanges();
+				return true;
+			}
+			catch
+			{
+				return false;
+			}
+		}
+
+		public ShowOffsViewModel GetOffsForShow(int teacherId = 0, int pageId = 1, int take = 2, string courseFilter = "")
+		{
+
+			IQueryable<CourseOff> result = context.CourseOffs.Include(x=>x.Course);
+			
+			if (courseFilter.IsNullOrEmpty() == false)
+			{
+				result = result.Where(x => x.Course.CourseName.Contains(courseFilter));
+			}
+
+			// Show Item In Page
+			int skip = (pageId - 1) * take;
+
+			List<CourseOff> courseOffs = [];
+
+			courseOffs.AddRange(
+				result.OrderByDescending(d => d.OffEndDate)
+					.Skip(skip)
+					.Take(take)
+					.Include(x=>x.User));
+
+			var list = new ShowOffsViewModel
+			{
+				CurrentPage = pageId,
+				PageCount = (int)Math.Ceiling(Convert.ToDouble(result.Count()) / take),
+				CourseOffs = courseOffs
+			};
+
+			return list;
+		}
+
+		public bool AddOffToCourses(List<int> courses, int offPercent, DateTime endTime, int adminId)
+		{
+			try
+			{
+
+				List<Course> contextCourses = context.Courses
+					.Include(x=>x.CourseOff)
+					.Where(x=>courses.Any(c=>x.CourseId == c) && x.CourseOff == null)
+					.ToList();
+
+				
+				foreach (var contextCourse in contextCourses)
+				{
+					if (contextCourse.CoursePrice <=0)
+					{
+						continue;
+					}
+
+					var courseOff = new CourseOff
+					{
+						CourseId = contextCourse.CourseId,
+						UserId = adminId,
+						RealCoursePrice = contextCourse.CoursePrice,
+						OffEndDate = endTime,
+						OffPrice = ((contextCourse.CoursePrice * offPercent)/100)
+					};
+
+					contextCourse.CoursePrice = (courseOff.RealCoursePrice - courseOff.OffPrice).PriceRound();
+
+					context.Update(contextCourse);
+					context.CourseOffs.Add(courseOff);
+				}
+
+				context.SaveChangesAsync();
+
 				return true;
 			}
 			catch

@@ -85,7 +85,7 @@ namespace Toplearn.DataLayer.Entities.Course
 
 		public virtual List<CourseComment> CourseComments { get; set; }
 
-		public virtual CourseOff CourseOff { get; set; }
+		public virtual CourseOff? CourseOff { get; set; }
 
 
 		#endregion

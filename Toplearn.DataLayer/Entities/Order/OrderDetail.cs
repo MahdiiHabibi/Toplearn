@@ -17,6 +17,8 @@ namespace Toplearn.DataLayer.Entities.Order
 
 		public int Price { get; set; }
 
+		
+
 
 
 		#region Relations

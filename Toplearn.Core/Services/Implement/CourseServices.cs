@@ -145,7 +145,7 @@ namespace Toplearn.Core.Services.Implement
 
 				if (enableInclude)
 				{
-					courses = courses.Include(x => x.Episodes).Include(x => x.Teacher);
+					courses = courses.Include(x => x.Episodes).Include(x => x.Teacher).Include(x=>x.CourseOff);
 				}
 
 				if (expression != null)
@@ -365,6 +365,7 @@ namespace Toplearn.Core.Services.Implement
 				"updatedate" => result.OrderByDescending(c => c.LastUpdateTime),
 				"price" => result.OrderByDescending(c => c.CoursePrice),
 				"totaltime" => result.OrderByDescending(x => x.CourseVideosTime),
+				"populer" => result.Include(x=>x.OrderDetails).ThenInclude(x=>x.Order).OrderByDescending(c=>c.OrderDetails.Count),
 				_ => result
 			};
 
@@ -448,6 +449,7 @@ namespace Toplearn.Core.Services.Implement
 		{
 			return Context.Courses.Include(c => c.Episodes)
 				.Include(c => c.Teacher)
+				.Include(x=>x.CourseOff)
 				.SingleOrDefault(c => c.CourseId == courseId)!;
 		}
 

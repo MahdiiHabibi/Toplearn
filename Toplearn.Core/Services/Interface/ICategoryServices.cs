@@ -16,10 +16,12 @@ namespace Toplearn.Core.Services.Interface
 
 		public Task<ShowCategoriesViewModel> GetCategories(bool enableIgnoreQueryFilter = false, int pageId = 1, int take = 5, string categoryFilter = "");
 
-		public Task<bool> UpdateCategory(Category  category);
+		public Task<bool> UpdateCategory(Category category);
 
-		public Task<Category?> GetCategory(Func<Category,bool> func,bool enableIgnoreQueryFilter);
+		public Task<Category?> GetCategory(Func<Category, bool> func, bool enableIgnoreQueryFilter);
 
+		public List<Category> GetCategories(Func<Category, bool>? func, bool enableIgnoreQueryFilter = false);
 
+		public List<Course> GetCoursesOfCategories(List<int> categoriesId);
 	}
 }

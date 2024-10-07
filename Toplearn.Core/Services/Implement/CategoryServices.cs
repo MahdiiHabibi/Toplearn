@@ -87,5 +87,33 @@ namespace Toplearn.Core.Services.Implement
 			}
 		}
 
+		public List<Category> GetCategories(Func<Category, bool>? func, bool enableIgnoreQueryFilter = false)
+		{
+			IQueryable<Category> categories = context.Categories;
+
+			if (enableIgnoreQueryFilter)
+			{
+				categories = categories.IgnoreQueryFilters();
+			}
+
+			return func == null ? categories.ToList() : categories.AsEnumerable().Where(func).ToList();
+		}
+
+		public List<Course> GetCoursesOfCategories(List<int> categoriesId)
+		{
+			var courses = context.Categories.Include(x=>x.Courses).Where(x => categoriesId.Any(c => c == x.CategoryId))
+				.Select(x => x.Courses)
+				.ToList();
+
+			List<Course> coursesList = [];
+
+
+			foreach (var cl in courses)
+			{
+				coursesList.AddRange(cl);
+			} 
+
+			return coursesList.DistinctBy(x => x.CourseId).ToList();
+		}
 	}
 }

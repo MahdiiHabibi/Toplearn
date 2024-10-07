@@ -151,7 +151,7 @@ namespace Toplearn.Core.Services.Implement
 
 			if (enableInclude)
 			{
-				orders = orders.Include(x => x.OrderDetails).ThenInclude(x => x.Course);
+				orders = orders.Include(x => x.OrderDetails).ThenInclude(x => x.Course).ThenInclude(x=>x.CourseOff);
 			}
 
 			var model = orders.ToList();

@@ -1,8 +1,10 @@
 W:\Toplearn\Toplearn.Core\bin\Debug\net8.0\Toplearn.Core.deps.json
 W:\Toplearn\Toplearn.Core\bin\Debug\net8.0\Toplearn.Core.dll
 W:\Toplearn\Toplearn.Core\bin\Debug\net8.0\Toplearn.Core.pdb
+W:\Toplearn\Toplearn.Core\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
 W:\Toplearn\Toplearn.Core\bin\Debug\net8.0\Toplearn.DataLayer.dll
 W:\Toplearn\Toplearn.Core\bin\Debug\net8.0\Toplearn.DataLayer.pdb
+W:\Toplearn\Toplearn.Core\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.xml
 W:\Toplearn\Toplearn.Core\obj\Debug\net8.0\Toplearn.Core.csproj.AssemblyReference.cache
 W:\Toplearn\Toplearn.Core\obj\Debug\net8.0\Toplearn.Core.GeneratedMSBuildEditorConfig.editorconfig
 W:\Toplearn\Toplearn.Core\obj\Debug\net8.0\Toplearn.Core.AssemblyInfoInputs.cache
@@ -14,5 +16,3 @@ W:\Toplearn\Toplearn.Core\obj\Debug\net8.0\Toplearn.Core.dll
 W:\Toplearn\Toplearn.Core\obj\Debug\net8.0\refint\Toplearn.Core.dll
 W:\Toplearn\Toplearn.Core\obj\Debug\net8.0\Toplearn.Core.pdb
 W:\Toplearn\Toplearn.Core\obj\Debug\net8.0\ref\Toplearn.Core.dll
-W:\Toplearn\Toplearn.Core\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
-W:\Toplearn\Toplearn.Core\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.xml

@@ -17,6 +17,8 @@ namespace Toplearn.Web.Controllers
 			ViewData["pageId"] = pageId;
 			var model = courseServices.GetCourse(pageId, filter, priceType, orderByType, startPrice, endPrice,
 				selectedGroups, take);
+
+
 			//if (model.PageCount ==0)
 			//{
 			//	return View(new ShowCoursesInSearchViewModel()
@@ -25,6 +27,7 @@ namespace Toplearn.Web.Controllers
 			//		TotalCourses = 0
 			//	});
 			//}
+
 
 			if (model.PageCount < pageId && model.PageCount != 0)
 			{

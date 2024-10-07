@@ -24,6 +24,9 @@ namespace Toplearn.Web.Controllers
 	{
 		public IActionResult Index()
 		{
+			var x = 132566.PriceRound(false);
+			var xx = 1325666.PriceRound();
+
 			return View();
 		}
 		

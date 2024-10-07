@@ -12,7 +12,7 @@
 
 	<!-- Sidebar -->
 	<div class="sidebar" style="direction: ltr">
-		<div style="direction: rtl">
+		<div style="direction: rtl; font-size:small;">
 			<!-- Sidebar UserForShow panel (optional) -->
 			<div class="UserForShow-panel mt-3 pb-3 mb-3 d-flex">
 				<div class="image">
@@ -177,6 +177,41 @@
 			</ul>
 		</li>
 
+		<li class="nav-item has-treeview">
+			<a href="#" class="nav-link">
+				<i class="nav-icon fa fa-table @(ViewBag.CoursesOffIndex!=null || ViewBag.AddOffCourses != null || ViewBag.AddOffCategories != null ?"text-info":"")"></i>
+				<p>
+					مدیریت تخفیف ها
+					<i class="fa fa-angle-left right"></i>
+				</p>
+			</a>
+			<ul class="nav nav-treeview">
+				<li class="nav-item">
+					<a asp-action="Index" asp-controller="CoursesOff" asp-area="Admin" class="nav-link @ViewBag.CoursesOffIndex">
+						<i class="fa fa-list-alt nav-icon"></i>
+						<p>
+							لیست  تخفیف ها
+						</p>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a asp-action="AddOff" asp-controller="CoursesOff" asp-area="Admin" asp-route-type="@(AddOffType.Categories.ToString())" class="nav-link @ViewBag.AddOffCategories">
+						<i class="fa fa-list-alt nav-icon"></i>
+						<p>
+							افزودن تخفیف جدید به گروه
+						</p>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a asp-action="AddOff" asp-controller="CoursesOff" asp-area="Admin" asp-route-type="@(AddOffType.Courses.ToString())" class="nav-link @ViewBag.AddOffCourses">
+						<i class="fa fa-list-alt nav-icon"></i>
+						<p>
+							افزودن تخفیف جدید به دوره ها
+						</p>
+					</a>
+				</li>
+			</ul>
+		</li>
 
 		<li class="nav-item has-treeview">
 			<a href="#" class="nav-link">
@@ -258,6 +293,8 @@
 					</a>
 				</li>
 
+
+
 						@if (ViewBag.EditEpisodeForCourse != null)
 						{
 					<li class="nav-item">
@@ -272,6 +309,39 @@
 
 			</ul>
 		</li>
+		<li class="nav-item has-treeview">
+			<a href="#" class="nav-link">
+				<i class="nav-icon fa fa-product-hunt @(ViewBag.CoursesOffIndexTe != null || ViewBag.AddOffForTeachersCourses != null ?"text-info":"")"></i>
+				<p>
+					تخفیف ها
+					<i class="fa fa-angle-left right"></i>
+				</p>
+			</a>
+			<ul class="nav nav-treeview">
+
+
+				<li class="nav-item">
+					<a asp-action="Index" asp-controller="CoursesOff" asp-area="Admin" asp-route-fromTeacher="true" class="nav-link @ViewBag.CoursesOffIndexTe">
+						<i class="fa fa-caret-square-o-right nav-icon"></i>
+						<p style="font-size:small;">
+							لیست تخفیفات شما
+						</p>
+					</a>
+				</li>
+
+				<li class="nav-item">
+					<a asp-action="AddOffForTeachersCourses" asp-controller="CoursesOff" asp-area="Admin" class="nav-link @ViewBag.AddOffForTeachersCourses">
+						<i class="fa fa-caret-square-o-right nav-icon"></i>
+						<p style="font-size:small;">
+							افزودن تخفیف به دوره
+						</p>
+					</a>
+				</li>
+
+
+			</ul>
+		</li>
+
 
 
 		<li class="nav-header">تنظیمات کلی سایت</li>

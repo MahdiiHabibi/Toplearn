@@ -39,6 +39,9 @@
 									<tr>
 										<th>دوره</th>
 										<th>قیمت فعلی</th>
+										
+											
+										
 										<th>قیمت در فاکتور </th>
 									</tr>
 								</thead>
@@ -50,7 +53,7 @@
 												<a asp-action="Index" asp-controller="Course" asp-route-courseId="@item.CourseId" asp-route-courseName="@item.Course.CourseName" target="_blank">@item.Course.CourseName</a>
 											</td>
 											<td title="@((item.Course.CoursePrice/10).ToString("N0")) تومان ">@item.Course.CoursePrice.ToString("N0") ریال</td>
-
+											
 											<td title="@((item.Price/10).ToString("N0")) تومان ">
 												@item.Price.ToString("N0") ریال
 											</td>

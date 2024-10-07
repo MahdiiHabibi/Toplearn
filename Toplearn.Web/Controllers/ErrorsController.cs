@@ -1,60 +1,62 @@
 ﻿using System.Net;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Quartz.Util;
 
 namespace Toplearn.Web.Controllers
 {
-    public class ErrorsController : Controller
-    {
+	public class ErrorsController : Controller
+	{
 
-        [Route("/Error")]
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+		[Route("/Error")]
+		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
 		public IActionResult Index()
-        {
-            var statusCode = HttpContext.Response.StatusCode;
-            var link = statusCode switch
-            {
-	            (int)HttpStatusCode.OK => null,
-	            (int)HttpStatusCode.Forbidden => "/AccessDenied",
-	            (int)HttpStatusCode.NotFound => "/NotFound",
-	            (int)HttpStatusCode.InternalServerError => "/ServerError",
-	            (int)HttpStatusCode.BadRequest => "/BadRequest",
-	            _ => "/ServerError"
+		{
+			var statusCode = HttpContext.Response.StatusCode;
+
+			var link = statusCode switch
+			{
+				(int)HttpStatusCode.OK => null,
+				(int)HttpStatusCode.Forbidden => "/AccessDenied",
+				(int)HttpStatusCode.NotFound => "/NotFound",
+				(int)HttpStatusCode.InternalServerError => "/ServerError",
+				(int)HttpStatusCode.BadRequest => "/BadRequest",
+				_ => "/ServerError"
 			};
 
-            return Redirect(link??"/");
-        }
+			return Redirect(link ?? "/");
+		}
 
 
-        #region Access Denied
+		#region Access Denied
 
 
-        [Route("/AccessDenied")]
-        public IActionResult AccessDenied() => View();
+		[Route("/AccessDenied")]
+		public IActionResult AccessDenied() => View();
 
 
-        #endregion
+		#endregion
 
-        #region NotFound
+		#region NotFound
 
-        [Route("/NotFound")]
-        public IActionResult NotFound() => View();
+		[Route("/NotFound")]
+		public IActionResult NotFound() => View();
 
 
-        #endregion
+		#endregion
 
-        #region InternalServerError
+		#region InternalServerError
 
-        [Route("/ServerError")]
-        public IActionResult InternalServerError() => View();
+		[Route("/ServerError")]
+		public IActionResult InternalServerError() => View();
 
-        #endregion
+		#endregion
 
-        #region BadRequest
+		#region BadRequest
 
-        [Route("/BadRequest")]
+		[Route("/BadRequest")]
 		public IActionResult BadRequest() => View();
 
 		#endregion
-    }
+	}
 }

@@ -10,7 +10,8 @@ namespace Toplearn.Web.ViewComponents
 		public async Task<IViewComponentResult> InvokeAsync()
 		{
 			return await Task.FromResult((IViewComponentResult)
-				View("ShowLastCoursesInIndexViewComponents", courseServices.GetCourse(orderByType: "totaltime").ShowCoursesWithBoxViewModels));
+				View("ShowLastCoursesInIndexViewComponents", courseServices.GetCourse(orderByType: "date",take:8).ShowCoursesWithBoxViewModels));
+
 		}
 
 	}

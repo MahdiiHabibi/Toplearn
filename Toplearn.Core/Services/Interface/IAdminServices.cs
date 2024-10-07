@@ -17,8 +17,13 @@ namespace Toplearn.Core.Services.Interface
 
 		public ShowDiscountsInAdminViewModel GetDiscountsForShow(int pageId = 1, int take = 2, string filter = "");
 
-		public bool IsDiscountCodeExist(string  discountCode);
+		public bool IsDiscountCodeExist(string discountCode);
 
 		public bool AddDiscount(OrderDiscount orderDiscount);
+
+		public ShowOffsViewModel GetOffsForShow(int teacherId = 0, int pageId = 1, int take = 5, string courseFilter = "");
+
+		public bool AddOffToCourses(List<int> courses, int offPercent, DateTime endTime,int adminId);
+
 	}
 }

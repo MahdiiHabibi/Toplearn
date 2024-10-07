@@ -152,7 +152,7 @@
 					}
 					@if (!User.Identity.IsAuthenticated || (Model.CoursePrice != 0 && !orderServices.IsUserBuyCourse(int.Parse(User.FindFirstValue(TopLearnClaimTypes.NameIdentifier)!), Model.CourseId) && !orderRes))
 					{
-						<a asp-area="UserPanel" asp-controller="Order" asp-action="AddCourseToCart" asp-route-courseId="@Model.CourseId"> شرکت در دوره : @((Model.CoursePrice / 10).ToString("#,0")) تومان </a>
+						<a asp-area="UserPanel" asp-controller="Order" asp-action="AddCourseToCart" asp-route-courseId="@Model.CourseId"> شرکت در دوره : @((Model.CoursePrice / 10).ToString("#,0")) تومان  @(Model.CourseOff is { OffPrice: >= 0 } ? "\"  با تخفیف \" " : "") </a>
 					}
 					else if (orderRes)
 					{
@@ -175,7 +175,14 @@
 						<li>وضعیت دوره: @Model.CourseLevel</li>
 						@if (Model.CoursePrice != 0)
 						{
-							<li title="@((Model.CoursePrice/10).ToString("#,0")) تومان">قیمت : @Model.CoursePrice.ToString("#,0") ریال</li>
+							if (Model.CourseOff == null)
+							{
+								<li title="@((Model.CoursePrice/10).ToString("#,0")) تومان">قیمت : @Model.CoursePrice.ToString("#,0") ریال</li>
+							}
+							else
+							{
+								<li>قیمت : <del title="@((Model.CourseOff.RealCoursePrice/10).ToString("#,0")) تومان" style="color:red;"> @Model.CourseOff.RealCoursePrice.ToString("#,0")</del>  ,  <span title="@((Model.CoursePrice/10).ToString("#,0")) تومان" style="color:#6fc341;"> @Model.CoursePrice.ToString("#,0") ریال</span></li>
+							}
 						}
 						else
 						{

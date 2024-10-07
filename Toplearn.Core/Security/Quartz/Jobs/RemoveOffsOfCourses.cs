@@ -31,7 +31,7 @@ namespace Toplearn.Core.Security.Quartz.Jobs
 
 				foreach (var off in model)
 				{
-					off.Course.CoursePrice = off.RealPrice;
+					off.Course.CoursePrice = off.RealCoursePrice;
 					dbContext.Courses.Update(off.Course);
 					dbContext.CourseOffs.Remove(off);
 				}
@@ -41,7 +41,6 @@ namespace Toplearn.Core.Security.Quartz.Jobs
 			catch (Exception e)
 			{
 				Console.WriteLine(e);
-				throw;
 			}
 		}
 	}

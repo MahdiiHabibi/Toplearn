@@ -207,15 +207,6 @@ namespace Toplearn.DataLayer.Migrations
 
             modelBuilder.Entity("Toplearn.DataLayer.Entities.Course.CourseOff", b =>
                 {
-                    b.Property<int>("OffId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OffId"));
-
-                    b.Property<int>("AdminId")
-                        .HasColumnType("int");
-
                     b.Property<int>("CourseId")
                         .HasColumnType("int");
 
@@ -225,15 +216,15 @@ namespace Toplearn.DataLayer.Migrations
                     b.Property<int>("OffPrice")
                         .HasColumnType("int");
 
-                    b.Property<int>("RealPrice")
+                    b.Property<int>("RealCoursePrice")
                         .HasColumnType("int");
 
-                    b.HasKey("OffId");
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
 
-                    b.HasIndex("AdminId");
+                    b.HasKey("CourseId");
 
-                    b.HasIndex("CourseId")
-                        .IsUnique();
+                    b.HasIndex("UserId");
 
                     b.ToTable("CourseOffs");
                 });
@@ -829,21 +820,21 @@ namespace Toplearn.DataLayer.Migrations
 
             modelBuilder.Entity("Toplearn.DataLayer.Entities.Course.CourseOff", b =>
                 {
-                    b.HasOne("Toplearn.DataLayer.Entities.User.User", "Admin")
-                        .WithMany("CourseOffs")
-                        .HasForeignKey("AdminId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("Toplearn.DataLayer.Entities.Course.Course", "Course")
                         .WithOne("CourseOff")
                         .HasForeignKey("Toplearn.DataLayer.Entities.Course.CourseOff", "CourseId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("Admin");
+                    b.HasOne("Toplearn.DataLayer.Entities.User.User", "User")
+                        .WithMany("CourseOffs")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.Navigation("Course");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Toplearn.DataLayer.Entities.Course.UserCourse", b =>
